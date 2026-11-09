@@ -1,0 +1,2631 @@
+{
+  "model": "PointNet scratch on selected historical reference meshes",
+  "training_parts": 932,
+  "validation_parts": 100,
+  "validation_views": 3200,
+  "first_validation_below_target_epoch": null,
+  "best_epoch": 132,
+  "epochs_completed": 162,
+  "training_seconds": 2429.180233930998,
+  "parameter_count": 808003,
+  "baseline_constant_up_axis": {
+    "count": 3200,
+    "mean_angle_deg": 87.1272964477539,
+    "median_angle_deg": 88.3839111328125,
+    "p90_angle_deg": 141.69471740722656,
+    "within_3deg_pct": 3.25,
+    "within_5deg_pct": 3.375,
+    "within_10deg_pct": 4.0,
+    "within_30deg_pct": 9.8125
+  },
+  "best_validation": {
+    "count": 3200,
+    "mean_angle_deg": 66.16897583007812,
+    "median_angle_deg": 55.924949645996094,
+    "p90_angle_deg": 130.8245391845703,
+    "within_3deg_pct": 0.8750000000000001,
+    "within_5deg_pct": 1.9375,
+    "within_10deg_pct": 5.6875,
+    "within_30deg_pct": 20.375
+  },
+  "peak_cuda_memory_allocated_mib": 1823.189453125,
+  "history": [
+    {
+      "epoch": 1,
+      "train_cosine_loss": 0.8969648191345608,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 77.19786071777344,
+        "median_angle_deg": 72.3684310913086,
+        "p90_angle_deg": 136.71224975585938,
+        "within_3deg_pct": 0.0625,
+        "within_5deg_pct": 0.34375,
+        "within_10deg_pct": 1.65625,
+        "within_30deg_pct": 14.09375
+      },
+      "learning_rate": 0.0009999383162408303,
+      "epoch_seconds": 17.295411610000883
+    },
+    {
+      "epoch": 2,
+      "train_cosine_loss": 0.8558476443198617,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 76.16293334960938,
+        "median_angle_deg": 70.73790740966797,
+        "p90_angle_deg": 137.411865234375,
+        "within_3deg_pct": 0.0625,
+        "within_5deg_pct": 0.43750000000000006,
+        "within_10deg_pct": 1.625,
+        "within_30deg_pct": 15.21875
+      },
+      "learning_rate": 0.0009997532801828658,
+      "epoch_seconds": 15.173777298998175
+    },
+    {
+      "epoch": 3,
+      "train_cosine_loss": 0.8546968715129493,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 76.77946472167969,
+        "median_angle_deg": 71.47813415527344,
+        "p90_angle_deg": 138.38259887695312,
+        "within_3deg_pct": 0.09375,
+        "within_5deg_pct": 0.40625,
+        "within_10deg_pct": 1.5625,
+        "within_30deg_pct": 13.96875
+      },
+      "learning_rate": 0.0009994449374809851,
+      "epoch_seconds": 15.435916805003217
+    },
+    {
+      "epoch": 4,
+      "train_cosine_loss": 0.844248292144276,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 74.41705322265625,
+        "median_angle_deg": 69.86653137207031,
+        "p90_angle_deg": 133.2828826904297,
+        "within_3deg_pct": 0.21875000000000003,
+        "within_5deg_pct": 0.59375,
+        "within_10deg_pct": 1.65625,
+        "within_30deg_pct": 15.59375
+      },
+      "learning_rate": 0.0009990133642141358,
+      "epoch_seconds": 15.460852086998784
+    },
+    {
+      "epoch": 5,
+      "train_cosine_loss": 0.8425804154044058,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 73.7337417602539,
+        "median_angle_deg": 68.87562561035156,
+        "p90_angle_deg": 135.07342529296875,
+        "within_3deg_pct": 0.125,
+        "within_5deg_pct": 0.71875,
+        "within_10deg_pct": 2.84375,
+        "within_30deg_pct": 16.4375
+      },
+      "learning_rate": 0.000998458666866564,
+      "epoch_seconds": 15.335154740001599
+    },
+    {
+      "epoch": 6,
+      "train_cosine_loss": 0.8349768983703826,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 72.74202728271484,
+        "median_angle_deg": 66.81954956054688,
+        "p90_angle_deg": 136.43417358398438,
+        "within_3deg_pct": 0.1875,
+        "within_5deg_pct": 0.75,
+        "within_10deg_pct": 2.96875,
+        "within_30deg_pct": 17.75
+      },
+      "learning_rate": 0.00099778098230154,
+      "epoch_seconds": 15.361186821002775
+    },
+    {
+      "epoch": 7,
+      "train_cosine_loss": 0.8305287426377571,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 72.57759094238281,
+        "median_angle_deg": 66.83541870117188,
+        "p90_angle_deg": 136.11436462402344,
+        "within_3deg_pct": 0.25,
+        "within_5deg_pct": 0.625,
+        "within_10deg_pct": 2.15625,
+        "within_30deg_pct": 18.375
+      },
+      "learning_rate": 0.0009969804777275899,
+      "epoch_seconds": 15.48564569500013
+    },
+    {
+      "epoch": 8,
+      "train_cosine_loss": 0.8328680793870672,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 74.85211181640625,
+        "median_angle_deg": 69.3886947631836,
+        "p90_angle_deg": 138.2354736328125,
+        "within_3deg_pct": 0.40625,
+        "within_5deg_pct": 0.71875,
+        "within_10deg_pct": 2.875,
+        "within_30deg_pct": 16.8125
+      },
+      "learning_rate": 0.000996057350657239,
+      "epoch_seconds": 15.075227535999147
+    },
+    {
+      "epoch": 9,
+      "train_cosine_loss": 0.8319197293259043,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 72.4275131225586,
+        "median_angle_deg": 65.45382690429688,
+        "p90_angle_deg": 136.44566345214844,
+        "within_3deg_pct": 0.34375,
+        "within_5deg_pct": 0.625,
+        "within_10deg_pct": 3.4062500000000004,
+        "within_30deg_pct": 17.75
+      },
+      "learning_rate": 0.0009950118288582787,
+      "epoch_seconds": 14.765063942999404
+    },
+    {
+      "epoch": 10,
+      "train_cosine_loss": 0.8240805933403866,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 73.13839721679688,
+        "median_angle_deg": 65.75639343261719,
+        "p90_angle_deg": 137.11517333984375,
+        "within_3deg_pct": 0.28125,
+        "within_5deg_pct": 0.8125,
+        "within_10deg_pct": 2.34375,
+        "within_30deg_pct": 17.15625
+      },
+      "learning_rate": 0.0009938441702975688,
+      "epoch_seconds": 14.639584028001991
+    },
+    {
+      "epoch": 11,
+      "train_cosine_loss": 0.8238978971739184,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.7099380493164,
+        "median_angle_deg": 65.16936492919922,
+        "p90_angle_deg": 135.91722106933594,
+        "within_3deg_pct": 0.1875,
+        "within_5deg_pct": 0.75,
+        "within_10deg_pct": 3.4375000000000004,
+        "within_30deg_pct": 19.15625
+      },
+      "learning_rate": 0.000992554663077387,
+      "epoch_seconds": 14.40295033500297
+    },
+    {
+      "epoch": 12,
+      "train_cosine_loss": 0.822624998159163,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 72.83399200439453,
+        "median_angle_deg": 66.64460754394531,
+        "p90_angle_deg": 134.94007873535156,
+        "within_3deg_pct": 0.25,
+        "within_5deg_pct": 0.75,
+        "within_10deg_pct": 2.65625,
+        "within_30deg_pct": 17.28125
+      },
+      "learning_rate": 0.0009911436253643444,
+      "epoch_seconds": 14.408590555998671
+    },
+    {
+      "epoch": 13,
+      "train_cosine_loss": 0.8204166053958205,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 73.09888458251953,
+        "median_angle_deg": 68.72592163085938,
+        "p90_angle_deg": 134.77783203125,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.21875,
+        "within_10deg_pct": 3.34375,
+        "within_30deg_pct": 17.0625
+      },
+      "learning_rate": 0.0009896114053108828,
+      "epoch_seconds": 14.843818727000325
+    },
+    {
+      "epoch": 14,
+      "train_cosine_loss": 0.8207450770001554,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 72.01412963867188,
+        "median_angle_deg": 65.77963256835938,
+        "p90_angle_deg": 135.18235778808594,
+        "within_3deg_pct": 0.28125,
+        "within_5deg_pct": 0.8750000000000001,
+        "within_10deg_pct": 3.1875,
+        "within_30deg_pct": 17.34375
+      },
+      "learning_rate": 0.0009879583809693736,
+      "epoch_seconds": 14.577340235002339
+    },
+    {
+      "epoch": 15,
+      "train_cosine_loss": 0.8158029773204624,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.6069107055664,
+        "median_angle_deg": 65.35777282714844,
+        "p90_angle_deg": 134.0159454345703,
+        "within_3deg_pct": 0.40625,
+        "within_5deg_pct": 1.09375,
+        "within_10deg_pct": 3.21875,
+        "within_30deg_pct": 18.40625
+      },
+      "learning_rate": 0.0009861849601988382,
+      "epoch_seconds": 14.200445509999554
+    },
+    {
+      "epoch": 16,
+      "train_cosine_loss": 0.8203146815811616,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.72760772705078,
+        "median_angle_deg": 65.71988677978516,
+        "p90_angle_deg": 134.2002410888672,
+        "within_3deg_pct": 0.34375,
+        "within_5deg_pct": 0.6875,
+        "within_10deg_pct": 2.875,
+        "within_30deg_pct": 17.875
+      },
+      "learning_rate": 0.0009842915805643154,
+      "epoch_seconds": 13.827828382000007
+    },
+    {
+      "epoch": 17,
+      "train_cosine_loss": 0.8168202134672664,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.21896362304688,
+        "median_angle_deg": 63.980018615722656,
+        "p90_angle_deg": 137.09190368652344,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 0.9375,
+        "within_10deg_pct": 3.75,
+        "within_30deg_pct": 19.40625
+      },
+      "learning_rate": 0.000982278709228899,
+      "epoch_seconds": 13.96054304199788
+    },
+    {
+      "epoch": 18,
+      "train_cosine_loss": 0.818396661030888,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.1288833618164,
+        "median_angle_deg": 64.43505859375,
+        "p90_angle_deg": 135.77330017089844,
+        "within_3deg_pct": 0.59375,
+        "within_5deg_pct": 1.0625,
+        "within_10deg_pct": 3.21875,
+        "within_30deg_pct": 18.28125
+      },
+      "learning_rate": 0.0009801468428384714,
+      "epoch_seconds": 14.23154115700163
+    },
+    {
+      "epoch": 19,
+      "train_cosine_loss": 0.8135243626111567,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 72.83477020263672,
+        "median_angle_deg": 65.29580688476562,
+        "p90_angle_deg": 138.7574462890625,
+        "within_3deg_pct": 0.375,
+        "within_5deg_pct": 0.84375,
+        "within_10deg_pct": 3.1875,
+        "within_30deg_pct": 18.25
+      },
+      "learning_rate": 0.0009778965073991648,
+      "epoch_seconds": 13.882212239001092
+    },
+    {
+      "epoch": 20,
+      "train_cosine_loss": 0.8136562335388855,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.83318328857422,
+        "median_angle_deg": 63.794532775878906,
+        "p90_angle_deg": 134.95401000976562,
+        "within_3deg_pct": 0.375,
+        "within_5deg_pct": 1.03125,
+        "within_10deg_pct": 3.90625,
+        "within_30deg_pct": 19.25
+      },
+      "learning_rate": 0.0009755282581475766,
+      "epoch_seconds": 14.10634164899966
+    },
+    {
+      "epoch": 21,
+      "train_cosine_loss": 0.8125236218579337,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 72.26642608642578,
+        "median_angle_deg": 65.67564392089844,
+        "p90_angle_deg": 135.15818786621094,
+        "within_3deg_pct": 0.375,
+        "within_5deg_pct": 0.9375,
+        "within_10deg_pct": 3.21875,
+        "within_30deg_pct": 16.65625
+      },
+      "learning_rate": 0.0009730426794137723,
+      "epoch_seconds": 14.205982981002307
+    },
+    {
+      "epoch": 22,
+      "train_cosine_loss": 0.8100659325399112,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 73.77919006347656,
+        "median_angle_deg": 66.73745727539062,
+        "p90_angle_deg": 138.68057250976562,
+        "within_3deg_pct": 0.28125,
+        "within_5deg_pct": 0.65625,
+        "within_10deg_pct": 2.53125,
+        "within_30deg_pct": 16.875
+      },
+      "learning_rate": 0.0009704403844771124,
+      "epoch_seconds": 14.115945025001565
+    },
+    {
+      "epoch": 23,
+      "train_cosine_loss": 0.8170818127531863,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.25862121582031,
+        "median_angle_deg": 63.07134246826172,
+        "p90_angle_deg": 137.3054962158203,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 0.8750000000000001,
+        "within_10deg_pct": 3.21875,
+        "within_30deg_pct": 19.03125
+      },
+      "learning_rate": 0.0009677220154149334,
+      "epoch_seconds": 14.408818743002485
+    },
+    {
+      "epoch": 24,
+      "train_cosine_loss": 0.8097925708017636,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.93477630615234,
+        "median_angle_deg": 64.38905334472656,
+        "p90_angle_deg": 138.4654083251953,
+        "within_3deg_pct": 0.1875,
+        "within_5deg_pct": 0.65625,
+        "within_10deg_pct": 3.5312499999999996,
+        "within_30deg_pct": 17.84375
+      },
+      "learning_rate": 0.0009648882429441253,
+      "epoch_seconds": 14.856945592000557
+    },
+    {
+      "epoch": 25,
+      "train_cosine_loss": 0.8101944135493987,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 72.2251968383789,
+        "median_angle_deg": 65.51206970214844,
+        "p90_angle_deg": 137.91319274902344,
+        "within_3deg_pct": 0.34375,
+        "within_5deg_pct": 1.09375,
+        "within_10deg_pct": 3.9375,
+        "within_30deg_pct": 17.65625
+      },
+      "learning_rate": 0.000961939766255643,
+      "epoch_seconds": 14.509996095999668
+    },
+    {
+      "epoch": 26,
+      "train_cosine_loss": 0.8138821671193249,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.7628402709961,
+        "median_angle_deg": 62.08403015136719,
+        "p90_angle_deg": 139.60586547851562,
+        "within_3deg_pct": 0.65625,
+        "within_5deg_pct": 1.59375,
+        "within_10deg_pct": 4.6875,
+        "within_30deg_pct": 19.78125
+      },
+      "learning_rate": 0.0009588773128419901,
+      "epoch_seconds": 14.159653639999306
+    },
+    {
+      "epoch": 27,
+      "train_cosine_loss": 0.8099852329671638,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.77017974853516,
+        "median_angle_deg": 62.648765563964844,
+        "p90_angle_deg": 136.00820922851562,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.03125,
+        "within_10deg_pct": 3.4375000000000004,
+        "within_30deg_pct": 19.46875
+      },
+      "learning_rate": 0.0009557016383177221,
+      "epoch_seconds": 15.23150618300133
+    },
+    {
+      "epoch": 28,
+      "train_cosine_loss": 0.8113834543929079,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.25955200195312,
+        "median_angle_deg": 62.207298278808594,
+        "p90_angle_deg": 140.01576232910156,
+        "within_3deg_pct": 0.59375,
+        "within_5deg_pct": 1.34375,
+        "within_10deg_pct": 4.28125,
+        "within_30deg_pct": 20.4375
+      },
+      "learning_rate": 0.0009524135262330093,
+      "epoch_seconds": 14.765249898999173
+    },
+    {
+      "epoch": 29,
+      "train_cosine_loss": 0.8112124997658791,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.04237365722656,
+        "median_angle_deg": 63.776275634765625,
+        "p90_angle_deg": 133.79669189453125,
+        "within_3deg_pct": 0.28125,
+        "within_5deg_pct": 0.9062499999999999,
+        "within_10deg_pct": 3.34375,
+        "within_30deg_pct": 18.9375
+      },
+      "learning_rate": 0.0009490137878803073,
+      "epoch_seconds": 15.291324332996737
+    },
+    {
+      "epoch": 30,
+      "train_cosine_loss": 0.814197218980912,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.28268432617188,
+        "median_angle_deg": 62.021156311035156,
+        "p90_angle_deg": 135.56626892089844,
+        "within_3deg_pct": 0.8750000000000001,
+        "within_5deg_pct": 2.0,
+        "within_10deg_pct": 5.0625,
+        "within_30deg_pct": 18.90625
+      },
+      "learning_rate": 0.0009455032620941834,
+      "epoch_seconds": 15.40464945399799
+    },
+    {
+      "epoch": 31,
+      "train_cosine_loss": 0.8089917767712999,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.181396484375,
+        "median_angle_deg": 62.68246078491211,
+        "p90_angle_deg": 136.39410400390625,
+        "within_3deg_pct": 0.0625,
+        "within_5deg_pct": 0.8125,
+        "within_10deg_pct": 3.3125,
+        "within_30deg_pct": 18.75
+      },
+      "learning_rate": 0.0009418828150443463,
+      "epoch_seconds": 15.487256421998609
+    },
+    {
+      "epoch": 32,
+      "train_cosine_loss": 0.8122894542667487,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.42111206054688,
+        "median_angle_deg": 63.975555419921875,
+        "p90_angle_deg": 134.65126037597656,
+        "within_3deg_pct": 0.25,
+        "within_5deg_pct": 0.8125,
+        "within_10deg_pct": 3.5312499999999996,
+        "within_30deg_pct": 18.4375
+      },
+      "learning_rate": 0.0009381533400219311,
+      "epoch_seconds": 15.261653166999167
+    },
+    {
+      "epoch": 33,
+      "train_cosine_loss": 0.8005802009750334,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.32072448730469,
+        "median_angle_deg": 63.35497283935547,
+        "p90_angle_deg": 134.59759521484375,
+        "within_3deg_pct": 0.15625,
+        "within_5deg_pct": 0.65625,
+        "within_10deg_pct": 3.375,
+        "within_30deg_pct": 17.59375
+      },
+      "learning_rate": 0.0009343157572190951,
+      "epoch_seconds": 14.912762924999697
+    },
+    {
+      "epoch": 34,
+      "train_cosine_loss": 0.8058958001147012,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.3257064819336,
+        "median_angle_deg": 63.0784797668457,
+        "p90_angle_deg": 133.68960571289062,
+        "within_3deg_pct": 0.25,
+        "within_5deg_pct": 0.84375,
+        "within_10deg_pct": 3.28125,
+        "within_30deg_pct": 18.75
+      },
+      "learning_rate": 0.0009303710135019713,
+      "epoch_seconds": 15.366307241998584
+    },
+    {
+      "epoch": 35,
+      "train_cosine_loss": 0.8023654532023254,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.37279510498047,
+        "median_angle_deg": 62.60118103027344,
+        "p90_angle_deg": 135.48333740234375,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.0,
+        "within_10deg_pct": 4.1875,
+        "within_30deg_pct": 19.5625
+      },
+      "learning_rate": 0.0009263200821770456,
+      "epoch_seconds": 15.652615368002444
+    },
+    {
+      "epoch": 36,
+      "train_cosine_loss": 0.807118791111549,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.15765380859375,
+        "median_angle_deg": 62.05924987792969,
+        "p90_angle_deg": 135.6023406982422,
+        "within_3deg_pct": 0.375,
+        "within_5deg_pct": 1.0,
+        "within_10deg_pct": 4.125,
+        "within_30deg_pct": 20.28125
+      },
+      "learning_rate": 0.000922163962751007,
+      "epoch_seconds": 15.643647859997145
+    },
+    {
+      "epoch": 37,
+      "train_cosine_loss": 0.7982205949371977,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.26980590820312,
+        "median_angle_deg": 64.39334869384766,
+        "p90_angle_deg": 135.8600616455078,
+        "within_3deg_pct": 0.59375,
+        "within_5deg_pct": 1.5,
+        "within_10deg_pct": 4.53125,
+        "within_30deg_pct": 18.375
+      },
+      "learning_rate": 0.0009179036806841347,
+      "epoch_seconds": 14.61845880400142
+    },
+    {
+      "epoch": 38,
+      "train_cosine_loss": 0.8030228012365332,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.31037902832031,
+        "median_angle_deg": 63.234214782714844,
+        "p90_angle_deg": 136.84375,
+        "within_3deg_pct": 0.375,
+        "within_5deg_pct": 1.53125,
+        "within_10deg_pct": 4.3125,
+        "within_30deg_pct": 18.75
+      },
+      "learning_rate": 0.0009135402871372803,
+      "epoch_seconds": 15.013538948998757
+    },
+    {
+      "epoch": 39,
+      "train_cosine_loss": 0.8048190198231153,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.11970520019531,
+        "median_angle_deg": 61.14301681518555,
+        "p90_angle_deg": 141.59835815429688,
+        "within_3deg_pct": 0.34375,
+        "within_5deg_pct": 1.375,
+        "within_10deg_pct": 3.875,
+        "within_30deg_pct": 19.96875
+      },
+      "learning_rate": 0.0009090748587125112,
+      "epoch_seconds": 15.448035884001001
+    },
+    {
+      "epoch": 40,
+      "train_cosine_loss": 0.8031675564245093,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.23595428466797,
+        "median_angle_deg": 62.59376907348633,
+        "p90_angle_deg": 134.5088348388672,
+        "within_3deg_pct": 0.40625,
+        "within_5deg_pct": 1.125,
+        "within_10deg_pct": 4.40625,
+        "within_30deg_pct": 18.65625
+      },
+      "learning_rate": 0.0009045084971874732,
+      "epoch_seconds": 14.942135605000658
+    },
+    {
+      "epoch": 41,
+      "train_cosine_loss": 0.8051498254737117,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.10359191894531,
+        "median_angle_deg": 63.04975891113281,
+        "p90_angle_deg": 132.61830139160156,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.25,
+        "within_10deg_pct": 4.40625,
+        "within_30deg_pct": 19.03125
+      },
+      "learning_rate": 0.0008998423292435448,
+      "epoch_seconds": 15.415745940998022
+    },
+    {
+      "epoch": 42,
+      "train_cosine_loss": 0.8105647823585461,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 71.07530975341797,
+        "median_angle_deg": 63.054603576660156,
+        "p90_angle_deg": 137.39584350585938,
+        "within_3deg_pct": 0.53125,
+        "within_5deg_pct": 1.21875,
+        "within_10deg_pct": 3.84375,
+        "within_30deg_pct": 18.9375
+      },
+      "learning_rate": 0.0008950775061878446,
+      "epoch_seconds": 13.78345874400111
+    },
+    {
+      "epoch": 43,
+      "train_cosine_loss": 0.8029258849794773,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.91374206542969,
+        "median_angle_deg": 64.42475128173828,
+        "p90_angle_deg": 136.66246032714844,
+        "within_3deg_pct": 0.65625,
+        "within_5deg_pct": 1.625,
+        "within_10deg_pct": 4.4375,
+        "within_30deg_pct": 18.96875
+      },
+      "learning_rate": 0.0008902152036691643,
+      "epoch_seconds": 14.469052068001474
+    },
+    {
+      "epoch": 44,
+      "train_cosine_loss": 0.8016927044662795,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.74957275390625,
+        "median_angle_deg": 62.85364532470703,
+        "p90_angle_deg": 132.79116821289062,
+        "within_3deg_pct": 0.375,
+        "within_5deg_pct": 1.125,
+        "within_10deg_pct": 4.21875,
+        "within_30deg_pct": 19.71875
+      },
+      "learning_rate": 0.000885256621387894,
+      "epoch_seconds": 14.927214128998457
+    },
+    {
+      "epoch": 45,
+      "train_cosine_loss": 0.7986735054351741,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.902587890625,
+        "median_angle_deg": 62.73875427246094,
+        "p90_angle_deg": 132.19361877441406,
+        "within_3deg_pct": 0.21875000000000003,
+        "within_5deg_pct": 0.625,
+        "within_10deg_pct": 3.375,
+        "within_30deg_pct": 19.375
+      },
+      "learning_rate": 0.0008802029828000149,
+      "epoch_seconds": 15.341532574999292
+    },
+    {
+      "epoch": 46,
+      "train_cosine_loss": 0.8029444174193517,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.49971008300781,
+        "median_angle_deg": 63.359779357910156,
+        "p90_angle_deg": 134.6627960205078,
+        "within_3deg_pct": 0.59375,
+        "within_5deg_pct": 1.40625,
+        "within_10deg_pct": 4.21875,
+        "within_30deg_pct": 19.5
+      },
+      "learning_rate": 0.0008750555348152292,
+      "epoch_seconds": 13.74623340999824
+    },
+    {
+      "epoch": 47,
+      "train_cosine_loss": 0.7978655672252434,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.50009155273438,
+        "median_angle_deg": 59.689369201660156,
+        "p90_angle_deg": 136.14849853515625,
+        "within_3deg_pct": 0.9062499999999999,
+        "within_5deg_pct": 1.9375,
+        "within_10deg_pct": 5.9375,
+        "within_30deg_pct": 20.375
+      },
+      "learning_rate": 0.0008698155474893041,
+      "epoch_seconds": 14.119264512999507
+    },
+    {
+      "epoch": 48,
+      "train_cosine_loss": 0.7978990181577053,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.74687194824219,
+        "median_angle_deg": 60.021446228027344,
+        "p90_angle_deg": 136.88925170898438,
+        "within_3deg_pct": 0.6875,
+        "within_5deg_pct": 1.90625,
+        "within_10deg_pct": 5.4375,
+        "within_30deg_pct": 19.9375
+      },
+      "learning_rate": 0.0008644843137107051,
+      "epoch_seconds": 15.258464896000078
+    },
+    {
+      "epoch": 49,
+      "train_cosine_loss": 0.8004719403296581,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.79900360107422,
+        "median_angle_deg": 61.91516876220703,
+        "p90_angle_deg": 135.0469207763672,
+        "within_3deg_pct": 0.28125,
+        "within_5deg_pct": 1.28125,
+        "within_10deg_pct": 4.6875,
+        "within_30deg_pct": 19.4375
+      },
+      "learning_rate": 0.0008590631488815938,
+      "epoch_seconds": 15.35356643099658
+    },
+    {
+      "epoch": 50,
+      "train_cosine_loss": 0.796489196018088,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.1736068725586,
+        "median_angle_deg": 62.805809020996094,
+        "p90_angle_deg": 134.18072509765625,
+        "within_3deg_pct": 0.5625,
+        "within_5deg_pct": 1.15625,
+        "within_10deg_pct": 4.09375,
+        "within_30deg_pct": 19.75
+      },
+      "learning_rate": 0.0008535533905932731,
+      "epoch_seconds": 15.378398087999813
+    },
+    {
+      "epoch": 51,
+      "train_cosine_loss": 0.7941869054741102,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.17127227783203,
+        "median_angle_deg": 62.67856979370117,
+        "p90_angle_deg": 132.560302734375,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.09375,
+        "within_10deg_pct": 3.78125,
+        "within_30deg_pct": 19.125
+      },
+      "learning_rate": 0.0008479563982961564,
+      "epoch_seconds": 15.340611749998061
+    },
+    {
+      "epoch": 52,
+      "train_cosine_loss": 0.7905210207971892,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.36129760742188,
+        "median_angle_deg": 61.675315856933594,
+        "p90_angle_deg": 137.44338989257812,
+        "within_3deg_pct": 0.3125,
+        "within_5deg_pct": 1.5,
+        "within_10deg_pct": 5.5,
+        "within_30deg_pct": 19.59375
+      },
+      "learning_rate": 0.0008422735529643437,
+      "epoch_seconds": 15.312397221998253
+    },
+    {
+      "epoch": 53,
+      "train_cosine_loss": 0.7906036430674049,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.42882537841797,
+        "median_angle_deg": 63.4193115234375,
+        "p90_angle_deg": 133.9053955078125,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.4375,
+        "within_10deg_pct": 3.78125,
+        "within_30deg_pct": 18.40625
+      },
+      "learning_rate": 0.000836506256754886,
+      "epoch_seconds": 15.100123137999617
+    },
+    {
+      "epoch": 54,
+      "train_cosine_loss": 0.7921099753594706,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.50745391845703,
+        "median_angle_deg": 60.618011474609375,
+        "p90_angle_deg": 134.8587646484375,
+        "within_3deg_pct": 0.3125,
+        "within_5deg_pct": 0.75,
+        "within_10deg_pct": 3.28125,
+        "within_30deg_pct": 19.59375
+      },
+      "learning_rate": 0.0008306559326618253,
+      "epoch_seconds": 15.059331806001865
+    },
+    {
+      "epoch": 55,
+      "train_cosine_loss": 0.7892713704078494,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.10673522949219,
+        "median_angle_deg": 62.28173065185547,
+        "p90_angle_deg": 137.31809997558594,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.25,
+        "within_10deg_pct": 4.21875,
+        "within_30deg_pct": 19.96875
+      },
+      "learning_rate": 0.0008247240241650912,
+      "epoch_seconds": 15.223507544000313
+    },
+    {
+      "epoch": 56,
+      "train_cosine_loss": 0.7872945092010908,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.71479797363281,
+        "median_angle_deg": 62.431114196777344,
+        "p90_angle_deg": 134.10914611816406,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.0,
+        "within_10deg_pct": 4.71875,
+        "within_30deg_pct": 19.40625
+      },
+      "learning_rate": 0.0008187119948743442,
+      "epoch_seconds": 15.332446419000917
+    },
+    {
+      "epoch": 57,
+      "train_cosine_loss": 0.7918494323292515,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.53994750976562,
+        "median_angle_deg": 62.55683898925781,
+        "p90_angle_deg": 130.55197143554688,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.625,
+        "within_10deg_pct": 5.21875,
+        "within_30deg_pct": 18.25
+      },
+      "learning_rate": 0.000812621328167852,
+      "epoch_seconds": 15.396630970000842
+    },
+    {
+      "epoch": 58,
+      "train_cosine_loss": 0.7878797061965189,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.3333969116211,
+        "median_angle_deg": 62.45674133300781,
+        "p90_angle_deg": 133.3172149658203,
+        "within_3deg_pct": 0.40625,
+        "within_5deg_pct": 1.15625,
+        "within_10deg_pct": 3.875,
+        "within_30deg_pct": 17.75
+      },
+      "learning_rate": 0.0008064535268264877,
+      "epoch_seconds": 15.250033508000342
+    },
+    {
+      "epoch": 59,
+      "train_cosine_loss": 0.7924094193099395,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.12333679199219,
+        "median_angle_deg": 61.235389709472656,
+        "p90_angle_deg": 138.0625762939453,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.28125,
+        "within_10deg_pct": 5.0,
+        "within_30deg_pct": 19.5625
+      },
+      "learning_rate": 0.0008002101126629415,
+      "epoch_seconds": 15.378627213001892
+    },
+    {
+      "epoch": 60,
+      "train_cosine_loss": 0.7810311105757823,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 70.02394104003906,
+        "median_angle_deg": 62.284645080566406,
+        "p90_angle_deg": 135.76242065429688,
+        "within_3deg_pct": 0.625,
+        "within_5deg_pct": 1.65625,
+        "within_10deg_pct": 4.78125,
+        "within_30deg_pct": 19.15625
+      },
+      "learning_rate": 0.000793892626146236,
+      "epoch_seconds": 14.912685842999053
+    },
+    {
+      "epoch": 61,
+      "train_cosine_loss": 0.7854047743803442,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.68798065185547,
+        "median_angle_deg": 61.73516082763672,
+        "p90_angle_deg": 134.39892578125,
+        "within_3deg_pct": 0.5625,
+        "within_5deg_pct": 1.21875,
+        "within_10deg_pct": 4.4375,
+        "within_30deg_pct": 19.03125
+      },
+      "learning_rate": 0.0007875026260216388,
+      "epoch_seconds": 14.529268866997882
+    },
+    {
+      "epoch": 62,
+      "train_cosine_loss": 0.7903269894517031,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.29662322998047,
+        "median_angle_deg": 60.74369812011719,
+        "p90_angle_deg": 134.2899932861328,
+        "within_3deg_pct": 0.40625,
+        "within_5deg_pct": 1.21875,
+        "within_10deg_pct": 4.15625,
+        "within_30deg_pct": 19.875
+      },
+      "learning_rate": 0.0007810416889260649,
+      "epoch_seconds": 15.028430364996893
+    },
+    {
+      "epoch": 63,
+      "train_cosine_loss": 0.7803052706012399,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.27765655517578,
+        "median_angle_deg": 61.014137268066406,
+        "p90_angle_deg": 135.51499938964844,
+        "within_3deg_pct": 0.75,
+        "within_5deg_pct": 2.03125,
+        "within_10deg_pct": 5.34375,
+        "within_30deg_pct": 20.0625
+      },
+      "learning_rate": 0.0007745114089990654,
+      "epoch_seconds": 14.108473839001817
+    },
+    {
+      "epoch": 64,
+      "train_cosine_loss": 0.7835102722112713,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 69.07544708251953,
+        "median_angle_deg": 60.82038116455078,
+        "p90_angle_deg": 129.89979553222656,
+        "within_3deg_pct": 0.65625,
+        "within_5deg_pct": 1.7187500000000002,
+        "within_10deg_pct": 4.5,
+        "within_30deg_pct": 18.8125
+      },
+      "learning_rate": 0.0007679133974894978,
+      "epoch_seconds": 14.197848335999879
+    },
+    {
+      "epoch": 65,
+      "train_cosine_loss": 0.7779263552166361,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.71502685546875,
+        "median_angle_deg": 60.72163772583008,
+        "p90_angle_deg": 131.86996459960938,
+        "within_3deg_pct": 0.625,
+        "within_5deg_pct": 1.40625,
+        "within_10deg_pct": 4.78125,
+        "within_30deg_pct": 19.8125
+      },
+      "learning_rate": 0.0007612492823579739,
+      "epoch_seconds": 14.237292716999946
+    },
+    {
+      "epoch": 66,
+      "train_cosine_loss": 0.7799763928922973,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.24848175048828,
+        "median_angle_deg": 60.91194152832031,
+        "p90_angle_deg": 131.6966094970703,
+        "within_3deg_pct": 0.65625,
+        "within_5deg_pct": 1.625,
+        "within_10deg_pct": 4.90625,
+        "within_30deg_pct": 20.0625
+      },
+      "learning_rate": 0.0007545207078751852,
+      "epoch_seconds": 14.443079805998423
+    },
+    {
+      "epoch": 67,
+      "train_cosine_loss": 0.7730339596711515,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.75396728515625,
+        "median_angle_deg": 60.94667053222656,
+        "p90_angle_deg": 133.8171844482422,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.25,
+        "within_10deg_pct": 4.4375,
+        "within_30deg_pct": 19.3125
+      },
+      "learning_rate": 0.0007477293342162034,
+      "epoch_seconds": 14.3669926520015
+    },
+    {
+      "epoch": 68,
+      "train_cosine_loss": 0.7729514315404605,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.94747161865234,
+        "median_angle_deg": 62.501121520996094,
+        "p90_angle_deg": 131.42337036132812,
+        "within_3deg_pct": 0.34375,
+        "within_5deg_pct": 1.21875,
+        "within_10deg_pct": 3.78125,
+        "within_30deg_pct": 19.21875
+      },
+      "learning_rate": 0.0007408768370508571,
+      "epoch_seconds": 14.60926623600244
+    },
+    {
+      "epoch": 69,
+      "train_cosine_loss": 0.7772695974730627,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.22149658203125,
+        "median_angle_deg": 60.041141510009766,
+        "p90_angle_deg": 127.15699768066406,
+        "within_3deg_pct": 0.5,
+        "within_5deg_pct": 1.34375,
+        "within_10deg_pct": 4.25,
+        "within_30deg_pct": 20.53125
+      },
+      "learning_rate": 0.0007339649071302863,
+      "epoch_seconds": 14.750394861999666
+    },
+    {
+      "epoch": 70,
+      "train_cosine_loss": 0.7746753175882822,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.07122039794922,
+        "median_angle_deg": 59.680023193359375,
+        "p90_angle_deg": 132.22640991210938,
+        "within_3deg_pct": 0.40625,
+        "within_5deg_pct": 1.25,
+        "within_10deg_pct": 4.3125,
+        "within_30deg_pct": 19.59375
+      },
+      "learning_rate": 0.0007269952498697729,
+      "epoch_seconds": 14.07856073000221
+    },
+    {
+      "epoch": 71,
+      "train_cosine_loss": 0.7683148211419838,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.05209350585938,
+        "median_angle_deg": 60.89695358276367,
+        "p90_angle_deg": 130.58102416992188,
+        "within_3deg_pct": 0.34375,
+        "within_5deg_pct": 0.8125,
+        "within_10deg_pct": 4.0,
+        "within_30deg_pct": 20.03125
+      },
+      "learning_rate": 0.000719969584927957,
+      "epoch_seconds": 14.482849768999586
+    },
+    {
+      "epoch": 72,
+      "train_cosine_loss": 0.771860394546914,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.193603515625,
+        "median_angle_deg": 61.09008026123047,
+        "p90_angle_deg": 130.80831909179688,
+        "within_3deg_pct": 0.3125,
+        "within_5deg_pct": 0.71875,
+        "within_10deg_pct": 3.5000000000000004,
+        "within_30deg_pct": 18.84375
+      },
+      "learning_rate": 0.0007128896457825358,
+      "epoch_seconds": 15.393250981996971
+    },
+    {
+      "epoch": 73,
+      "train_cosine_loss": 0.7731976891536058,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.30785369873047,
+        "median_angle_deg": 58.87089538574219,
+        "p90_angle_deg": 131.1232147216797,
+        "within_3deg_pct": 0.65625,
+        "within_5deg_pct": 2.0,
+        "within_10deg_pct": 5.1875,
+        "within_30deg_pct": 20.21875
+      },
+      "learning_rate": 0.0007057571793025539,
+      "epoch_seconds": 15.293538534999243
+    },
+    {
+      "epoch": 74,
+      "train_cosine_loss": 0.7700322710393325,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.16741943359375,
+        "median_angle_deg": 59.37499237060547,
+        "p90_angle_deg": 132.6129150390625,
+        "within_3deg_pct": 0.75,
+        "within_5deg_pct": 1.875,
+        "within_10deg_pct": 5.125,
+        "within_30deg_pct": 19.78125
+      },
+      "learning_rate": 0.0006985739453173898,
+      "epoch_seconds": 15.246863110998675
+    },
+    {
+      "epoch": 75,
+      "train_cosine_loss": 0.7649189057268299,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.75533294677734,
+        "median_angle_deg": 59.6038818359375,
+        "p90_angle_deg": 131.8250732421875,
+        "within_3deg_pct": 0.5625,
+        "within_5deg_pct": 1.25,
+        "within_10deg_pct": 5.09375,
+        "within_30deg_pct": 18.96875
+      },
+      "learning_rate": 0.0006913417161825444,
+      "epoch_seconds": 15.053430754996953
+    },
+    {
+      "epoch": 76,
+      "train_cosine_loss": 0.761947086952275,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.73042297363281,
+        "median_angle_deg": 58.80248260498047,
+        "p90_angle_deg": 135.6472625732422,
+        "within_3deg_pct": 0.59375,
+        "within_5deg_pct": 1.21875,
+        "within_10deg_pct": 4.5625,
+        "within_30deg_pct": 20.34375
+      },
+      "learning_rate": 0.0006840622763423385,
+      "epoch_seconds": 15.03180718799922
+    },
+    {
+      "epoch": 77,
+      "train_cosine_loss": 0.7715427813483922,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.34187316894531,
+        "median_angle_deg": 58.1917724609375,
+        "p90_angle_deg": 132.14036560058594,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.375,
+        "within_10deg_pct": 5.125,
+        "within_30deg_pct": 20.6875
+      },
+      "learning_rate": 0.000676737421889628,
+      "epoch_seconds": 15.39785072000086
+    },
+    {
+      "epoch": 78,
+      "train_cosine_loss": 0.7651736490716239,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.11799621582031,
+        "median_angle_deg": 60.05628204345703,
+        "p90_angle_deg": 129.34820556640625,
+        "within_3deg_pct": 0.65625,
+        "within_5deg_pct": 1.4375,
+        "within_10deg_pct": 4.8125,
+        "within_30deg_pct": 20.1875
+      },
+      "learning_rate": 0.0006693689601226452,
+      "epoch_seconds": 15.415930084000138
+    },
+    {
+      "epoch": 79,
+      "train_cosine_loss": 0.7619430989410744,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.38104248046875,
+        "median_angle_deg": 59.10601806640625,
+        "p90_angle_deg": 130.04690551757812,
+        "within_3deg_pct": 0.625,
+        "within_5deg_pct": 1.21875,
+        "within_10deg_pct": 4.5,
+        "within_30deg_pct": 19.125
+      },
+      "learning_rate": 0.0006619587090990741,
+      "epoch_seconds": 15.399378594000154
+    },
+    {
+      "epoch": 80,
+      "train_cosine_loss": 0.7670643737004038,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.41098022460938,
+        "median_angle_deg": 58.518428802490234,
+        "p90_angle_deg": 131.92242431640625,
+        "within_3deg_pct": 0.3125,
+        "within_5deg_pct": 1.125,
+        "within_10deg_pct": 4.4375,
+        "within_30deg_pct": 19.65625
+      },
+      "learning_rate": 0.0006545084971874731,
+      "epoch_seconds": 15.459555023997382
+    },
+    {
+      "epoch": 81,
+      "train_cosine_loss": 0.7593292253083938,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.05921173095703,
+        "median_angle_deg": 60.0285758972168,
+        "p90_angle_deg": 131.9149627685547,
+        "within_3deg_pct": 0.5,
+        "within_5deg_pct": 1.40625,
+        "within_10deg_pct": 4.34375,
+        "within_30deg_pct": 19.15625
+      },
+      "learning_rate": 0.0006470201626161514,
+      "epoch_seconds": 15.49196472499898
+    },
+    {
+      "epoch": 82,
+      "train_cosine_loss": 0.7615200320154812,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.0376205444336,
+        "median_angle_deg": 59.648170471191406,
+        "p90_angle_deg": 131.71119689941406,
+        "within_3deg_pct": 0.59375,
+        "within_5deg_pct": 1.15625,
+        "within_10deg_pct": 3.6875,
+        "within_30deg_pct": 20.21875
+      },
+      "learning_rate": 0.0006394955530196142,
+      "epoch_seconds": 14.845786792000581
+    },
+    {
+      "epoch": 83,
+      "train_cosine_loss": 0.7625600811365848,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.8705062866211,
+        "median_angle_deg": 59.618865966796875,
+        "p90_angle_deg": 133.44134521484375,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.0625,
+        "within_10deg_pct": 4.59375,
+        "within_30deg_pct": 19.25
+      },
+      "learning_rate": 0.0006319365249826858,
+      "epoch_seconds": 14.374018593000073
+    },
+    {
+      "epoch": 84,
+      "train_cosine_loss": 0.760675321449026,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.98233032226562,
+        "median_angle_deg": 58.991336822509766,
+        "p90_angle_deg": 133.41641235351562,
+        "within_3deg_pct": 0.53125,
+        "within_5deg_pct": 1.5,
+        "within_10deg_pct": 5.21875,
+        "within_30deg_pct": 19.21875
+      },
+      "learning_rate": 0.0006243449435824268,
+      "epoch_seconds": 14.712195108000742
+    },
+    {
+      "epoch": 85,
+      "train_cosine_loss": 0.7586671063444645,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.06725311279297,
+        "median_angle_deg": 60.08869552612305,
+        "p90_angle_deg": 130.54443359375,
+        "within_3deg_pct": 0.34375,
+        "within_5deg_pct": 1.1875,
+        "within_10deg_pct": 4.65625,
+        "within_30deg_pct": 19.21875
+      },
+      "learning_rate": 0.0006167226819279523,
+      "epoch_seconds": 14.175970889002201
+    },
+    {
+      "epoch": 86,
+      "train_cosine_loss": 0.753727102995942,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.59840393066406,
+        "median_angle_deg": 61.3182373046875,
+        "p90_angle_deg": 132.0128173828125,
+        "within_3deg_pct": 0.6875,
+        "within_5deg_pct": 1.3125,
+        "within_10deg_pct": 4.4375,
+        "within_30deg_pct": 18.4375
+      },
+      "learning_rate": 0.0006090716206982709,
+      "epoch_seconds": 15.111210578001192
+    },
+    {
+      "epoch": 87,
+      "train_cosine_loss": 0.7584626598547457,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.3409423828125,
+        "median_angle_deg": 59.7660026550293,
+        "p90_angle_deg": 131.27676391601562,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.1875,
+        "within_10deg_pct": 3.875,
+        "within_30deg_pct": 17.40625
+      },
+      "learning_rate": 0.0006013936476782558,
+      "epoch_seconds": 15.476062820001971
+    },
+    {
+      "epoch": 88,
+      "train_cosine_loss": 0.754573165858764,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.73492431640625,
+        "median_angle_deg": 58.87617492675781,
+        "p90_angle_deg": 130.86422729492188,
+        "within_3deg_pct": 0.3125,
+        "within_5deg_pct": 0.9062499999999999,
+        "within_10deg_pct": 3.9375,
+        "within_30deg_pct": 18.84375
+      },
+      "learning_rate": 0.000593690657292862,
+      "epoch_seconds": 15.358313486998668
+    },
+    {
+      "epoch": 89,
+      "train_cosine_loss": 0.7582922766520742,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.2626953125,
+        "median_angle_deg": 57.968345642089844,
+        "p90_angle_deg": 131.66151428222656,
+        "within_3deg_pct": 0.78125,
+        "within_5deg_pct": 1.625,
+        "within_10deg_pct": 4.90625,
+        "within_30deg_pct": 19.78125
+      },
+      "learning_rate": 0.0005859645501397043,
+      "epoch_seconds": 15.41194131299926
+    },
+    {
+      "epoch": 90,
+      "train_cosine_loss": 0.7618689477571602,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.29662322998047,
+        "median_angle_deg": 57.684104919433594,
+        "p90_angle_deg": 130.896728515625,
+        "within_3deg_pct": 0.625,
+        "within_5deg_pct": 1.40625,
+        "within_10deg_pct": 4.6875,
+        "within_30deg_pct": 18.71875
+      },
+      "learning_rate": 0.000578217232520115,
+      "epoch_seconds": 15.46337829299955
+    },
+    {
+      "epoch": 91,
+      "train_cosine_loss": 0.7566401521663297,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.16333770751953,
+        "median_angle_deg": 57.98108673095703,
+        "p90_angle_deg": 131.55628967285156,
+        "within_3deg_pct": 0.53125,
+        "within_5deg_pct": 1.53125,
+        "within_10deg_pct": 4.4375,
+        "within_30deg_pct": 19.25
+      },
+      "learning_rate": 0.000570450615968791,
+      "epoch_seconds": 15.434336901998904
+    },
+    {
+      "epoch": 92,
+      "train_cosine_loss": 0.7538575384238247,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 68.5317611694336,
+        "median_angle_deg": 60.491058349609375,
+        "p90_angle_deg": 133.1453094482422,
+        "within_3deg_pct": 0.53125,
+        "within_5deg_pct": 1.40625,
+        "within_10deg_pct": 4.59375,
+        "within_30deg_pct": 18.9375
+      },
+      "learning_rate": 0.0005626666167821518,
+      "epoch_seconds": 15.49502170300184
+    },
+    {
+      "epoch": 93,
+      "train_cosine_loss": 0.754146025096398,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.8865737915039,
+        "median_angle_deg": 58.13154602050781,
+        "p90_angle_deg": 131.2466583251953,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.21875,
+        "within_10deg_pct": 4.28125,
+        "within_30deg_pct": 19.84375
+      },
+      "learning_rate": 0.0005548671555455222,
+      "epoch_seconds": 15.417286092000722
+    },
+    {
+      "epoch": 94,
+      "train_cosine_loss": 0.7561988598415268,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.03276824951172,
+        "median_angle_deg": 57.71378707885742,
+        "p90_angle_deg": 130.70220947265625,
+        "within_3deg_pct": 0.34375,
+        "within_5deg_pct": 1.46875,
+        "within_10deg_pct": 5.03125,
+        "within_30deg_pct": 19.75
+      },
+      "learning_rate": 0.0005470541566592567,
+      "epoch_seconds": 15.446827386000223
+    },
+    {
+      "epoch": 95,
+      "train_cosine_loss": 0.7521944503287901,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.2138900756836,
+        "median_angle_deg": 58.755367279052734,
+        "p90_angle_deg": 131.2573699951172,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.25,
+        "within_10deg_pct": 5.03125,
+        "within_30deg_pct": 19.65625
+      },
+      "learning_rate": 0.000539229547863922,
+      "epoch_seconds": 15.389256456997828
+    },
+    {
+      "epoch": 96,
+      "train_cosine_loss": 0.75073080922401,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.81188201904297,
+        "median_angle_deg": 57.079246520996094,
+        "p90_angle_deg": 132.09597778320312,
+        "within_3deg_pct": 0.9375,
+        "within_5deg_pct": 1.96875,
+        "within_10deg_pct": 5.34375,
+        "within_30deg_pct": 19.4375
+      },
+      "learning_rate": 0.0005313952597646562,
+      "epoch_seconds": 14.743992728002922
+    },
+    {
+      "epoch": 97,
+      "train_cosine_loss": 0.7523695254786332,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.39634704589844,
+        "median_angle_deg": 58.74913787841797,
+        "p90_angle_deg": 129.90707397460938,
+        "within_3deg_pct": 0.6875,
+        "within_5deg_pct": 1.875,
+        "within_10deg_pct": 4.4375,
+        "within_30deg_pct": 18.46875
+      },
+      "learning_rate": 0.0005235532253548208,
+      "epoch_seconds": 15.346137537999311
+    },
+    {
+      "epoch": 98,
+      "train_cosine_loss": 0.7465240822969077,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.49459838867188,
+        "median_angle_deg": 58.63106155395508,
+        "p90_angle_deg": 131.7301788330078,
+        "within_3deg_pct": 0.5625,
+        "within_5deg_pct": 1.1875,
+        "within_10deg_pct": 4.34375,
+        "within_30deg_pct": 19.53125
+      },
+      "learning_rate": 0.0005157053795390637,
+      "epoch_seconds": 15.156389284999022
+    },
+    {
+      "epoch": 99,
+      "train_cosine_loss": 0.7538729005617133,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.64407348632812,
+        "median_angle_deg": 59.679962158203125,
+        "p90_angle_deg": 129.85931396484375,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.28125,
+        "within_10deg_pct": 4.25,
+        "within_30deg_pct": 18.5625
+      },
+      "learning_rate": 0.0005078536586559099,
+      "epoch_seconds": 14.551369452001381
+    },
+    {
+      "epoch": 100,
+      "train_cosine_loss": 0.7509258728426413,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.88381958007812,
+        "median_angle_deg": 57.64434051513672,
+        "p90_angle_deg": 132.33407592773438,
+        "within_3deg_pct": 0.375,
+        "within_5deg_pct": 1.3125,
+        "within_10deg_pct": 4.53125,
+        "within_30deg_pct": 19.90625
+      },
+      "learning_rate": 0.0004999999999999996,
+      "epoch_seconds": 15.611992584999825
+    },
+    {
+      "epoch": 101,
+      "train_cosine_loss": 0.752730691637604,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.16279602050781,
+        "median_angle_deg": 59.40623474121094,
+        "p90_angle_deg": 128.5491485595703,
+        "within_3deg_pct": 0.71875,
+        "within_5deg_pct": 1.53125,
+        "within_10deg_pct": 4.5625,
+        "within_30deg_pct": 18.6875
+      },
+      "learning_rate": 0.0004921463413440893,
+      "epoch_seconds": 15.660346939999727
+    },
+    {
+      "epoch": 102,
+      "train_cosine_loss": 0.7491453722311192,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.72587585449219,
+        "median_angle_deg": 56.64366912841797,
+        "p90_angle_deg": 132.13107299804688,
+        "within_3deg_pct": 0.8125,
+        "within_5deg_pct": 2.0,
+        "within_10deg_pct": 5.25,
+        "within_30deg_pct": 19.71875
+      },
+      "learning_rate": 0.0004842946204609354,
+      "epoch_seconds": 15.779858883000998
+    },
+    {
+      "epoch": 103,
+      "train_cosine_loss": 0.7486103302419441,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.87242889404297,
+        "median_angle_deg": 56.76626205444336,
+        "p90_angle_deg": 131.29580688476562,
+        "within_3deg_pct": 0.6875,
+        "within_5deg_pct": 1.96875,
+        "within_10deg_pct": 5.96875,
+        "within_30deg_pct": 20.03125
+      },
+      "learning_rate": 0.00047644677464517824,
+      "epoch_seconds": 15.747691738997673
+    },
+    {
+      "epoch": 104,
+      "train_cosine_loss": 0.7444677669475007,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.89376831054688,
+        "median_angle_deg": 58.86717987060547,
+        "p90_angle_deg": 130.73916625976562,
+        "within_3deg_pct": 0.59375,
+        "within_5deg_pct": 1.46875,
+        "within_10deg_pct": 5.40625,
+        "within_30deg_pct": 18.75
+      },
+      "learning_rate": 0.00046860474023534287,
+      "epoch_seconds": 15.735008173000097
+    },
+    {
+      "epoch": 105,
+      "train_cosine_loss": 0.7478570739215024,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.16883087158203,
+        "median_angle_deg": 57.24144744873047,
+        "p90_angle_deg": 132.17327880859375,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.40625,
+        "within_10deg_pct": 4.9375,
+        "within_30deg_pct": 18.84375
+      },
+      "learning_rate": 0.00046077045213607716,
+      "epoch_seconds": 15.655892530998244
+    },
+    {
+      "epoch": 106,
+      "train_cosine_loss": 0.7502995120609267,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.6054458618164,
+        "median_angle_deg": 57.78364944458008,
+        "p90_angle_deg": 130.9376983642578,
+        "within_3deg_pct": 0.75,
+        "within_5deg_pct": 1.40625,
+        "within_10deg_pct": 4.6875,
+        "within_30deg_pct": 19.15625
+      },
+      "learning_rate": 0.0004529458433407424,
+      "epoch_seconds": 15.749797567001224
+    },
+    {
+      "epoch": 107,
+      "train_cosine_loss": 0.7470586806407814,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.32837677001953,
+        "median_angle_deg": 58.38037872314453,
+        "p90_angle_deg": 131.02476501464844,
+        "within_3deg_pct": 0.78125,
+        "within_5deg_pct": 1.9375,
+        "within_10deg_pct": 5.09375,
+        "within_30deg_pct": 19.40625
+      },
+      "learning_rate": 0.000445132844454477,
+      "epoch_seconds": 15.728917243999604
+    },
+    {
+      "epoch": 108,
+      "train_cosine_loss": 0.7482825146724226,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.05010986328125,
+        "median_angle_deg": 57.522926330566406,
+        "p90_angle_deg": 132.30584716796875,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.7500000000000002,
+        "within_10deg_pct": 4.9375,
+        "within_30deg_pct": 18.96875
+      },
+      "learning_rate": 0.0004373333832178475,
+      "epoch_seconds": 15.640800386998308
+    },
+    {
+      "epoch": 109,
+      "train_cosine_loss": 0.7472680921590379,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.54204559326172,
+        "median_angle_deg": 55.888450622558594,
+        "p90_angle_deg": 132.93113708496094,
+        "within_3deg_pct": 0.78125,
+        "within_5deg_pct": 1.7187500000000002,
+        "within_10deg_pct": 5.1875,
+        "within_30deg_pct": 20.15625
+      },
+      "learning_rate": 0.0004295493840312084,
+      "epoch_seconds": 15.397930550003366
+    },
+    {
+      "epoch": 110,
+      "train_cosine_loss": 0.7404639210567966,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.0999755859375,
+        "median_angle_deg": 57.3309440612793,
+        "p90_angle_deg": 131.30613708496094,
+        "within_3deg_pct": 0.65625,
+        "within_5deg_pct": 2.0,
+        "within_10deg_pct": 4.65625,
+        "within_30deg_pct": 19.65625
+      },
+      "learning_rate": 0.0004217827674798842,
+      "epoch_seconds": 15.599043785001413
+    },
+    {
+      "epoch": 111,
+      "train_cosine_loss": 0.7386226202541155,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.76982879638672,
+        "median_angle_deg": 58.03971862792969,
+        "p90_angle_deg": 134.72323608398438,
+        "within_3deg_pct": 0.75,
+        "within_5deg_pct": 1.65625,
+        "within_10deg_pct": 5.25,
+        "within_30deg_pct": 19.375
+      },
+      "learning_rate": 0.00041403544986029484,
+      "epoch_seconds": 15.634879139000986
+    },
+    {
+      "epoch": 112,
+      "train_cosine_loss": 0.74240694716253,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.65440368652344,
+        "median_angle_deg": 58.36223602294922,
+        "p90_angle_deg": 133.37037658691406,
+        "within_3deg_pct": 0.5625,
+        "within_5deg_pct": 1.625,
+        "within_10deg_pct": 4.46875,
+        "within_30deg_pct": 19.03125
+      },
+      "learning_rate": 0.0004063093427071374,
+      "epoch_seconds": 15.74326882600144
+    },
+    {
+      "epoch": 113,
+      "train_cosine_loss": 0.7438894816606342,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.53081512451172,
+        "median_angle_deg": 57.088417053222656,
+        "p90_angle_deg": 131.3516387939453,
+        "within_3deg_pct": 0.6875,
+        "within_5deg_pct": 1.40625,
+        "within_10deg_pct": 4.625,
+        "within_30deg_pct": 20.34375
+      },
+      "learning_rate": 0.00039860635232174353,
+      "epoch_seconds": 15.469488573999115
+    },
+    {
+      "epoch": 114,
+      "train_cosine_loss": 0.7380914060087163,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.78823852539062,
+        "median_angle_deg": 56.298404693603516,
+        "p90_angle_deg": 131.60379028320312,
+        "within_3deg_pct": 0.53125,
+        "within_5deg_pct": 1.46875,
+        "within_10deg_pct": 5.1875,
+        "within_30deg_pct": 19.75
+      },
+      "learning_rate": 0.0003909283793017286,
+      "epoch_seconds": 15.649851086996932
+    },
+    {
+      "epoch": 115,
+      "train_cosine_loss": 0.7447928598254535,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.94782257080078,
+        "median_angle_deg": 56.42774963378906,
+        "p90_angle_deg": 131.7461395263672,
+        "within_3deg_pct": 0.8125,
+        "within_5deg_pct": 1.5625,
+        "within_10deg_pct": 5.0625,
+        "within_30deg_pct": 19.875
+      },
+      "learning_rate": 0.000383277318072047,
+      "epoch_seconds": 15.614941927000473
+    },
+    {
+      "epoch": 116,
+      "train_cosine_loss": 0.7417952087048297,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.98833465576172,
+        "median_angle_deg": 57.09503173828125,
+        "p90_angle_deg": 132.88597106933594,
+        "within_3deg_pct": 0.71875,
+        "within_5deg_pct": 1.9375,
+        "within_10deg_pct": 5.59375,
+        "within_30deg_pct": 19.96875
+      },
+      "learning_rate": 0.00037565505641757235,
+      "epoch_seconds": 15.590051051000046
+    },
+    {
+      "epoch": 117,
+      "train_cosine_loss": 0.7425690173079528,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.01545715332031,
+        "median_angle_deg": 58.24156188964844,
+        "p90_angle_deg": 131.75836181640625,
+        "within_3deg_pct": 0.75,
+        "within_5deg_pct": 1.59375,
+        "within_10deg_pct": 5.21875,
+        "within_30deg_pct": 19.5
+      },
+      "learning_rate": 0.0003680634750173133,
+      "epoch_seconds": 15.348103934000392
+    },
+    {
+      "epoch": 118,
+      "train_cosine_loss": 0.747074433918163,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.02691650390625,
+        "median_angle_deg": 55.848243713378906,
+        "p90_angle_deg": 133.50953674316406,
+        "within_3deg_pct": 0.78125,
+        "within_5deg_pct": 1.875,
+        "within_10deg_pct": 5.65625,
+        "within_30deg_pct": 19.75
+      },
+      "learning_rate": 0.00036050444698038515,
+      "epoch_seconds": 15.555410288998246
+    },
+    {
+      "epoch": 119,
+      "train_cosine_loss": 0.7408379507550866,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.73905944824219,
+        "median_angle_deg": 58.334285736083984,
+        "p90_angle_deg": 132.68161010742188,
+        "within_3deg_pct": 0.6875,
+        "within_5deg_pct": 1.4375,
+        "within_10deg_pct": 4.125,
+        "within_30deg_pct": 18.1875
+      },
+      "learning_rate": 0.0003529798373838478,
+      "epoch_seconds": 15.64583512399986
+    },
+    {
+      "epoch": 120,
+      "train_cosine_loss": 0.7411874192467063,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.47196960449219,
+        "median_angle_deg": 57.61912536621094,
+        "p90_angle_deg": 132.49334716796875,
+        "within_3deg_pct": 0.46875,
+        "within_5deg_pct": 1.25,
+        "within_10deg_pct": 4.65625,
+        "within_30deg_pct": 19.625
+      },
+      "learning_rate": 0.0003454915028125262,
+      "epoch_seconds": 15.565422435000073
+    },
+    {
+      "epoch": 121,
+      "train_cosine_loss": 0.7361093716687911,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.51420593261719,
+        "median_angle_deg": 57.58428192138672,
+        "p90_angle_deg": 132.45848083496094,
+        "within_3deg_pct": 0.5625,
+        "within_5deg_pct": 1.625,
+        "within_10deg_pct": 5.4375,
+        "within_30deg_pct": 19.65625
+      },
+      "learning_rate": 0.00033804129090092506,
+      "epoch_seconds": 15.256277792999754
+    },
+    {
+      "epoch": 122,
+      "train_cosine_loss": 0.7396756778970809,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.68543243408203,
+        "median_angle_deg": 58.7335319519043,
+        "p90_angle_deg": 132.7963409423828,
+        "within_3deg_pct": 0.5,
+        "within_5deg_pct": 1.59375,
+        "within_10deg_pct": 5.1875,
+        "within_30deg_pct": 19.28125
+      },
+      "learning_rate": 0.0003306310398773541,
+      "epoch_seconds": 13.811714198000118
+    },
+    {
+      "epoch": 123,
+      "train_cosine_loss": 0.7411048285695104,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.05668640136719,
+        "median_angle_deg": 57.80762481689453,
+        "p90_angle_deg": 131.57867431640625,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.6875,
+        "within_10deg_pct": 5.25,
+        "within_30deg_pct": 19.40625
+      },
+      "learning_rate": 0.00032326257811037126,
+      "epoch_seconds": 15.312676782999915
+    },
+    {
+      "epoch": 124,
+      "train_cosine_loss": 0.7392955412808406,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.4312973022461,
+        "median_angle_deg": 55.50840759277344,
+        "p90_angle_deg": 132.46707153320312,
+        "within_3deg_pct": 0.40625,
+        "within_5deg_pct": 1.46875,
+        "within_10deg_pct": 5.46875,
+        "within_30deg_pct": 19.90625
+      },
+      "learning_rate": 0.0003159377236576609,
+      "epoch_seconds": 14.14103617100045
+    },
+    {
+      "epoch": 125,
+      "train_cosine_loss": 0.7442700476605493,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.91873931884766,
+        "median_angle_deg": 56.67074203491211,
+        "p90_angle_deg": 131.5634765625,
+        "within_3deg_pct": 0.5,
+        "within_5deg_pct": 1.59375,
+        "within_10deg_pct": 5.28125,
+        "within_30deg_pct": 19.90625
+      },
+      "learning_rate": 0.000308658283817455,
+      "epoch_seconds": 14.288669470999594
+    },
+    {
+      "epoch": 126,
+      "train_cosine_loss": 0.7323351713465007,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.79412078857422,
+        "median_angle_deg": 57.822505950927734,
+        "p90_angle_deg": 133.31044006347656,
+        "within_3deg_pct": 0.65625,
+        "within_5deg_pct": 1.6875,
+        "within_10deg_pct": 5.1875,
+        "within_30deg_pct": 19.625
+      },
+      "learning_rate": 0.0003014260546826094,
+      "epoch_seconds": 15.597011456000473
+    },
+    {
+      "epoch": 127,
+      "train_cosine_loss": 0.7404487400991211,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.0337905883789,
+        "median_angle_deg": 57.559547424316406,
+        "p90_angle_deg": 129.84866333007812,
+        "within_3deg_pct": 1.0625,
+        "within_5deg_pct": 2.4375,
+        "within_10deg_pct": 5.25,
+        "within_30deg_pct": 19.34375
+      },
+      "learning_rate": 0.0002942428206974454,
+      "epoch_seconds": 15.577683904000878
+    },
+    {
+      "epoch": 128,
+      "train_cosine_loss": 0.7338542637651059,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.7141342163086,
+        "median_angle_deg": 57.646209716796875,
+        "p90_angle_deg": 130.49502563476562,
+        "within_3deg_pct": 0.8750000000000001,
+        "within_5deg_pct": 1.8124999999999998,
+        "within_10deg_pct": 5.25,
+        "within_30deg_pct": 19.53125
+      },
+      "learning_rate": 0.00028711035421746345,
+      "epoch_seconds": 14.58051561100001
+    },
+    {
+      "epoch": 129,
+      "train_cosine_loss": 0.7346332701234859,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.06420135498047,
+        "median_angle_deg": 56.99583435058594,
+        "p90_angle_deg": 134.58743286132812,
+        "within_3deg_pct": 0.43750000000000006,
+        "within_5deg_pct": 1.875,
+        "within_10deg_pct": 5.3125,
+        "within_30deg_pct": 19.875
+      },
+      "learning_rate": 0.0002800304150720422,
+      "epoch_seconds": 13.450157793999097
+    },
+    {
+      "epoch": 130,
+      "train_cosine_loss": 0.7407948970794678,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.4820327758789,
+        "median_angle_deg": 58.19807434082031,
+        "p90_angle_deg": 131.0811767578125,
+        "within_3deg_pct": 0.8125,
+        "within_5deg_pct": 1.90625,
+        "within_10deg_pct": 5.1875,
+        "within_30deg_pct": 19.0625
+      },
+      "learning_rate": 0.0002730047501302264,
+      "epoch_seconds": 13.376250277000509
+    },
+    {
+      "epoch": 131,
+      "train_cosine_loss": 0.7345894114014416,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.49250793457031,
+        "median_angle_deg": 56.84858703613281,
+        "p90_angle_deg": 131.05929565429688,
+        "within_3deg_pct": 0.6875,
+        "within_5deg_pct": 2.09375,
+        "within_10deg_pct": 5.78125,
+        "within_30deg_pct": 20.25
+      },
+      "learning_rate": 0.0002660350928697132,
+      "epoch_seconds": 14.390284043001884
+    },
+    {
+      "epoch": 132,
+      "train_cosine_loss": 0.7391369151583045,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.16897583007812,
+        "median_angle_deg": 55.924949645996094,
+        "p90_angle_deg": 130.8245391845703,
+        "within_3deg_pct": 0.8750000000000001,
+        "within_5deg_pct": 1.9375,
+        "within_10deg_pct": 5.6875,
+        "within_30deg_pct": 20.375
+      },
+      "learning_rate": 0.0002591231629491421,
+      "epoch_seconds": 15.544039160002285
+    },
+    {
+      "epoch": 133,
+      "train_cosine_loss": 0.7355965263342141,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.45247650146484,
+        "median_angle_deg": 56.95527648925781,
+        "p90_angle_deg": 129.5210418701172,
+        "within_3deg_pct": 0.75,
+        "within_5deg_pct": 2.03125,
+        "within_10deg_pct": 5.75,
+        "within_30deg_pct": 20.09375
+      },
+      "learning_rate": 0.00025227066578379596,
+      "epoch_seconds": 14.84514762300023
+    },
+    {
+      "epoch": 134,
+      "train_cosine_loss": 0.7352291158212613,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.74481201171875,
+        "median_angle_deg": 57.035430908203125,
+        "p90_angle_deg": 131.1136932373047,
+        "within_3deg_pct": 0.5,
+        "within_5deg_pct": 1.5625,
+        "within_10deg_pct": 5.0625,
+        "within_30deg_pct": 20.03125
+      },
+      "learning_rate": 0.0002454792921248141,
+      "epoch_seconds": 14.794647545997577
+    },
+    {
+      "epoch": 135,
+      "train_cosine_loss": 0.7345343241108334,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.13602447509766,
+        "median_angle_deg": 56.881771087646484,
+        "p90_angle_deg": 131.67933654785156,
+        "within_3deg_pct": 0.75,
+        "within_5deg_pct": 1.8124999999999998,
+        "within_10deg_pct": 5.8125,
+        "within_30deg_pct": 19.40625
+      },
+      "learning_rate": 0.00023875071764202534,
+      "epoch_seconds": 14.901253006999468
+    },
+    {
+      "epoch": 136,
+      "train_cosine_loss": 0.7389652805778602,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.19346618652344,
+        "median_angle_deg": 57.29979705810547,
+        "p90_angle_deg": 133.08432006835938,
+        "within_3deg_pct": 0.96875,
+        "within_5deg_pct": 2.03125,
+        "within_10deg_pct": 5.8125,
+        "within_30deg_pct": 19.375
+      },
+      "learning_rate": 0.0002320866025105013,
+      "epoch_seconds": 14.346434835002583
+    },
+    {
+      "epoch": 137,
+      "train_cosine_loss": 0.7323934758809503,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.2738265991211,
+        "median_angle_deg": 56.013343811035156,
+        "p90_angle_deg": 131.44200134277344,
+        "within_3deg_pct": 0.9375,
+        "within_5deg_pct": 2.09375,
+        "within_10deg_pct": 5.9375,
+        "within_30deg_pct": 20.6875
+      },
+      "learning_rate": 0.0002254885910009338,
+      "epoch_seconds": 14.009253365002223
+    },
+    {
+      "epoch": 138,
+      "train_cosine_loss": 0.7328270337996053,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.36651611328125,
+        "median_angle_deg": 55.44464874267578,
+        "p90_angle_deg": 130.99508666992188,
+        "within_3deg_pct": 1.0,
+        "within_5deg_pct": 2.4375,
+        "within_10deg_pct": 5.96875,
+        "within_30deg_pct": 19.78125
+      },
+      "learning_rate": 0.0002189583110739344,
+      "epoch_seconds": 15.059011836001446
+    },
+    {
+      "epoch": 139,
+      "train_cosine_loss": 0.7338169808039849,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.66822052001953,
+        "median_angle_deg": 56.61528396606445,
+        "p90_angle_deg": 130.75140380859375,
+        "within_3deg_pct": 1.28125,
+        "within_5deg_pct": 2.40625,
+        "within_10deg_pct": 5.875,
+        "within_30deg_pct": 19.34375
+      },
+      "learning_rate": 0.00021249737397836048,
+      "epoch_seconds": 15.717857333998836
+    },
+    {
+      "epoch": 140,
+      "train_cosine_loss": 0.7335649432670405,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.25111389160156,
+        "median_angle_deg": 56.553165435791016,
+        "p90_angle_deg": 130.17251586914062,
+        "within_3deg_pct": 0.71875,
+        "within_5deg_pct": 2.3125,
+        "within_10deg_pct": 5.5625,
+        "within_30deg_pct": 20.40625
+      },
+      "learning_rate": 0.00020610737385376327,
+      "epoch_seconds": 15.41298811500019
+    },
+    {
+      "epoch": 141,
+      "train_cosine_loss": 0.7316473490306747,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.73635864257812,
+        "median_angle_deg": 56.39433288574219,
+        "p90_angle_deg": 131.7735595703125,
+        "within_3deg_pct": 1.125,
+        "within_5deg_pct": 2.21875,
+        "within_10deg_pct": 5.78125,
+        "within_30deg_pct": 20.125
+      },
+      "learning_rate": 0.00019978988733705783,
+      "epoch_seconds": 15.694817424002395
+    },
+    {
+      "epoch": 142,
+      "train_cosine_loss": 0.7296052397960245,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.6197738647461,
+        "median_angle_deg": 55.50376892089844,
+        "p90_angle_deg": 132.0631866455078,
+        "within_3deg_pct": 0.8125,
+        "within_5deg_pct": 2.25,
+        "within_10deg_pct": 5.5625,
+        "within_30deg_pct": 20.1875
+      },
+      "learning_rate": 0.00019354647317351147,
+      "epoch_seconds": 15.717959667999821
+    },
+    {
+      "epoch": 143,
+      "train_cosine_loss": 0.733665752820191,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.72483825683594,
+        "median_angle_deg": 55.88843536376953,
+        "p90_angle_deg": 132.94454956054688,
+        "within_3deg_pct": 0.75,
+        "within_5deg_pct": 2.0625,
+        "within_10deg_pct": 6.15625,
+        "within_30deg_pct": 20.5625
+      },
+      "learning_rate": 0.00018737867183214719,
+      "epoch_seconds": 15.762240572999872
+    },
+    {
+      "epoch": 144,
+      "train_cosine_loss": 0.7354278563174055,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.47493743896484,
+        "median_angle_deg": 56.22764587402344,
+        "p90_angle_deg": 132.98594665527344,
+        "within_3deg_pct": 1.21875,
+        "within_5deg_pct": 2.71875,
+        "within_10deg_pct": 5.96875,
+        "within_30deg_pct": 21.125
+      },
+      "learning_rate": 0.0001812880051256549,
+      "epoch_seconds": 15.56500337399848
+    },
+    {
+      "epoch": 145,
+      "train_cosine_loss": 0.7302389725595073,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.41110229492188,
+        "median_angle_deg": 57.75251007080078,
+        "p90_angle_deg": 133.6769561767578,
+        "within_3deg_pct": 1.0625,
+        "within_5deg_pct": 2.34375,
+        "within_10deg_pct": 5.625,
+        "within_30deg_pct": 19.40625
+      },
+      "learning_rate": 0.00017527597583490801,
+      "epoch_seconds": 15.520646598000894
+    },
+    {
+      "epoch": 146,
+      "train_cosine_loss": 0.7313803077511521,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.36595916748047,
+        "median_angle_deg": 56.25619125366211,
+        "p90_angle_deg": 129.63888549804688,
+        "within_3deg_pct": 1.15625,
+        "within_5deg_pct": 2.40625,
+        "within_10deg_pct": 6.25,
+        "within_30deg_pct": 20.375
+      },
+      "learning_rate": 0.00016934406733817395,
+      "epoch_seconds": 15.528000097001495
+    },
+    {
+      "epoch": 147,
+      "train_cosine_loss": 0.7353581119120889,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.55783081054688,
+        "median_angle_deg": 55.72383499145508,
+        "p90_angle_deg": 133.66275024414062,
+        "within_3deg_pct": 1.09375,
+        "within_5deg_pct": 2.5,
+        "within_10deg_pct": 5.8125,
+        "within_30deg_pct": 20.59375
+      },
+      "learning_rate": 0.0001634937432451131,
+      "epoch_seconds": 15.528975820998312
+    },
+    {
+      "epoch": 148,
+      "train_cosine_loss": 0.7249059577996128,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.6548843383789,
+        "median_angle_deg": 56.296051025390625,
+        "p90_angle_deg": 129.8053741455078,
+        "within_3deg_pct": 1.0,
+        "within_5deg_pct": 2.4375,
+        "within_10deg_pct": 6.0625,
+        "within_30deg_pct": 20.125
+      },
+      "learning_rate": 0.00015772644703565544,
+      "epoch_seconds": 15.48052713099969
+    },
+    {
+      "epoch": 149,
+      "train_cosine_loss": 0.726291942110389,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 67.04993438720703,
+        "median_angle_deg": 55.90219497680664,
+        "p90_angle_deg": 132.1471710205078,
+        "within_3deg_pct": 1.09375,
+        "within_5deg_pct": 2.53125,
+        "within_10deg_pct": 6.0625,
+        "within_30deg_pct": 19.78125
+      },
+      "learning_rate": 0.00015204360170384266,
+      "epoch_seconds": 14.64292743400074
+    },
+    {
+      "epoch": 150,
+      "train_cosine_loss": 0.7292768666160977,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.75208282470703,
+        "median_angle_deg": 55.81792449951172,
+        "p90_angle_deg": 133.01177978515625,
+        "within_3deg_pct": 0.96875,
+        "within_5deg_pct": 2.5,
+        "within_10deg_pct": 5.875,
+        "within_30deg_pct": 20.5625
+      },
+      "learning_rate": 0.0001464466094067261,
+      "epoch_seconds": 14.216010258001916
+    },
+    {
+      "epoch": 151,
+      "train_cosine_loss": 0.733681357277821,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.81718444824219,
+        "median_angle_deg": 55.90992736816406,
+        "p90_angle_deg": 131.453857421875,
+        "within_3deg_pct": 1.03125,
+        "within_5deg_pct": 2.625,
+        "within_10deg_pct": 5.875,
+        "within_30deg_pct": 19.84375
+      },
+      "learning_rate": 0.00014093685111840547,
+      "epoch_seconds": 14.359834552000393
+    },
+    {
+      "epoch": 152,
+      "train_cosine_loss": 0.7320349510647196,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.64399719238281,
+        "median_angle_deg": 55.346641540527344,
+        "p90_angle_deg": 133.93466186523438,
+        "within_3deg_pct": 1.5,
+        "within_5deg_pct": 3.0,
+        "within_10deg_pct": 6.0,
+        "within_30deg_pct": 20.21875
+      },
+      "learning_rate": 0.00013551568628929414,
+      "epoch_seconds": 14.191740736998327
+    },
+    {
+      "epoch": 153,
+      "train_cosine_loss": 0.7252720038650373,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.95364379882812,
+        "median_angle_deg": 56.021636962890625,
+        "p90_angle_deg": 133.6550750732422,
+        "within_3deg_pct": 1.1875,
+        "within_5deg_pct": 2.65625,
+        "within_10deg_pct": 6.0,
+        "within_30deg_pct": 20.53125
+      },
+      "learning_rate": 0.00013018445251069492,
+      "epoch_seconds": 13.70639833399764
+    },
+    {
+      "epoch": 154,
+      "train_cosine_loss": 0.728035885824666,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.69901275634766,
+        "median_angle_deg": 55.74755859375,
+        "p90_angle_deg": 131.63003540039062,
+        "within_3deg_pct": 1.1875,
+        "within_5deg_pct": 3.3125,
+        "within_10deg_pct": 6.65625,
+        "within_30deg_pct": 20.1875
+      },
+      "learning_rate": 0.00012494446518477003,
+      "epoch_seconds": 14.329260569000326
+    },
+    {
+      "epoch": 155,
+      "train_cosine_loss": 0.731152341856977,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.37303161621094,
+        "median_angle_deg": 55.83298873901367,
+        "p90_angle_deg": 131.94137573242188,
+        "within_3deg_pct": 0.9062499999999999,
+        "within_5deg_pct": 2.0625,
+        "within_10deg_pct": 5.84375,
+        "within_30deg_pct": 20.15625
+      },
+      "learning_rate": 0.00011979701719998438,
+      "epoch_seconds": 14.24458090600092
+    },
+    {
+      "epoch": 156,
+      "train_cosine_loss": 0.7289925806640044,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.79621124267578,
+        "median_angle_deg": 56.018470764160156,
+        "p90_angle_deg": 132.67279052734375,
+        "within_3deg_pct": 1.125,
+        "within_5deg_pct": 2.625,
+        "within_10deg_pct": 5.625,
+        "within_30deg_pct": 20.0
+      },
+      "learning_rate": 0.00011474337861210527,
+      "epoch_seconds": 14.562302310001542
+    },
+    {
+      "epoch": 157,
+      "train_cosine_loss": 0.7270996070470933,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.64612579345703,
+        "median_angle_deg": 55.81364059448242,
+        "p90_angle_deg": 132.07290649414062,
+        "within_3deg_pct": 1.34375,
+        "within_5deg_pct": 3.09375,
+        "within_10deg_pct": 6.09375,
+        "within_30deg_pct": 19.96875
+      },
+      "learning_rate": 0.00010978479633083506,
+      "epoch_seconds": 14.33358388600027
+    },
+    {
+      "epoch": 158,
+      "train_cosine_loss": 0.7295216779212583,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.47964477539062,
+        "median_angle_deg": 56.14421844482422,
+        "p90_angle_deg": 131.5404815673828,
+        "within_3deg_pct": 1.1875,
+        "within_5deg_pct": 2.5,
+        "within_10deg_pct": 6.3125,
+        "within_30deg_pct": 20.0625
+      },
+      "learning_rate": 0.00010492249381215464,
+      "epoch_seconds": 13.9046525570011
+    },
+    {
+      "epoch": 159,
+      "train_cosine_loss": 0.7288672407937152,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.69622802734375,
+        "median_angle_deg": 55.098960876464844,
+        "p90_angle_deg": 134.16867065429688,
+        "within_3deg_pct": 1.6875,
+        "within_5deg_pct": 3.0625,
+        "within_10deg_pct": 5.96875,
+        "within_30deg_pct": 20.78125
+      },
+      "learning_rate": 0.00010015767075645457,
+      "epoch_seconds": 13.87885445700158
+    },
+    {
+      "epoch": 160,
+      "train_cosine_loss": 0.7274057812061433,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.57817077636719,
+        "median_angle_deg": 55.4364013671875,
+        "p90_angle_deg": 133.5362091064453,
+        "within_3deg_pct": 1.5625,
+        "within_5deg_pct": 2.96875,
+        "within_10deg_pct": 6.15625,
+        "within_30deg_pct": 20.03125
+      },
+      "learning_rate": 9.549150281252619e-05,
+      "epoch_seconds": 14.125102303998574
+    },
+    {
+      "epoch": 161,
+      "train_cosine_loss": 0.7269048168935489,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.59217834472656,
+        "median_angle_deg": 55.6291389465332,
+        "p90_angle_deg": 133.9017791748047,
+        "within_3deg_pct": 1.34375,
+        "within_5deg_pct": 3.25,
+        "within_10deg_pct": 6.84375,
+        "within_30deg_pct": 20.65625
+      },
+      "learning_rate": 9.092514128748822e-05,
+      "epoch_seconds": 13.960950218999642
+    },
+    {
+      "epoch": 162,
+      "train_cosine_loss": 0.7224672292179304,
+      "validation": {
+        "count": 3200,
+        "mean_angle_deg": 66.90071105957031,
+        "median_angle_deg": 55.728328704833984,
+        "p90_angle_deg": 135.11419677734375,
+        "within_3deg_pct": 1.3125,
+        "within_5deg_pct": 3.1875,
+        "within_10deg_pct": 6.281249999999999,
+        "within_30deg_pct": 20.5
+      },
+      "learning_rate": 8.645971286271902e-05,
+      "epoch_seconds": 14.102400604999275
+    }
+  ],
+  "limitations": [
+    "Conservative finite-tolerance geometric grouping, not a certified CAD identity audit. Remeshed copies outside candidate thresholds may remain. Part families and projects are not isolated; symmetry-equivalent axes are not corrected.",
+    "Mean signed-axis angle over fixed random rotations of held-out records; see split.json for shape grouping. Not an independent project/family test. Symmetry is not corrected.",
+    "Magics member activity and exact semantic part roles are not independently labeled."
+  ]
+}

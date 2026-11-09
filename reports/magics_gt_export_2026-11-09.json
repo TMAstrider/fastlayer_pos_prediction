@@ -1,0 +1,88 @@
+{
+  "summary": {
+    "magics_projects_scanned": 326,
+    "stored_meshes": 7072,
+    "part_candidate_records": 5534,
+    "unique_part_geometries": 1644,
+    "duplicate_part_records": 3890,
+    "platforms_excluded": 1200,
+    "support_boxes_excluded": 338,
+    "projects_with_part_records": 326,
+    "projects_without_part_records": 0,
+    "records_inside_420mm_plate_bbox": 3746,
+    "records_needing_review": 1788,
+    "errors": 0,
+    "stl_paths_verified": 5534,
+    "hardlinks_verified": 3890,
+    "source_content_spot_checks": 15,
+    "geometry_screened_unique_candidates": 1044,
+    "review_reasons": {
+      "xy_outside_420mm_plate": 1618,
+      "xy_partially_outside_420mm_plate": 170,
+      "below_build_plate": 2
+    },
+    "all_source_projects_represented": true
+  },
+  "source_checks": [
+    {
+      "stl_file": "0701-0710/0701/0701-铝1-2/part_001__0c880e9e-dc65-4d2b-84e9-2492c86bd642.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0701-0710/0701/0701-铝1-2/part_004__2dc27783-d3ba-4ade-9613-271c21aa3e98.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0701-0710/0701/0701-铝1-2/part_017__ff9d8d67-fb88-4619-805d-b1f1463ed2ca.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0701-0710/0701/0701-铝22/part_046__7d7bfc88-8ef2-4eec-87e6-7eb04d172c79.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0701-0710/0702/0702-铝19/part_080__57f1014d-095d-4180-a3c6-f0815b65b997.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0701-0710/0703/0703-铝19/part_011__8f511948-de52-4c6d-ab88-84276dd72589.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0701-0710/0706/0706-铝2/part_063__5decb4a9-e8cb-48b5-adfc-d4e1f61f7186.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0701-0710/0708/0708-铝15/part_062__cf716bd4-9705-4f6f-a423-ff43dc968d06.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0711-0720/0712/0712-铝13/part_005__3f29f50f-f266-4bce-a343-f2c1cd964bcd.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0711-0720/0714/0714-铝9/part_017__a90c1405-a905-4459-87a1-423b53a944a4.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0711-0720/0719/0719-铝12/part_039__c82bb2d1-a15b-4f07-bb5a-371ba2adb497.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0721-0725/0721/0721-铝34/part_003__1671c76a-6562-4165-bb5d-f48a4081ee55.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0721-0725/0723/0723-线割1/part_001__201b72ac-028e-455d-b353-0aab4dfbfa04.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0726-0731/0726/0726-铝6-7/part_017__41372f66-8603-4b5f-b511-21fed2c75053.stl",
+      "source_triangles_equal": true
+    },
+    {
+      "stl_file": "0726-0731/0731/0731-铝9/part_005__768f8a15-58b6-4be6-9c4c-e462b9a5996d.stl",
+      "source_triangles_equal": true
+    }
+  ]
+}

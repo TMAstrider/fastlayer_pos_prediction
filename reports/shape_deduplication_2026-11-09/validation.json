@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "representative_count": 1032,
+  "duplicate_shape_group_ids": 0,
+  "remaining_surface_descriptor_candidate_pairs": 0,
+  "all_14_known_up_difference_pairs_grouped_together": true,
+  "all_clouds_finite_4096_xyz": true,
+  "all_reference_stl_paths_exist": true,
+  "source_formats": {
+    "magics": 1019,
+    "pjf": 13
+  },
+  "training_parts": 932,
+  "validation_parts": 100,
+  "train_validation_shape_group_overlap": 0,
+  "input_manifest_sha256": "93dd3713c56acaf97712c0013917ce9bfe5c809009d8bb3f8703f1bdb653c97b",
+  "active_run": "runs/pointnet_shape_dedup_2026-11-09_val100"
+}

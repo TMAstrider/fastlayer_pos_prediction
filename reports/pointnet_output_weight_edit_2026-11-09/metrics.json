@@ -1,0 +1,147 @@
+{
+  "experiment": {
+    "method": "Closed-form ridge least-squares refit of final 256-to-3 affine layer only; fixed coefficient, no validation tuning.",
+    "source_checkpoint_sha256": "169404e3749aa14edc62ca1b0df9318981d45c6f11c9be189eaa4d28459cf32a",
+    "source_checkpoint_epoch": 132,
+    "training_parts": 932,
+    "validation_parts": 100,
+    "training_rotations_per_part": 16,
+    "ridge_coefficient_per_sample": 0.001,
+    "training_seed": 20322632,
+    "loss_for_edit": "Mean squared error on raw Cartesian direction components plus ridge penalty; output normalized for evaluation.",
+    "edited_parameters": [
+      "regressor.8.weight",
+      "regressor.8.bias"
+    ],
+    "validation_use": "Evaluation after the single predetermined fit; source checkpoint was already selected using this validation set."
+  },
+  "metrics": {
+    "original": {
+      "all_views": {
+        "count": 3200,
+        "mean_angle_deg": 66.16897583007812,
+        "median_angle_deg": 55.92495346069336,
+        "p90_angle_deg": 130.8245391845703,
+        "within_3deg_pct": 0.8750000000000001,
+        "within_5deg_pct": 1.9375,
+        "within_10deg_pct": 5.6875,
+        "within_30deg_pct": 20.375
+      },
+      "random_rotations_only": {
+        "count": 3100,
+        "mean_angle_deg": 66.34759521484375,
+        "median_angle_deg": 56.16874694824219,
+        "p90_angle_deg": 131.48486328125,
+        "within_3deg_pct": 0.903225806451613,
+        "within_5deg_pct": 1.9677419354838708,
+        "within_10deg_pct": 5.709677419354839,
+        "within_30deg_pct": 20.35483870967742
+      }
+    },
+    "edited": {
+      "all_views": {
+        "count": 3200,
+        "mean_angle_deg": 67.53884887695312,
+        "median_angle_deg": 59.417728424072266,
+        "p90_angle_deg": 131.96560668945312,
+        "within_3deg_pct": 0.28125,
+        "within_5deg_pct": 1.09375,
+        "within_10deg_pct": 3.875,
+        "within_30deg_pct": 19.875
+      },
+      "random_rotations_only": {
+        "count": 3100,
+        "mean_angle_deg": 67.72941589355469,
+        "median_angle_deg": 59.73914337158203,
+        "p90_angle_deg": 132.1355743408203,
+        "within_3deg_pct": 0.2903225806451613,
+        "within_5deg_pct": 1.064516129032258,
+        "within_10deg_pct": 3.8064516129032255,
+        "within_30deg_pct": 19.741935483870968
+      }
+    },
+    "random_unit_direction": {
+      "all_views": {
+        "count": 3200,
+        "mean_angle_deg": 89.32381596212709,
+        "median_angle_deg": 89.28427223820248,
+        "p90_angle_deg": 142.87960375494873,
+        "within_3deg_pct": 0.1875,
+        "within_5deg_pct": 0.25,
+        "within_10deg_pct": 0.71875,
+        "within_30deg_pct": 6.78125
+      },
+      "random_rotations_only": {
+        "count": 3100,
+        "mean_angle_deg": 89.0785879825264,
+        "median_angle_deg": 88.91475226822902,
+        "p90_angle_deg": 142.9295954343941,
+        "within_3deg_pct": 0.1935483870967742,
+        "within_5deg_pct": 0.25806451612903225,
+        "within_10deg_pct": 0.7419354838709677,
+        "within_30deg_pct": 6.935483870967742
+      }
+    },
+    "constant_input_plus_z": {
+      "all_views": {
+        "count": 3200,
+        "mean_angle_deg": 87.12729659774415,
+        "median_angle_deg": 88.38391824312886,
+        "p90_angle_deg": 141.6947248363833,
+        "within_3deg_pct": 3.25,
+        "within_5deg_pct": 3.375,
+        "within_10deg_pct": 4.0,
+        "within_30deg_pct": 9.8125
+      },
+      "random_rotations_only": {
+        "count": 3100,
+        "mean_angle_deg": 89.93785455251009,
+        "median_angle_deg": 89.85435287465413,
+        "p90_angle_deg": 142.12830314791185,
+        "within_3deg_pct": 0.12903225806451613,
+        "within_5deg_pct": 0.25806451612903225,
+        "within_10deg_pct": 0.903225806451613,
+        "within_30deg_pct": 6.903225806451613
+      }
+    }
+  },
+  "training_fit_views": {
+    "original": {
+      "count": 14912,
+      "mean_angle_deg": 70.54566955566406,
+      "median_angle_deg": 61.90021514892578,
+      "p90_angle_deg": 136.2879180908203,
+      "within_3deg_pct": 0.576716738197425,
+      "within_5deg_pct": 1.5222639484978542,
+      "within_10deg_pct": 5.063036480686695,
+      "within_30deg_pct": 19.541309012875534
+    },
+    "edited": {
+      "count": 14912,
+      "mean_angle_deg": 68.240478515625,
+      "median_angle_deg": 59.56458282470703,
+      "p90_angle_deg": 133.36502075195312,
+      "within_3deg_pct": 0.4157725321888412,
+      "within_5deg_pct": 1.2070815450643777,
+      "within_10deg_pct": 3.9565450643776825,
+      "within_30deg_pct": 20.58074034334764
+    }
+  },
+  "edited_minus_original_mean_deg": 1.3698747158050537,
+  "part_bootstrap_95pct_interval_deg": [
+    0.06726747862994673,
+    2.6964580833911893
+  ],
+  "source_checkpoint_unchanged": true,
+  "changed_state_keys": [
+    "regressor.8.weight",
+    "regressor.8.bias"
+  ],
+  "original_prediction_reproduction_max_abs_error": 1.7881393432617188e-07,
+  "elapsed_seconds": 13.517699293999613,
+  "limitations": [
+    "Same validation set previously selected the source checkpoint; no independent test.",
+    "Editing the output layer does not add missing geometry or process information.",
+    "Training fit metrics are in-sample; random baseline is one fixed-seed realization."
+  ]
+}

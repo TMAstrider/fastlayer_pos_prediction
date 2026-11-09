@@ -121,7 +121,8 @@ def audit_project(path, mesh_directory):
 
 def main():
     parser = argparse.ArgumentParser(description="Read-only audit of the observed PJF SQLite mesh format")
-    parser.add_argument("dataset", nargs="?", type=Path, default=Path("datasets"))
+    parser.add_argument("dataset", nargs="?", type=Path,
+                        default=Path("datasets/initial_data") if Path("datasets/initial_data").is_dir() else Path("datasets"))
     parser.add_argument("--output", type=Path, default=Path("reports/dataset_audit.json"))
     parser.add_argument("--export-meshes", type=Path)
     arguments = parser.parse_args()

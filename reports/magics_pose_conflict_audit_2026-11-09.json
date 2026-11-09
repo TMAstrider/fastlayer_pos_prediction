@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "source_part_records": 5534,
+    "unique_exact_geometry_records": 1644,
+    "unique_topology_signatures": 1598,
+    "topology_signatures_with_multiple_meshes": 31,
+    "rigid_pose_comparisons": 46,
+    "rigid_matches_within_tolerance": 46,
+    "same_topology_rigid_matches_with_different_up_labels": 0,
+    "fit_error_tolerance_mm": 0.02,
+    "different_up_threshold_deg": 2.0,
+    "note": "This conservative check requires identical ordered triangle-index buffers and vertex ordering. It can miss re-tessellated/reindexed duplicates; exact mesh records all share the same stored-frame +Z label."
+  },
+  "pose_variants": []
+}

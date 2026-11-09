@@ -1,0 +1,7 @@
+{
+  "status": "stopped_for_shape_deduplication",
+  "last_completed_epoch": 116,
+  "best_observed_epoch": 114,
+  "best_observed_mean_angle_deg": 66.99,
+  "note": "Approximate numbers transcribed from stdout. Checkpoint retained. This is the superseded pose-hash split, not the deduplicated experiment."
+}

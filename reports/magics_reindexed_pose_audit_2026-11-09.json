@@ -1,0 +1,2591 @@
+{
+  "summary": {
+    "unique_stored_meshes": 1644,
+    "equal_vertex_triangle_count_groups": 87,
+    "candidate_pairs": 190,
+    "confirmed_rigid_same_mesh_pairs": 129,
+    "pairs_with_up_difference_at_least_threshold": 14,
+    "up_threshold_deg": 2.0,
+    "max_vertex_error_tolerance_mm": 0.02,
+    "max_matched_up_difference_deg": 180.0,
+    "limitations": "Requires equal vertex/triangle counts and matching connectivity. PCA search may miss degenerate frames. Remeshed copies are not covered. Ordered-vertex fits use the existing vertex correspondence; symmetry-equivalent direction labels are not adjudicated."
+  },
+  "conflicts": [
+    {
+      "rms_mm": 9.205087151199595e-12,
+      "max_mm": 9.233351801540103e-12,
+      "up_difference_deg": 180.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "3fa705023b929a6d4d9c5f9b1112805ad317f52c44b00e8a7b1eb177c879a19a",
+        "project_relative": "0711-0720/0714/0714-铝16",
+        "member": "Stl{e3c70c53-c86b-47ab-876e-cb78a6b394cf}_vertices",
+        "stl_file": "0711-0720/0714/0714-铝16/part_024__e3c70c53-c86b-47ab-876e-cb78a6b394cf.stl"
+      },
+      "other": {
+        "geometry_sha256": "b2106bdd301bc4a55daba8ecfcf474ea630e000b80e4da319990ac7531046738",
+        "project_relative": "0711-0720/0714/0714-铝3-8",
+        "member": "Stl{5b7f7c1f-9ff5-432c-a358-727d57a69f9f}_vertices",
+        "stl_file": "0711-0720/0714/0714-铝3-8/part_004__5b7f7c1f-9ff5-432c-a358-727d57a69f9f.stl"
+      }
+    },
+    {
+      "rms_mm": 8.170237809076352e-05,
+      "max_mm": 0.00018058551013266238,
+      "up_difference_deg": 60.00065445730462,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "b96975c84c1f31fe5db789d5cc8f94b2a89a2d5121b271cd6ba2a61c1d627fd2",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{be60f0cc-9c18-4925-8559-9eb7159593f5}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_037__be60f0cc-9c18-4925-8559-9eb7159593f5.stl"
+      },
+      "other": {
+        "geometry_sha256": "9bc8488f1cdab557094e7fb63d92439a01e310faf0f0ed058d067ad65b1b233d",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{d3442f22-86a5-4459-a8c9-e051d05a5716}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_044__d3442f22-86a5-4459-a8c9-e051d05a5716.stl"
+      }
+    },
+    {
+      "rms_mm": 8.1558886512649e-05,
+      "max_mm": 0.00018640947381366938,
+      "up_difference_deg": 120.00814404666536,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "b96975c84c1f31fe5db789d5cc8f94b2a89a2d5121b271cd6ba2a61c1d627fd2",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{be60f0cc-9c18-4925-8559-9eb7159593f5}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_037__be60f0cc-9c18-4925-8559-9eb7159593f5.stl"
+      },
+      "other": {
+        "geometry_sha256": "828b08968158717580363ad32925ca3ec488be8b5b9b50f2713cdf0e943ad391",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{8a7abceb-f25d-4093-955f-f945bfd1e5ef}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_027__8a7abceb-f25d-4093-955f-f945bfd1e5ef.stl"
+      }
+    },
+    {
+      "rms_mm": 7.030373561424154e-05,
+      "max_mm": 0.00013314790809197132,
+      "up_difference_deg": 60.00749133669363,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "9bc8488f1cdab557094e7fb63d92439a01e310faf0f0ed058d067ad65b1b233d",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{d3442f22-86a5-4459-a8c9-e051d05a5716}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_044__d3442f22-86a5-4459-a8c9-e051d05a5716.stl"
+      },
+      "other": {
+        "geometry_sha256": "828b08968158717580363ad32925ca3ec488be8b5b9b50f2713cdf0e943ad391",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{8a7abceb-f25d-4093-955f-f945bfd1e5ef}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_027__8a7abceb-f25d-4093-955f-f945bfd1e5ef.stl"
+      }
+    },
+    {
+      "rms_mm": 5.652360708876365e-05,
+      "max_mm": 0.00011678036242591232,
+      "up_difference_deg": 2.7455885665328457,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "4ae4ca4d9e2ee495496de6f028bf52c81ee5231a3a6693dec2a36c2f02eefb32",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{4df4886b-5033-4df0-a07b-c33c62e4aa2a}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_007__4df4886b-5033-4df0-a07b-c33c62e4aa2a.stl"
+      },
+      "other": {
+        "geometry_sha256": "623d3f2b54e5202ff08f8aa72a0624346d3b3d24355695db56994071ca2557fa",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{754a28c8-e03b-4972-bfa5-9ef34d804ee5}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_011__754a28c8-e03b-4972-bfa5-9ef34d804ee5.stl"
+      }
+    },
+    {
+      "rms_mm": 5.686872115922272e-05,
+      "max_mm": 0.00011583914926668771,
+      "up_difference_deg": 2.378833008253162,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "4ae4ca4d9e2ee495496de6f028bf52c81ee5231a3a6693dec2a36c2f02eefb32",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{4df4886b-5033-4df0-a07b-c33c62e4aa2a}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_007__4df4886b-5033-4df0-a07b-c33c62e4aa2a.stl"
+      },
+      "other": {
+        "geometry_sha256": "bf86149ffb648b926acb2216c9c6bf7815b773273ab6cfad33a970730f87aef6",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e45ccd15-042b-404f-b315-794473478691}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_022__e45ccd15-042b-404f-b315-794473478691.stl"
+      }
+    },
+    {
+      "rms_mm": 5.793917474531701e-05,
+      "max_mm": 0.00010827217545667889,
+      "up_difference_deg": 3.3629588947619213,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "0930b7d45cc96306f9a58af7198e560c9d04ba3a4dbab5cde85d30410f5d1811",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{3c4fb7c5-a178-4729-8f46-64e369cb4991}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_006__3c4fb7c5-a178-4729-8f46-64e369cb4991.stl"
+      },
+      "other": {
+        "geometry_sha256": "1553786e88f6b3c593663399a24c51a82eeedce7ad87bd6bceee6f5c242f3733",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a6c84630-cc87-48fb-b586-950afc694015}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_017__a6c84630-cc87-48fb-b586-950afc694015.stl"
+      }
+    },
+    {
+      "rms_mm": 5.5669853062966795e-05,
+      "max_mm": 0.0001190380390850945,
+      "up_difference_deg": 2.215670152243337,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "0930b7d45cc96306f9a58af7198e560c9d04ba3a4dbab5cde85d30410f5d1811",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{3c4fb7c5-a178-4729-8f46-64e369cb4991}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_006__3c4fb7c5-a178-4729-8f46-64e369cb4991.stl"
+      },
+      "other": {
+        "geometry_sha256": "a8d529cff8b6c3813ad6a82974595eb17db54e176b2b32cebb334b95b9461080",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a79f2d7f-469d-47d0-9d12-24d4dc363d53}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_018__a79f2d7f-469d-47d0-9d12-24d4dc363d53.stl"
+      }
+    },
+    {
+      "rms_mm": 7.154331642220622e-05,
+      "max_mm": 0.00015430393634929368,
+      "up_difference_deg": 4.134491740206765,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "71deeb2cf3f7512afc8d4a666d61aec72f0c57e7e4342bbfd195ac4a6f98301b",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{50a9d678-070b-4e10-bb51-d75dc324969c}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_008__50a9d678-070b-4e10-bb51-d75dc324969c.stl"
+      },
+      "other": {
+        "geometry_sha256": "1553786e88f6b3c593663399a24c51a82eeedce7ad87bd6bceee6f5c242f3733",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a6c84630-cc87-48fb-b586-950afc694015}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_017__a6c84630-cc87-48fb-b586-950afc694015.stl"
+      }
+    },
+    {
+      "rms_mm": 7.001201859338186e-05,
+      "max_mm": 0.00015073641471537538,
+      "up_difference_deg": 2.987202997111398,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "71deeb2cf3f7512afc8d4a666d61aec72f0c57e7e4342bbfd195ac4a6f98301b",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{50a9d678-070b-4e10-bb51-d75dc324969c}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_008__50a9d678-070b-4e10-bb51-d75dc324969c.stl"
+      },
+      "other": {
+        "geometry_sha256": "a8d529cff8b6c3813ad6a82974595eb17db54e176b2b32cebb334b95b9461080",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a79f2d7f-469d-47d0-9d12-24d4dc363d53}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_018__a79f2d7f-469d-47d0-9d12-24d4dc363d53.stl"
+      }
+    },
+    {
+      "rms_mm": 5.456350615573625e-05,
+      "max_mm": 0.00012499496926854245,
+      "up_difference_deg": 3.5700096575142317,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "dda80b53943ac07ad8824d7ecac00b17ed106b8cb7b57e27a8c1c3ee9593a312",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{5e713e16-12ad-4c99-9758-1b60101c9843}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_010__5e713e16-12ad-4c99-9758-1b60101c9843.stl"
+      },
+      "other": {
+        "geometry_sha256": "a8d529cff8b6c3813ad6a82974595eb17db54e176b2b32cebb334b95b9461080",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a79f2d7f-469d-47d0-9d12-24d4dc363d53}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_018__a79f2d7f-469d-47d0-9d12-24d4dc363d53.stl"
+      }
+    },
+    {
+      "rms_mm": 5.8511374511702394e-05,
+      "max_mm": 0.0001249724087924585,
+      "up_difference_deg": 4.587719146187496,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "dd4c7dfb000a810fe0538fc21eb4e2448858480aac587da6be5d9bd37ef41635",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{9ee62ce9-2d03-409d-b4cd-2009a703648f}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_016__9ee62ce9-2d03-409d-b4cd-2009a703648f.stl"
+      },
+      "other": {
+        "geometry_sha256": "1553786e88f6b3c593663399a24c51a82eeedce7ad87bd6bceee6f5c242f3733",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a6c84630-cc87-48fb-b586-950afc694015}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_017__a6c84630-cc87-48fb-b586-950afc694015.stl"
+      }
+    },
+    {
+      "rms_mm": 5.918741281371262e-05,
+      "max_mm": 0.00011037648011681505,
+      "up_difference_deg": 3.440430404134203,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "dd4c7dfb000a810fe0538fc21eb4e2448858480aac587da6be5d9bd37ef41635",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{9ee62ce9-2d03-409d-b4cd-2009a703648f}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_016__9ee62ce9-2d03-409d-b4cd-2009a703648f.stl"
+      },
+      "other": {
+        "geometry_sha256": "a8d529cff8b6c3813ad6a82974595eb17db54e176b2b32cebb334b95b9461080",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a79f2d7f-469d-47d0-9d12-24d4dc363d53}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_018__a79f2d7f-469d-47d0-9d12-24d4dc363d53.stl"
+      }
+    },
+    {
+      "rms_mm": 7.330598301060905e-05,
+      "max_mm": 0.00014539101456133253,
+      "up_difference_deg": 60.01607269949117,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "477265ccf3eaae6460f8312488480796984af2a849debfafa626b2cdbb953b60",
+        "project_relative": "0726-0731/0729/0729-铝6",
+        "member": "Stl{2ad99398-6f1c-4838-9ff7-cd47c461accb}_vertices",
+        "stl_file": "0726-0731/0729/0729-铝6/part_002__2ad99398-6f1c-4838-9ff7-cd47c461accb.stl"
+      },
+      "other": {
+        "geometry_sha256": "881c41b7576580f768755578b05b91293ff92fc75b1e0c05103c05155eb1dcb1",
+        "project_relative": "0726-0731/0731/0731-铝13",
+        "member": "Stl{727e0453-f985-4075-b4fc-b4f818916a51}_vertices",
+        "stl_file": "0726-0731/0731/0731-铝13/part_007__727e0453-f985-4075-b4fc-b4f818916a51.stl"
+      }
+    }
+  ],
+  "matches": [
+    {
+      "rms_mm": 4.0745801082219606e-05,
+      "max_mm": 7.088290113274525e-05,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "8a2d04b465e0677b6e4cd16b3da5a86e9cf13c7de87590880a5dd046864be44e",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{0a64768e-0cdb-43f3-aeb9-b3d3e53abe3b}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_004__0a64768e-0cdb-43f3-aeb9-b3d3e53abe3b.stl"
+      },
+      "other": {
+        "geometry_sha256": "1b5a9e6d1043765b155807980602820c14c1642b825b8e30157a3d4fe0159c9f",
+        "project_relative": "0701-0710/0701/0701-铝24-25",
+        "member": "Stl{1eec81aa-caa4-477a-b13d-1acbfb752e88}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝24-25/part_003__1eec81aa-caa4-477a-b13d-1acbfb752e88.stl"
+      }
+    },
+    {
+      "rms_mm": 1.344244259782833e-12,
+      "max_mm": 1.3791532000997761e-12,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "74c61a8fa661bfbb5fdfdb558239f3221ae5438d2c08634299b8380bcf0d666c",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{853020e8-0c61-42d7-9d9b-462d46ed763e}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_030__853020e8-0c61-42d7-9d9b-462d46ed763e.stl"
+      },
+      "other": {
+        "geometry_sha256": "1161f8b142eb3718a3cf21831f88b9dab8262c2b83f21822dd3762209e78d18a",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{ede24797-e98e-4402-a567-8a071e7b8b39}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_067__ede24797-e98e-4402-a567-8a071e7b8b39.stl"
+      }
+    },
+    {
+      "rms_mm": 6.625711411778221e-13,
+      "max_mm": 7.17894348572093e-13,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "83e44d2e2adbf189655c19e0983525afade132f23c827215740a8d5e2154f30f",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{5b064fa3-f1ff-40f9-800e-afceaee325bf}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_021__5b064fa3-f1ff-40f9-800e-afceaee325bf.stl"
+      },
+      "other": {
+        "geometry_sha256": "516d2dc6397228473f95cb3ba823c7c989003a43cf833e750d081ef299bf3aff",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{508c56e0-c8ad-4e5b-b317-5c71f409c888}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_024__508c56e0-c8ad-4e5b-b317-5c71f409c888.stl"
+      }
+    },
+    {
+      "rms_mm": 1.3142749373968488e-12,
+      "max_mm": 1.357500450677226e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "8e487f012b20458484c75691ac9988905b9f84573f285a8729f6e9f11e5942e1",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{34beb362-4220-4463-a6e3-b037c099e50a}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_013__34beb362-4220-4463-a6e3-b037c099e50a.stl"
+      },
+      "other": {
+        "geometry_sha256": "820c37bb164e1a27fae73c39420cea8fe74ea687467ade6bfe2e47d9ef005ed3",
+        "project_relative": "0701-0710/0701/0701-铝18",
+        "member": "Stl{287eeab2-ce71-4fe2-b9d4-7de5aa3f7ae2}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝18/part_011__287eeab2-ce71-4fe2-b9d4-7de5aa3f7ae2.stl"
+      }
+    },
+    {
+      "rms_mm": 1.0967981209912166e-12,
+      "max_mm": 1.1415660173096185e-12,
+      "up_difference_deg": 1.9090959104164224e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "9eaa0af7bf05d3ef90d97cbbe31d5e515d2bba725943f7704b9feca714ba9c6e",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{def51597-5a54-40d8-9b93-cc6eaa1a6f10}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_050__def51597-5a54-40d8-9b93-cc6eaa1a6f10.stl"
+      },
+      "other": {
+        "geometry_sha256": "9b2f6897543b760a5ebd251957beb9b0a3b45ece14b4b98d89d6124311b15091",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{91f0c2b7-21b1-4f56-bad0-a1e1e4e4bf6a}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_039__91f0c2b7-21b1-4f56-bad0-a1e1e4e4bf6a.stl"
+      }
+    },
+    {
+      "rms_mm": 1.8942076353426836e-13,
+      "max_mm": 2.0658503085281067e-13,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "134b9debc877e10f7045e891972927ce3a3d2ba13fef5351f0e87e0f088137fc",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{ad59258b-ec75-4d6d-87a7-55d63034508f}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_038__ad59258b-ec75-4d6d-87a7-55d63034508f.stl"
+      },
+      "other": {
+        "geometry_sha256": "fc39669aa097ca4a549dc2c443a91a68d04a7f2aca10faa991541cc70ba29380",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{6fae6294-12d8-4a03-ab9c-f4e5f37eb250}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_024__6fae6294-12d8-4a03-ab9c-f4e5f37eb250.stl"
+      }
+    },
+    {
+      "rms_mm": 7.735545063800593e-13,
+      "max_mm": 8.003941439605633e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "134b9debc877e10f7045e891972927ce3a3d2ba13fef5351f0e87e0f088137fc",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{ad59258b-ec75-4d6d-87a7-55d63034508f}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_038__ad59258b-ec75-4d6d-87a7-55d63034508f.stl"
+      },
+      "other": {
+        "geometry_sha256": "849a9667c8563b387d36566dafc715394967bc2d7dc37b810441f05f9d320fac",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{03f3cd7e-c1ba-4a8b-afe5-9b36ea5f984b}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_002__03f3cd7e-c1ba-4a8b-afe5-9b36ea5f984b.stl"
+      }
+    },
+    {
+      "rms_mm": 6.115263816995012e-13,
+      "max_mm": 6.29392081429202e-13,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "fc39669aa097ca4a549dc2c443a91a68d04a7f2aca10faa991541cc70ba29380",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{6fae6294-12d8-4a03-ab9c-f4e5f37eb250}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_024__6fae6294-12d8-4a03-ab9c-f4e5f37eb250.stl"
+      },
+      "other": {
+        "geometry_sha256": "849a9667c8563b387d36566dafc715394967bc2d7dc37b810441f05f9d320fac",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{03f3cd7e-c1ba-4a8b-afe5-9b36ea5f984b}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_002__03f3cd7e-c1ba-4a8b-afe5-9b36ea5f984b.stl"
+      }
+    },
+    {
+      "rms_mm": 2.8306841023448177e-12,
+      "max_mm": 2.8456816592087422e-12,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "37153e5c94654b7c64fcdd0da0be36c897fcc5998f3257bb6e6c209076b2d94c",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{52bc4d9b-c612-400b-9345-219cd0409fcc}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_019__52bc4d9b-c612-400b-9345-219cd0409fcc.stl"
+      },
+      "other": {
+        "geometry_sha256": "397fc4bf5fe97c06eb789b54189bfb856d1e369af8249e759a02d5ae82387381",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{35294491-099a-4996-aaf2-d9ae1f2689d7}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_014__35294491-099a-4996-aaf2-d9ae1f2689d7.stl"
+      }
+    },
+    {
+      "rms_mm": 2.005423213456748e-12,
+      "max_mm": 2.0235386693351074e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "37153e5c94654b7c64fcdd0da0be36c897fcc5998f3257bb6e6c209076b2d94c",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{52bc4d9b-c612-400b-9345-219cd0409fcc}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_019__52bc4d9b-c612-400b-9345-219cd0409fcc.stl"
+      },
+      "other": {
+        "geometry_sha256": "d552d07cda03b9839a0244bd425c916f4ce9c77ce9dc66acb24f4b2a98ec71b9",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{fc0fa402-26a4-42f0-a010-e5e11f0f33db}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_069__fc0fa402-26a4-42f0-a010-e5e11f0f33db.stl"
+      }
+    },
+    {
+      "rms_mm": 1.382420926199571e-12,
+      "max_mm": 1.4166019796281472e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "397fc4bf5fe97c06eb789b54189bfb856d1e369af8249e759a02d5ae82387381",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{35294491-099a-4996-aaf2-d9ae1f2689d7}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_014__35294491-099a-4996-aaf2-d9ae1f2689d7.stl"
+      },
+      "other": {
+        "geometry_sha256": "d552d07cda03b9839a0244bd425c916f4ce9c77ce9dc66acb24f4b2a98ec71b9",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{fc0fa402-26a4-42f0-a010-e5e11f0f33db}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_069__fc0fa402-26a4-42f0-a010-e5e11f0f33db.stl"
+      }
+    },
+    {
+      "rms_mm": 2.794924230665172e-13,
+      "max_mm": 2.980894033072876e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "0e11d2306ccb640ab172a1bd63e700c5d86f560ca46de2e3d1b34ada0929d826",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{bcb94649-5a57-4058-87a4-a02e0f282dec}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_041__bcb94649-5a57-4058-87a4-a02e0f282dec.stl"
+      },
+      "other": {
+        "geometry_sha256": "35a95d88dc48b90de0570fb27fa58061447f8c0508dc2eb85a536d34dbb3cc6b",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{03329c4c-6164-4121-ba0f-486fe9e6a18b}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_001__03329c4c-6164-4121-ba0f-486fe9e6a18b.stl"
+      }
+    },
+    {
+      "rms_mm": 1.1405025927223687e-11,
+      "max_mm": 1.146380112955211e-11,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "b87cc7ac1fba690859eeee5d9fd34f82068b04d8531ee9f94e066a41b7b81dd9",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{2c0d43d7-ecd8-4ca9-a83f-8b0aaa5f2332}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_009__2c0d43d7-ecd8-4ca9-a83f-8b0aaa5f2332.stl"
+      },
+      "other": {
+        "geometry_sha256": "9b448f52e22e85d0f4f13edd39180ebdb58bbe85aa0a778b5991bc8dc9cc9c93",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{9d4acc92-7199-4768-96b7-61a07888208b}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_033__9d4acc92-7199-4768-96b7-61a07888208b.stl"
+      }
+    },
+    {
+      "rms_mm": 3.373374954036208e-13,
+      "max_mm": 5.518497755175417e-13,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "9810cf67f31a5e35192a783fb077f50593ce7f73d03a7651b5c43654ea09111e",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{a85aa2af-fc4b-402f-af01-fae60e25c593}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_037__a85aa2af-fc4b-402f-af01-fae60e25c593.stl"
+      },
+      "other": {
+        "geometry_sha256": "f25499d6f6623d4082b19bd5885bb24e05940da7fd53aba28c522a508351b214",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{2c571e21-0e76-47f8-8bef-655e9906eef3}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_010__2c571e21-0e76-47f8-8bef-655e9906eef3.stl"
+      }
+    },
+    {
+      "rms_mm": 2.473204874359809e-13,
+      "max_mm": 3.9635055275060776e-13,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "9810cf67f31a5e35192a783fb077f50593ce7f73d03a7651b5c43654ea09111e",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{a85aa2af-fc4b-402f-af01-fae60e25c593}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_037__a85aa2af-fc4b-402f-af01-fae60e25c593.stl"
+      },
+      "other": {
+        "geometry_sha256": "1cfe63f589820b1c2fe1c7c16380a6b253a1d90d361024496e52644a9bea4ac4",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{3d3db235-ef87-4cbe-8dc7-8e6271d7b45e}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_018__3d3db235-ef87-4cbe-8dc7-8e6271d7b45e.stl"
+      }
+    },
+    {
+      "rms_mm": 5.662478157333917e-13,
+      "max_mm": 7.247209361212968e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "f25499d6f6623d4082b19bd5885bb24e05940da7fd53aba28c522a508351b214",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{2c571e21-0e76-47f8-8bef-655e9906eef3}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_010__2c571e21-0e76-47f8-8bef-655e9906eef3.stl"
+      },
+      "other": {
+        "geometry_sha256": "1cfe63f589820b1c2fe1c7c16380a6b253a1d90d361024496e52644a9bea4ac4",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{3d3db235-ef87-4cbe-8dc7-8e6271d7b45e}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_018__3d3db235-ef87-4cbe-8dc7-8e6271d7b45e.stl"
+      }
+    },
+    {
+      "rms_mm": 3.7568613301561815e-13,
+      "max_mm": 3.914368661786889e-13,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "b37f753cf8f419c44da0636f24f90de2f37b25e149f53e420cf5dd8cc3951eb0",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{80e8be0c-349e-4e8a-8971-5ee458fb3c2c}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_029__80e8be0c-349e-4e8a-8971-5ee458fb3c2c.stl"
+      },
+      "other": {
+        "geometry_sha256": "7969bb16197298bf729525ce6159bc3578aa42457089bab21a9aa84bb70b64e6",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{2564a587-4526-4688-a3b1-e3faf07cb867}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_008__2564a587-4526-4688-a3b1-e3faf07cb867.stl"
+      }
+    },
+    {
+      "rms_mm": 3.4381771420365535e-13,
+      "max_mm": 3.734407399689961e-13,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "b37f753cf8f419c44da0636f24f90de2f37b25e149f53e420cf5dd8cc3951eb0",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{80e8be0c-349e-4e8a-8971-5ee458fb3c2c}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_029__80e8be0c-349e-4e8a-8971-5ee458fb3c2c.stl"
+      },
+      "other": {
+        "geometry_sha256": "66ba9dfdeb3d9f0907fde78ca0431d68e8b16377ae8484f5a77e0b89e9cc1c8c",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{656732cb-0436-4ae9-9e64-786bb31baa78}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_027__656732cb-0436-4ae9-9e64-786bb31baa78.stl"
+      }
+    },
+    {
+      "rms_mm": 6.981734863845384e-13,
+      "max_mm": 7.220404386476303e-13,
+      "up_difference_deg": 2.2588727439225506e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "7969bb16197298bf729525ce6159bc3578aa42457089bab21a9aa84bb70b64e6",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{2564a587-4526-4688-a3b1-e3faf07cb867}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_008__2564a587-4526-4688-a3b1-e3faf07cb867.stl"
+      },
+      "other": {
+        "geometry_sha256": "66ba9dfdeb3d9f0907fde78ca0431d68e8b16377ae8484f5a77e0b89e9cc1c8c",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{656732cb-0436-4ae9-9e64-786bb31baa78}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_027__656732cb-0436-4ae9-9e64-786bb31baa78.stl"
+      }
+    },
+    {
+      "rms_mm": 6.689508940883018e-13,
+      "max_mm": 7.128216995741055e-13,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "c8ca5f425667138f23bd3621e0a3466461b736d50cbe5a735b1c8f9df83347f2",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{0619c8e1-157c-4210-878a-e9e3590c691a}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_001__0619c8e1-157c-4210-878a-e9e3590c691a.stl"
+      },
+      "other": {
+        "geometry_sha256": "4eeb855474063d22f7f20e525abe26a73d088c62e22e9368b2ebca8a57dfb795",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{453269d1-5dd8-4042-8679-35f30abc9b95}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_017__453269d1-5dd8-4042-8679-35f30abc9b95.stl"
+      }
+    },
+    {
+      "rms_mm": 2.5092083762104644e-12,
+      "max_mm": 2.5619481498211688e-12,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "c8ca5f425667138f23bd3621e0a3466461b736d50cbe5a735b1c8f9df83347f2",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{0619c8e1-157c-4210-878a-e9e3590c691a}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_001__0619c8e1-157c-4210-878a-e9e3590c691a.stl"
+      },
+      "other": {
+        "geometry_sha256": "4d5cabd02eed98ed5da972b12c66a26b10691ced5e78d38f87b09d5da52423e9",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{749aeb43-5983-4756-a41b-358f4a38c0bd}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_032__749aeb43-5983-4756-a41b-358f4a38c0bd.stl"
+      }
+    },
+    {
+      "rms_mm": 2.0667385023746934e-12,
+      "max_mm": 2.1146257976358845e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "4eeb855474063d22f7f20e525abe26a73d088c62e22e9368b2ebca8a57dfb795",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{453269d1-5dd8-4042-8679-35f30abc9b95}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_017__453269d1-5dd8-4042-8679-35f30abc9b95.stl"
+      },
+      "other": {
+        "geometry_sha256": "4d5cabd02eed98ed5da972b12c66a26b10691ced5e78d38f87b09d5da52423e9",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{749aeb43-5983-4756-a41b-358f4a38c0bd}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_032__749aeb43-5983-4756-a41b-358f4a38c0bd.stl"
+      }
+    },
+    {
+      "rms_mm": 6.107797767512467e-12,
+      "max_mm": 6.147192628881371e-12,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "36ead8e92e26006dfc0b237eb7256be7c2a41abffaa7908614a713e055a665c7",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{d914a210-50a0-4a4e-84ad-26f2ed6434b2}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_049__d914a210-50a0-4a4e-84ad-26f2ed6434b2.stl"
+      },
+      "other": {
+        "geometry_sha256": "191d931a52f224bc3f0c9188fd39b20c1df689087a7e4906e86b2224bd7345e9",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{454178a9-403e-48e6-ab88-8fa06ee13ade}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_022__454178a9-403e-48e6-ab88-8fa06ee13ade.stl"
+      }
+    },
+    {
+      "rms_mm": 5.26655220107794e-13,
+      "max_mm": 5.914281327957256e-13,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "b7a71028cc4a819cac095633eb344a60e3551884c9e8eaeaca68916d8697b993",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{2db35734-89f9-447a-b1f0-30a08cf51b86}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_011__2db35734-89f9-447a-b1f0-30a08cf51b86.stl"
+      },
+      "other": {
+        "geometry_sha256": "8da67c1c4fc215a8666758c2a6a1965dbaa287e59846ce2f2ab4c249795b939b",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{509877c4-f3e5-42c8-a642-820a7c2b1861}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_025__509877c4-f3e5-42c8-a642-820a7c2b1861.stl"
+      }
+    },
+    {
+      "rms_mm": 6.519729454826851e-13,
+      "max_mm": 6.875120599916388e-13,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "de82a71bb6676d14a829523ff4e38e2ef0fe51e516f80a3db64671ad21125bd8",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{1978b5b5-2c93-4818-9c66-0b21ec1680fc}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_005__1978b5b5-2c93-4818-9c66-0b21ec1680fc.stl"
+      },
+      "other": {
+        "geometry_sha256": "953dae38b7f3f1b00fa3fceb3038e00fd0caf81aade7f8a0235295213c3b4f1e",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{7592a2f8-9fbd-4a17-ad44-5e5a9b2c9206}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_033__7592a2f8-9fbd-4a17-ad44-5e5a9b2c9206.stl"
+      }
+    },
+    {
+      "rms_mm": 2.707335611506667e-13,
+      "max_mm": 2.94458942257757e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "8af958cec91e0eb88beda0c7bcec1e0ce21b102ade5f0489b268d5f9c1a03394",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{d86df1d6-7fa5-40ea-81e0-c2a2cc649f5a}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_048__d86df1d6-7fa5-40ea-81e0-c2a2cc649f5a.stl"
+      },
+      "other": {
+        "geometry_sha256": "9f3de6a9bdd50f747e5d830e72fc15c2595448752e85e97c169e97cb3efc492e",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{09b2a222-e932-4c4c-9728-871b5a38ea8e}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_002__09b2a222-e932-4c4c-9728-871b5a38ea8e.stl"
+      }
+    },
+    {
+      "rms_mm": 2.1669533559123384e-13,
+      "max_mm": 2.3654244077018384e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "8af958cec91e0eb88beda0c7bcec1e0ce21b102ade5f0489b268d5f9c1a03394",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{d86df1d6-7fa5-40ea-81e0-c2a2cc649f5a}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_048__d86df1d6-7fa5-40ea-81e0-c2a2cc649f5a.stl"
+      },
+      "other": {
+        "geometry_sha256": "97a9176243ca629b55adc5f4dd862684c26a7bfb43881790e0d0bb61f7d86ac8",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{db138120-212a-43f1-a712-a5a6c2e1071f}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_060__db138120-212a-43f1-a712-a5a6c2e1071f.stl"
+      }
+    },
+    {
+      "rms_mm": 1.4991713035235017e-13,
+      "max_mm": 1.5305816640201982e-13,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "9f3de6a9bdd50f747e5d830e72fc15c2595448752e85e97c169e97cb3efc492e",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{09b2a222-e932-4c4c-9728-871b5a38ea8e}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_002__09b2a222-e932-4c4c-9728-871b5a38ea8e.stl"
+      },
+      "other": {
+        "geometry_sha256": "97a9176243ca629b55adc5f4dd862684c26a7bfb43881790e0d0bb61f7d86ac8",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{db138120-212a-43f1-a712-a5a6c2e1071f}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_060__db138120-212a-43f1-a712-a5a6c2e1071f.stl"
+      }
+    },
+    {
+      "rms_mm": 3.6592001524797426e-12,
+      "max_mm": 3.709984198657011e-12,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "d2261bab7fd2a69d3ed8b49d244c6e5c46bab96091e4043cfbf393c70667a303",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{1e8a1d9a-c92c-4e7d-94b8-745b6fdbe452}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_007__1e8a1d9a-c92c-4e7d-94b8-745b6fdbe452.stl"
+      },
+      "other": {
+        "geometry_sha256": "8ad0632ced7706d97f137a9ec89dd084f0bb274f77cadd2c6fa8623cbca962df",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{205ff9c0-5475-4a5a-9a27-1e4e038fed80}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_009__205ff9c0-5475-4a5a-9a27-1e4e038fed80.stl"
+      }
+    },
+    {
+      "rms_mm": 1.6662024108769098e-12,
+      "max_mm": 1.7337251852732782e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "17eea09ee58c5e46376546e639e9fe3b386d9b9a9583956a31317c73ce0911ab",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{494f7bde-f08f-4d59-a1e4-8a7ab226606b}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_018__494f7bde-f08f-4d59-a1e4-8a7ab226606b.stl"
+      },
+      "other": {
+        "geometry_sha256": "30114f5f1e084bfcdcf12d234818984adef02340da8ffb5c1dbb7b3db9265507",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{960d347a-b421-4649-977d-51360a9b02e5}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_041__960d347a-b421-4649-977d-51360a9b02e5.stl"
+      }
+    },
+    {
+      "rms_mm": 4.705139376450669e-13,
+      "max_mm": 4.895015493289587e-13,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "240e15db81f569b5f017d9177b125aa44165c597a8777c1e9fe8bb530ab3e422",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{7fc3b907-4125-4949-870c-901862e9a7f8}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_027__7fc3b907-4125-4949-870c-901862e9a7f8.stl"
+      },
+      "other": {
+        "geometry_sha256": "e6d78405061b21f05b9be7ecbc2cec346d7739906e69f148de95ce8ab3095bdd",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{b8b7296c-4b77-47c7-a16d-e3c11ad2cac9}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_048__b8b7296c-4b77-47c7-a16d-e3c11ad2cac9.stl"
+      }
+    },
+    {
+      "rms_mm": 2.0746368423024472e-13,
+      "max_mm": 2.4513724383723456e-13,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "1d02f4b2eb037ea9b8f5cfc4d9e7bb85e6b256e3fc8342ed7fd088df120c9d76",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{cf29d8fe-9d6f-48d4-86f9-2903430a0094}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_045__cf29d8fe-9d6f-48d4-86f9-2903430a0094.stl"
+      },
+      "other": {
+        "geometry_sha256": "c5c4897a54f274a7a59d30d141ce92e9c95f9d0bfd01adda85a0803bd0295f86",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{9fa2cefb-8e0f-4d2a-8cd0-9093b6759430}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_043__9fa2cefb-8e0f-4d2a-8cd0-9093b6759430.stl"
+      }
+    },
+    {
+      "rms_mm": 1.9837027520155444e-12,
+      "max_mm": 2.0915076173435368e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "791db97345231f04ab74b2a090d68a0e304577be51040e73f228e5d290f02c93",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{eb8d55f1-eec5-4744-a796-4c51c810a5e4}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_052__eb8d55f1-eec5-4744-a796-4c51c810a5e4.stl"
+      },
+      "other": {
+        "geometry_sha256": "1e6cd5c85281b8a902c7d67e2a469cfd3836f2991bbe485977de19dcf9bfba51",
+        "project_relative": "0701-0710/0701/0701-铝19",
+        "member": "Stl{026814be-f85c-4f32-b482-5ecc9f5770b3}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝19/part_003__026814be-f85c-4f32-b482-5ecc9f5770b3.stl"
+      }
+    },
+    {
+      "rms_mm": 7.988733355561763e-13,
+      "max_mm": 8.393300164224497e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "9c7998f2c4b09774bd4b7f43f87245f1b451b6791a4cae3ff01c0c58a372952f",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{90f30807-ab33-48ef-92d6-d2b33efa029a}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_031__90f30807-ab33-48ef-92d6-d2b33efa029a.stl"
+      },
+      "other": {
+        "geometry_sha256": "2f49e2ad4dc5e158e3e3b14dc42a50a6c16262522b78cfe11f351411cbf30092",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{df7448b0-e5f7-475e-b480-d5a9a559ec68}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_061__df7448b0-e5f7-475e-b480-d5a9a559ec68.stl"
+      }
+    },
+    {
+      "rms_mm": 1.1789718193884783e-13,
+      "max_mm": 1.6175579898220192e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "6d9e1043455f13e159be9a46f1b4e4f64fc699e951c2bf98afbd1804c8a27b75",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{a61776ab-c1aa-410e-ba3b-a8a346008e72}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_036__a61776ab-c1aa-410e-ba3b-a8a346008e72.stl"
+      },
+      "other": {
+        "geometry_sha256": "bf97c5e72e4e46d30072a715241f9e4d31a687822e254dba46c00522cf76eacc",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{a810cd7a-92a6-4dec-9d55-dfbe51b1c88c}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_045__a810cd7a-92a6-4dec-9d55-dfbe51b1c88c.stl"
+      }
+    },
+    {
+      "rms_mm": 5.215634700504529e-13,
+      "max_mm": 5.803877302429936e-13,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "0d517906500d65061dfe33be80d9e296efcb97b492583f43a044421290803e90",
+        "project_relative": "0701-0710/0701/0701-铝9",
+        "member": "Stl{ce2b7c64-9904-4846-b254-3fdd3b34ee0f}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝9/part_044__ce2b7c64-9904-4846-b254-3fdd3b34ee0f.stl"
+      },
+      "other": {
+        "geometry_sha256": "a43632885e99e2f4a197d386e8ea6b992db6895e71a372eb2cad797e29c29d7c",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{eb001d37-1df5-4f31-94d8-4b442adf8c63}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_066__eb001d37-1df5-4f31-94d8-4b442adf8c63.stl"
+      }
+    },
+    {
+      "rms_mm": 1.07435850684894e-12,
+      "max_mm": 1.0981104083076514e-12,
+      "up_difference_deg": 1.7075472925031877e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "b9b7f1fda9885ec9c0d3116b7ebdc08a3bbc209f7c4595b477ae238e8ea7b548",
+        "project_relative": "0701-0710/0701/0701-铝18",
+        "member": "Stl{701b71d4-7377-434c-9d2f-67603c5e3f92}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝18/part_032__701b71d4-7377-434c-9d2f-67603c5e3f92.stl"
+      },
+      "other": {
+        "geometry_sha256": "a9b4a990cb53ff759d1d54638e7893c28f4e2e7c7932b3c35cfd4b395d5ac296",
+        "project_relative": "0701-0710/0701/0701-铝23",
+        "member": "Stl{93e98be6-dfcd-462c-8461-ee008291bf5d}_vertices",
+        "stl_file": "0701-0710/0701/0701-铝23/part_040__93e98be6-dfcd-462c-8461-ee008291bf5d.stl"
+      }
+    },
+    {
+      "rms_mm": 8.901874424408058e-13,
+      "max_mm": 1.0496811064865248e-12,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "8079949fad2fc969537270b79b22398cf78f86c70fe50cd2892c8cca62d18b1c",
+        "project_relative": "0701-0710/0702/0702-铝9",
+        "member": "Stl{2b60966f-66d1-4627-beb6-0b8eeaed09fe}_vertices",
+        "stl_file": "0701-0710/0702/0702-铝9/part_005__2b60966f-66d1-4627-beb6-0b8eeaed09fe.stl"
+      },
+      "other": {
+        "geometry_sha256": "6a8e5c22cbd313215f8a6989cd477cb74ab4f4e3ec23e09c4a6fe8022151bb81",
+        "project_relative": "0701-0710/0702/0702-铝12-13",
+        "member": "Stl{34002767-2e30-4ede-bfb4-c2fddf69e6d6}_vertices",
+        "stl_file": "0701-0710/0702/0702-铝12-13/part_006__34002767-2e30-4ede-bfb4-c2fddf69e6d6.stl"
+      }
+    },
+    {
+      "rms_mm": 1.8537357007490758e-11,
+      "max_mm": 1.856016104842627e-11,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "cea76c2b8a99b9f9c7da43792f46ac73b4fbfd53981ed52ff9dd87f7c514e196",
+        "project_relative": "0701-0710/0705/0705-铝1",
+        "member": "Stl{055c086e-895a-4824-bb7d-738806f5c270}_vertices",
+        "stl_file": "0701-0710/0705/0705-铝1/part_002__055c086e-895a-4824-bb7d-738806f5c270.stl"
+      },
+      "other": {
+        "geometry_sha256": "3dc76c0071f64671dfe7ca65da3b1dc20cab11334efc3c2bc8287b0f2e8fa73b",
+        "project_relative": "0701-0710/0705/0705-铝1",
+        "member": "Stl{6dbcbb00-1af5-49e6-b37b-121a701a9ffd}_vertices",
+        "stl_file": "0701-0710/0705/0705-铝1/part_016__6dbcbb00-1af5-49e6-b37b-121a701a9ffd.stl"
+      }
+    },
+    {
+      "rms_mm": 2.4243523953616193e-11,
+      "max_mm": 2.4349315722169214e-11,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "d26ffb95adcff40f780fef06444060f98c961c9c7cfcb86ca96a916cae53dd39",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{3f70e8b6-96eb-4ba4-885c-075b80edabb1}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_027__3f70e8b6-96eb-4ba4-885c-075b80edabb1.stl"
+      },
+      "other": {
+        "geometry_sha256": "27f0482f2c75f09dccaf1a17b6da3ea425a3dba6e1d72de88fbb2469e2049fb8",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{ec553d6e-dbae-432e-81aa-153be0727660}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_087__ec553d6e-dbae-432e-81aa-153be0727660.stl"
+      }
+    },
+    {
+      "rms_mm": 2.788371545397018e-13,
+      "max_mm": 2.9844909537526646e-13,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "3ad4cb00430a78f79bffc33d21f2f7f1cb7c72010143b146629ef703b00addd9",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{4d630dd2-30ee-41bf-a427-a7129cfc4baf}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_030__4d630dd2-30ee-41bf-a427-a7129cfc4baf.stl"
+      },
+      "other": {
+        "geometry_sha256": "8c917f35b1a6e1d6a33784d1b6d2d5db842ec98a48abe1444cd0eb5c9cf35d5d",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{7386ad1a-af4d-4b4e-9f44-e1e6a7c0dc7c}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_042__7386ad1a-af4d-4b4e-9f44-e1e6a7c0dc7c.stl"
+      }
+    },
+    {
+      "rms_mm": 1.5986849792665797e-12,
+      "max_mm": 1.6200413330477294e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "3ad4cb00430a78f79bffc33d21f2f7f1cb7c72010143b146629ef703b00addd9",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{4d630dd2-30ee-41bf-a427-a7129cfc4baf}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_030__4d630dd2-30ee-41bf-a427-a7129cfc4baf.stl"
+      },
+      "other": {
+        "geometry_sha256": "512ff7d892b4ba41a01bafcf1e63391eaece0a2ff9fdd5a81997a4481b3704ad",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{93046796-83cf-4e03-b459-e0051f131236}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_054__93046796-83cf-4e03-b459-e0051f131236.stl"
+      }
+    },
+    {
+      "rms_mm": 1.311735719580522e-12,
+      "max_mm": 1.321620232563901e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "8c917f35b1a6e1d6a33784d1b6d2d5db842ec98a48abe1444cd0eb5c9cf35d5d",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{7386ad1a-af4d-4b4e-9f44-e1e6a7c0dc7c}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_042__7386ad1a-af4d-4b4e-9f44-e1e6a7c0dc7c.stl"
+      },
+      "other": {
+        "geometry_sha256": "512ff7d892b4ba41a01bafcf1e63391eaece0a2ff9fdd5a81997a4481b3704ad",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{93046796-83cf-4e03-b459-e0051f131236}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_054__93046796-83cf-4e03-b459-e0051f131236.stl"
+      }
+    },
+    {
+      "rms_mm": 4.921804445262452e-12,
+      "max_mm": 4.945382864390604e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "4e4b4938c9e41b111948f69527f50f7370cd2db751766b5bab68244b3a53e82d",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{6b80ccf3-6be0-48b5-bc19-5c711efe87c0}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_040__6b80ccf3-6be0-48b5-bc19-5c711efe87c0.stl"
+      },
+      "other": {
+        "geometry_sha256": "14385cd54a38de476925b6e49e8132a034e3598698970443ceb1b6851fb5f93f",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{78377002-8e79-4813-badb-5d863a95e766}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_044__78377002-8e79-4813-badb-5d863a95e766.stl"
+      }
+    },
+    {
+      "rms_mm": 1.4608708795055667e-12,
+      "max_mm": 1.4648386086183987e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "4e4b4938c9e41b111948f69527f50f7370cd2db751766b5bab68244b3a53e82d",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{6b80ccf3-6be0-48b5-bc19-5c711efe87c0}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_040__6b80ccf3-6be0-48b5-bc19-5c711efe87c0.stl"
+      },
+      "other": {
+        "geometry_sha256": "eebb40b075e7486a2b5cb9ab6b6ea117bfedb5f0399e0d1837a4205737fb3246",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{88fed10a-f0a7-4225-8ef2-4074adfb772f}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_047__88fed10a-f0a7-4225-8ef2-4074adfb772f.stl"
+      }
+    },
+    {
+      "rms_mm": 5.121048307740107e-12,
+      "max_mm": 5.1301973589649126e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "4e4b4938c9e41b111948f69527f50f7370cd2db751766b5bab68244b3a53e82d",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{6b80ccf3-6be0-48b5-bc19-5c711efe87c0}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_040__6b80ccf3-6be0-48b5-bc19-5c711efe87c0.stl"
+      },
+      "other": {
+        "geometry_sha256": "2692b2066657085e1a69c6d6f05999ae659e3c6807f29226dc5b205d2549920e",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_051__907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1.stl"
+      }
+    },
+    {
+      "rms_mm": 5.697417936466626e-14,
+      "max_mm": 5.739584601870544e-14,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "4e4b4938c9e41b111948f69527f50f7370cd2db751766b5bab68244b3a53e82d",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{6b80ccf3-6be0-48b5-bc19-5c711efe87c0}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_040__6b80ccf3-6be0-48b5-bc19-5c711efe87c0.stl"
+      },
+      "other": {
+        "geometry_sha256": "b33ff54d4aea8d77cd5319ed305795a69b87d124df4d52b1c2ef68cc3736a62a",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{c7e0fe13-534a-4523-a6bc-6eeae1e02f5e}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_069__c7e0fe13-534a-4523-a6bc-6eeae1e02f5e.stl"
+      }
+    },
+    {
+      "rms_mm": 5.7053211080896115e-12,
+      "max_mm": 5.712772433100585e-12,
+      "up_difference_deg": 1.7075472925031877e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "4e4b4938c9e41b111948f69527f50f7370cd2db751766b5bab68244b3a53e82d",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{6b80ccf3-6be0-48b5-bc19-5c711efe87c0}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_040__6b80ccf3-6be0-48b5-bc19-5c711efe87c0.stl"
+      },
+      "other": {
+        "geometry_sha256": "b7bf28c183b07803bfe6e281e63edfb1a3634c0fe31d62b360b80435bb4d2fd8",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{db4379bc-aeb8-409e-af0c-b56d31a2a8fa}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_079__db4379bc-aeb8-409e-af0c-b56d31a2a8fa.stl"
+      }
+    },
+    {
+      "rms_mm": 1.4563003382688979e-12,
+      "max_mm": 1.4568909498287785e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "4e4b4938c9e41b111948f69527f50f7370cd2db751766b5bab68244b3a53e82d",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{6b80ccf3-6be0-48b5-bc19-5c711efe87c0}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_040__6b80ccf3-6be0-48b5-bc19-5c711efe87c0.stl"
+      },
+      "other": {
+        "geometry_sha256": "56a14d1126a3d92a39766fc6c2f382b084b9c6c48defc2cc3f158a5e6865fed6",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{e42647ac-2e6f-40e4-a416-aa52c265d7e9}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_084__e42647ac-2e6f-40e4-a416-aa52c265d7e9.stl"
+      }
+    },
+    {
+      "rms_mm": 5.888588551250777e-12,
+      "max_mm": 5.8973003152210224e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "4e4b4938c9e41b111948f69527f50f7370cd2db751766b5bab68244b3a53e82d",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{6b80ccf3-6be0-48b5-bc19-5c711efe87c0}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_040__6b80ccf3-6be0-48b5-bc19-5c711efe87c0.stl"
+      },
+      "other": {
+        "geometry_sha256": "3045178b48e0977e763020f91311a337ec4a8c5c9aef2b00d2eb15947677b5f5",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{efb31c16-59d2-4362-9ce1-8608dd6f2dff}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_088__efb31c16-59d2-4362-9ce1-8608dd6f2dff.stl"
+      }
+    },
+    {
+      "rms_mm": 5.0737159190987356e-12,
+      "max_mm": 5.100934783186331e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "14385cd54a38de476925b6e49e8132a034e3598698970443ceb1b6851fb5f93f",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{78377002-8e79-4813-badb-5d863a95e766}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_044__78377002-8e79-4813-badb-5d863a95e766.stl"
+      },
+      "other": {
+        "geometry_sha256": "eebb40b075e7486a2b5cb9ab6b6ea117bfedb5f0399e0d1837a4205737fb3246",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{88fed10a-f0a7-4225-8ef2-4074adfb772f}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_047__88fed10a-f0a7-4225-8ef2-4074adfb772f.stl"
+      }
+    },
+    {
+      "rms_mm": 1.456595686775516e-12,
+      "max_mm": 1.463722347205183e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "14385cd54a38de476925b6e49e8132a034e3598698970443ceb1b6851fb5f93f",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{78377002-8e79-4813-badb-5d863a95e766}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_044__78377002-8e79-4813-badb-5d863a95e766.stl"
+      },
+      "other": {
+        "geometry_sha256": "2692b2066657085e1a69c6d6f05999ae659e3c6807f29226dc5b205d2549920e",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_051__907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1.stl"
+      }
+    },
+    {
+      "rms_mm": 4.860422070793254e-12,
+      "max_mm": 4.88853563572548e-12,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "14385cd54a38de476925b6e49e8132a034e3598698970443ceb1b6851fb5f93f",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{78377002-8e79-4813-badb-5d863a95e766}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_044__78377002-8e79-4813-badb-5d863a95e766.stl"
+      },
+      "other": {
+        "geometry_sha256": "b33ff54d4aea8d77cd5319ed305795a69b87d124df4d52b1c2ef68cc3736a62a",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{c7e0fe13-534a-4523-a6bc-6eeae1e02f5e}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_069__c7e0fe13-534a-4523-a6bc-6eeae1e02f5e.stl"
+      }
+    },
+    {
+      "rms_mm": 7.95542344087349e-13,
+      "max_mm": 8.242448867604936e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "14385cd54a38de476925b6e49e8132a034e3598698970443ceb1b6851fb5f93f",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{78377002-8e79-4813-badb-5d863a95e766}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_044__78377002-8e79-4813-badb-5d863a95e766.stl"
+      },
+      "other": {
+        "geometry_sha256": "b7bf28c183b07803bfe6e281e63edfb1a3634c0fe31d62b360b80435bb4d2fd8",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{db4379bc-aeb8-409e-af0c-b56d31a2a8fa}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_079__db4379bc-aeb8-409e-af0c-b56d31a2a8fa.stl"
+      }
+    },
+    {
+      "rms_mm": 5.119299716675483e-12,
+      "max_mm": 5.130198512225832e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "14385cd54a38de476925b6e49e8132a034e3598698970443ceb1b6851fb5f93f",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{78377002-8e79-4813-badb-5d863a95e766}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_044__78377002-8e79-4813-badb-5d863a95e766.stl"
+      },
+      "other": {
+        "geometry_sha256": "56a14d1126a3d92a39766fc6c2f382b084b9c6c48defc2cc3f158a5e6865fed6",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{e42647ac-2e6f-40e4-a416-aa52c265d7e9}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_084__e42647ac-2e6f-40e4-a416-aa52c265d7e9.stl"
+      }
+    },
+    {
+      "rms_mm": 1.6627484162604744e-12,
+      "max_mm": 1.679829763154243e-12,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "14385cd54a38de476925b6e49e8132a034e3598698970443ceb1b6851fb5f93f",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{78377002-8e79-4813-badb-5d863a95e766}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_044__78377002-8e79-4813-badb-5d863a95e766.stl"
+      },
+      "other": {
+        "geometry_sha256": "3045178b48e0977e763020f91311a337ec4a8c5c9aef2b00d2eb15947677b5f5",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{efb31c16-59d2-4362-9ce1-8608dd6f2dff}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_088__efb31c16-59d2-4362-9ce1-8608dd6f2dff.stl"
+      }
+    },
+    {
+      "rms_mm": 4.852706952368156e-12,
+      "max_mm": 4.860118805127057e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "eebb40b075e7486a2b5cb9ab6b6ea117bfedb5f0399e0d1837a4205737fb3246",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{88fed10a-f0a7-4225-8ef2-4074adfb772f}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_047__88fed10a-f0a7-4225-8ef2-4074adfb772f.stl"
+      },
+      "other": {
+        "geometry_sha256": "2692b2066657085e1a69c6d6f05999ae659e3c6807f29226dc5b205d2549920e",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_051__907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1.stl"
+      }
+    },
+    {
+      "rms_mm": 1.4544461198904412e-12,
+      "max_mm": 1.4604443367853873e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "eebb40b075e7486a2b5cb9ab6b6ea117bfedb5f0399e0d1837a4205737fb3246",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{88fed10a-f0a7-4225-8ef2-4074adfb772f}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_047__88fed10a-f0a7-4225-8ef2-4074adfb772f.stl"
+      },
+      "other": {
+        "geometry_sha256": "b33ff54d4aea8d77cd5319ed305795a69b87d124df4d52b1c2ef68cc3736a62a",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{c7e0fe13-534a-4523-a6bc-6eeae1e02f5e}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_069__c7e0fe13-534a-4523-a6bc-6eeae1e02f5e.stl"
+      }
+    },
+    {
+      "rms_mm": 5.833064495465273e-12,
+      "max_mm": 5.842261302658824e-12,
+      "up_difference_deg": 1.7075472925031877e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "eebb40b075e7486a2b5cb9ab6b6ea117bfedb5f0399e0d1837a4205737fb3246",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{88fed10a-f0a7-4225-8ef2-4074adfb772f}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_047__88fed10a-f0a7-4225-8ef2-4074adfb772f.stl"
+      },
+      "other": {
+        "geometry_sha256": "b7bf28c183b07803bfe6e281e63edfb1a3634c0fe31d62b360b80435bb4d2fd8",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{db4379bc-aeb8-409e-af0c-b56d31a2a8fa}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_079__db4379bc-aeb8-409e-af0c-b56d31a2a8fa.stl"
+      }
+    },
+    {
+      "rms_mm": 5.692207566681558e-14,
+      "max_mm": 5.739584601870544e-14,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "eebb40b075e7486a2b5cb9ab6b6ea117bfedb5f0399e0d1837a4205737fb3246",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{88fed10a-f0a7-4225-8ef2-4074adfb772f}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_047__88fed10a-f0a7-4225-8ef2-4074adfb772f.stl"
+      },
+      "other": {
+        "geometry_sha256": "56a14d1126a3d92a39766fc6c2f382b084b9c6c48defc2cc3f158a5e6865fed6",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{e42647ac-2e6f-40e4-a416-aa52c265d7e9}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_084__e42647ac-2e6f-40e4-a416-aa52c265d7e9.stl"
+      }
+    },
+    {
+      "rms_mm": 5.640997909846062e-12,
+      "max_mm": 5.65592638329581e-12,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "eebb40b075e7486a2b5cb9ab6b6ea117bfedb5f0399e0d1837a4205737fb3246",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{88fed10a-f0a7-4225-8ef2-4074adfb772f}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_047__88fed10a-f0a7-4225-8ef2-4074adfb772f.stl"
+      },
+      "other": {
+        "geometry_sha256": "3045178b48e0977e763020f91311a337ec4a8c5c9aef2b00d2eb15947677b5f5",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{efb31c16-59d2-4362-9ce1-8608dd6f2dff}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_088__efb31c16-59d2-4362-9ce1-8608dd6f2dff.stl"
+      }
+    },
+    {
+      "rms_mm": 5.067429422388918e-12,
+      "max_mm": 5.1009317675053135e-12,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "2692b2066657085e1a69c6d6f05999ae659e3c6807f29226dc5b205d2549920e",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_051__907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1.stl"
+      },
+      "other": {
+        "geometry_sha256": "b33ff54d4aea8d77cd5319ed305795a69b87d124df4d52b1c2ef68cc3736a62a",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{c7e0fe13-534a-4523-a6bc-6eeae1e02f5e}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_069__c7e0fe13-534a-4523-a6bc-6eeae1e02f5e.stl"
+      }
+    },
+    {
+      "rms_mm": 1.6596621593470406e-12,
+      "max_mm": 1.6736420871643692e-12,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "2692b2066657085e1a69c6d6f05999ae659e3c6807f29226dc5b205d2549920e",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_051__907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1.stl"
+      },
+      "other": {
+        "geometry_sha256": "b7bf28c183b07803bfe6e281e63edfb1a3634c0fe31d62b360b80435bb4d2fd8",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{db4379bc-aeb8-409e-af0c-b56d31a2a8fa}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_079__db4379bc-aeb8-409e-af0c-b56d31a2a8fa.stl"
+      }
+    },
+    {
+      "rms_mm": 4.910478729418928e-12,
+      "max_mm": 4.945378717008552e-12,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "2692b2066657085e1a69c6d6f05999ae659e3c6807f29226dc5b205d2549920e",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_051__907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1.stl"
+      },
+      "other": {
+        "geometry_sha256": "56a14d1126a3d92a39766fc6c2f382b084b9c6c48defc2cc3f158a5e6865fed6",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{e42647ac-2e6f-40e4-a416-aa52c265d7e9}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_084__e42647ac-2e6f-40e4-a416-aa52c265d7e9.stl"
+      }
+    },
+    {
+      "rms_mm": 7.913714448534807e-13,
+      "max_mm": 8.242678561452396e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "2692b2066657085e1a69c6d6f05999ae659e3c6807f29226dc5b205d2549920e",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_051__907a1d61-5f5b-4b1a-93bd-da0af4bdb2e1.stl"
+      },
+      "other": {
+        "geometry_sha256": "3045178b48e0977e763020f91311a337ec4a8c5c9aef2b00d2eb15947677b5f5",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{efb31c16-59d2-4362-9ce1-8608dd6f2dff}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_088__efb31c16-59d2-4362-9ce1-8608dd6f2dff.stl"
+      }
+    },
+    {
+      "rms_mm": 5.6409965793360795e-12,
+      "max_mm": 5.655922408254027e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "b33ff54d4aea8d77cd5319ed305795a69b87d124df4d52b1c2ef68cc3736a62a",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{c7e0fe13-534a-4523-a6bc-6eeae1e02f5e}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_069__c7e0fe13-534a-4523-a6bc-6eeae1e02f5e.stl"
+      },
+      "other": {
+        "geometry_sha256": "b7bf28c183b07803bfe6e281e63edfb1a3634c0fe31d62b360b80435bb4d2fd8",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{db4379bc-aeb8-409e-af0c-b56d31a2a8fa}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_079__db4379bc-aeb8-409e-af0c-b56d31a2a8fa.stl"
+      }
+    },
+    {
+      "rms_mm": 1.4587281162533846e-12,
+      "max_mm": 1.466200458832115e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "b33ff54d4aea8d77cd5319ed305795a69b87d124df4d52b1c2ef68cc3736a62a",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{c7e0fe13-534a-4523-a6bc-6eeae1e02f5e}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_069__c7e0fe13-534a-4523-a6bc-6eeae1e02f5e.stl"
+      },
+      "other": {
+        "geometry_sha256": "56a14d1126a3d92a39766fc6c2f382b084b9c6c48defc2cc3f158a5e6865fed6",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{e42647ac-2e6f-40e4-a416-aa52c265d7e9}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_084__e42647ac-2e6f-40e4-a416-aa52c265d7e9.stl"
+      }
+    },
+    {
+      "rms_mm": 5.825628807951487e-12,
+      "max_mm": 5.8404765179819e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "b33ff54d4aea8d77cd5319ed305795a69b87d124df4d52b1c2ef68cc3736a62a",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{c7e0fe13-534a-4523-a6bc-6eeae1e02f5e}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_069__c7e0fe13-534a-4523-a6bc-6eeae1e02f5e.stl"
+      },
+      "other": {
+        "geometry_sha256": "3045178b48e0977e763020f91311a337ec4a8c5c9aef2b00d2eb15947677b5f5",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{efb31c16-59d2-4362-9ce1-8608dd6f2dff}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_088__efb31c16-59d2-4362-9ce1-8608dd6f2dff.stl"
+      }
+    },
+    {
+      "rms_mm": 5.888574367825438e-12,
+      "max_mm": 5.89729951262229e-12,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "b7bf28c183b07803bfe6e281e63edfb1a3634c0fe31d62b360b80435bb4d2fd8",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{db4379bc-aeb8-409e-af0c-b56d31a2a8fa}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_079__db4379bc-aeb8-409e-af0c-b56d31a2a8fa.stl"
+      },
+      "other": {
+        "geometry_sha256": "56a14d1126a3d92a39766fc6c2f382b084b9c6c48defc2cc3f158a5e6865fed6",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{e42647ac-2e6f-40e4-a416-aa52c265d7e9}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_084__e42647ac-2e6f-40e4-a416-aa52c265d7e9.stl"
+      }
+    },
+    {
+      "rms_mm": 1.4565250852057958e-12,
+      "max_mm": 1.4637191135518412e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "b7bf28c183b07803bfe6e281e63edfb1a3634c0fe31d62b360b80435bb4d2fd8",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{db4379bc-aeb8-409e-af0c-b56d31a2a8fa}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_079__db4379bc-aeb8-409e-af0c-b56d31a2a8fa.stl"
+      },
+      "other": {
+        "geometry_sha256": "3045178b48e0977e763020f91311a337ec4a8c5c9aef2b00d2eb15947677b5f5",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{efb31c16-59d2-4362-9ce1-8608dd6f2dff}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_088__efb31c16-59d2-4362-9ce1-8608dd6f2dff.stl"
+      }
+    },
+    {
+      "rms_mm": 5.705319595645191e-12,
+      "max_mm": 5.712772433100585e-12,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "56a14d1126a3d92a39766fc6c2f382b084b9c6c48defc2cc3f158a5e6865fed6",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{e42647ac-2e6f-40e4-a416-aa52c265d7e9}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_084__e42647ac-2e6f-40e4-a416-aa52c265d7e9.stl"
+      },
+      "other": {
+        "geometry_sha256": "3045178b48e0977e763020f91311a337ec4a8c5c9aef2b00d2eb15947677b5f5",
+        "project_relative": "0701-0710/0706/0706-铝13",
+        "member": "Stl{efb31c16-59d2-4362-9ce1-8608dd6f2dff}_vertices",
+        "stl_file": "0701-0710/0706/0706-铝13/part_088__efb31c16-59d2-4362-9ce1-8608dd6f2dff.stl"
+      }
+    },
+    {
+      "rms_mm": 3.1172767076431823e-12,
+      "max_mm": 3.159337407994083e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "8bca3d62ff91d22a6e21cf723505c035aa55635c77e079af84203354b697057e",
+        "project_relative": "0701-0710/0707/0707-铝8-9-10",
+        "member": "Stl{f1de8c29-2d33-4aeb-b1df-ae52a134896e}_vertices",
+        "stl_file": "0701-0710/0707/0707-铝8-9-10/part_019__f1de8c29-2d33-4aeb-b1df-ae52a134896e.stl"
+      },
+      "other": {
+        "geometry_sha256": "371c2d684ab9551098f220c4da8f137e189ce0a284df1298a287197a672b6931",
+        "project_relative": "0701-0710/0708/0708-铝15",
+        "member": "Stl{f8909b8a-5d5f-4bc0-b0da-37fd87cdff94}_vertices",
+        "stl_file": "0701-0710/0708/0708-铝15/part_078__f8909b8a-5d5f-4bc0-b0da-37fd87cdff94.stl"
+      }
+    },
+    {
+      "rms_mm": 8.171852058001553e-05,
+      "max_mm": 0.00019614276047795888,
+      "up_difference_deg": 0.22124913767261883,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "66aedc55ae8201599576a71dc92084b45079f910c7176d86667b0edc0b04b75e",
+        "project_relative": "0701-0710/0709/0709-铝1",
+        "member": "Stl{3aabf93a-d34f-40a4-b589-e39c36c8a110}_vertices",
+        "stl_file": "0701-0710/0709/0709-铝1/part_009__3aabf93a-d34f-40a4-b589-e39c36c8a110.stl"
+      },
+      "other": {
+        "geometry_sha256": "1e58a78ae7158536adc5e897dca1e28d466f8c87c296a21414110553dddaa6d9",
+        "project_relative": "0711-0720/0713/0713-铝3",
+        "member": "Stl{5f298be3-5f0b-444b-a2a8-82dd15ea690e}_vertices",
+        "stl_file": "0711-0720/0713/0713-铝3/part_006__5f298be3-5f0b-444b-a2a8-82dd15ea690e.stl"
+      }
+    },
+    {
+      "rms_mm": 2.9845473832025252e-12,
+      "max_mm": 3.2880321911933826e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "452b5f283725323e86a62d7cbe9d24971a7036aa05d9b9b75fd29310a6ac96aa",
+        "project_relative": "0711-0720/0713/0713-铝6",
+        "member": "Stl{5d2af84c-7706-468a-8210-9e84b98c973c}_vertices",
+        "stl_file": "0711-0720/0713/0713-铝6/part_005__5d2af84c-7706-468a-8210-9e84b98c973c.stl"
+      },
+      "other": {
+        "geometry_sha256": "d614ba48f02363f7afda28f428a98a3d20cbf1c8a28726590e29026a007b71eb",
+        "project_relative": "0711-0720/0714/0714-铝3-8",
+        "member": "Stl{9b225558-d4f4-4068-a03d-e20cc5fc56fa}_vertices",
+        "stl_file": "0711-0720/0714/0714-铝3-8/part_006__9b225558-d4f4-4068-a03d-e20cc5fc56fa.stl"
+      }
+    },
+    {
+      "rms_mm": 2.12113488824581e-12,
+      "max_mm": 2.1868107078039043e-12,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "6c9b326e1e35ed3e10565417042752e86e0c0a36bc1d1ebc7226c505710c8ed4",
+        "project_relative": "0711-0720/0714/0714-铝12",
+        "member": "Stl{a558b224-bfc0-4270-a758-b9732e240403}_vertices",
+        "stl_file": "0711-0720/0714/0714-铝12/part_021__a558b224-bfc0-4270-a758-b9732e240403.stl"
+      },
+      "other": {
+        "geometry_sha256": "3d23500d408a29c58f6f1cb99bc840cac15974e71e1b496cba608792f1a8dd16",
+        "project_relative": "0711-0720/0716/0716-铝3-4",
+        "member": "Stl{6b284e5e-c286-43e4-b4b4-c32f38085134}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝3-4/part_005__6b284e5e-c286-43e4-b4b4-c32f38085134.stl"
+      }
+    },
+    {
+      "rms_mm": 8.771911267302124e-13,
+      "max_mm": 9.096334690647097e-13,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "6c9b326e1e35ed3e10565417042752e86e0c0a36bc1d1ebc7226c505710c8ed4",
+        "project_relative": "0711-0720/0714/0714-铝12",
+        "member": "Stl{a558b224-bfc0-4270-a758-b9732e240403}_vertices",
+        "stl_file": "0711-0720/0714/0714-铝12/part_021__a558b224-bfc0-4270-a758-b9732e240403.stl"
+      },
+      "other": {
+        "geometry_sha256": "d2b45d9f96cc7bbe7dd8728b76ce867f1dc275431bdb8891a8ade8210090e609",
+        "project_relative": "0711-0720/0716/0716-铝2",
+        "member": "Stl{de878055-e52f-4318-8ddc-2c2e6acb065d}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝2/part_027__de878055-e52f-4318-8ddc-2c2e6acb065d.stl"
+      }
+    },
+    {
+      "rms_mm": 9.62207912044212e-12,
+      "max_mm": 1.0004538232742795e-11,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "6c9b326e1e35ed3e10565417042752e86e0c0a36bc1d1ebc7226c505710c8ed4",
+        "project_relative": "0711-0720/0714/0714-铝12",
+        "member": "Stl{a558b224-bfc0-4270-a758-b9732e240403}_vertices",
+        "stl_file": "0711-0720/0714/0714-铝12/part_021__a558b224-bfc0-4270-a758-b9732e240403.stl"
+      },
+      "other": {
+        "geometry_sha256": "ce22ad3e606c74a4a98354db14c17dde3550d0c8d596c281547d6d04510ae886",
+        "project_relative": "0711-0720/0717/0717-铝7",
+        "member": "Stl{5d1ebcdc-cdb3-4386-a840-b3b3d3051e78}_vertices",
+        "stl_file": "0711-0720/0717/0717-铝7/part_008__5d1ebcdc-cdb3-4386-a840-b3b3d3051e78.stl"
+      }
+    },
+    {
+      "rms_mm": 6.976691184776631e-13,
+      "max_mm": 7.289559011057346e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "6c9b326e1e35ed3e10565417042752e86e0c0a36bc1d1ebc7226c505710c8ed4",
+        "project_relative": "0711-0720/0714/0714-铝12",
+        "member": "Stl{a558b224-bfc0-4270-a758-b9732e240403}_vertices",
+        "stl_file": "0711-0720/0714/0714-铝12/part_021__a558b224-bfc0-4270-a758-b9732e240403.stl"
+      },
+      "other": {
+        "geometry_sha256": "bd82b34d588fd0d9fefb58ad3ae61f13a4d847dfd05c6219313857c6f0941c68",
+        "project_relative": "0726-0731/0731/0731-铝8",
+        "member": "Stl{1e8b3dab-ba17-4ecf-90e4-3b7d1f1bb442}_vertices",
+        "stl_file": "0726-0731/0731/0731-铝8/part_002__1e8b3dab-ba17-4ecf-90e4-3b7d1f1bb442.stl"
+      }
+    },
+    {
+      "rms_mm": 1.3526708419126511e-12,
+      "max_mm": 1.3973440409584994e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "3d23500d408a29c58f6f1cb99bc840cac15974e71e1b496cba608792f1a8dd16",
+        "project_relative": "0711-0720/0716/0716-铝3-4",
+        "member": "Stl{6b284e5e-c286-43e4-b4b4-c32f38085134}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝3-4/part_005__6b284e5e-c286-43e4-b4b4-c32f38085134.stl"
+      },
+      "other": {
+        "geometry_sha256": "d2b45d9f96cc7bbe7dd8728b76ce867f1dc275431bdb8891a8ade8210090e609",
+        "project_relative": "0711-0720/0716/0716-铝2",
+        "member": "Stl{de878055-e52f-4318-8ddc-2c2e6acb065d}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝2/part_027__de878055-e52f-4318-8ddc-2c2e6acb065d.stl"
+      }
+    },
+    {
+      "rms_mm": 7.587909839236761e-12,
+      "max_mm": 7.737027385608421e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "3d23500d408a29c58f6f1cb99bc840cac15974e71e1b496cba608792f1a8dd16",
+        "project_relative": "0711-0720/0716/0716-铝3-4",
+        "member": "Stl{6b284e5e-c286-43e4-b4b4-c32f38085134}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝3-4/part_005__6b284e5e-c286-43e4-b4b4-c32f38085134.stl"
+      },
+      "other": {
+        "geometry_sha256": "ce22ad3e606c74a4a98354db14c17dde3550d0c8d596c281547d6d04510ae886",
+        "project_relative": "0711-0720/0717/0717-铝7",
+        "member": "Stl{5d1ebcdc-cdb3-4386-a840-b3b3d3051e78}_vertices",
+        "stl_file": "0711-0720/0717/0717-铝7/part_008__5d1ebcdc-cdb3-4386-a840-b3b3d3051e78.stl"
+      }
+    },
+    {
+      "rms_mm": 1.6038656495138426e-12,
+      "max_mm": 1.6417268755337188e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "3d23500d408a29c58f6f1cb99bc840cac15974e71e1b496cba608792f1a8dd16",
+        "project_relative": "0711-0720/0716/0716-铝3-4",
+        "member": "Stl{6b284e5e-c286-43e4-b4b4-c32f38085134}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝3-4/part_005__6b284e5e-c286-43e4-b4b4-c32f38085134.stl"
+      },
+      "other": {
+        "geometry_sha256": "bd82b34d588fd0d9fefb58ad3ae61f13a4d847dfd05c6219313857c6f0941c68",
+        "project_relative": "0726-0731/0731/0731-铝8",
+        "member": "Stl{1e8b3dab-ba17-4ecf-90e4-3b7d1f1bb442}_vertices",
+        "stl_file": "0726-0731/0731/0731-铝8/part_002__1e8b3dab-ba17-4ecf-90e4-3b7d1f1bb442.stl"
+      }
+    },
+    {
+      "rms_mm": 9.062082719442962e-12,
+      "max_mm": 9.10364977805727e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "d2b45d9f96cc7bbe7dd8728b76ce867f1dc275431bdb8891a8ade8210090e609",
+        "project_relative": "0711-0720/0716/0716-铝2",
+        "member": "Stl{de878055-e52f-4318-8ddc-2c2e6acb065d}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝2/part_027__de878055-e52f-4318-8ddc-2c2e6acb065d.stl"
+      },
+      "other": {
+        "geometry_sha256": "ce22ad3e606c74a4a98354db14c17dde3550d0c8d596c281547d6d04510ae886",
+        "project_relative": "0711-0720/0717/0717-铝7",
+        "member": "Stl{5d1ebcdc-cdb3-4386-a840-b3b3d3051e78}_vertices",
+        "stl_file": "0711-0720/0717/0717-铝7/part_008__5d1ebcdc-cdb3-4386-a840-b3b3d3051e78.stl"
+      }
+    },
+    {
+      "rms_mm": 2.5615956117396363e-13,
+      "max_mm": 2.760406517490009e-13,
+      "up_difference_deg": 1.4787793334710982e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "d2b45d9f96cc7bbe7dd8728b76ce867f1dc275431bdb8891a8ade8210090e609",
+        "project_relative": "0711-0720/0716/0716-铝2",
+        "member": "Stl{de878055-e52f-4318-8ddc-2c2e6acb065d}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝2/part_027__de878055-e52f-4318-8ddc-2c2e6acb065d.stl"
+      },
+      "other": {
+        "geometry_sha256": "bd82b34d588fd0d9fefb58ad3ae61f13a4d847dfd05c6219313857c6f0941c68",
+        "project_relative": "0726-0731/0731/0731-铝8",
+        "member": "Stl{1e8b3dab-ba17-4ecf-90e4-3b7d1f1bb442}_vertices",
+        "stl_file": "0726-0731/0731/0731-铝8/part_002__1e8b3dab-ba17-4ecf-90e4-3b7d1f1bb442.stl"
+      }
+    },
+    {
+      "rms_mm": 9.353561147199717e-12,
+      "max_mm": 9.582150246758988e-12,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "ce22ad3e606c74a4a98354db14c17dde3550d0c8d596c281547d6d04510ae886",
+        "project_relative": "0711-0720/0717/0717-铝7",
+        "member": "Stl{5d1ebcdc-cdb3-4386-a840-b3b3d3051e78}_vertices",
+        "stl_file": "0711-0720/0717/0717-铝7/part_008__5d1ebcdc-cdb3-4386-a840-b3b3d3051e78.stl"
+      },
+      "other": {
+        "geometry_sha256": "bd82b34d588fd0d9fefb58ad3ae61f13a4d847dfd05c6219313857c6f0941c68",
+        "project_relative": "0726-0731/0731/0731-铝8",
+        "member": "Stl{1e8b3dab-ba17-4ecf-90e4-3b7d1f1bb442}_vertices",
+        "stl_file": "0726-0731/0731/0731-铝8/part_002__1e8b3dab-ba17-4ecf-90e4-3b7d1f1bb442.stl"
+      }
+    },
+    {
+      "rms_mm": 9.205087151199595e-12,
+      "max_mm": 9.233351801540103e-12,
+      "up_difference_deg": 180.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "3fa705023b929a6d4d9c5f9b1112805ad317f52c44b00e8a7b1eb177c879a19a",
+        "project_relative": "0711-0720/0714/0714-铝16",
+        "member": "Stl{e3c70c53-c86b-47ab-876e-cb78a6b394cf}_vertices",
+        "stl_file": "0711-0720/0714/0714-铝16/part_024__e3c70c53-c86b-47ab-876e-cb78a6b394cf.stl"
+      },
+      "other": {
+        "geometry_sha256": "b2106bdd301bc4a55daba8ecfcf474ea630e000b80e4da319990ac7531046738",
+        "project_relative": "0711-0720/0714/0714-铝3-8",
+        "member": "Stl{5b7f7c1f-9ff5-432c-a358-727d57a69f9f}_vertices",
+        "stl_file": "0711-0720/0714/0714-铝3-8/part_004__5b7f7c1f-9ff5-432c-a358-727d57a69f9f.stl"
+      }
+    },
+    {
+      "rms_mm": 8.170237809076352e-05,
+      "max_mm": 0.00018058551013266238,
+      "up_difference_deg": 60.00065445730462,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "b96975c84c1f31fe5db789d5cc8f94b2a89a2d5121b271cd6ba2a61c1d627fd2",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{be60f0cc-9c18-4925-8559-9eb7159593f5}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_037__be60f0cc-9c18-4925-8559-9eb7159593f5.stl"
+      },
+      "other": {
+        "geometry_sha256": "9bc8488f1cdab557094e7fb63d92439a01e310faf0f0ed058d067ad65b1b233d",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{d3442f22-86a5-4459-a8c9-e051d05a5716}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_044__d3442f22-86a5-4459-a8c9-e051d05a5716.stl"
+      }
+    },
+    {
+      "rms_mm": 8.1558886512649e-05,
+      "max_mm": 0.00018640947381366938,
+      "up_difference_deg": 120.00814404666536,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "b96975c84c1f31fe5db789d5cc8f94b2a89a2d5121b271cd6ba2a61c1d627fd2",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{be60f0cc-9c18-4925-8559-9eb7159593f5}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_037__be60f0cc-9c18-4925-8559-9eb7159593f5.stl"
+      },
+      "other": {
+        "geometry_sha256": "828b08968158717580363ad32925ca3ec488be8b5b9b50f2713cdf0e943ad391",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{8a7abceb-f25d-4093-955f-f945bfd1e5ef}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_027__8a7abceb-f25d-4093-955f-f945bfd1e5ef.stl"
+      }
+    },
+    {
+      "rms_mm": 7.030373561424154e-05,
+      "max_mm": 0.00013314790809197132,
+      "up_difference_deg": 60.00749133669363,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "9bc8488f1cdab557094e7fb63d92439a01e310faf0f0ed058d067ad65b1b233d",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{d3442f22-86a5-4459-a8c9-e051d05a5716}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_044__d3442f22-86a5-4459-a8c9-e051d05a5716.stl"
+      },
+      "other": {
+        "geometry_sha256": "828b08968158717580363ad32925ca3ec488be8b5b9b50f2713cdf0e943ad391",
+        "project_relative": "0711-0720/0716/0716-铝6",
+        "member": "Stl{8a7abceb-f25d-4093-955f-f945bfd1e5ef}_vertices",
+        "stl_file": "0711-0720/0716/0716-铝6/part_027__8a7abceb-f25d-4093-955f-f945bfd1e5ef.stl"
+      }
+    },
+    {
+      "rms_mm": 2.717650630547325e-12,
+      "max_mm": 2.734915818291198e-12,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "a47e73f332363833c69820ac2a1f484488a0ead3003fb0d37e9f8ed68e47b4da",
+        "project_relative": "0711-0720/0720/0720-铝1",
+        "member": "Stl{60bc4afc-897a-454e-91ae-9d137d77a28d}_vertices",
+        "stl_file": "0711-0720/0720/0720-铝1/part_005__60bc4afc-897a-454e-91ae-9d137d77a28d.stl"
+      },
+      "other": {
+        "geometry_sha256": "b7b522ba0c4e8874a8d13a965e0e03703e9ec339556acb713fd0a61348c6dc74",
+        "project_relative": "0711-0720/0720/0720-铝1",
+        "member": "Stl{86809a47-866a-487f-a8fc-dbe0deb26e9a}_vertices",
+        "stl_file": "0711-0720/0720/0720-铝1/part_009__86809a47-866a-487f-a8fc-dbe0deb26e9a.stl"
+      }
+    },
+    {
+      "rms_mm": 8.01481908853603e-13,
+      "max_mm": 8.589342012701889e-13,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "efd0fbb0df44a9c47555f756e8b73f22310d63d77e390132f63fa84d6f301fcf",
+        "project_relative": "0721-0725/0721/0721-铝2",
+        "member": "Stl{79947d6d-bc82-402e-94a5-f46cbd6f1e37}_vertices",
+        "stl_file": "0721-0725/0721/0721-铝2/part_008__79947d6d-bc82-402e-94a5-f46cbd6f1e37.stl"
+      },
+      "other": {
+        "geometry_sha256": "8dfc3d99d9a43513a52dcd48936f0fece57205a16f4194b25584df4c91cbd233",
+        "project_relative": "0721-0725/0721/0721-铝2",
+        "member": "Stl{fde1d8f6-7eeb-4afc-bd01-c790007fa941}_vertices",
+        "stl_file": "0721-0725/0721/0721-铝2/part_017__fde1d8f6-7eeb-4afc-bd01-c790007fa941.stl"
+      }
+    },
+    {
+      "rms_mm": 1.9540680819311867e-12,
+      "max_mm": 2.037858367912503e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "32e503e58ef1d73fff0f4d0be17dd40fa8db4e2ee807853f0910b95d22d25465",
+        "project_relative": "0726-0731/0726/0726-铝16",
+        "member": "Stl{eca6bffd-6fd5-465e-9862-72d057be9b23}_vertices",
+        "stl_file": "0726-0731/0726/0726-铝16/part_048__eca6bffd-6fd5-465e-9862-72d057be9b23.stl"
+      },
+      "other": {
+        "geometry_sha256": "035a6b1410a15e048175a4abba0645801c15ace58680c95ea9fffb71cbc10dc0",
+        "project_relative": "0726-0731/0726/0726-铝9",
+        "member": "Stl{f39d6d0b-c63e-4437-8243-43fb2764c7ff}_vertices",
+        "stl_file": "0726-0731/0726/0726-铝9/part_046__f39d6d0b-c63e-4437-8243-43fb2764c7ff.stl"
+      }
+    },
+    {
+      "rms_mm": 1.7051021807078547e-12,
+      "max_mm": 1.7524640274008553e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "f4dddc597d0cadd35feb77002880d76ee220e434c2f07cb271c7406acace2d74",
+        "project_relative": "0721-0725/0722/0722-铝5",
+        "member": "Stl{392184a3-021c-4df9-83b5-43f62ac33da6}_vertices",
+        "stl_file": "0721-0725/0722/0722-铝5/part_001__392184a3-021c-4df9-83b5-43f62ac33da6.stl"
+      },
+      "other": {
+        "geometry_sha256": "31523d8aa756a415a676b8eab3ab67e41267e54f144aac77f480ed97561ce835",
+        "project_relative": "0721-0725/0722/0722-铝5",
+        "member": "Stl{d04a5cd3-80a8-4a9d-9142-f4eaad8d5dbe}_vertices",
+        "stl_file": "0721-0725/0722/0722-铝5/part_008__d04a5cd3-80a8-4a9d-9142-f4eaad8d5dbe.stl"
+      }
+    },
+    {
+      "rms_mm": 4.087999552060004e-05,
+      "max_mm": 7.098027545503473e-05,
+      "up_difference_deg": 1.9090959104164224e-06,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "e7ae26c0a3274a20f10b565f322ea746ab0dc77ace0cd2f44d737c01544bddc5",
+        "project_relative": "0721-0725/0722/0722-铝6",
+        "member": "Stl{1b9dce13-59e2-46b0-a6c2-2d3c1c90dc58}_vertices",
+        "stl_file": "0721-0725/0722/0722-铝6/part_006__1b9dce13-59e2-46b0-a6c2-2d3c1c90dc58.stl"
+      },
+      "other": {
+        "geometry_sha256": "dbe8ff76b8291951b75bae30754d74b7471a0c82ae134a57f6ffcf29a4aa5fe3",
+        "project_relative": "0721-0725/0722/0722-铝6",
+        "member": "Stl{60eef843-4b12-4ad7-8566-dc4e62c16746}_vertices",
+        "stl_file": "0721-0725/0722/0722-铝6/part_020__60eef843-4b12-4ad7-8566-dc4e62c16746.stl"
+      }
+    },
+    {
+      "rms_mm": 4.082209877882365e-05,
+      "max_mm": 7.038641318206204e-05,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "457eb6129e71725a7567baccf52ac3100f9df8d3140d72dee649b56d22795de1",
+        "project_relative": "0726-0731/0726/0726-铝9",
+        "member": "Stl{619d9cfa-89e6-44cb-895b-e17e31ddea8a}_vertices",
+        "stl_file": "0726-0731/0726/0726-铝9/part_018__619d9cfa-89e6-44cb-895b-e17e31ddea8a.stl"
+      },
+      "other": {
+        "geometry_sha256": "00c2db5e8696ef3b7987361992ed581f69b5587b9ce11439acf419bf5fa3b858",
+        "project_relative": "0726-0731/0726/0726-铝6-7",
+        "member": "Stl{6db4013c-4c3e-440b-ae25-9b895d07dbc8}_vertices",
+        "stl_file": "0726-0731/0726/0726-铝6-7/part_028__6db4013c-4c3e-440b-ae25-9b895d07dbc8.stl"
+      }
+    },
+    {
+      "rms_mm": 5.7898675457084335e-05,
+      "max_mm": 0.00011587731975782548,
+      "up_difference_deg": 0.262736148357504,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "8d0a8b37137fba4dd851c05155a551adb91b6f81c55ea34699356ba4f12563ad",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{13108850-efe9-43c4-bbc0-1a21b5c9ea76}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_003__13108850-efe9-43c4-bbc0-1a21b5c9ea76.stl"
+      },
+      "other": {
+        "geometry_sha256": "41e15c32605cdc20eb90a753ddb1fa5f0325f599b220c1dfef981f2c016a196e",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{19d46b83-a417-4353-ab24-f919fee1c0a2}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_004__19d46b83-a417-4353-ab24-f919fee1c0a2.stl"
+      }
+    },
+    {
+      "rms_mm": 6.049579235327546e-05,
+      "max_mm": 0.000129312749783487,
+      "up_difference_deg": 1.0596232531420313,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "8d0a8b37137fba4dd851c05155a551adb91b6f81c55ea34699356ba4f12563ad",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{13108850-efe9-43c4-bbc0-1a21b5c9ea76}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_003__13108850-efe9-43c4-bbc0-1a21b5c9ea76.stl"
+      },
+      "other": {
+        "geometry_sha256": "4ae4ca4d9e2ee495496de6f028bf52c81ee5231a3a6693dec2a36c2f02eefb32",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{4df4886b-5033-4df0-a07b-c33c62e4aa2a}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_007__4df4886b-5033-4df0-a07b-c33c62e4aa2a.stl"
+      }
+    },
+    {
+      "rms_mm": 5.857109772959053e-05,
+      "max_mm": 0.0001249736567615807,
+      "up_difference_deg": 1.6859653139966233,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "8d0a8b37137fba4dd851c05155a551adb91b6f81c55ea34699356ba4f12563ad",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{13108850-efe9-43c4-bbc0-1a21b5c9ea76}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_003__13108850-efe9-43c4-bbc0-1a21b5c9ea76.stl"
+      },
+      "other": {
+        "geometry_sha256": "623d3f2b54e5202ff08f8aa72a0624346d3b3d24355695db56994071ca2557fa",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{754a28c8-e03b-4972-bfa5-9ef34d804ee5}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_011__754a28c8-e03b-4972-bfa5-9ef34d804ee5.stl"
+      }
+    },
+    {
+      "rms_mm": 5.879576537205776e-05,
+      "max_mm": 0.00012473799021119742,
+      "up_difference_deg": 1.3192097538988088,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "8d0a8b37137fba4dd851c05155a551adb91b6f81c55ea34699356ba4f12563ad",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{13108850-efe9-43c4-bbc0-1a21b5c9ea76}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_003__13108850-efe9-43c4-bbc0-1a21b5c9ea76.stl"
+      },
+      "other": {
+        "geometry_sha256": "bf86149ffb648b926acb2216c9c6bf7815b773273ab6cfad33a970730f87aef6",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e45ccd15-042b-404f-b315-794473478691}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_022__e45ccd15-042b-404f-b315-794473478691.stl"
+      }
+    },
+    {
+      "rms_mm": 5.733653822289707e-05,
+      "max_mm": 0.00011069011218333837,
+      "up_difference_deg": 0.17505544367562864,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "8d0a8b37137fba4dd851c05155a551adb91b6f81c55ea34699356ba4f12563ad",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{13108850-efe9-43c4-bbc0-1a21b5c9ea76}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_003__13108850-efe9-43c4-bbc0-1a21b5c9ea76.stl"
+      },
+      "other": {
+        "geometry_sha256": "3011124f47329daf57341601ae368dccb76308c48a0d6c368a590dc7139b8d09",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_023__e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad.stl"
+      }
+    },
+    {
+      "rms_mm": 5.811996843788293e-05,
+      "max_mm": 0.00011917920250033778,
+      "up_difference_deg": 0.7968871044075077,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "41e15c32605cdc20eb90a753ddb1fa5f0325f599b220c1dfef981f2c016a196e",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{19d46b83-a417-4353-ab24-f919fee1c0a2}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_004__19d46b83-a417-4353-ab24-f919fee1c0a2.stl"
+      },
+      "other": {
+        "geometry_sha256": "4ae4ca4d9e2ee495496de6f028bf52c81ee5231a3a6693dec2a36c2f02eefb32",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{4df4886b-5033-4df0-a07b-c33c62e4aa2a}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_007__4df4886b-5033-4df0-a07b-c33c62e4aa2a.stl"
+      }
+    },
+    {
+      "rms_mm": 5.660326748630959e-05,
+      "max_mm": 0.00011718609223869449,
+      "up_difference_deg": 1.948701463754965,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "41e15c32605cdc20eb90a753ddb1fa5f0325f599b220c1dfef981f2c016a196e",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{19d46b83-a417-4353-ab24-f919fee1c0a2}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_004__19d46b83-a417-4353-ab24-f919fee1c0a2.stl"
+      },
+      "other": {
+        "geometry_sha256": "623d3f2b54e5202ff08f8aa72a0624346d3b3d24355695db56994071ca2557fa",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{754a28c8-e03b-4972-bfa5-9ef34d804ee5}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_011__754a28c8-e03b-4972-bfa5-9ef34d804ee5.stl"
+      }
+    },
+    {
+      "rms_mm": 5.7578452615806356e-05,
+      "max_mm": 0.00011743393481886064,
+      "up_difference_deg": 1.5819459032169876,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "41e15c32605cdc20eb90a753ddb1fa5f0325f599b220c1dfef981f2c016a196e",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{19d46b83-a417-4353-ab24-f919fee1c0a2}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_004__19d46b83-a417-4353-ab24-f919fee1c0a2.stl"
+      },
+      "other": {
+        "geometry_sha256": "bf86149ffb648b926acb2216c9c6bf7815b773273ab6cfad33a970730f87aef6",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e45ccd15-042b-404f-b315-794473478691}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_022__e45ccd15-042b-404f-b315-794473478691.stl"
+      }
+    },
+    {
+      "rms_mm": 5.665353106180669e-05,
+      "max_mm": 0.00011987902098459227,
+      "up_difference_deg": 0.08768070424614628,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "41e15c32605cdc20eb90a753ddb1fa5f0325f599b220c1dfef981f2c016a196e",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{19d46b83-a417-4353-ab24-f919fee1c0a2}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_004__19d46b83-a417-4353-ab24-f919fee1c0a2.stl"
+      },
+      "other": {
+        "geometry_sha256": "3011124f47329daf57341601ae368dccb76308c48a0d6c368a590dc7139b8d09",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_023__e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad.stl"
+      }
+    },
+    {
+      "rms_mm": 5.652360708876365e-05,
+      "max_mm": 0.00011678036242591232,
+      "up_difference_deg": 2.7455885665328457,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "4ae4ca4d9e2ee495496de6f028bf52c81ee5231a3a6693dec2a36c2f02eefb32",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{4df4886b-5033-4df0-a07b-c33c62e4aa2a}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_007__4df4886b-5033-4df0-a07b-c33c62e4aa2a.stl"
+      },
+      "other": {
+        "geometry_sha256": "623d3f2b54e5202ff08f8aa72a0624346d3b3d24355695db56994071ca2557fa",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{754a28c8-e03b-4972-bfa5-9ef34d804ee5}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_011__754a28c8-e03b-4972-bfa5-9ef34d804ee5.stl"
+      }
+    },
+    {
+      "rms_mm": 5.686872115922272e-05,
+      "max_mm": 0.00011583914926668771,
+      "up_difference_deg": 2.378833008253162,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "4ae4ca4d9e2ee495496de6f028bf52c81ee5231a3a6693dec2a36c2f02eefb32",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{4df4886b-5033-4df0-a07b-c33c62e4aa2a}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_007__4df4886b-5033-4df0-a07b-c33c62e4aa2a.stl"
+      },
+      "other": {
+        "geometry_sha256": "bf86149ffb648b926acb2216c9c6bf7815b773273ab6cfad33a970730f87aef6",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e45ccd15-042b-404f-b315-794473478691}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_022__e45ccd15-042b-404f-b315-794473478691.stl"
+      }
+    },
+    {
+      "rms_mm": 5.868202178568257e-05,
+      "max_mm": 0.00012149406894969163,
+      "up_difference_deg": 0.8845678076537768,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "4ae4ca4d9e2ee495496de6f028bf52c81ee5231a3a6693dec2a36c2f02eefb32",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{4df4886b-5033-4df0-a07b-c33c62e4aa2a}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_007__4df4886b-5033-4df0-a07b-c33c62e4aa2a.stl"
+      },
+      "other": {
+        "geometry_sha256": "3011124f47329daf57341601ae368dccb76308c48a0d6c368a590dc7139b8d09",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_023__e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad.stl"
+      }
+    },
+    {
+      "rms_mm": 5.5388627475505764e-05,
+      "max_mm": 0.00011603575191910722,
+      "up_difference_deg": 0.366755559712085,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "623d3f2b54e5202ff08f8aa72a0624346d3b3d24355695db56994071ca2557fa",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{754a28c8-e03b-4972-bfa5-9ef34d804ee5}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_011__754a28c8-e03b-4972-bfa5-9ef34d804ee5.stl"
+      },
+      "other": {
+        "geometry_sha256": "bf86149ffb648b926acb2216c9c6bf7815b773273ab6cfad33a970730f87aef6",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e45ccd15-042b-404f-b315-794473478691}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_022__e45ccd15-042b-404f-b315-794473478691.stl"
+      }
+    },
+    {
+      "rms_mm": 5.7108731745673647e-05,
+      "max_mm": 0.00012081298191169396,
+      "up_difference_deg": 1.8610207599850603,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "623d3f2b54e5202ff08f8aa72a0624346d3b3d24355695db56994071ca2557fa",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{754a28c8-e03b-4972-bfa5-9ef34d804ee5}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_011__754a28c8-e03b-4972-bfa5-9ef34d804ee5.stl"
+      },
+      "other": {
+        "geometry_sha256": "3011124f47329daf57341601ae368dccb76308c48a0d6c368a590dc7139b8d09",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_023__e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad.stl"
+      }
+    },
+    {
+      "rms_mm": 5.5679133203987154e-05,
+      "max_mm": 0.0001266652839280069,
+      "up_difference_deg": 1.4942651990647962,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "bf86149ffb648b926acb2216c9c6bf7815b773273ab6cfad33a970730f87aef6",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e45ccd15-042b-404f-b315-794473478691}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_022__e45ccd15-042b-404f-b315-794473478691.stl"
+      },
+      "other": {
+        "geometry_sha256": "3011124f47329daf57341601ae368dccb76308c48a0d6c368a590dc7139b8d09",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_023__e609abd7-7c6c-45f0-a7b7-5ce3848bc1ad.stl"
+      }
+    },
+    {
+      "rms_mm": 7.11179447342379e-05,
+      "max_mm": 0.0001600562685053181,
+      "up_difference_deg": 0.7715328459789891,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "0930b7d45cc96306f9a58af7198e560c9d04ba3a4dbab5cde85d30410f5d1811",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{3c4fb7c5-a178-4729-8f46-64e369cb4991}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_006__3c4fb7c5-a178-4729-8f46-64e369cb4991.stl"
+      },
+      "other": {
+        "geometry_sha256": "71deeb2cf3f7512afc8d4a666d61aec72f0c57e7e4342bbfd195ac4a6f98301b",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{50a9d678-070b-4e10-bb51-d75dc324969c}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_008__50a9d678-070b-4e10-bb51-d75dc324969c.stl"
+      }
+    },
+    {
+      "rms_mm": 5.4668536840871384e-05,
+      "max_mm": 0.00011132336483065777,
+      "up_difference_deg": 1.3543395043786117,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "0930b7d45cc96306f9a58af7198e560c9d04ba3a4dbab5cde85d30410f5d1811",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{3c4fb7c5-a178-4729-8f46-64e369cb4991}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_006__3c4fb7c5-a178-4729-8f46-64e369cb4991.stl"
+      },
+      "other": {
+        "geometry_sha256": "dda80b53943ac07ad8824d7ecac00b17ed106b8cb7b57e27a8c1c3ee9593a312",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{5e713e16-12ad-4c99-9758-1b60101c9843}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_010__5e713e16-12ad-4c99-9758-1b60101c9843.stl"
+      }
+    },
+    {
+      "rms_mm": 5.738210687095002e-05,
+      "max_mm": 0.00012161161710449485,
+      "up_difference_deg": 1.224760251241304,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "0930b7d45cc96306f9a58af7198e560c9d04ba3a4dbab5cde85d30410f5d1811",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{3c4fb7c5-a178-4729-8f46-64e369cb4991}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_006__3c4fb7c5-a178-4729-8f46-64e369cb4991.stl"
+      },
+      "other": {
+        "geometry_sha256": "dd4c7dfb000a810fe0538fc21eb4e2448858480aac587da6be5d9bd37ef41635",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{9ee62ce9-2d03-409d-b4cd-2009a703648f}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_016__9ee62ce9-2d03-409d-b4cd-2009a703648f.stl"
+      }
+    },
+    {
+      "rms_mm": 5.793917474531701e-05,
+      "max_mm": 0.00010827217545667889,
+      "up_difference_deg": 3.3629588947619213,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "0930b7d45cc96306f9a58af7198e560c9d04ba3a4dbab5cde85d30410f5d1811",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{3c4fb7c5-a178-4729-8f46-64e369cb4991}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_006__3c4fb7c5-a178-4729-8f46-64e369cb4991.stl"
+      },
+      "other": {
+        "geometry_sha256": "1553786e88f6b3c593663399a24c51a82eeedce7ad87bd6bceee6f5c242f3733",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a6c84630-cc87-48fb-b586-950afc694015}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_017__a6c84630-cc87-48fb-b586-950afc694015.stl"
+      }
+    },
+    {
+      "rms_mm": 5.5669853062966795e-05,
+      "max_mm": 0.0001190380390850945,
+      "up_difference_deg": 2.215670152243337,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "0930b7d45cc96306f9a58af7198e560c9d04ba3a4dbab5cde85d30410f5d1811",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{3c4fb7c5-a178-4729-8f46-64e369cb4991}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_006__3c4fb7c5-a178-4729-8f46-64e369cb4991.stl"
+      },
+      "other": {
+        "geometry_sha256": "a8d529cff8b6c3813ad6a82974595eb17db54e176b2b32cebb334b95b9461080",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a79f2d7f-469d-47d0-9d12-24d4dc363d53}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_018__a79f2d7f-469d-47d0-9d12-24d4dc363d53.stl"
+      }
+    },
+    {
+      "rms_mm": 6.979352884893661e-05,
+      "max_mm": 0.00013886810511512984,
+      "up_difference_deg": 0.5828066613630846,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "71deeb2cf3f7512afc8d4a666d61aec72f0c57e7e4342bbfd195ac4a6f98301b",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{50a9d678-070b-4e10-bb51-d75dc324969c}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_008__50a9d678-070b-4e10-bb51-d75dc324969c.stl"
+      },
+      "other": {
+        "geometry_sha256": "dda80b53943ac07ad8824d7ecac00b17ed106b8cb7b57e27a8c1c3ee9593a312",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{5e713e16-12ad-4c99-9758-1b60101c9843}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_010__5e713e16-12ad-4c99-9758-1b60101c9843.stl"
+      }
+    },
+    {
+      "rms_mm": 7.090644057270714e-05,
+      "max_mm": 0.00015279533302328918,
+      "up_difference_deg": 0.45322741005583167,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "71deeb2cf3f7512afc8d4a666d61aec72f0c57e7e4342bbfd195ac4a6f98301b",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{50a9d678-070b-4e10-bb51-d75dc324969c}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_008__50a9d678-070b-4e10-bb51-d75dc324969c.stl"
+      },
+      "other": {
+        "geometry_sha256": "dd4c7dfb000a810fe0538fc21eb4e2448858480aac587da6be5d9bd37ef41635",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{9ee62ce9-2d03-409d-b4cd-2009a703648f}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_016__9ee62ce9-2d03-409d-b4cd-2009a703648f.stl"
+      }
+    },
+    {
+      "rms_mm": 7.154331642220622e-05,
+      "max_mm": 0.00015430393634929368,
+      "up_difference_deg": 4.134491740206765,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "71deeb2cf3f7512afc8d4a666d61aec72f0c57e7e4342bbfd195ac4a6f98301b",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{50a9d678-070b-4e10-bb51-d75dc324969c}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_008__50a9d678-070b-4e10-bb51-d75dc324969c.stl"
+      },
+      "other": {
+        "geometry_sha256": "1553786e88f6b3c593663399a24c51a82eeedce7ad87bd6bceee6f5c242f3733",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a6c84630-cc87-48fb-b586-950afc694015}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_017__a6c84630-cc87-48fb-b586-950afc694015.stl"
+      }
+    },
+    {
+      "rms_mm": 7.001201859338186e-05,
+      "max_mm": 0.00015073641471537538,
+      "up_difference_deg": 2.987202997111398,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "71deeb2cf3f7512afc8d4a666d61aec72f0c57e7e4342bbfd195ac4a6f98301b",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{50a9d678-070b-4e10-bb51-d75dc324969c}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_008__50a9d678-070b-4e10-bb51-d75dc324969c.stl"
+      },
+      "other": {
+        "geometry_sha256": "a8d529cff8b6c3813ad6a82974595eb17db54e176b2b32cebb334b95b9461080",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a79f2d7f-469d-47d0-9d12-24d4dc363d53}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_018__a79f2d7f-469d-47d0-9d12-24d4dc363d53.stl"
+      }
+    },
+    {
+      "rms_mm": 5.456350615573625e-05,
+      "max_mm": 0.00012499496926854245,
+      "up_difference_deg": 3.5700096575142317,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "dda80b53943ac07ad8824d7ecac00b17ed106b8cb7b57e27a8c1c3ee9593a312",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{5e713e16-12ad-4c99-9758-1b60101c9843}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_010__5e713e16-12ad-4c99-9758-1b60101c9843.stl"
+      },
+      "other": {
+        "geometry_sha256": "a8d529cff8b6c3813ad6a82974595eb17db54e176b2b32cebb334b95b9461080",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a79f2d7f-469d-47d0-9d12-24d4dc363d53}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_018__a79f2d7f-469d-47d0-9d12-24d4dc363d53.stl"
+      }
+    },
+    {
+      "rms_mm": 5.8511374511702394e-05,
+      "max_mm": 0.0001249724087924585,
+      "up_difference_deg": 4.587719146187496,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "dd4c7dfb000a810fe0538fc21eb4e2448858480aac587da6be5d9bd37ef41635",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{9ee62ce9-2d03-409d-b4cd-2009a703648f}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_016__9ee62ce9-2d03-409d-b4cd-2009a703648f.stl"
+      },
+      "other": {
+        "geometry_sha256": "1553786e88f6b3c593663399a24c51a82eeedce7ad87bd6bceee6f5c242f3733",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a6c84630-cc87-48fb-b586-950afc694015}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_017__a6c84630-cc87-48fb-b586-950afc694015.stl"
+      }
+    },
+    {
+      "rms_mm": 5.918741281371262e-05,
+      "max_mm": 0.00011037648011681505,
+      "up_difference_deg": 3.440430404134203,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "dd4c7dfb000a810fe0538fc21eb4e2448858480aac587da6be5d9bd37ef41635",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{9ee62ce9-2d03-409d-b4cd-2009a703648f}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_016__9ee62ce9-2d03-409d-b4cd-2009a703648f.stl"
+      },
+      "other": {
+        "geometry_sha256": "a8d529cff8b6c3813ad6a82974595eb17db54e176b2b32cebb334b95b9461080",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a79f2d7f-469d-47d0-9d12-24d4dc363d53}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_018__a79f2d7f-469d-47d0-9d12-24d4dc363d53.stl"
+      }
+    },
+    {
+      "rms_mm": 5.5769254807417314e-05,
+      "max_mm": 0.00012388587209576386,
+      "up_difference_deg": 1.1472887426098695,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "1553786e88f6b3c593663399a24c51a82eeedce7ad87bd6bceee6f5c242f3733",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a6c84630-cc87-48fb-b586-950afc694015}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_017__a6c84630-cc87-48fb-b586-950afc694015.stl"
+      },
+      "other": {
+        "geometry_sha256": "a8d529cff8b6c3813ad6a82974595eb17db54e176b2b32cebb334b95b9461080",
+        "project_relative": "0726-0731/0727/0727-铝5",
+        "member": "Stl{a79f2d7f-469d-47d0-9d12-24d4dc363d53}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝5/part_018__a79f2d7f-469d-47d0-9d12-24d4dc363d53.stl"
+      }
+    },
+    {
+      "rms_mm": 4.085620002573683e-05,
+      "max_mm": 7.0633034163316e-05,
+      "up_difference_deg": 8.537736462515939e-07,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "582cc13b2795606402f5619ddecd4b6500a745cac1b29805f38e37c4eec5d5c8",
+        "project_relative": "0726-0731/0727/0727-铝7",
+        "member": "Stl{79e762b5-f847-4d39-b2eb-a2730b863acb}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝7/part_002__79e762b5-f847-4d39-b2eb-a2730b863acb.stl"
+      },
+      "other": {
+        "geometry_sha256": "748e7702623438c1512bf1421277dde090e2e74f3538249acb1e0a65cbc84220",
+        "project_relative": "0726-0731/0727/0727-铝8",
+        "member": "Stl{4748f579-736f-435e-95d9-401f347db65e}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝8/part_001__4748f579-736f-435e-95d9-401f347db65e.stl"
+      }
+    },
+    {
+      "rms_mm": 4.080710945561402e-05,
+      "max_mm": 7.042065997041768e-05,
+      "up_difference_deg": 0.0,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "60f609205b0e4e95cc5b6e8de1a7a1f0407e1daeb592ad41d501b37b65031062",
+        "project_relative": "0726-0731/0727/0727-铝7",
+        "member": "Stl{ad702ca1-14c3-486f-8739-3a67ef9f8737}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝7/part_004__ad702ca1-14c3-486f-8739-3a67ef9f8737.stl"
+      },
+      "other": {
+        "geometry_sha256": "7f052fa4652df45443da13b517e71b7774d66fdd4292fec7c2d73c649b096432",
+        "project_relative": "0726-0731/0727/0727-铝8",
+        "member": "Stl{c6309ed8-9345-43c9-9d16-4b360c604534}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝8/part_005__c6309ed8-9345-43c9-9d16-4b360c604534.stl"
+      }
+    },
+    {
+      "rms_mm": 4.7645383287330734e-12,
+      "max_mm": 4.893737682082267e-12,
+      "up_difference_deg": 0.0,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "941718e02fbf455488898753fa9bf8d74076ee3171daf58413dd9410afb6bc58",
+        "project_relative": "0726-0731/0727/0727-铝8",
+        "member": "Stl{89846255-63f1-434c-a7d4-47b677d7fa84}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝8/part_003__89846255-63f1-434c-a7d4-47b677d7fa84.stl"
+      },
+      "other": {
+        "geometry_sha256": "25965f443dc3783f29ab7d3f6a9fda20dc8b542d7f50a5d00f0f0a91ddf3782e",
+        "project_relative": "0726-0731/0727/0727-铝8",
+        "member": "Stl{a075ff83-8abb-4df6-b77e-7a513c6c00b7}_vertices",
+        "stl_file": "0726-0731/0727/0727-铝8/part_004__a075ff83-8abb-4df6-b77e-7a513c6c00b7.stl"
+      }
+    },
+    {
+      "rms_mm": 6.465516777437497e-05,
+      "max_mm": 0.00010011763264608763,
+      "up_difference_deg": 8.18910913293408e-06,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "ab0c1588a607cc886ea7f28bfcb23cac317938d9db05cc5ac32bfaa3c78732b7",
+        "project_relative": "0726-0731/0728/0728-铝10",
+        "member": "Stl{dfb30d5c-cd2b-4512-ba50-8a3655e4eb91}_vertices",
+        "stl_file": "0726-0731/0728/0728-铝10/part_018__dfb30d5c-cd2b-4512-ba50-8a3655e4eb91.stl"
+      },
+      "other": {
+        "geometry_sha256": "e0f9dd7319ce0be9c2716d43d42404ab3e0a750d60e32c4add144fad0453c921",
+        "project_relative": "0726-0731/0730/0730-铝11",
+        "member": "Stl{3f1d90bf-d42c-4043-9550-a2f1854b011e}_vertices",
+        "stl_file": "0726-0731/0730/0730-铝11/part_003__3f1d90bf-d42c-4043-9550-a2f1854b011e.stl"
+      }
+    },
+    {
+      "rms_mm": 3.3529501805162425e-06,
+      "max_mm": 9.977621794519893e-05,
+      "up_difference_deg": 1.2074182697257333e-06,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "c3c331ed611cc4341b50d239be11888c699f94766238b47ba37e8a82efd16bc9",
+        "project_relative": "0726-0731/0729/0729-铝3",
+        "member": "Stl{81b70e45-2cd6-4f99-8294-7f7f8330fa9c}_vertices",
+        "stl_file": "0726-0731/0729/0729-铝3/part_028__81b70e45-2cd6-4f99-8294-7f7f8330fa9c.stl"
+      },
+      "other": {
+        "geometry_sha256": "c1faa49b0d473f14d3072da600df12867fb732c9ac2ff1a2ee97d4e70b7bef23",
+        "project_relative": "0726-0731/0729/0729-铝3",
+        "member": "Stl{a9484aca-969f-4bc7-91a7-f172428fff18}_vertices",
+        "stl_file": "0726-0731/0729/0729-铝3/part_032__a9484aca-969f-4bc7-91a7-f172428fff18.stl"
+      }
+    },
+    {
+      "rms_mm": 7.330598301060905e-05,
+      "max_mm": 0.00014539101456133253,
+      "up_difference_deg": 60.01607269949117,
+      "registration": "pca_vertex_mapping_and_connectivity",
+      "reference": {
+        "geometry_sha256": "477265ccf3eaae6460f8312488480796984af2a849debfafa626b2cdbb953b60",
+        "project_relative": "0726-0731/0729/0729-铝6",
+        "member": "Stl{2ad99398-6f1c-4838-9ff7-cd47c461accb}_vertices",
+        "stl_file": "0726-0731/0729/0729-铝6/part_002__2ad99398-6f1c-4838-9ff7-cd47c461accb.stl"
+      },
+      "other": {
+        "geometry_sha256": "881c41b7576580f768755578b05b91293ff92fc75b1e0c05103c05155eb1dcb1",
+        "project_relative": "0726-0731/0731/0731-铝13",
+        "member": "Stl{727e0453-f985-4075-b4fc-b4f818916a51}_vertices",
+        "stl_file": "0726-0731/0731/0731-铝13/part_007__727e0453-f985-4075-b4fc-b4f818916a51.stl"
+      }
+    },
+    {
+      "rms_mm": 2.3745642674269207e-05,
+      "max_mm": 9.583684812363344e-05,
+      "up_difference_deg": 2.6480749995996562e-05,
+      "registration": "ordered_vertices",
+      "reference": {
+        "geometry_sha256": "f189fbf28328136d1aa82e928785fd5e9863847623b7c39398108f4489900fde",
+        "project_relative": "0726-0731/0730/0730-铝5",
+        "member": "Stl{ef8e9324-25b2-4ca3-a371-55882a31354e}_vertices",
+        "stl_file": "0726-0731/0730/0730-铝5/part_015__ef8e9324-25b2-4ca3-a371-55882a31354e.stl"
+      },
+      "other": {
+        "geometry_sha256": "ff063180732f8f55f5b75643930707c8f3583efe2d93e0b6aaa3747a8d0625cd",
+        "project_relative": "0726-0731/0730/0730-铝5",
+        "member": "Stl{dba17b79-c0ce-4ee7-8e04-9553ee87a569}_vertices",
+        "stl_file": "0726-0731/0730/0730-铝5/part_013__dba17b79-c0ce-4ee7-8e04-9553ee87a569.stl"
+      }
+    }
+  ]
+}

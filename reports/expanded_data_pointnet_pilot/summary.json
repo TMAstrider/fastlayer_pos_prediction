@@ -1,0 +1,40 @@
+{
+  "old_run": "runs/pointnet_real_parts_scratch",
+  "expanded_run": "runs/pointnet_real_parts_expanded_pjf",
+  "validation_targets_and_view_ids_exactly_equal": true,
+  "validation_input_point_clouds_exactly_equal": true,
+  "old_train_parts": 173,
+  "expanded_train_parts": 203,
+  "validation_parts": 20,
+  "validation_views": 640,
+  "old_best_validation": {
+    "count": 640,
+    "mean_angle_deg": 71.28790283203125,
+    "median_angle_deg": 71.98681640625,
+    "p90_angle_deg": 113.47460174560547,
+    "within_3deg_pct": 0.3125,
+    "within_5deg_pct": 0.46875,
+    "within_10deg_pct": 1.5625,
+    "within_30deg_pct": 8.59375
+  },
+  "expanded_best_validation": {
+    "count": 640,
+    "mean_angle_deg": 73.39332580566406,
+    "median_angle_deg": 70.0719985961914,
+    "p90_angle_deg": 119.03897857666016,
+    "within_3deg_pct": 0.15625,
+    "within_5deg_pct": 0.3125,
+    "within_10deg_pct": 1.09375,
+    "within_30deg_pct": 6.875000000000001
+  },
+  "old_best_epoch": 13,
+  "expanded_best_epoch": 4,
+  "mean_angle_delta_expanded_minus_old_deg": 2.1054229736328125,
+  "limitations": [
+    "Only the extra PJF project contributes added training data; none of the 326 Magics projects is trained on.",
+    "The 30 added part objects come from one project and only six distinct P-codes in their names, not 30 certified unique shapes.",
+    "One seed, one small historical validation split; validation selects the checkpoint and is not an independent test set.",
+    "Fixed per-part views and epochs imply the expanded run has more updates per epoch; update count is not controlled.",
+    "Raw historical +Z is assumed build-up; FastLayer round-trip and symmetry/family audit are still pending."
+  ]
+}

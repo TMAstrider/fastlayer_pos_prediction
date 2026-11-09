@@ -1,0 +1,1571 @@
+{
+  "train_indices": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    7,
+    8,
+    9,
+    10,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222
+  ],
+  "validation_indices": [
+    4,
+    5,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168
+  ],
+  "method": "Hold out whole projects; merge projects sharing a nine-digit part identifier before splitting. Original validation indices unchanged; append eligible added PJF records to training only.",
+  "limitation": "Preliminary split. Geometry duplicates, families and symmetric equivalent poses are not yet reviewed. This is not an independent final test set. Added records filtered by raw hash and held-out project/parsed identifier; rotated or remeshed duplicates are not certified absent.",
+  "records": [
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_0701-lv3_260910_0_V8.pjf",
+      "source_part_id": 10001,
+      "source_part_name": "N02_166045996_2_100x50x54_铝合金（Alsi10Mg）_P26063017A47A6_1_1_1_1_1_2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_0701-lv3_260910_0_V8__part_10001__34ccccd0b6.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_0701-lv3_260910_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N02_166047121_3_95x304x136_铝合金（Alsi10Mg）_P2607011189EFA_1_1_1_2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_0701-lv3_260910_0_V8__part_10002__0005c169ae.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_0701-lv3_260910_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "N01_166046021_1_95x65x12_铝合金（Alsi10Mg）_P260630179BF31_1_1_1_1_2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_0701-lv3_260910_0_V8__part_10007__247746be33.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0701-铝1-2_260828_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N02_166020461_2_366x240x182_铝合金（Alsi10Mg）_P260626152CA16_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0701-_1-2_260828_0_V8__part_10002__bc2f0a6b30.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0701-铝17_260829_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N02_166046601_1_190x143x360_铝合金（Alsi10Mg）_P26063019A2284_1_1_cut_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0701-_17_260829_0_V8__part_10002__05b90490ac.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0701-铝17_260829_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "N02_166046601_1_247x184x350_铝合金（Alsi10Mg）_P26063019D6A5A_1_cut_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0701-_17_260829_0_V8__part_10003__bb5929e458.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0702-铝22-23_260827_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N01_166061121_5_216x110x164_铝合金（Alsi10Mg）_P260702151DC0F_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0702-_22-23_260827_0_V8__part_10002__9bfd159f24.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0702-铝22-23_260827_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "N02_166061386_4_207x116x81_铝合金（Alsi10Mg）_P26070216AAE9F_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0702-_22-23_260827_0_V8__part_10003__785387ae4e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0702-铝22-23_260827_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "N02_166061386_4_207x116x81_铝合金（Alsi10Mg）_P26070216AAE9F_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0702-_22-23_260827_0_V8__part_10004__6dbf022804.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0703-铝22-31.2_260908_0_V8.pjf",
+      "source_part_id": 10001,
+      "source_part_name": "N01_166060606_10_264x112x57_铝合金（Alsi10Mg）_P2607021412E5F_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0703-_22-31.2_260908_0_V8__part_10001__8b0b7cd935.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0703-铝22-31.2_260908_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N01_166060606_10_288x98x57_铝合金（Alsi10Mg）_P2607021466266_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0703-_22-31.2_260908_0_V8__part_10002__c8842b18f7.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10001,
+      "source_part_name": "16_166067841_1_126x43x35_东莞铝合金（Alsi10Mg）_P26070513ABF3B_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10001__0eed39123e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "16_166067841_1_311x195x78_东莞铝合金（Alsi10Mg）_P260705133452A_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10002__1798c1bd42.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10003__6fdb86b788.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10004__f4f4b1a14d.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10005__305b67fafe.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10006__aa5461122d.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10007__7cee951a96.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10008,
+      "source_part_name": "16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10008__32f785f1e2.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10009,
+      "source_part_name": "16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10009__9865dfd1e0.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10010,
+      "source_part_name": "16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10010__1c74b44700.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10011,
+      "source_part_name": "16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10011__12164560ee.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10012,
+      "source_part_name": "16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_1__260831_0_V8__part_10012__94107a10e5.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝2_260827_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N02_166067746_2_116x266x126_铝合金（Alsi10Mg）_P260705117BD32_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_2_260827_0_V8__part_10002__e607343eec.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝2_260827_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "N02_166067746_2_116x266x126_铝合金（Alsi10Mg）_P260705117BD32_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_2_260827_0_V8__part_10003__d4614e2f85.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝2_260827_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "N02_166067746_2_163x266x172_铝合金（Alsi10Mg）_P2607051193049_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_2_260827_0_V8__part_10004__e73227f540.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝2_260827_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "N02_166067746_2_163x266x172_铝合金（Alsi10Mg）_P2607051193049_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_2_260827_0_V8__part_10005__cf0a938e64.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝2_260827_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "N02_166068011_8_161x74x24_铝合金（Alsi10Mg）_P2607051651E5E_1_1_1_1_1_2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_2_260827_0_V8__part_10006__4d07a2606a.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝2_260827_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "N02_166068011_8_161x74x24_铝合金（Alsi10Mg）_P2607051651E5E_1_1_1_1_1_2_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0705-_2_260827_0_V8__part_10007__97897305f3.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "Mirrored_Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10002__21625f677f.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10003__7713a2f69e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10004__a9d24ea72f.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10005__f28d911e68.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "Mirrored_N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10006__e0d9c35ab7.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "Mirrored_N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10007__77fef78dc0.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10008,
+      "source_part_name": "N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10008__7de5212343.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10009,
+      "source_part_name": "N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10009__ff296a4667.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10010,
+      "source_part_name": "N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10010__abb6865ef9.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10011,
+      "source_part_name": "N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_3.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10011__f5a3a46352.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10012,
+      "source_part_name": "N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P2607012090E0E_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10012__e639fd5fe8.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10013,
+      "source_part_name": "N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P2607012090E0E_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10013__61a9c1f9db.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10014,
+      "source_part_name": "N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10014__b8ec5bd393.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10015,
+      "source_part_name": "N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10015__652abc60bc.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝1.1_260904_0_V8.pjf",
+      "source_part_id": 10016,
+      "source_part_name": "N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_4.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_1.1_260904_0_V8__part_10016__140a175b6e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10001,
+      "source_part_name": "1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10001__1227177b56.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10002__580ebc40df.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "3.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10003__082551867c.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "4.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10004__b4fe2c2ddb.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "5.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10005__3c91c2e1d7.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "6.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10006__98d6588d73.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "7.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10007__244bf3cb8b.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10008,
+      "source_part_name": "8.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10008__b19c046e5a.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10009,
+      "source_part_name": "9.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10009__2f4afd6227.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10010,
+      "source_part_name": "10.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10010__c20df04f37.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10011,
+      "source_part_name": "11.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10011__716c3c611e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10012,
+      "source_part_name": "12.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10012__939aeb8938.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10013,
+      "source_part_name": "13.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10013__6d6dad7c09.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10014,
+      "source_part_name": "14.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10014__8f1cca2204.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10015,
+      "source_part_name": "15.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10015__ced823bd1f.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10016,
+      "source_part_name": "16.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10016__366924e9a9.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10017,
+      "source_part_name": "17.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10017__fdced0b3e9.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10018,
+      "source_part_name": "18.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10018__9b7188497b.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10019,
+      "source_part_name": "19.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10019__cee7974545.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10020,
+      "source_part_name": "20.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10020__ee068ab90a.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10021,
+      "source_part_name": "21.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10021__3c2ee53f75.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10022,
+      "source_part_name": "22.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10022__e557dc050c.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10023,
+      "source_part_name": "23.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10023__841e1df191.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10024,
+      "source_part_name": "24.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10024__6fbd7ea87f.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10025,
+      "source_part_name": "25.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10025__11a00407a2.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10026,
+      "source_part_name": "26.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10026__835b4b14fc.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10027,
+      "source_part_name": "27.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10027__645df4a385.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10028,
+      "source_part_name": "28.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10028__0421e0e58d.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10029,
+      "source_part_name": "29.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10029__75c41c2a08.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10030,
+      "source_part_name": "30.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10030__c85f193409.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10031,
+      "source_part_name": "31.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10031__ce8e8b3c42.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10032,
+      "source_part_name": "32.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10032__299a7aadb7.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10033,
+      "source_part_name": "33.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10033__93b748fe27.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10034,
+      "source_part_name": "34.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10034__c2bddcf9ea.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10035,
+      "source_part_name": "35.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10035__93f896063b.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10036,
+      "source_part_name": "36.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10036__8941c37be0.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10037,
+      "source_part_name": "37.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10037__c4a7e22344.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10038,
+      "source_part_name": "38.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10038__5064f077af.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10039,
+      "source_part_name": "39.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10039__61e05e660f.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10040,
+      "source_part_name": "40.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10040__8535e14ddb.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10041,
+      "source_part_name": "41.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10041__afdf9bde7d.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10042,
+      "source_part_name": "42.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10042__5b9100db14.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10043,
+      "source_part_name": "43.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10043__a3ca4b80a1.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10044,
+      "source_part_name": "44.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10044__70a6c1da8e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10045,
+      "source_part_name": "45.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10045__8aa9103c78.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10046,
+      "source_part_name": "46.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10046__487d3b265f.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10047,
+      "source_part_name": "47.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10047__d1ce681d9f.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10048,
+      "source_part_name": "48.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10048__1e6e9dc901.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10049,
+      "source_part_name": "49.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10049__51487f5328.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10050,
+      "source_part_name": "50.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10050__466e38a825.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10051,
+      "source_part_name": "51.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10051__73edfdfaf4.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10052,
+      "source_part_name": "52.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10052__9d6299636c.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10053,
+      "source_part_name": "53.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10053__bf2cf8a0dd.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10054,
+      "source_part_name": "54.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10054__fcef731df8.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10055,
+      "source_part_name": "55.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10055__2077c9c7d3.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10056,
+      "source_part_name": "56.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10056__2301ded1d1.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10057,
+      "source_part_name": "57.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10057__f6b1ad1e49.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10058,
+      "source_part_name": "58.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10058__726da71bf4.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10059,
+      "source_part_name": "59.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10059__3cd486143e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10060,
+      "source_part_name": "60.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10060__12df99744e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10061,
+      "source_part_name": "61.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10061__78b305c549.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10062,
+      "source_part_name": "62.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10062__72b0364ae2.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10063,
+      "source_part_name": "63.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10063__194e531f7c.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10064,
+      "source_part_name": "64.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10064__1864350415.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10065,
+      "source_part_name": "65.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10065__eaa3fe1186.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10066,
+      "source_part_name": "66.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10066__cb6d541b4e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0706-铝6_260910_0_V8.pjf",
+      "source_part_id": 10067,
+      "source_part_name": "67.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0706-_6_260910_0_V8__part_10067__d9b8ae97ee.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "Mirrored_N02_166073211_2_50x52x37_铝合金（Alsi10Mg）_P2607071551769_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10002__3d2afe9959.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "N01_166073141_1_105x15x105_铝合金（Alsi10Mg）_P26070715CE35B_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10003__f089c2f912.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "N01_166073141_1_105x15x105_铝合金（Alsi10Mg）_P26070715CE35B_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10004__23b2c35b6e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "N01_166073141_1_129x129x52_铝合金（Alsi10Mg）_P26070715D50BA_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10005__cff45837ea.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10006__7e1f89a630.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10007__3dca617e12.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10008,
+      "source_part_name": "N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10008__02d73381db.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10009,
+      "source_part_name": "N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10009__19f5ec045c.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10010,
+      "source_part_name": "N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10010__7547b7ce24.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10011,
+      "source_part_name": "N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10011__a0756b55c9.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10012,
+      "source_part_name": "N01_166073156_2_91x91x4_铝合金（Alsi10Mg）_P26070715B7C0F_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10012__f0ee016243.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10013,
+      "source_part_name": "N01_166073156_2_91x91x4_铝合金（Alsi10Mg）_P26070715B7C0F_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10013__437e6bbc82.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10014,
+      "source_part_name": "N01_166073156_2_97x97x14_铝合金（Alsi10Mg）_P26070715A91AE_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10014__ed385f3bea.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10015,
+      "source_part_name": "N01_166073156_2_97x97x14_铝合金（Alsi10Mg）_P26070715A91AE_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10015__7927263834.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10016,
+      "source_part_name": "N02_166073211_2_49x51x21_铝合金（Alsi10Mg）_P260707152C1C2_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10016__50b4048094.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10017,
+      "source_part_name": "N02_166073211_2_49x51x21_铝合金（Alsi10Mg）_P260707152C1C2_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10017__4fae127aa0.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10018,
+      "source_part_name": "N02_166073211_2_50x52x37_铝合金（Alsi10Mg）_P2607071551769_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10018__54a48ceb17.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10019,
+      "source_part_name": "N16_166072861_1_82x14x92_铝合金（Alsi10Mg）_P260707146D3E0_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10019__21d37e7935.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0708-铝1_260903_0_V8.pjf",
+      "source_part_id": 10020,
+      "source_part_name": "N16_166072861_1_83x78x92_铝合金（Alsi10Mg）_P26070714B3CC7_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0708-_1_260903_0_V8__part_10020__26367261d0.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0709-铝7_260831_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "Mirrored_N01_166140836_7_181x147x95_铝合金（Alsi10Mg）_P26070916A6E3D_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0709-_7_260831_0_V8__part_10002__995f1cc95a.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0709-铝7_260831_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "N01_166140836_7_181x147x95_铝合金（Alsi10Mg）_P26070916A6E3D_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0709-_7_260831_0_V8__part_10003__5ef22d1433.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0709-铝7_260831_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "N01_166141626_1_91x196x169_铝合金（Alsi10Mg）_P26070918E44A0_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0709-_7_260831_0_V8__part_10004__be6c465d74.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10001,
+      "source_part_name": "B.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10001__b70da4cf79.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "B_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10002__5433fe5567.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "B_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10003__a3dc7b3411.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "B_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10004__7fcd010de6.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "B_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10005__4e40b14d63.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "B_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10006__820a905af3.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "B_1_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10007__e0c19d56f5.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10008,
+      "source_part_name": "B_1_1_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10008__59016ffe35.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10009,
+      "source_part_name": "B_1_1_1_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10009__857d5075cb.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10010,
+      "source_part_name": "B_1_1_1_1_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10010__d76246f388.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10011,
+      "source_part_name": "L.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10011__62d7ddb333.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10012,
+      "source_part_name": "M.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10012__c78fd8d9d3.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10013,
+      "source_part_name": "N.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10013__a9f1f7ee7e.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10014,
+      "source_part_name": "N_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10014__1eff72b7d2.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10015,
+      "source_part_name": "N_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10015__5b19d5defd.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10016,
+      "source_part_name": "P.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10016__3abb958d3c.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10017,
+      "source_part_name": "P_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10017__7079cf8224.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10018,
+      "source_part_name": "P_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10018__8401ac0338.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10039,
+      "source_part_name": "T.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10039__aed1e4e1e5.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8.pjf",
+      "source_part_id": 10040,
+      "source_part_name": "U.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0715-lv3.2_260911_0_V8__part_10040__e9f46d1dec.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "Mirrored_N01_166159366_3_220x42x255_铝合金（Alsi10Mg）_P26071618D84A3_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10002__a630865bf3.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "Mirrored_N02_166159036_2_106x106x36_铝合金（Alsi10Mg）_P26071617A8DFB_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10003__a79f202c4d.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "N01_166159366_2_60x36x127_铝合金（Alsi10Mg）_P26071618DA7CC_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10004__d72ef253a4.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "N01_166159366_2_60x36x127_铝合金（Alsi10Mg）_P26071618DA7CC_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10005__951b7d03c0.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "N01_166159366_3_38x18x43_铝合金（Alsi10Mg）_P2607161817E85_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10006__d40514e6b1.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "N01_166159366_3_38x18x43_铝合金（Alsi10Mg）_P2607161817E85_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10007__63c9424310.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10008,
+      "source_part_name": "N01_166159366_3_38x18x43_铝合金（Alsi10Mg）_P2607161817E85_1_1_2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10008__58cb04b1db.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10009,
+      "source_part_name": "N01_166159366_3_220x42x255_铝合金（Alsi10Mg）_P26071618D84A3_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10009__c30da9f970.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10010,
+      "source_part_name": "N01_166159366_3_220x42x255_铝合金（Alsi10Mg）_P26071618D84A3_1_2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10010__b071081598.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0716-铝7_260903_0_V8.pjf",
+      "source_part_id": 10011,
+      "source_part_name": "N02_166159036_2_106x106x36_铝合金（Alsi10Mg）_P26071617A8DFB_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0716-_7_260903_0_V8__part_10011__aaecafc10f.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0718-_15_260907_0_V8__part_10002__f2de5b303d.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0718-_15_260907_0_V8__part_10003__5d3c1a3af9.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0718-_15_260907_0_V8__part_10004__33fa1a8619.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0718-_15_260907_0_V8__part_10005__b624cc8f2a.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0718-_15_260907_0_V8__part_10006__233dc7f7e9.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "N02_166171876_6_129x342x239_铝合金（Alsi10Mg）_P26071721D7F08_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_AI-0718-_15_260907_0_V8__part_10007__8a208f749a.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_jixiebi_260912_0_V8.pjf",
+      "source_part_id": 10001,
+      "source_part_name": "Merge_of_改进模型-改圆角_bb-s-1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_jixiebi_260912_0_V8__part_10001__8361de7827.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_jixiebi_260912_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "Merge_of_改进模型-改圆角_bb-s-1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_jixiebi_260912_0_V8__part_10002__96bdaec3dd.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_jixiebi_260912_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "机械臂-优化_1__x_b.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_jixiebi_260912_0_V8__part_10007__edeca7a6a4.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_jixiebi_260912_0_V8.pjf",
+      "source_part_id": 10008,
+      "source_part_name": "机械臂-优化_1__x_b_1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_jixiebi_260912_0_V8__part_10008__5175bd01b9.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_wuzhichengyepian_261031_0_V8.pjf",
+      "source_part_id": 10001,
+      "source_part_name": "1.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_wuzhichengyepian_261031_0_V8__part_10001__74b05e9cb5.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_wuzhichengyepian_261031_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "3.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_wuzhichengyepian_261031_0_V8__part_10002__4aca5fc985.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_wuzhichengyepian_261031_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "2.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_wuzhichengyepian_261031_0_V8__part_10003__460e668598.npz"
+    },
+    {
+      "source_project": "M300-400mm-2X2-Y.mpf_wuzhichengyepian_261031_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "4.stl",
+      "pointcloud_file": "../pointclouds/M300-400mm-2X2-Y.mpf_wuzhichengyepian_261031_0_V8__part_10005__a22dbfba59.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10001,
+      "source_part_name": "N01_166140841_3_30x48x10_铝合金（Alsi10Mg）_P260709161467F_1_1_2.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10001__0260750932.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N01_166140841_3_30x70x35_铝合金（Alsi10Mg）_P26070916D0A45_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10002__6c85720732.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "N01_166150226_1_175x79x69_铝合金（Alsi10Mg）_P26071211BB7EA_1.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10003__a141555a77.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "N02_166130311_1_16x17x21_铝合金（Alsi10Mg）_P260709090D5D4.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10004__ee92b55f16.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "N02_166130311_1_16x17x32_铝合金（Alsi10Mg）_P260709096A237.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10005__3e32b9fadc.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "N02_166130311_1_16x17x36_铝合金（Alsi10Mg）_P2607090928B58.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10006__f98d163f43.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "N02_166150201_12_120x120x2_铝合金（Alsi10Mg）_P26071211E9A0E_1_1_9.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10007__81586c7e63.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10008,
+      "source_part_name": "N02_166150201_12_160x160x15_铝合金（Alsi10Mg）_P26071211A63EB_1_1_5.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10008__a384e0497d.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10009,
+      "source_part_name": "N52_166130551_2_238x200x34_铝合金（Alsi10Mg）_P260709102DA05_1.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10009__b9f6d91818.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10010,
+      "source_part_name": "QN00_166130666_1_66x77x51_铝合金（Alsi10Mg）_P26070912249D7_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10010__bf9da189f8.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10041,
+      "source_part_name": "N01_166130531_2_45x34x28_铝合金（Alsi10Mg）_P2607091061618.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10041__4728cb08a1.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10042,
+      "source_part_name": "N01_166130661_2_39x39x14_铝合金（Alsi10Mg）_P260709127339A_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10042__d3c1b2f660.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10043,
+      "source_part_name": "N01_166140841_1_69x44x39_铝合金（Alsi10Mg）_P260709166F792_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10043__7f90d9c484.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10044,
+      "source_part_name": "N01_166140841_2_61x45x30_铝合金（Alsi10Mg）_P26070916EEE9A_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10044__b439d874c8.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_0712-lv20+0709-lv_260902_0_V8.pjf",
+      "source_part_id": 10045,
+      "source_part_name": "N01_166140841_2_68x29x30_铝合金（Alsi10Mg）_P26070916424EC_1_1_1.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_0712-lv20_0709-lv_260902_0_V8__part_10045__8df7a44bcf.npz"
+    },
+    {
+      "source_project": "M300H-400mm-2X2-Y_AI-0702-铝5_260826_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N11_166045306_1_429x153x228_铝合金（Alsi10Mg）_P26063014E86BA_1_1_1_1_cut_1.stl",
+      "pointcloud_file": "../pointclouds/M300H-400mm-2X2-Y_AI-0702-_5_260826_0_V8__part_10002__9d7e00e269.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10032,
+      "source_part_name": "N00_166200011_50_54x54x59_铝合金（Alsi10Mg）_P26072313B49A5_2_3_1_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10032__7ff1489a9b.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10033,
+      "source_part_name": "N00_166200011_50_51x51x80_铝合金（Alsi10Mg）_P2607231371386_2_3_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10033__90f68590a9.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10034,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_4_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10034__79b7241cf1.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10035,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_3_3_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10035__e4958f391e.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10036,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_3_2_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10036__d9cfd92840.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10037,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_3_2.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10037__3c62c8f7f3.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10038,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_3_1_2_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10038__d19c0d1225.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10039,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_3_1_1_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10039__8621c09334.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10040,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_3_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10040__34006dc9a6.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10041,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_3_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10041__56a0996de0.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10042,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_3.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10042__115b9d62f6.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10043,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_2_2_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10043__6390c50495.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10044,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_2_1_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10044__bc19346b59.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10045,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_2_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10045__e46059522a.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10046,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_2.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10046__4cebd9e82c.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10047,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_1_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10047__890f887fb9.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10048,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10048__97c5f5bb7d.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10049,
+      "source_part_name": "N00_166200011_48_120x36x72_铝合金（Alsi10Mg）_P26072313DB6BF_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10049__60a1c1f180.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10050,
+      "source_part_name": "N00_166200011_24_71x20x71_铝合金（Alsi10Mg）_P2607231365038_1_1_1_2_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10050__101db34c2d.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10051,
+      "source_part_name": "N00_166200011_24_71x20x71_铝合金（Alsi10Mg）_P2607231365038_1_1_1_2.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10051__5a290abaf8.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10052,
+      "source_part_name": "N00_166200011_24_71x20x71_铝合金（Alsi10Mg）_P2607231365038_1_1_1_1_1_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10052__42cb538651.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10053,
+      "source_part_name": "N00_166200011_24_71x20x71_铝合金（Alsi10Mg）_P2607231365038_1_1_1_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10053__1279c6abb7.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10054,
+      "source_part_name": "N00_166200011_12_31x100x22_铝合金（Alsi10Mg）_P26072313A095A_1_2_1_1_2.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10054__3e9e152701.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10055,
+      "source_part_name": "N00_166200011_12_31x100x22_铝合金（Alsi10Mg）_P26072313A095A_1_2_1_1_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10055__18bfcac024.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10056,
+      "source_part_name": "N00_166200011_12_31x100x22_铝合金（Alsi10Mg）_P26072313A095A_1_2_1_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10056__2f70bb3238.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10057,
+      "source_part_name": "N00_166200011_12_31x100x22_铝合金（Alsi10Mg）_P26072313A095A_1_2_1_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10057__b50527bdb1.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10058,
+      "source_part_name": "N00_166200011_8_50x50x66_铝合金（Alsi10Mg）_P26072313E00FB_7_1_5_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10058__8f91c1131f.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10059,
+      "source_part_name": "N00_166200011_8_50x50x66_铝合金（Alsi10Mg）_P26072313E00FB_7_1_5.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10059__a5f1cde099.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10060,
+      "source_part_name": "N00_166200011_8_50x50x66_铝合金（Alsi10Mg）_P26072313E00FB_7_1_2_4_1.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10060__a9197afc45.npz"
+    },
+    {
+      "source_project": "420_0724-铝35-2209-104_260728_9_V-6.pjf",
+      "source_part_id": 10061,
+      "source_part_name": "N00_166200011_8_50x50x66_铝合金（Alsi10Mg）_P26072313E00FB_7_1_2_4.stl",
+      "pointcloud_file": "../expanded_pjf_pointclouds/420_0724-_35-2209-104_260728_9_V-6__part_10061__da5a8cf84b.npz"
+    }
+  ]
+}

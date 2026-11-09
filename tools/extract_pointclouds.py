@@ -100,7 +100,8 @@ def make_features(points, vertices, surface_area, triangle_count):
 
 def main():
     parser = argparse.ArgumentParser(description="Export historical root-part meshes as sampled point clouds")
-    parser.add_argument("dataset", nargs="?", type=Path, default=Path("datasets"))
+    parser.add_argument("dataset", nargs="?", type=Path,
+                        default=Path("datasets/initial_data") if Path("datasets/initial_data").is_dir() else Path("datasets"))
     parser.add_argument("--output", type=Path, default=Path("outputs/pointclouds"))
     parser.add_argument("--points-per-part", type=int, default=4096)
     parser.add_argument("--seed", type=int, default=20261108)

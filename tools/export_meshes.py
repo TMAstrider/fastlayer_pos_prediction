@@ -129,7 +129,8 @@ def export_project(project_path, output_directory):
 
 def main():
     parser = argparse.ArgumentParser(description="Export PJF part and support meshes as verified binary STL files")
-    parser.add_argument("dataset", nargs="?", type=Path, default=Path("datasets"))
+    parser.add_argument("dataset", nargs="?", type=Path,
+                        default=Path("datasets/initial_data") if Path("datasets/initial_data").is_dir() else Path("datasets"))
     parser.add_argument("--output", type=Path, default=Path("outputs/meshes_stl"))
     arguments = parser.parse_args()
     projects = sorted(arguments.dataset.glob("*.pjf"))
