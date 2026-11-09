@@ -20,10 +20,10 @@ DEFAULT_OUTPUT = ROOT / "runs/magics_pointnet_scratch_2026-11-09"
 
 
 class PointNetAxis(nn.Module):
-    def __init__(self):
+    def __init__(self, input_channels=3):
         super().__init__()
         self.point_mlp = nn.Sequential(
-            nn.Conv1d(3, 64, 1, bias=False), nn.BatchNorm1d(64), nn.ReLU(inplace=True),
+            nn.Conv1d(input_channels, 64, 1, bias=False), nn.BatchNorm1d(64), nn.ReLU(inplace=True),
             nn.Conv1d(64, 64, 1, bias=False), nn.BatchNorm1d(64), nn.ReLU(inplace=True),
             nn.Conv1d(64, 64, 1, bias=False), nn.BatchNorm1d(64), nn.ReLU(inplace=True),
             nn.Conv1d(64, 128, 1, bias=False), nn.BatchNorm1d(128), nn.ReLU(inplace=True),

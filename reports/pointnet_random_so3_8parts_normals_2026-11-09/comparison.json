@@ -1,0 +1,142 @@
+{
+  "paired_targets_identical": true,
+  "baseline": {
+    "count": 512,
+    "mean_angle_deg": 15.164133071899414,
+    "median_angle_deg": 3.869734764099121,
+    "p90_angle_deg": 48.91886901855469,
+    "within_3deg_pct": 37.890625,
+    "within_5deg_pct": 64.453125,
+    "within_10deg_pct": 86.328125,
+    "within_30deg_pct": 89.0625,
+    "cosine_loss": 0.13662534952163696
+  },
+  "xyz_normals": {
+    "count": 512,
+    "mean_angle_deg": 9.719721794128418,
+    "median_angle_deg": 3.8764915466308594,
+    "p90_angle_deg": 24.618066787719727,
+    "within_3deg_pct": 37.109375,
+    "within_5deg_pct": 65.8203125,
+    "within_10deg_pct": 86.71875,
+    "within_30deg_pct": 90.8203125,
+    "cosine_loss": 0.05741006135940552
+  },
+  "per_part": [
+    {
+      "part_index": 69,
+      "xyz": {
+        "mean_angle_deg": 94.5684814453125,
+        "cosine_loss": 1.0718157291412354,
+        "unsigned_axis_mean_angle_deg": 48.48773956298828
+      },
+      "xyz_normals": {
+        "mean_angle_deg": 50.926666259765625,
+        "cosine_loss": 0.4377061724662781,
+        "unsigned_axis_mean_angle_deg": 46.9852180480957
+      },
+      "angle_delta_deg_normals_minus_xyz": -43.641815185546875
+    },
+    {
+      "part_index": 147,
+      "xyz": {
+        "mean_angle_deg": 3.6674773693084717,
+        "cosine_loss": 0.002518966794013977,
+        "unsigned_axis_mean_angle_deg": 3.6674773693084717
+      },
+      "xyz_normals": {
+        "mean_angle_deg": 3.400766134262085,
+        "cosine_loss": 0.0022140806540846825,
+        "unsigned_axis_mean_angle_deg": 3.400766134262085
+      },
+      "angle_delta_deg_normals_minus_xyz": -0.2667112350463867
+    },
+    {
+      "part_index": 232,
+      "xyz": {
+        "mean_angle_deg": 5.013566493988037,
+        "cosine_loss": 0.004898729734122753,
+        "unsigned_axis_mean_angle_deg": 5.013566493988037
+      },
+      "xyz_normals": {
+        "mean_angle_deg": 4.424722671508789,
+        "cosine_loss": 0.0038307905197143555,
+        "unsigned_axis_mean_angle_deg": 4.424722671508789
+      },
+      "angle_delta_deg_normals_minus_xyz": -0.588843822479248
+    },
+    {
+      "part_index": 546,
+      "xyz": {
+        "mean_angle_deg": 3.164536476135254,
+        "cosine_loss": 0.001873658038675785,
+        "unsigned_axis_mean_angle_deg": 3.164536476135254
+      },
+      "xyz_normals": {
+        "mean_angle_deg": 3.025115966796875,
+        "cosine_loss": 0.0018226923421025276,
+        "unsigned_axis_mean_angle_deg": 3.025115966796875
+      },
+      "angle_delta_deg_normals_minus_xyz": -0.1394205093383789
+    },
+    {
+      "part_index": 644,
+      "xyz": {
+        "mean_angle_deg": 4.506100177764893,
+        "cosine_loss": 0.003888203762471676,
+        "unsigned_axis_mean_angle_deg": 4.506100177764893
+      },
+      "xyz_normals": {
+        "mean_angle_deg": 4.450811386108398,
+        "cosine_loss": 0.004066389054059982,
+        "unsigned_axis_mean_angle_deg": 4.450811386108398
+      },
+      "angle_delta_deg_normals_minus_xyz": -0.05528879165649414
+    },
+    {
+      "part_index": 659,
+      "xyz": {
+        "mean_angle_deg": 5.369925022125244,
+        "cosine_loss": 0.005511735565960407,
+        "unsigned_axis_mean_angle_deg": 5.369925022125244
+      },
+      "xyz_normals": {
+        "mean_angle_deg": 6.054983139038086,
+        "cosine_loss": 0.006732955574989319,
+        "unsigned_axis_mean_angle_deg": 6.054983139038086
+      },
+      "angle_delta_deg_normals_minus_xyz": 0.6850581169128418
+    },
+    {
+      "part_index": 790,
+      "xyz": {
+        "mean_angle_deg": 2.875027656555176,
+        "cosine_loss": 0.0016102539375424385,
+        "unsigned_axis_mean_angle_deg": 2.875027656555176
+      },
+      "xyz_normals": {
+        "mean_angle_deg": 2.9791769981384277,
+        "cosine_loss": 0.0016967998817563057,
+        "unsigned_axis_mean_angle_deg": 2.9791769981384277
+      },
+      "angle_delta_deg_normals_minus_xyz": 0.10414934158325195
+    },
+    {
+      "part_index": 843,
+      "xyz": {
+        "mean_angle_deg": 2.147944450378418,
+        "cosine_loss": 0.0008854512125253677,
+        "unsigned_axis_mean_angle_deg": 2.147944450378418
+      },
+      "xyz_normals": {
+        "mean_angle_deg": 2.4955379962921143,
+        "cosine_loss": 0.0012102900072932243,
+        "unsigned_axis_mean_angle_deg": 2.4955379962921143
+      },
+      "angle_delta_deg_normals_minus_xyz": 0.3475935459136963
+    }
+  ],
+  "minimum_online_train_loss": 0.05579408723860979,
+  "best_additional_epoch": 3940,
+  "scope": "Same eight training shapes, same 512 independent rotation targets; not unseen-shape accuracy."
+}

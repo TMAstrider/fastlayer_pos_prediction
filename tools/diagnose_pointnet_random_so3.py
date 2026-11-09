@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 import time
+import subprocess
 
 import matplotlib
 matplotlib.use('Agg')
@@ -22,6 +23,14 @@ def measured(model, inputs, targets):
     return metrics, predicted, target
 
 
+def rotate_features(base, rotations):
+    xyz = torch.bmm(base[:, :, :3], rotations.transpose(1, 2))
+    if base.shape[-1] == 3:
+        return xyz
+    normals = torch.bmm(base[:, :, 3:6], rotations.transpose(1, 2))
+    return torch.cat([xyz, normals], dim=-1)
+
+
 def main():
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
@@ -33,6 +42,7 @@ def main():
     parser.add_argument('--checkpoint', type=Path)
     parser.add_argument('--training-seed-offset', type=int, default=9703)
     parser.add_argument('--test-seed-offset', type=int, default=83079)
+    parser.add_argument('--use-normals', action='store_true')
     args = parser.parse_args()
     if args.epochs < 1 or not 0 <= args.min_learning_rate <= args.learning_rate:
         parser.error('Require positive epochs and 0 <= minimum LR <= initial LR')
@@ -67,11 +77,19 @@ def main():
             points = data['points'].astype(np.float32)
         points -= points.mean(0, keepdims=True)
         points /= np.linalg.norm(points, axis=1).max()
-        base = torch.from_numpy(points[rng.choice(len(points), 2048, replace=False)]).to(device)
+        sample_ids = rng.choice(len(points), 2048, replace=False)
+        base = torch.from_numpy(points[sample_ids]).to(device)
+        if args.use_normals:
+            with np.load(root / 'outputs/eight_part_normals' / record['pointcloud_file']) as data:
+                normals = data['normals'].astype(np.float32)
+                with np.load(cloud_dir / record['pointcloud_file']) as original:
+                    np.testing.assert_array_equal(data['points'], original['points'])
+            np.testing.assert_allclose(np.linalg.norm(normals, axis=1), 1, atol=1e-5)
+            base = torch.cat([base, torch.from_numpy(normals[sample_ids]).to(device)], dim=-1)
         clouds.append(base)
         for count, inputs_list, targets_list in ((16, old_inputs, old_targets), (64, probe_inputs, probe_targets)):
             rotations = random_rotations(count, reference_generator, device)
-            inputs_list.append(torch.bmm(base.unsqueeze(0).expand(count, -1, -1), rotations.transpose(1, 2)))
+            inputs_list.append(rotate_features(base.unsqueeze(0).expand(count, -1, -1), rotations))
             targets_list.append(rotations[:, :, 2])
     clouds = torch.stack(clouds)
     old_inputs, old_targets = torch.cat(old_inputs), torch.cat(old_targets)
@@ -91,8 +109,13 @@ def main():
               'model': 'Same PointNet architecture; dropout disabled; checkpoint initialization' if args.checkpoint else prior['model'],
               'initial_checkpoint': str(args.checkpoint) if args.checkpoint else None,
               'final_test_seed': seed+args.test_seed_offset,
+              'use_normals': args.use_normals, 'input_channels': 6 if args.use_normals else 3,
+              'normal_source': 'outputs/eight_part_normals; exact same points, nearest source triangle face normals' if args.use_normals else None,
+              'normal_rotation': 'N@R.T, same active rotation as XYZ; no translation or scale applied to normals' if args.use_normals else None,
+              'checkpoint_adaptation': 'Preserve XYZ weights, zero-initialize three extra normal columns of first convolution' if args.use_normals and args.checkpoint else None,
               'wandb': 'disabled by default; only enabled explicitly via WANDB_MODE',
-              'source_commit': '4575b82'}
+              'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip(),
+              'source_worktree_changes': bool(subprocess.check_output(['git', 'diff', '--name-only'], cwd=root, text=True).strip())}
     for folder in (run, report):
         (folder / 'config.json').write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding='utf8')
     tracking = start_run(run, config, tags=['same-shape', 'online-so3', '8-parts'])
@@ -103,6 +126,17 @@ def main():
     if args.checkpoint:
         initial = torch.load(args.checkpoint, map_location=device, weights_only=True)
         model.load_state_dict(initial['model_state_dict'])
+    if args.use_normals:
+        original_conv = model.point_mlp[0]
+        extended_conv = nn.Conv1d(6, 64, 1, bias=False).to(device)
+        with torch.no_grad():
+            extended_conv.weight.zero_()
+            extended_conv.weight[:, :3].copy_(original_conv.weight)
+            model.eval()
+            reference = model(old_inputs[:32, :, :3])
+            model.point_mlp[0] = extended_conv
+            np.testing.assert_allclose(model(old_inputs[:32]).cpu().numpy(), reference.cpu().numpy(), atol=1e-5)
+        print('Verified: added normal channels preserve initial XYZ model predictions', flush=True)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=0.)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
         optimizer, args.epochs, eta_min=args.min_learning_rate) if args.cosine_schedule else None
@@ -122,7 +156,7 @@ def main():
         for start in range(0, len(ids), 32):
             base = clouds[ids[start:start+32]]
             rotations = random_rotations(len(base), generator, device)
-            inputs = torch.bmm(base, rotations.transpose(1, 2))
+            inputs = rotate_features(base, rotations)
             targets = rotations[:, :, 2]
             predicted = model(inputs)
             loss = (1-(predicted*targets).sum(-1)).mean()
@@ -167,7 +201,7 @@ def main():
     test_inputs, test_targets = [], []
     for base in clouds:
         rotations = random_rotations(64, test_generator, device)
-        test_inputs.append(torch.bmm(base.unsqueeze(0).expand(64, -1, -1), rotations.transpose(1, 2)))
+        test_inputs.append(rotate_features(base.unsqueeze(0).expand(64, -1, -1), rotations))
         test_targets.append(rotations[:, :, 2])
     test_metrics, predicted, target = measured(model, torch.cat(test_inputs), torch.cat(test_targets))
     per_part = []
@@ -203,7 +237,7 @@ def main():
     prior_metrics = json.loads((root / 'reports/pointnet_small_fit_2026-11-09/metrics.json').read_text(encoding='utf8'))
     text = f'''# 八零件在线 SO(3) 诊断（2026-11-09）
 
-沿用固定旋转实验的 8 个训练零件、相同 2048 点子集、batch32、无 dropout / weight decay、余弦损失。每次更新重新生成 SO(3)，每件每轮 16 个新朝向，一轮 4 次更新。原有 100 个验证零件不参与训练。起始权重：{args.checkpoint or '从头初始化'}；优化器重新初始化，初始 lr={args.learning_rate}，调度为 {config['learning_rate_schedule']}，最低 lr={config['minimum_learning_rate']}。
+沿用固定旋转实验的 8 个训练零件、相同 2048 点子集、batch32、无 dropout / weight decay、余弦损失。输入通道数 {config['input_channels']}，使用法向：{args.use_normals}。每次更新重新生成 SO(3)，每件每轮 16 个新朝向，一轮 4 次更新。原有 100 个验证零件不参与训练。起始权重：{args.checkpoint or '从头初始化'}；优化器重新初始化，初始 lr={args.learning_rate}，调度为 {config['learning_rate_schedule']}，最低 lr={config['minimum_learning_rate']}。
 
 本轮最多 {args.epochs} 轮，实际 {epoch} 轮，约 {result['seconds']/60:.2f} 分钟。按固定 512 个同件探针旋转选择本轮 epoch {checkpoint['epoch']}。选择之后生成另一组独立种子的 512 个旋转，评估一次。
 

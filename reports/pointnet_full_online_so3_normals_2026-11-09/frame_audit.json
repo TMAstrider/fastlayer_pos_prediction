@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "rotations_checked": 64,
+  "max_recovered_up_error": 4.76837158203125e-07,
+  "normal_rotation": "Same R.T as points; no centering or scaling on normals"
+}

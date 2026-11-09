@@ -1,0 +1,706 @@
+{
+  "status": "complete",
+  "unseen_parts_512_rotations": {
+    "count": 512,
+    "mean_angle_deg": 79.14335632324219,
+    "median_angle_deg": 71.27877807617188,
+    "p90_angle_deg": 141.08677673339844,
+    "within_3deg_pct": 0.0,
+    "within_5deg_pct": 0.0,
+    "within_10deg_pct": 0.0,
+    "within_30deg_pct": 0.0,
+    "cosine_loss": 0.81110018491745,
+    "mean_signed_rotation_concentration": 1.0
+  },
+  "per_part": [
+    {
+      "part_index": 54,
+      "shape_group_id": "shape_09d730b1f0ac64fdde84",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 71.24388122558594,
+        "median_angle_deg": 71.24390411376953,
+        "p90_angle_deg": 71.24425506591797,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.6784594058990479
+      }
+    },
+    {
+      "part_index": 172,
+      "shape_group_id": "shape_29c364016da101d60ebc",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 47.922645568847656,
+        "median_angle_deg": 47.92264175415039,
+        "p90_angle_deg": 47.922672271728516,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.32986676692962646
+      }
+    },
+    {
+      "part_index": 430,
+      "shape_group_id": "shape_6e3e430a85043d522d72",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 58.59417724609375,
+        "median_angle_deg": 58.59416961669922,
+        "p90_angle_deg": 58.59418869018555,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.4789036512374878
+      }
+    },
+    {
+      "part_index": 696,
+      "shape_group_id": "shape_afe180a8bc059b29ed47",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 64.13041687011719,
+        "median_angle_deg": 64.13041687011719,
+        "p90_angle_deg": 64.13046264648438,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.5636758208274841
+      }
+    },
+    {
+      "part_index": 877,
+      "shape_group_id": "shape_db968af1376a40c6ad6c",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 71.315185546875,
+        "median_angle_deg": 71.315185546875,
+        "p90_angle_deg": 71.31611633300781,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.679638147354126
+      }
+    },
+    {
+      "part_index": 893,
+      "shape_group_id": "shape_df55dbae6d84d528f670",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 141.08682250976562,
+        "median_angle_deg": 141.08682250976562,
+        "p90_angle_deg": 141.0869140625,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 1.778098702430725
+      }
+    },
+    {
+      "part_index": 974,
+      "shape_group_id": "shape_f3272ecf2eca51c8caf0",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 82.06956481933594,
+        "median_angle_deg": 82.06956481933594,
+        "p90_angle_deg": 82.06963348388672,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.8620293736457825
+      }
+    },
+    {
+      "part_index": 999,
+      "shape_group_id": "shape_f8cbf975eff3f48c4cac",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 96.7841796875,
+        "median_angle_deg": 96.7841796875,
+        "p90_angle_deg": 96.7842788696289,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 1.118129849433899
+      }
+    }
+  ],
+  "subset_variants": [
+    {
+      "point_subset": "matched_prior_subset",
+      "metrics": {
+        "count": 512,
+        "mean_angle_deg": 79.14335632324219,
+        "median_angle_deg": 71.27877807617188,
+        "p90_angle_deg": 141.08677673339844,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.81110018491745,
+        "mean_signed_rotation_concentration": 1.0
+      },
+      "per_part": [
+        {
+          "part_index": 54,
+          "shape_group_id": "shape_09d730b1f0ac64fdde84",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 71.24388122558594,
+            "median_angle_deg": 71.24390411376953,
+            "p90_angle_deg": 71.24425506591797,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.6784594058990479
+          }
+        },
+        {
+          "part_index": 172,
+          "shape_group_id": "shape_29c364016da101d60ebc",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 47.922645568847656,
+            "median_angle_deg": 47.92264175415039,
+            "p90_angle_deg": 47.922672271728516,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.32986676692962646
+          }
+        },
+        {
+          "part_index": 430,
+          "shape_group_id": "shape_6e3e430a85043d522d72",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 58.59417724609375,
+            "median_angle_deg": 58.59416961669922,
+            "p90_angle_deg": 58.59418869018555,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.4789036512374878
+          }
+        },
+        {
+          "part_index": 696,
+          "shape_group_id": "shape_afe180a8bc059b29ed47",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 64.13041687011719,
+            "median_angle_deg": 64.13041687011719,
+            "p90_angle_deg": 64.13046264648438,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.5636758208274841
+          }
+        },
+        {
+          "part_index": 877,
+          "shape_group_id": "shape_db968af1376a40c6ad6c",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 71.315185546875,
+            "median_angle_deg": 71.315185546875,
+            "p90_angle_deg": 71.31611633300781,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.679638147354126
+          }
+        },
+        {
+          "part_index": 893,
+          "shape_group_id": "shape_df55dbae6d84d528f670",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 141.08682250976562,
+            "median_angle_deg": 141.08682250976562,
+            "p90_angle_deg": 141.0869140625,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.778098702430725
+          }
+        },
+        {
+          "part_index": 974,
+          "shape_group_id": "shape_f3272ecf2eca51c8caf0",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 82.06956481933594,
+            "median_angle_deg": 82.06956481933594,
+            "p90_angle_deg": 82.06963348388672,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.8620293736457825
+          }
+        },
+        {
+          "part_index": 999,
+          "shape_group_id": "shape_f8cbf975eff3f48c4cac",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 96.7841796875,
+            "median_angle_deg": 96.7841796875,
+            "p90_angle_deg": 96.7842788696289,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.118129849433899
+          }
+        }
+      ]
+    },
+    {
+      "point_subset": "new_subset_1",
+      "metrics": {
+        "count": 512,
+        "mean_angle_deg": 100.87486267089844,
+        "median_angle_deg": 93.73686218261719,
+        "p90_angle_deg": 169.2915802001953,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 1.127553939819336,
+        "mean_signed_rotation_concentration": 1.0
+      },
+      "per_part": [
+        {
+          "part_index": 54,
+          "shape_group_id": "shape_09d730b1f0ac64fdde84",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 69.31404876708984,
+            "median_angle_deg": 69.31404876708984,
+            "p90_angle_deg": 69.3140869140625,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.6467546224594116
+          }
+        },
+        {
+          "part_index": 172,
+          "shape_group_id": "shape_29c364016da101d60ebc",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 56.728240966796875,
+            "median_angle_deg": 56.728240966796875,
+            "p90_angle_deg": 56.72831726074219,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.4513893127441406
+          }
+        },
+        {
+          "part_index": 430,
+          "shape_group_id": "shape_6e3e430a85043d522d72",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 58.83311080932617,
+            "median_angle_deg": 58.833106994628906,
+            "p90_angle_deg": 58.8331298828125,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.4824674725532532
+          }
+        },
+        {
+          "part_index": 696,
+          "shape_group_id": "shape_afe180a8bc059b29ed47",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 122.01492309570312,
+            "median_angle_deg": 122.01493072509766,
+            "p90_angle_deg": 122.0150146484375,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.5301401615142822
+          }
+        },
+        {
+          "part_index": 877,
+          "shape_group_id": "shape_db968af1376a40c6ad6c",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 143.3432159423828,
+            "median_angle_deg": 143.34323120117188,
+            "p90_angle_deg": 143.34359741210938,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.8022260665893555
+          }
+        },
+        {
+          "part_index": 893,
+          "shape_group_id": "shape_df55dbae6d84d528f670",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 169.29159545898438,
+            "median_angle_deg": 169.2915802001953,
+            "p90_angle_deg": 169.2916259765625,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.9825856685638428
+          }
+        },
+        {
+          "part_index": 974,
+          "shape_group_id": "shape_f3272ecf2eca51c8caf0",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 110.41291809082031,
+            "median_angle_deg": 110.41293334960938,
+            "p90_angle_deg": 110.41300201416016,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.3487833738327026
+          }
+        },
+        {
+          "part_index": 999,
+          "shape_group_id": "shape_f8cbf975eff3f48c4cac",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 77.06087493896484,
+            "median_angle_deg": 77.06087493896484,
+            "p90_angle_deg": 77.06095123291016,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.7760843634605408
+          }
+        }
+      ]
+    },
+    {
+      "point_subset": "new_subset_2",
+      "metrics": {
+        "count": 512,
+        "mean_angle_deg": 71.51367950439453,
+        "median_angle_deg": 67.12641906738281,
+        "p90_angle_deg": 112.06397247314453,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 12.5,
+        "cosine_loss": 0.7287613153457642,
+        "mean_signed_rotation_concentration": 1.0
+      },
+      "per_part": [
+        {
+          "part_index": 54,
+          "shape_group_id": "shape_09d730b1f0ac64fdde84",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 66.04466247558594,
+            "median_angle_deg": 66.04464721679688,
+            "p90_angle_deg": 66.04473876953125,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.5939755439758301
+          }
+        },
+        {
+          "part_index": 172,
+          "shape_group_id": "shape_29c364016da101d60ebc",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 50.42082595825195,
+            "median_angle_deg": 50.42082977294922,
+            "p90_angle_deg": 50.42085647583008,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.3628562092781067
+          }
+        },
+        {
+          "part_index": 430,
+          "shape_group_id": "shape_6e3e430a85043d522d72",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 61.7938232421875,
+            "median_angle_deg": 61.7938232421875,
+            "p90_angle_deg": 61.79383850097656,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.5273543000221252
+          }
+        },
+        {
+          "part_index": 696,
+          "shape_group_id": "shape_afe180a8bc059b29ed47",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 68.20811462402344,
+            "median_angle_deg": 68.2081069946289,
+            "p90_angle_deg": 68.20816040039062,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.6287636756896973
+          }
+        },
+        {
+          "part_index": 877,
+          "shape_group_id": "shape_db968af1376a40c6ad6c",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 112.06572723388672,
+            "median_angle_deg": 112.06605529785156,
+            "p90_angle_deg": 112.06816864013672,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.375670075416565
+          }
+        },
+        {
+          "part_index": 893,
+          "shape_group_id": "shape_df55dbae6d84d528f670",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 16.07394790649414,
+            "median_angle_deg": 16.073949813842773,
+            "p90_angle_deg": 16.073974609375,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 100.0,
+            "cosine_loss": 0.03909490257501602
+          }
+        },
+        {
+          "part_index": 974,
+          "shape_group_id": "shape_f3272ecf2eca51c8caf0",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 105.17642974853516,
+            "median_angle_deg": 105.17642211914062,
+            "p90_angle_deg": 105.17656707763672,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.2617923021316528
+          }
+        },
+        {
+          "part_index": 999,
+          "shape_group_id": "shape_f8cbf975eff3f48c4cac",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 92.32591247558594,
+            "median_angle_deg": 92.32591247558594,
+            "p90_angle_deg": 92.32596588134766,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.040583848953247
+          }
+        }
+      ]
+    },
+    {
+      "point_subset": "new_subset_3",
+      "metrics": {
+        "count": 512,
+        "mean_angle_deg": 76.75104522705078,
+        "median_angle_deg": 66.48789978027344,
+        "p90_angle_deg": 163.1344757080078,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 12.5,
+        "within_30deg_pct": 12.5,
+        "cosine_loss": 0.7914943695068359,
+        "mean_signed_rotation_concentration": 0.9999999403953552
+      },
+      "per_part": [
+        {
+          "part_index": 54,
+          "shape_group_id": "shape_09d730b1f0ac64fdde84",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 56.67976760864258,
+            "median_angle_deg": 56.67974853515625,
+            "p90_angle_deg": 56.67993927001953,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.450682133436203
+          }
+        },
+        {
+          "part_index": 172,
+          "shape_group_id": "shape_29c364016da101d60ebc",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 84.31309509277344,
+            "median_angle_deg": 84.31310272216797,
+            "p90_angle_deg": 84.31312561035156,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.9009077548980713
+          }
+        },
+        {
+          "part_index": 430,
+          "shape_group_id": "shape_6e3e430a85043d522d72",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 59.301025390625,
+            "median_angle_deg": 59.301025390625,
+            "p90_angle_deg": 59.3010368347168,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.48947250843048096
+          }
+        },
+        {
+          "part_index": 696,
+          "shape_group_id": "shape_afe180a8bc059b29ed47",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 65.45402526855469,
+            "median_angle_deg": 65.45401763916016,
+            "p90_angle_deg": 65.4540786743164,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.5845766663551331
+          }
+        },
+        {
+          "part_index": 877,
+          "shape_group_id": "shape_db968af1376a40c6ad6c",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 8.976842880249023,
+            "median_angle_deg": 8.976832389831543,
+            "p90_angle_deg": 8.976923942565918,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 100.0,
+            "within_30deg_pct": 100.0,
+            "cosine_loss": 0.012248576618731022
+          }
+        },
+        {
+          "part_index": 893,
+          "shape_group_id": "shape_df55dbae6d84d528f670",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 163.13449096679688,
+            "median_angle_deg": 163.13449096679688,
+            "p90_angle_deg": 163.13455200195312,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.9569883346557617
+          }
+        },
+        {
+          "part_index": 974,
+          "shape_group_id": "shape_f3272ecf2eca51c8caf0",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 108.62728118896484,
+            "median_angle_deg": 108.62727355957031,
+            "p90_angle_deg": 108.62751770019531,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 1.3194105625152588
+          }
+        },
+        {
+          "part_index": 999,
+          "shape_group_id": "shape_f8cbf975eff3f48c4cac",
+          "metrics": {
+            "count": 64,
+            "mean_angle_deg": 67.52180480957031,
+            "median_angle_deg": 67.52180480957031,
+            "p90_angle_deg": 67.52185821533203,
+            "within_3deg_pct": 0.0,
+            "within_5deg_pct": 0.0,
+            "within_10deg_pct": 0.0,
+            "within_30deg_pct": 0.0,
+            "cosine_loss": 0.6176682710647583
+          }
+        }
+      ]
+    }
+  ],
+  "equivariance_audit": {
+    "rotation_vector_l2_max": 2.772618790913839e-05,
+    "rotation_vector_l2_mean": 5.054941539128777e-06,
+    "batch_independence_max_component_error": 1.6868114471435547e-05,
+    "point_permutation_max_component_error": 7.748603820800781e-07,
+    "passed": true,
+    "seed": 20262012,
+    "parts_checked": 8,
+    "note": "FP32 tolerance; structural equivariance is mathematical, observed numerical residual is finite precision."
+  },
+  "inference_and_audit_seconds": 1.737526147000608,
+  "prior_targets_exactly_equal": true,
+  "limitations": [
+    "Only eight held-out shapes; same original validation pool previously inspected, not a pristine final test.",
+    "Fixed original 4096-point caches; no independent fresh mesh resampling.",
+    "No project or family isolation, no symmetry-equivalent direction correction.",
+    "Source face signs on non-watertight meshes are not certified outward.",
+    "Equivariance makes same-subset rotations correlated; 512 views are not 512 independent shapes."
+  ]
+}

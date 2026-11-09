@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "views_per_part": 32,
+  "seed": 20340212,
+  "sampling": "Same deterministic random SO(3) draws for every shape and both checkpoints; fixed training point subsets",
+  "restoration": "Predicted row vector in augmented frame @ R returns history-frame vector",
+  "checkpoints": [
+    {
+      "file": "best_model.pt",
+      "sha256": "3c841a9437088dbeff5b934fc626c5c442e9e9b94cd67318dd5bdab01a7af4b8",
+      "epoch": 100
+    },
+    {
+      "file": "last_model.pt",
+      "sha256": "dca52c3acdd0238e315d6273cfbd4cb603c79a74020a1fee663444e56a7b65b9",
+      "epoch": 315
+    }
+  ],
+  "training_changed": false,
+  "seconds": 53.809365123001044,
+  "summary": [
+    {
+      "checkpoint": "best_model_epoch100",
+      "scope": "train",
+      "parts": 932,
+      "mean_gt_error_deg": 65.03278638170723,
+      "mean_signed_concentration": 0.7890579134281804,
+      "mean_spread_to_consensus_deg": 29.071698781758418,
+      "mean_error_to_identity_prediction_deg": 38.025448494203104,
+      "concentration_ge_095_parts": 335,
+      "concentrated_but_gt_over_30deg_parts": 216,
+      "axial_concentration_ge_09_signed_below_05_parts": 1
+    },
+    {
+      "checkpoint": "best_model_epoch100",
+      "scope": "validation",
+      "parts": 100,
+      "mean_gt_error_deg": 65.98358560880445,
+      "mean_signed_concentration": 0.816743643283844,
+      "mean_spread_to_consensus_deg": 26.818469281196595,
+      "mean_error_to_identity_prediction_deg": 36.69102143287659,
+      "concentration_ge_095_parts": 38,
+      "concentrated_but_gt_over_30deg_parts": 25,
+      "axial_concentration_ge_09_signed_below_05_parts": 0
+    },
+    {
+      "checkpoint": "last_model_epoch315",
+      "scope": "train",
+      "parts": 932,
+      "mean_gt_error_deg": 44.78515965054999,
+      "mean_signed_concentration": 0.8510784914121512,
+      "mean_spread_to_consensus_deg": 23.409854622357905,
+      "mean_error_to_identity_prediction_deg": 31.9937079791859,
+      "concentration_ge_095_parts": 395,
+      "concentrated_but_gt_over_30deg_parts": 169,
+      "axial_concentration_ge_09_signed_below_05_parts": 0
+    },
+    {
+      "checkpoint": "last_model_epoch315",
+      "scope": "validation",
+      "parts": 100,
+      "mean_gt_error_deg": 68.49717595793376,
+      "mean_signed_concentration": 0.7952405130118132,
+      "mean_spread_to_consensus_deg": 28.23944220542908,
+      "mean_error_to_identity_prediction_deg": 37.31401884555817,
+      "concentration_ge_095_parts": 38,
+      "concentrated_but_gt_over_30deg_parts": 22,
+      "axial_concentration_ge_09_signed_below_05_parts": 0
+    }
+  ],
+  "limitations": [
+    "32 rotations are a finite diagnostic, not a proof of equivariance.",
+    "A consistent wrong axis does not prove symmetry, label error or manufacturability.",
+    "High scatter can include competing modes or sign flips, not only arbitrary instability.",
+    "Validation-selected checkpoint; no new shape test set or retraining.",
+    "Different rotation draws from training progress; aggregate angles need not match exactly."
+  ]
+}

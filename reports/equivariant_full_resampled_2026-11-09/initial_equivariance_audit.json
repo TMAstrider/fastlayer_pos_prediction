@@ -1,0 +1,10 @@
+{
+  "rotation_vector_l2_max": 6.320060037978692e-06,
+  "rotation_vector_l2_mean": 1.3199588693169062e-06,
+  "batch_independence_max_component_error": 1.7285346984863281e-06,
+  "point_permutation_max_component_error": 4.76837158203125e-07,
+  "passed": true,
+  "seed": 20261201,
+  "parts_checked": 8,
+  "note": "FP32 tolerance; structural equivariance is mathematical, observed numerical residual is finite precision."
+}

@@ -1,0 +1,578 @@
+{
+  "shape_count": 1032,
+  "validation_shape_count": 100,
+  "pca_angle_deg": {
+    "p5": 0.20144637006994892,
+    "p10": 0.5809111775955768,
+    "p25": 6.342547131426273,
+    "p50": 32.911862171281555,
+    "p75": 43.80636045980127,
+    "p90": 44.966891372603015,
+    "p95": 45.249274270259214
+  },
+  "pca_within_10deg_pct": 28.391472868217054,
+  "z_extent_rank_counts": {
+    "0": 122,
+    "1": 389,
+    "2": 521
+  },
+  "top10_normal_angle_deg": {
+    "p5": 0.0,
+    "p10": 0.0,
+    "p25": 11.478340954533579,
+    "p50": 44.765084671328424,
+    "p75": 44.765084671328424,
+    "p90": 63.256316049597,
+    "p95": 88.5387813742423
+  },
+  "top10_normal_within_10deg_pct": 24.9031007751938,
+  "top10_normal_within_20deg_pct": 29.166666666666668,
+  "largest_face_fraction": {
+    "p5": 0.0087890625,
+    "p10": 0.014404296875,
+    "p25": 0.048583984375,
+    "p50": 0.113525390625,
+    "p75": 0.1942138671875,
+    "p90": 0.28466796875,
+    "p95": 0.3339965820312498
+  },
+  "largest_face_signed_angle_deg": {
+    "p5": 43.26286415334672,
+    "p10": 44.999000965341,
+    "p25": 61.69237418695838,
+    "p50": 90.0,
+    "p75": 133.17418047980718,
+    "p90": 135.00217731433978,
+    "p95": 178.32211305793123
+  },
+  "largest_face_signed_within_10deg_pct": 3.391472868217054,
+  "largest_face_unsigned_within_10deg_pct": 8.720930232558139,
+  "bottom_2pct_normal_z": {
+    "p5": -0.8866011066398973,
+    "p10": -0.8388471972244678,
+    "p25": -0.7250215238353858,
+    "p50": -0.5701561764996985,
+    "p75": -0.23933854579656244,
+    "p90": -0.0900881145423731,
+    "p95": -0.03753979499884311
+  },
+  "bottom_flat_share_pct": 15.60077519379845,
+  "validation": {
+    "pca_within_10deg_pct": 23.0,
+    "top10_normal_within_10deg_pct": 24.0,
+    "bottom_flat_share_pct": 12.0
+  },
+  "saved_prediction": {
+    "part_count": 100,
+    "mean_signed_angle_deg": 63.95473492700981,
+    "median_signed_angle_deg": 57.16871517567304,
+    "mean_unsigned_angle_deg": 50.613574154893456,
+    "median_unsigned_angle_deg": 52.95909844697458,
+    "within_10_unsigned_pct": 9.0,
+    "within_20_unsigned_pct": 14.000000000000002,
+    "within_30_unsigned_pct": 19.0,
+    "parts_below_20_signed": 13,
+    "per_part": [
+      {
+        "part_index": 17,
+        "mean_signed_angle_deg": 54.00663686581135,
+        "mean_unsigned_angle_deg": 54.00663686581135
+      },
+      {
+        "part_index": 18,
+        "mean_signed_angle_deg": 109.03562161262082,
+        "mean_unsigned_angle_deg": 70.96437838737918
+      },
+      {
+        "part_index": 25,
+        "mean_signed_angle_deg": 76.66496933880526,
+        "mean_unsigned_angle_deg": 76.66496933880526
+      },
+      {
+        "part_index": 29,
+        "mean_signed_angle_deg": 6.7103086725347305,
+        "mean_unsigned_angle_deg": 6.7103086725347305
+      },
+      {
+        "part_index": 32,
+        "mean_signed_angle_deg": 14.044178849659065,
+        "mean_unsigned_angle_deg": 14.044178849659065
+      },
+      {
+        "part_index": 36,
+        "mean_signed_angle_deg": 38.60797857827967,
+        "mean_unsigned_angle_deg": 38.60797857827967
+      },
+      {
+        "part_index": 40,
+        "mean_signed_angle_deg": 52.72046263253693,
+        "mean_unsigned_angle_deg": 52.72046263253693
+      },
+      {
+        "part_index": 54,
+        "mean_signed_angle_deg": 7.528993800148289,
+        "mean_unsigned_angle_deg": 7.528993800148289
+      },
+      {
+        "part_index": 59,
+        "mean_signed_angle_deg": 86.32633296278445,
+        "mean_unsigned_angle_deg": 86.32633296278445
+      },
+      {
+        "part_index": 70,
+        "mean_signed_angle_deg": 48.53723089364483,
+        "mean_unsigned_angle_deg": 48.53723089364483
+      },
+      {
+        "part_index": 98,
+        "mean_signed_angle_deg": 51.46022126759814,
+        "mean_unsigned_angle_deg": 51.46022126759814
+      },
+      {
+        "part_index": 100,
+        "mean_signed_angle_deg": 38.220281681524455,
+        "mean_unsigned_angle_deg": 38.220281681524455
+      },
+      {
+        "part_index": 105,
+        "mean_signed_angle_deg": 140.94012801096738,
+        "mean_unsigned_angle_deg": 39.059871989032644
+      },
+      {
+        "part_index": 122,
+        "mean_signed_angle_deg": 90.76784955029993,
+        "mean_unsigned_angle_deg": 89.23215044970007
+      },
+      {
+        "part_index": 125,
+        "mean_signed_angle_deg": 75.73397403183239,
+        "mean_unsigned_angle_deg": 75.73397403183239
+      },
+      {
+        "part_index": 143,
+        "mean_signed_angle_deg": 74.79729826993957,
+        "mean_unsigned_angle_deg": 74.79729826993957
+      },
+      {
+        "part_index": 159,
+        "mean_signed_angle_deg": 92.97779263025177,
+        "mean_unsigned_angle_deg": 87.02220736974823
+      },
+      {
+        "part_index": 164,
+        "mean_signed_angle_deg": 132.28915241863308,
+        "mean_unsigned_angle_deg": 47.71084758136695
+      },
+      {
+        "part_index": 165,
+        "mean_signed_angle_deg": 80.99623950380736,
+        "mean_unsigned_angle_deg": 80.99623950380736
+      },
+      {
+        "part_index": 171,
+        "mean_signed_angle_deg": 119.8323267499249,
+        "mean_unsigned_angle_deg": 60.16767325007509
+      },
+      {
+        "part_index": 172,
+        "mean_signed_angle_deg": 126.76255159275948,
+        "mean_unsigned_angle_deg": 53.23744840724052
+      },
+      {
+        "part_index": 178,
+        "mean_signed_angle_deg": 87.37691849973022,
+        "mean_unsigned_angle_deg": 87.37691849973022
+      },
+      {
+        "part_index": 180,
+        "mean_signed_angle_deg": 85.37072798384459,
+        "mean_unsigned_angle_deg": 85.37072798384459
+      },
+      {
+        "part_index": 189,
+        "mean_signed_angle_deg": 36.4044081205691,
+        "mean_unsigned_angle_deg": 36.4044081205691
+      },
+      {
+        "part_index": 208,
+        "mean_signed_angle_deg": 61.43025096035174,
+        "mean_unsigned_angle_deg": 61.43025096035174
+      },
+      {
+        "part_index": 211,
+        "mean_signed_angle_deg": 61.58794008536694,
+        "mean_unsigned_angle_deg": 61.58794008536694
+      },
+      {
+        "part_index": 242,
+        "mean_signed_angle_deg": 14.774064257443957,
+        "mean_unsigned_angle_deg": 14.774064257443957
+      },
+      {
+        "part_index": 247,
+        "mean_signed_angle_deg": 49.69554758864948,
+        "mean_unsigned_angle_deg": 49.69554758864948
+      },
+      {
+        "part_index": 249,
+        "mean_signed_angle_deg": 68.75385923534807,
+        "mean_unsigned_angle_deg": 68.75385923534807
+      },
+      {
+        "part_index": 255,
+        "mean_signed_angle_deg": 48.09171922949106,
+        "mean_unsigned_angle_deg": 48.09171922949106
+      },
+      {
+        "part_index": 265,
+        "mean_signed_angle_deg": 36.43014757280919,
+        "mean_unsigned_angle_deg": 36.43014757280919
+      },
+      {
+        "part_index": 268,
+        "mean_signed_angle_deg": 58.57779142449869,
+        "mean_unsigned_angle_deg": 58.57779142449869
+      },
+      {
+        "part_index": 270,
+        "mean_signed_angle_deg": 53.19771180835063,
+        "mean_unsigned_angle_deg": 53.19771180835063
+      },
+      {
+        "part_index": 280,
+        "mean_signed_angle_deg": 57.64726674108901,
+        "mean_unsigned_angle_deg": 57.64726674108901
+      },
+      {
+        "part_index": 287,
+        "mean_signed_angle_deg": 21.587638620385775,
+        "mean_unsigned_angle_deg": 21.587638620385775
+      },
+      {
+        "part_index": 306,
+        "mean_signed_angle_deg": 153.67651946020737,
+        "mean_unsigned_angle_deg": 26.32348053979262
+      },
+      {
+        "part_index": 315,
+        "mean_signed_angle_deg": 31.750290741973593,
+        "mean_unsigned_angle_deg": 31.750290741973593
+      },
+      {
+        "part_index": 357,
+        "mean_signed_angle_deg": 65.7975700897126,
+        "mean_unsigned_angle_deg": 65.7975700897126
+      },
+      {
+        "part_index": 385,
+        "mean_signed_angle_deg": 46.216224126900954,
+        "mean_unsigned_angle_deg": 46.216224126900954
+      },
+      {
+        "part_index": 391,
+        "mean_signed_angle_deg": 55.59317142677017,
+        "mean_unsigned_angle_deg": 55.59317142677017
+      },
+      {
+        "part_index": 398,
+        "mean_signed_angle_deg": 55.03229718599191,
+        "mean_unsigned_angle_deg": 55.03229718599191
+      },
+      {
+        "part_index": 408,
+        "mean_signed_angle_deg": 107.03809529767418,
+        "mean_unsigned_angle_deg": 72.96190470232584
+      },
+      {
+        "part_index": 414,
+        "mean_signed_angle_deg": 9.03634292951002,
+        "mean_unsigned_angle_deg": 9.03634292951002
+      },
+      {
+        "part_index": 420,
+        "mean_signed_angle_deg": 32.08519363576993,
+        "mean_unsigned_angle_deg": 32.08519363576993
+      },
+      {
+        "part_index": 424,
+        "mean_signed_angle_deg": 104.78906446116146,
+        "mean_unsigned_angle_deg": 75.21093553883854
+      },
+      {
+        "part_index": 427,
+        "mean_signed_angle_deg": 40.23252814638023,
+        "mean_unsigned_angle_deg": 40.23252814638023
+      },
+      {
+        "part_index": 430,
+        "mean_signed_angle_deg": 142.76439442477283,
+        "mean_unsigned_angle_deg": 37.23560557522717
+      },
+      {
+        "part_index": 432,
+        "mean_signed_angle_deg": 114.0941531328088,
+        "mean_unsigned_angle_deg": 65.90584686719122
+      },
+      {
+        "part_index": 439,
+        "mean_signed_angle_deg": 44.968052568046176,
+        "mean_unsigned_angle_deg": 44.968052568046176
+      },
+      {
+        "part_index": 443,
+        "mean_signed_angle_deg": 54.152974867615995,
+        "mean_unsigned_angle_deg": 54.152974867615995
+      },
+      {
+        "part_index": 447,
+        "mean_signed_angle_deg": 73.22026494081629,
+        "mean_unsigned_angle_deg": 73.22026494081629
+      },
+      {
+        "part_index": 461,
+        "mean_signed_angle_deg": 9.5689134614429,
+        "mean_unsigned_angle_deg": 9.5689134614429
+      },
+      {
+        "part_index": 466,
+        "mean_signed_angle_deg": 50.42749964754279,
+        "mean_unsigned_angle_deg": 50.42749964754279
+      },
+      {
+        "part_index": 469,
+        "mean_signed_angle_deg": 61.51175389591762,
+        "mean_unsigned_angle_deg": 61.51175389591762
+      },
+      {
+        "part_index": 493,
+        "mean_signed_angle_deg": 32.63595164815829,
+        "mean_unsigned_angle_deg": 32.63595164815829
+      },
+      {
+        "part_index": 521,
+        "mean_signed_angle_deg": 115.28578146584351,
+        "mean_unsigned_angle_deg": 64.71421853415649
+      },
+      {
+        "part_index": 535,
+        "mean_signed_angle_deg": 67.5395137034496,
+        "mean_unsigned_angle_deg": 67.5395137034496
+      },
+      {
+        "part_index": 544,
+        "mean_signed_angle_deg": 68.13888817928009,
+        "mean_unsigned_angle_deg": 68.13888817928009
+      },
+      {
+        "part_index": 550,
+        "mean_signed_angle_deg": 50.0418714161322,
+        "mean_unsigned_angle_deg": 50.0418714161322
+      },
+      {
+        "part_index": 572,
+        "mean_signed_angle_deg": 109.17562394382789,
+        "mean_unsigned_angle_deg": 70.82437605617213
+      },
+      {
+        "part_index": 573,
+        "mean_signed_angle_deg": 116.69280540057338,
+        "mean_unsigned_angle_deg": 63.30719459942664
+      },
+      {
+        "part_index": 587,
+        "mean_signed_angle_deg": 93.6803450374231,
+        "mean_unsigned_angle_deg": 86.31965496257692
+      },
+      {
+        "part_index": 590,
+        "mean_signed_angle_deg": 10.731451659980719,
+        "mean_unsigned_angle_deg": 10.731451659980719
+      },
+      {
+        "part_index": 612,
+        "mean_signed_angle_deg": 36.44977792395147,
+        "mean_unsigned_angle_deg": 36.44977792395147
+      },
+      {
+        "part_index": 613,
+        "mean_signed_angle_deg": 13.600091357789557,
+        "mean_unsigned_angle_deg": 13.600091357789557
+      },
+      {
+        "part_index": 646,
+        "mean_signed_angle_deg": 45.98396341627911,
+        "mean_unsigned_angle_deg": 45.98396341627911
+      },
+      {
+        "part_index": 663,
+        "mean_signed_angle_deg": 67.32339823976196,
+        "mean_unsigned_angle_deg": 67.32339823976196
+      },
+      {
+        "part_index": 667,
+        "mean_signed_angle_deg": 63.48481153198009,
+        "mean_unsigned_angle_deg": 63.48481153198009
+      },
+      {
+        "part_index": 672,
+        "mean_signed_angle_deg": 162.4733221750304,
+        "mean_unsigned_angle_deg": 17.5266778249696
+      },
+      {
+        "part_index": 696,
+        "mean_signed_angle_deg": 64.26588697979581,
+        "mean_unsigned_angle_deg": 64.26588697979581
+      },
+      {
+        "part_index": 726,
+        "mean_signed_angle_deg": 7.812534863265558,
+        "mean_unsigned_angle_deg": 7.812534863265558
+      },
+      {
+        "part_index": 749,
+        "mean_signed_angle_deg": 143.99759368577867,
+        "mean_unsigned_angle_deg": 36.002406314221346
+      },
+      {
+        "part_index": 755,
+        "mean_signed_angle_deg": 80.47252064105473,
+        "mean_unsigned_angle_deg": 80.47252064105473
+      },
+      {
+        "part_index": 765,
+        "mean_signed_angle_deg": 1.933307875236577,
+        "mean_unsigned_angle_deg": 1.933307875236577
+      },
+      {
+        "part_index": 770,
+        "mean_signed_angle_deg": 25.67204566074622,
+        "mean_unsigned_angle_deg": 25.67204566074622
+      },
+      {
+        "part_index": 781,
+        "mean_signed_angle_deg": 26.898537005404897,
+        "mean_unsigned_angle_deg": 26.898537005404897
+      },
+      {
+        "part_index": 784,
+        "mean_signed_angle_deg": 34.735600615102435,
+        "mean_unsigned_angle_deg": 34.735600615102435
+      },
+      {
+        "part_index": 807,
+        "mean_signed_angle_deg": 107.11163648611092,
+        "mean_unsigned_angle_deg": 72.88836351388908
+      },
+      {
+        "part_index": 817,
+        "mean_signed_angle_deg": 35.792429120035706,
+        "mean_unsigned_angle_deg": 35.792429120035706
+      },
+      {
+        "part_index": 839,
+        "mean_signed_angle_deg": 4.143021270761915,
+        "mean_unsigned_angle_deg": 4.143021270761915
+      },
+      {
+        "part_index": 844,
+        "mean_signed_angle_deg": 56.69016043372979,
+        "mean_unsigned_angle_deg": 56.69016043372979
+      },
+      {
+        "part_index": 859,
+        "mean_signed_angle_deg": 137.64815508648252,
+        "mean_unsigned_angle_deg": 42.351844913517496
+      },
+      {
+        "part_index": 877,
+        "mean_signed_angle_deg": 75.9553713517559,
+        "mean_unsigned_angle_deg": 75.9553713517559
+      },
+      {
+        "part_index": 880,
+        "mean_signed_angle_deg": 86.43834736728422,
+        "mean_unsigned_angle_deg": 86.43834736728422
+      },
+      {
+        "part_index": 893,
+        "mean_signed_angle_deg": 90.32113529386311,
+        "mean_unsigned_angle_deg": 89.6788647061369
+      },
+      {
+        "part_index": 913,
+        "mean_signed_angle_deg": 3.8536165896530283,
+        "mean_unsigned_angle_deg": 3.8536165896530283
+      },
+      {
+        "part_index": 920,
+        "mean_signed_angle_deg": 51.80049276816156,
+        "mean_unsigned_angle_deg": 51.80049276816156
+      },
+      {
+        "part_index": 926,
+        "mean_signed_angle_deg": 51.70664656688721,
+        "mean_unsigned_angle_deg": 51.70664656688721
+      },
+      {
+        "part_index": 935,
+        "mean_signed_angle_deg": 57.853443729521786,
+        "mean_unsigned_angle_deg": 57.853443729521786
+      },
+      {
+        "part_index": 962,
+        "mean_signed_angle_deg": 90.74204537678034,
+        "mean_unsigned_angle_deg": 89.25795462321966
+      },
+      {
+        "part_index": 972,
+        "mean_signed_angle_deg": 55.44636572310951,
+        "mean_unsigned_angle_deg": 55.44636572310951
+      },
+      {
+        "part_index": 974,
+        "mean_signed_angle_deg": 93.85862652864569,
+        "mean_unsigned_angle_deg": 86.14137347135431
+      },
+      {
+        "part_index": 980,
+        "mean_signed_angle_deg": 21.12323496464504,
+        "mean_unsigned_angle_deg": 21.12323496464504
+      },
+      {
+        "part_index": 983,
+        "mean_signed_angle_deg": 94.67821584055775,
+        "mean_unsigned_angle_deg": 85.32178415944225
+      },
+      {
+        "part_index": 999,
+        "mean_signed_angle_deg": 46.78077272162874,
+        "mean_unsigned_angle_deg": 46.78077272162874
+      },
+      {
+        "part_index": 1002,
+        "mean_signed_angle_deg": 51.876317620878126,
+        "mean_unsigned_angle_deg": 51.876317620878126
+      },
+      {
+        "part_index": 1006,
+        "mean_signed_angle_deg": 68.19427109526404,
+        "mean_unsigned_angle_deg": 68.19427109526404
+      },
+      {
+        "part_index": 1009,
+        "mean_signed_angle_deg": 31.077299039802714,
+        "mean_unsigned_angle_deg": 31.077299039802714
+      },
+      {
+        "part_index": 1011,
+        "mean_signed_angle_deg": 126.42510294281882,
+        "mean_unsigned_angle_deg": 53.57489705718118
+      },
+      {
+        "part_index": 1024,
+        "mean_signed_angle_deg": 5.0893338734489895,
+        "mean_unsigned_angle_deg": 5.0893338734489895
+      }
+    ]
+  }
+}

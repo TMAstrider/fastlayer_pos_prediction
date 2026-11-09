@@ -1,0 +1,136 @@
+{
+  "checkpoint_epoch": 600,
+  "training_performed": false,
+  "variants": [
+    {
+      "point_subset": "original",
+      "metrics": {
+        "count": 512,
+        "mean_angle_deg": 1.6056878566741943,
+        "median_angle_deg": 1.5100572109222412,
+        "p90_angle_deg": 3.306892156600952,
+        "within_3deg_pct": 87.5,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0,
+        "cosine_loss": 0.0005297427996993065,
+        "mean_signed_rotation_concentration": 1.0
+      },
+      "per_part_mean_deg": {
+        "69": 2.512031078338623,
+        "147": 0.16535446047782898,
+        "232": 0.7486490607261658,
+        "546": 1.0709202289581299,
+        "644": 1.8214893341064453,
+        "659": 1.1986198425292969,
+        "790": 2.023376941680908,
+        "843": 3.30696177482605
+      }
+    },
+    {
+      "point_subset": "disjoint_remaining_2048",
+      "metrics": {
+        "count": 512,
+        "mean_angle_deg": 2.6494336128234863,
+        "median_angle_deg": 2.3755874633789062,
+        "p90_angle_deg": 4.51848030090332,
+        "within_3deg_pct": 62.5,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0,
+        "cosine_loss": 0.00129513384308666,
+        "mean_signed_rotation_concentration": 1.0
+      },
+      "per_part_mean_deg": {
+        "69": 1.2791249752044678,
+        "147": 4.428050994873047,
+        "232": 3.1169662475585938,
+        "546": 1.914546251296997,
+        "644": 2.836620330810547,
+        "659": 4.518562316894531,
+        "790": 1.2756445407867432,
+        "843": 1.826485276222229
+      }
+    },
+    {
+      "point_subset": "resampled_subset_seed1",
+      "metrics": {
+        "count": 512,
+        "mean_angle_deg": 3.3560338020324707,
+        "median_angle_deg": 3.318286895751953,
+        "p90_angle_deg": 5.735106468200684,
+        "within_3deg_pct": 50.0,
+        "within_5deg_pct": 87.5,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0,
+        "cosine_loss": 0.002023235894739628,
+        "mean_signed_rotation_concentration": 1.0
+      },
+      "per_part_mean_deg": {
+        "69": 2.9361374378204346,
+        "147": 3.700397491455078,
+        "232": 4.854981899261475,
+        "546": 1.3385285139083862,
+        "644": 4.147671222686768,
+        "659": 5.735161304473877,
+        "790": 2.107367515563965,
+        "843": 2.028383731842041
+      }
+    },
+    {
+      "point_subset": "resampled_subset_seed2",
+      "metrics": {
+        "count": 512,
+        "mean_angle_deg": 2.309175968170166,
+        "median_angle_deg": 1.73646879196167,
+        "p90_angle_deg": 4.786509990692139,
+        "within_3deg_pct": 75.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0,
+        "cosine_loss": 0.0011364762904122472,
+        "mean_signed_rotation_concentration": 1.0
+      },
+      "per_part_mean_deg": {
+        "69": 0.8191770315170288,
+        "147": 1.8529449701309204,
+        "232": 2.7413415908813477,
+        "546": 1.201460599899292,
+        "644": 4.786550998687744,
+        "659": 4.494739532470703,
+        "790": 1.6201200485229492,
+        "843": 0.9578630924224854
+      }
+    },
+    {
+      "point_subset": "resampled_subset_seed3",
+      "metrics": {
+        "count": 512,
+        "mean_angle_deg": 2.9369893074035645,
+        "median_angle_deg": 2.283222198486328,
+        "p90_angle_deg": 5.164294719696045,
+        "within_3deg_pct": 62.5,
+        "within_5deg_pct": 87.5,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0,
+        "cosine_loss": 0.0017128263134509325,
+        "mean_signed_rotation_concentration": 0.9999999403953552
+      },
+      "per_part_mean_deg": {
+        "69": 0.47947412729263306,
+        "147": 4.829948425292969,
+        "232": 4.713968276977539,
+        "546": 2.0260562896728516,
+        "644": 5.164342880249023,
+        "659": 1.8464579582214355,
+        "790": 2.54042911529541,
+        "843": 1.8958475589752197
+      }
+    }
+  ],
+  "normalization": "Unchanged 4096-point reference mean and radius",
+  "limitations": [
+    "New subsets of original 4096 surface samples, not independent fresh mesh sampling.",
+    "No new-shape evaluation; this only checks sensitivity to the point subset."
+  ]
+}

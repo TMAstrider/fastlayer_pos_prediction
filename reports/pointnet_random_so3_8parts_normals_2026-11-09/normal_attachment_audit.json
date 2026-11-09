@@ -1,0 +1,96 @@
+{
+  "records": [
+    {
+      "part_index": 69,
+      "file": "shape_0dd5750287aca2e6cab8.npz",
+      "point_bytes_sha256": "363248259921144713fba0958548961aa9d664dff8c4175a453c294159a8ab1b",
+      "point_to_mesh_max_distance_mm": 7.0970137553390885e-06,
+      "point_to_mesh_mean_distance_mm": 9.205591620271639e-07,
+      "mesh_watertight": true,
+      "mesh_winding_consistent": true,
+      "mesh_positive_volume": true,
+      "normal_method": "Closest source triangle face normal, not estimated from sparse points."
+    },
+    {
+      "part_index": 147,
+      "file": "shape_21a52c0393f519210c81.npz",
+      "point_bytes_sha256": "9b84d2c1e56b7ba81d53c4ac8e0d227ed2747f22e8eeb269a6601fa897c5592e",
+      "point_to_mesh_max_distance_mm": 7.67876913697921e-06,
+      "point_to_mesh_mean_distance_mm": 1.3462767495013588e-06,
+      "mesh_watertight": true,
+      "mesh_winding_consistent": true,
+      "mesh_positive_volume": true,
+      "normal_method": "Closest source triangle face normal, not estimated from sparse points."
+    },
+    {
+      "part_index": 232,
+      "file": "shape_3c5e95bef117bac8d31e.npz",
+      "point_bytes_sha256": "9cba6566708e4002d48f7ea39f0f5f16e3293ef4aef1f747682db635d268fb0c",
+      "point_to_mesh_max_distance_mm": 1.1211682594846616e-05,
+      "point_to_mesh_mean_distance_mm": 1.2294877951575273e-06,
+      "mesh_watertight": true,
+      "mesh_winding_consistent": true,
+      "mesh_positive_volume": true,
+      "normal_method": "Closest source triangle face normal, not estimated from sparse points."
+    },
+    {
+      "part_index": 546,
+      "file": "shape_89b5305035b28d39318a.npz",
+      "point_bytes_sha256": "904eb9bcb11e67285746958d521d28633f5eee366bfede948147277d32aca56f",
+      "point_to_mesh_max_distance_mm": 5.22192410315387e-06,
+      "point_to_mesh_mean_distance_mm": 8.981186028405361e-07,
+      "mesh_watertight": true,
+      "mesh_winding_consistent": true,
+      "mesh_positive_volume": true,
+      "normal_method": "Closest source triangle face normal, not estimated from sparse points."
+    },
+    {
+      "part_index": 644,
+      "file": "shape_a22d92db1f050ecb3624.npz",
+      "point_bytes_sha256": "d8f3ea6e7a623e7317092f1e12f126a72c03b8fb1c2742f43d4fbcea51105779",
+      "point_to_mesh_max_distance_mm": 7.934970518442013e-06,
+      "point_to_mesh_mean_distance_mm": 1.7169917280429576e-06,
+      "mesh_watertight": true,
+      "mesh_winding_consistent": true,
+      "mesh_positive_volume": true,
+      "normal_method": "Closest source triangle face normal, not estimated from sparse points."
+    },
+    {
+      "part_index": 659,
+      "file": "shape_a6665f71b76a2fa68cea.npz",
+      "point_bytes_sha256": "1c45c2d05db293d9038b03e2b57e3ff3698260800af72e66cf8215389b443f5d",
+      "point_to_mesh_max_distance_mm": 2.8433429703517587e-05,
+      "point_to_mesh_mean_distance_mm": 5.5631270154196044e-06,
+      "mesh_watertight": true,
+      "mesh_winding_consistent": true,
+      "mesh_positive_volume": true,
+      "normal_method": "Closest source triangle face normal, not estimated from sparse points."
+    },
+    {
+      "part_index": 790,
+      "file": "shape_c73c00df3f03538b1134.npz",
+      "point_bytes_sha256": "1a1b408fde13f2fee548876bb9b2ed24b21a69da055d3735577e2b54bc94e8b1",
+      "point_to_mesh_max_distance_mm": 2.694737409698253e-05,
+      "point_to_mesh_mean_distance_mm": 3.4317638435734126e-06,
+      "mesh_watertight": true,
+      "mesh_winding_consistent": true,
+      "mesh_positive_volume": true,
+      "normal_method": "Closest source triangle face normal, not estimated from sparse points."
+    },
+    {
+      "part_index": 843,
+      "file": "shape_d19597422c32de220375.npz",
+      "point_bytes_sha256": "4c2c13d0c7dca5c1b4ac3a9365ef7c93cbd12e01682b2835ba40715adc0e226d",
+      "point_to_mesh_max_distance_mm": 6.608788794744733e-06,
+      "point_to_mesh_mean_distance_mm": 5.934340123123497e-07,
+      "mesh_watertight": true,
+      "mesh_winding_consistent": true,
+      "mesh_positive_volume": true,
+      "normal_method": "Closest source triangle face normal, not estimated from sparse points."
+    }
+  ],
+  "limitations": [
+    "At triangle edges, closest-face tie can choose either incident face normal.",
+    "Watertightness and positive total volume do not certify every physical surface orientation."
+  ]
+}

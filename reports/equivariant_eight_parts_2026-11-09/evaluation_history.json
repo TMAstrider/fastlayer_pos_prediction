@@ -1,0 +1,402 @@
+[
+  {
+    "epoch": 1,
+    "online_train_loss": 0.7914259433746338,
+    "learning_rate": 0.001,
+    "probe": {
+      "count": 512,
+      "mean_angle_deg": 53.05663299560547,
+      "median_angle_deg": 42.416603088378906,
+      "p90_angle_deg": 103.23228454589844,
+      "within_3deg_pct": 0.0,
+      "within_5deg_pct": 0.0,
+      "within_10deg_pct": 0.0,
+      "within_30deg_pct": 25.0,
+      "cosine_loss": 0.46963196992874146,
+      "mean_signed_rotation_concentration": 1.0
+    },
+    "per_part": [
+      {
+        "count": 64,
+        "mean_angle_deg": 93.1759033203125,
+        "median_angle_deg": 93.1759033203125,
+        "p90_angle_deg": 93.17593383789062,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 43.6849479675293,
+        "median_angle_deg": 43.6849365234375,
+        "p90_angle_deg": 43.68500518798828,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 41.14824676513672,
+        "median_angle_deg": 41.14824676513672,
+        "p90_angle_deg": 41.14829635620117,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 28.875722885131836,
+        "median_angle_deg": 28.87571907043457,
+        "p90_angle_deg": 28.87575912475586,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 68.64077758789062,
+        "median_angle_deg": 68.64077758789062,
+        "p90_angle_deg": 68.64082336425781,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 12.175798416137695,
+        "median_angle_deg": 12.175792694091797,
+        "p90_angle_deg": 12.175825119018555,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 33.519378662109375,
+        "median_angle_deg": 33.51937484741211,
+        "p90_angle_deg": 33.51939392089844,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 103.2322998046875,
+        "median_angle_deg": 103.23229217529297,
+        "p90_angle_deg": 103.23230743408203,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0
+      }
+    ],
+    "probe_without_69_mean_deg": 47.325310298374724
+  },
+  {
+    "epoch": 50,
+    "online_train_loss": 0.0007060314528644085,
+    "learning_rate": 0.0009996334835055164,
+    "probe": {
+      "count": 512,
+      "mean_angle_deg": 2.9871978759765625,
+      "median_angle_deg": 2.2123305797576904,
+      "p90_angle_deg": 7.615664005279541,
+      "within_3deg_pct": 62.5,
+      "within_5deg_pct": 75.0,
+      "within_10deg_pct": 100.0,
+      "within_30deg_pct": 100.0,
+      "cosine_loss": 0.002186939585953951,
+      "mean_signed_rotation_concentration": 1.0
+    },
+    "per_part": [
+      {
+        "count": 64,
+        "mean_angle_deg": 3.3278393745422363,
+        "median_angle_deg": 3.327842950820923,
+        "p90_angle_deg": 3.3279430866241455,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 2.712435722351074,
+        "median_angle_deg": 2.7124547958374023,
+        "p90_angle_deg": 2.712526798248291,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 5.7325592041015625,
+        "median_angle_deg": 5.732545852661133,
+        "p90_angle_deg": 5.732614517211914,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 1.7121024131774902,
+        "median_angle_deg": 1.7121222019195557,
+        "p90_angle_deg": 1.7122364044189453,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 7.615696430206299,
+        "median_angle_deg": 7.615715026855469,
+        "p90_angle_deg": 7.615739822387695,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.6382808685302734,
+        "median_angle_deg": 0.6382712721824646,
+        "p90_angle_deg": 0.6385776996612549,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 1.1852189302444458,
+        "median_angle_deg": 1.1853117942810059,
+        "p90_angle_deg": 1.1853117942810059,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.9734473824501038,
+        "median_angle_deg": 0.9734756946563721,
+        "p90_angle_deg": 0.9735761880874634,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      }
+    ],
+    "probe_without_69_mean_deg": 2.9385344215801785
+  },
+  {
+    "epoch": 100,
+    "online_train_loss": 6.437767297029495e-06,
+    "learning_rate": 0.0009985044307016522,
+    "probe": {
+      "count": 512,
+      "mean_angle_deg": 0.1218065470457077,
+      "median_angle_deg": 0.08835838735103607,
+      "p90_angle_deg": 0.35221511125564575,
+      "within_3deg_pct": 100.0,
+      "within_5deg_pct": 100.0,
+      "within_10deg_pct": 100.0,
+      "within_30deg_pct": 100.0,
+      "cosine_loss": 3.80747951567173e-06,
+      "mean_signed_rotation_concentration": 1.0
+    },
+    "per_part": [
+      {
+        "count": 64,
+        "mean_angle_deg": 0.35259658098220825,
+        "median_angle_deg": 0.35277020931243896,
+        "p90_angle_deg": 0.353158175945282,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.11035481095314026,
+        "median_angle_deg": 0.11014342308044434,
+        "p90_angle_deg": 0.11190582811832428,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.19149212539196014,
+        "median_angle_deg": 0.19179698824882507,
+        "p90_angle_deg": 0.19281449913978577,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.07464809715747833,
+        "median_angle_deg": 0.07401873916387558,
+        "p90_angle_deg": 0.07661667466163635,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.09724371880292892,
+        "median_angle_deg": 0.09691328555345535,
+        "p90_angle_deg": 0.09891171008348465,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.05379560589790344,
+        "median_angle_deg": 0.05595290660858154,
+        "p90_angle_deg": 0.05595290660858154,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.015641063451766968,
+        "median_angle_deg": 0.01978234015405178,
+        "p90_angle_deg": 0.02797645330429077,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.07868041098117828,
+        "median_angle_deg": 0.07912936806678772,
+        "p90_angle_deg": 0.08083408325910568,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      }
+    ],
+    "probe_without_69_mean_deg": 0.08883654751947948
+  },
+  {
+    "epoch": 150,
+    "online_train_loss": 5.7635828852653503e-05,
+    "learning_rate": 0.0009966144298355613,
+    "probe": {
+      "count": 512,
+      "mean_angle_deg": 0.5893400311470032,
+      "median_angle_deg": 0.51724773645401,
+      "p90_angle_deg": 1.0784709453582764,
+      "within_3deg_pct": 100.0,
+      "within_5deg_pct": 100.0,
+      "within_10deg_pct": 100.0,
+      "within_30deg_pct": 100.0,
+      "cosine_loss": 6.083736661821604e-05,
+      "mean_signed_rotation_concentration": 1.0
+    },
+    "per_part": [
+      {
+        "count": 64,
+        "mean_angle_deg": 0.35402438044548035,
+        "median_angle_deg": 0.35387781262397766,
+        "p90_angle_deg": 0.3548164665699005,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 1.0787203311920166,
+        "median_angle_deg": 1.078833818435669,
+        "p90_angle_deg": 1.078833818435669,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.5767464637756348,
+        "median_angle_deg": 0.5767518281936646,
+        "p90_angle_deg": 0.5770909786224365,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.4048368036746979,
+        "median_angle_deg": 0.40493524074554443,
+        "p90_angle_deg": 0.40541818737983704,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.43651700019836426,
+        "median_angle_deg": 0.43655925989151,
+        "p90_angle_deg": 0.43700724840164185,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.80082106590271,
+        "median_angle_deg": 0.8008859753608704,
+        "p90_angle_deg": 0.8011301755905151,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.4578484892845154,
+        "median_angle_deg": 0.4579954743385315,
+        "p90_angle_deg": 0.45842257142066956,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      },
+      {
+        "count": 64,
+        "mean_angle_deg": 0.605205774307251,
+        "median_angle_deg": 0.6052260398864746,
+        "p90_angle_deg": 0.6055492162704468,
+        "within_3deg_pct": 100.0,
+        "within_5deg_pct": 100.0,
+        "within_10deg_pct": 100.0,
+        "within_30deg_pct": 100.0
+      }
+    ],
+    "probe_without_69_mean_deg": 0.6229565611907414
+  }
+]
