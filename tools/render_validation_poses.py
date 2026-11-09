@@ -41,6 +41,8 @@ def render_part(job):
     import trimesh
 
     font_path = Path("/mnt/c/Windows/Fonts/msyh.ttc")
+    if not font_path.exists():
+        font_path = Path("C:/Windows/Fonts/msyh.ttc")
     font = FontProperties(fname=str(font_path)) if font_path.exists() else FontProperties()
     mesh = trimesh.load(job["stl_path"], force="mesh", process=False)
     vertices = np.asarray(mesh.vertices, dtype=np.float64)
@@ -128,10 +130,10 @@ def render_part(job):
         axis.view_init(elev=38, azim=-58)
         axis.set_axis_off()
         axis.set_title(title, fontproperties=font, color=title_color, fontsize=13, pad=-8)
-        subtitle = ["固定验证输入：第 1 / 8 个随机朝向（无平台）", "历史 GT：最低点落到平台", f"Pred：自由 yaw 对齐 GT；倾斜差 {job['tilt_error_deg']:.2f}°"]
+        subtitle = [job.get('input_subtitle', "固定验证输入：第 1 / 8 个随机朝向（无平台）"), "历史 GT：最低点落到平台", f"Pred：自由 yaw 对齐 GT；倾斜差 {job['tilt_error_deg']:.2f}°"]
         axis.text2D(.5, .015, subtitle[column], transform=axis.transAxes,
                     ha="center", fontproperties=font, fontsize=10, color="#444444")
-    figure.text(.025, .965, f"{job['number']:02d} / 20  ·  record {job['record_id']}  ·  part {job['source_part_id']}",
+    figure.text(.025, .965, f"{job['number']:02d} / {job.get('total_parts', 20)}  ·  record {job['record_id']}  ·  part {job['source_part_id']}",
                 fontsize=14, weight="bold", va="top", color="#202b3b")
     figure.text(.025, .914, "\n".join(textwrap.wrap(job["source_part_name"], 112)),
                 fontproperties=font, fontsize=9, va="top", color="#555555")
@@ -145,13 +147,88 @@ def render_part(job):
     return job["number"], job["image_path"]
 
 
+def render_diagnostic_run(arguments):
+    configuration = json.loads((arguments.run / 'config.json').read_text(encoding='utf-8-sig'))
+    unseen = configuration.get('evaluation_scope') == 'unseen_parts'
+    scope_label = '未见零件' if unseen else '同件独立新朝向'
+    with np.load(arguments.run / 'independent_predictions.npz') as saved:
+        predicted, targets, ids = saved['predicted_axis'], saved['target_axis'], saved['part_indices']
+    with np.load(arguments.run / 'independent_preview_rotations.npz') as saved:
+        rotations = saved['augmentation_rotations']
+        np.testing.assert_array_equal(saved['part_indices'], ids)
+    np.testing.assert_allclose(rotations[:, :, 2], targets, atol=1e-6)
+    jobs = []
+    for number, (record_id, record) in enumerate(zip(configuration['selected_indices'], configuration['selected_records']), 1):
+        positions = np.flatnonzero(ids == record_id)
+        position = int(positions[0])
+        direction = predicted[position].astype(np.float64)
+        direction /= np.linalg.norm(direction)
+        target = targets[position].astype(np.float64)
+        target /= np.linalg.norm(target)
+        error = float(np.degrees(np.arccos(np.clip(direction @ target, -1, 1))))
+        correction = Rotation.align_vectors([[0., 0., 1.]], direction[None, :])[0].as_matrix()
+        np.testing.assert_allclose(correction @ direction, [0, 0, 1], atol=1e-6)
+        filename = f'{number:02d}_record_{record_id:03d}_triptych.png'
+        source_path = ROOT / record['source_stl_file']
+        jobs.append({
+            'number': number, 'total_parts': len(configuration['selected_indices']),
+            'record_id': record_id, 'source_part_id': source_path.stem.split('__')[0],
+            'source_part_name': record['source_project'] + ' / ' + source_path.name,
+            'stl_path': str(source_path), 'image_path': str(arguments.output / filename),
+            'image_file': filename, 'augmentation_rotation': rotations[position].tolist(),
+            'prediction_rotation': correction.tolist(), 'tilt_error_deg': error,
+            'target_direction_input_frame': target.tolist(),
+            'predicted_direction_input_frame': direction.tolist(),
+            'independent_sample_index': position, 'rotation_index': 0,
+            'input_subtitle': f'{scope_label}：第 1 / {len(positions)} 个朝向（无平台）',
+        })
+    with ProcessPoolExecutor(max_workers=arguments.workers) as executor:
+        for number, path in executor.map(render_part, jobs):
+            print(f'Rendered {number}/{len(jobs)}: {Path(path).name}', flush=True)
+    document = {
+        'run': str(arguments.run),
+        'selection': 'First saved independent rotation per shape, without error-based selection.',
+        'scope': 'Eight held-out shapes, unseen by this model.' if unseen else 'Same training shapes, new rotations; not held-out-shape validation.',
+        'rotation_verification': 'Actual evaluation CUDA RNG rotations; third columns match all saved targets.',
+        'direction_marker': 'Input frame +Z attached to the object; not a predicted up vector.',
+        'yaw': 'Prediction display yaw aligned to GT; signed build-direction error excludes yaw.',
+        'samples': jobs,
+    }
+    (arguments.output / 'manifest.json').write_text(json.dumps(document, ensure_ascii=False, indent=2), encoding='utf8')
+    cards = ''.join(f'<article><h2>索引 {job["record_id"]} · 本图方向误差 {job["tilt_error_deg"]:.2f}°</h2>'
+                    f'<a href="{job["image_file"]}"><img src="{job["image_file"]}"></a></article>' for job in jobs)
+    page = ('<!doctype html><meta charset="utf-8"><title>8 个零件：输入 / GT / 预测</title>'
+            '<style>body{background:#eef1f5;font:16px system-ui;margin:24px}main{max-width:1600px;margin:auto}'
+            'article{background:white;margin:20px 0}h2{padding:12px}img{width:100%;display:block}</style>'
+            f'<main><h1>{"8 个未见零件" if unseen else "8 个训练零件的新朝向"}：输入 / GT / 预测</h1>'
+            '<p>使用追加训练后的最佳权重保存的预测；每件展示独立评测的第一个随机朝向，未按误差挑选。'
+            '图上误差是该次朝向的误差，不是该件 64 个朝向的均值。输入无平台；GT/预测落在 40% 透明平台上；'
+            '红箭头跟随输入初始 +Z。预测只在显示时绕 Z 对齐 GT，方向误差仍区分上下。</p>'
+            + cards + '</main>')
+    (arguments.output / 'index.html').write_text(page, encoding='utf8')
+    from PIL import Image, ImageOps
+    thumbnails = []
+    for job in jobs:
+        with Image.open(job['image_path']) as image:
+            thumbnails.append(ImageOps.contain(image.convert('RGB'), (960, 366)))
+    overview = Image.new('RGB', (1920, 366*((len(jobs)+1)//2)), '#e9edf2')
+    for index, thumbnail in enumerate(thumbnails):
+        overview.paste(thumbnail, ((index % 2)*960, (index//2)*366))
+    overview.save(arguments.output / 'overview.jpg', quality=92)
+    print(f'Complete: {arguments.output / "index.html"}', flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run", type=Path, default=ROOT / "runs/utonia_tiny_direction_ablation/with_normals_r64")
     parser.add_argument("--output", type=Path, default=ROOT / "outputs/validation_pose_comparison")
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument('--diagnostic', action='store_true', help='Render saved eight-part independent SO(3) predictions')
     arguments = parser.parse_args()
     arguments.output.mkdir(parents=True, exist_ok=True)
+    if arguments.diagnostic:
+        render_diagnostic_run(arguments)
+        return
     configuration = json.loads((arguments.run / "config.json").read_text())
     split = json.loads((arguments.run / "split.json").read_text())
     records = json.loads((ROOT / "outputs/pointclouds/manifest.json").read_text())["records"]

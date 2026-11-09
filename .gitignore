@@ -5,6 +5,7 @@
 /external/
 /checkpoints/
 /runs/
+/wandb/
 
 # Python cache and local environments
 __pycache__/

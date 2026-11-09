@@ -2,6 +2,10 @@
 
 本记录承接首次基线提交 `44ee7c7`，覆盖新增数据清点、Magics 导出、形状去重、真实件训练及输出层权重编辑。原始数据、导出 STL/点云和 checkpoint 在本机保存，由 `.gitignore` 排除；本阶段提交保存代码、配置、划分、逐轮指标与汇总。
 
+后续八零件诊断的输入、数据加载、A/B/延长训练对比和法向使用情况，见 [八零件训练设置总结](eight_part_training_setup_summary_2026-11-09.md)。其中 15.164° 是同件新朝向误差，不是新的未见零件验证成绩。
+
+当前八件模型在原保留验证池中随机抽取的另外 8 件上，512 个新朝向平均误差 94.204°、≤30° 为 0%，未进行重训。详见 [八个未见零件评测](pointnet_eight_unseen_parts_2026-11-09/README.md)，三联图在 `outputs/eight_unseen_part_pose_comparison/index.html`。
+
 ## 数据工作
 
 - 初始 193 个 PJF 主零件迁移到 `datasets/initial_data`，原有读取脚本适配该路径。

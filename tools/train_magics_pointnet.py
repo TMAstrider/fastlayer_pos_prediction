@@ -11,6 +11,7 @@ from pathlib import Path
 import numpy as np
 import torch
 from torch import nn
+from wandb_tracking import start_run, log_epoch, finish_run
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -244,6 +245,7 @@ def main():
     }
     (args.output / "config.json").write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
     (args.output / "split.json").write_text(json.dumps(split, ensure_ascii=False, indent=2), encoding="utf-8")
+    tracking = start_run(args.output, config, tags=['pointnet', 'unseen-parts-validation'])
     val_inputs, val_targets, val_part_ids, val_rotation_ids = make_validation(
         clouds, validation_indices.tolist(), args.validation_rotations, args.points, args.seed
     )
@@ -287,6 +289,7 @@ def main():
             total_count += len(sampled)
         scheduler.step()
         validation, predicted, target = evaluate(model, val_inputs, val_targets, args.eval_batch_size)
+        validation['cosine_loss'] = float((1 - (predicted * target).sum(axis=-1)).mean())
         row = {
             "epoch": epoch,
             "train_cosine_loss": total_loss / max(total_count, 1),
@@ -295,6 +298,7 @@ def main():
             "epoch_seconds": time.monotonic() - epoch_started,
         }
         history.append(row)
+        log_epoch(tracking, row)
         if validation["mean_angle_deg"] < best_validation:
             best_validation = validation["mean_angle_deg"]
             best_epoch = epoch
@@ -347,6 +351,7 @@ def main():
                         "Magics member activity and exact semantic part roles are not independently labeled."],
     }
     (args.output / "metrics.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    finish_run(tracking, report)
     progress["status"] = "complete"
     (args.output / "progress.json").write_text(json.dumps(progress, indent=2), encoding="utf-8")
     print("Training complete:", json.dumps({key: report[key] for key in (

@@ -1,0 +1,143 @@
+{
+  "status": "complete",
+  "unseen_parts_512_rotations": {
+    "count": 512,
+    "mean_angle_deg": 94.20364379882812,
+    "median_angle_deg": 93.19245910644531,
+    "p90_angle_deg": 153.1211395263672,
+    "within_3deg_pct": 0.0,
+    "within_5deg_pct": 0.0,
+    "within_10deg_pct": 0.0,
+    "within_30deg_pct": 0.0,
+    "cosine_loss": 1.0483617782592773
+  },
+  "per_part": [
+    {
+      "part_index": 54,
+      "shape_group_id": "shape_09d730b1f0ac64fdde84",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 112.52627563476562,
+        "median_angle_deg": 112.44427490234375,
+        "p90_angle_deg": 128.2424774169922,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 1.375180959701538
+      }
+    },
+    {
+      "part_index": 172,
+      "shape_group_id": "shape_29c364016da101d60ebc",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 51.908790588378906,
+        "median_angle_deg": 52.199588775634766,
+        "p90_angle_deg": 60.11214065551758,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.3881225287914276
+      }
+    },
+    {
+      "part_index": 430,
+      "shape_group_id": "shape_6e3e430a85043d522d72",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 49.77037811279297,
+        "median_angle_deg": 49.85981369018555,
+        "p90_angle_deg": 55.34141159057617,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.3554321229457855
+      }
+    },
+    {
+      "part_index": 696,
+      "shape_group_id": "shape_afe180a8bc059b29ed47",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 88.80376434326172,
+        "median_angle_deg": 87.87796020507812,
+        "p90_angle_deg": 98.8606185913086,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.9791262149810791
+      }
+    },
+    {
+      "part_index": 877,
+      "shape_group_id": "shape_db968af1376a40c6ad6c",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 99.64827728271484,
+        "median_angle_deg": 100.75486755371094,
+        "p90_angle_deg": 108.34994506835938,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 1.166408896446228
+      }
+    },
+    {
+      "part_index": 893,
+      "shape_group_id": "shape_df55dbae6d84d528f670",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 68.40040588378906,
+        "median_angle_deg": 69.98397064208984,
+        "p90_angle_deg": 80.93360900878906,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 0.638083815574646
+      }
+    },
+    {
+      "part_index": 974,
+      "shape_group_id": "shape_f3272ecf2eca51c8caf0",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 156.1968994140625,
+        "median_angle_deg": 156.913330078125,
+        "p90_angle_deg": 161.19178771972656,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 1.9118297100067139
+      }
+    },
+    {
+      "part_index": 999,
+      "shape_group_id": "shape_f8cbf975eff3f48c4cac",
+      "metrics": {
+        "count": 64,
+        "mean_angle_deg": 126.37438201904297,
+        "median_angle_deg": 129.85769653320312,
+        "p90_angle_deg": 143.06710815429688,
+        "within_3deg_pct": 0.0,
+        "within_5deg_pct": 0.0,
+        "within_10deg_pct": 0.0,
+        "within_30deg_pct": 0.0,
+        "cosine_loss": 1.572709321975708
+      }
+    }
+  ],
+  "inference_seconds": 0.9844226839995827,
+  "limitations": [
+    "Eight held-out shape groups only; no family/project isolation.",
+    "Original 100-part pool was used for earlier different-model validation; not a pristine final test set.",
+    "Current checkpoint trained only on the listed eight training shapes; no fitting or selection on these eight.",
+    "One point subset per shape; no symmetry-equivalent direction correction."
+  ]
+}

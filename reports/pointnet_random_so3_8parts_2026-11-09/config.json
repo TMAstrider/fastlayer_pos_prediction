@@ -1,0 +1,180 @@
+{
+  "task": "Online random SO(3) on the same eight training shapes",
+  "parts": 8,
+  "fixed_training_views_per_part": null,
+  "fresh_views_per_part": 64,
+  "points": 2048,
+  "batch_size": 32,
+  "max_epochs": 1000,
+  "seed": 20261110,
+  "model": "Same PointNet architecture; scratch; dropout disabled for memorization diagnostic",
+  "optimizer": "AdamW lr=0.001 weight_decay=0",
+  "loss": "unit-axis cosine",
+  "gradient_clip": 1.0,
+  "learning_rate_schedule": "constant",
+  "selected_indices": [
+    69,
+    147,
+    232,
+    546,
+    644,
+    659,
+    790,
+    843
+  ],
+  "selected_records": [
+    {
+      "geometry_sha256": "ff7a2838943e11819621125a1ea36a02f3e4648ce52fdd56a88f4103afe79c1b",
+      "shape_group_id": "shape_0dd5750287aca2e6cab8",
+      "pointcloud_file": "shape_0dd5750287aca2e6cab8.npz",
+      "source_stl_file": "outputs\\magics_parts_stl\\0721-0725\\0724\\0724-铝7\\part_009__f488b518-e0ce-4e77-8b55-36f4fcc1aba7.stl",
+      "source_project": "0721-0725/0724/0724-铝7",
+      "source_format": "magics",
+      "source_record_id": "magics:ff7a2838943e11819621125a1ea36a02f3e4648ce52fdd56a88f4103afe79c1b",
+      "point_count": 4096,
+      "triangle_count": 9132,
+      "gt_up_axis": [
+        0,
+        0,
+        1
+      ],
+      "shape_member_count": 1,
+      "duplicate_record_count": 1
+    },
+    {
+      "geometry_sha256": "68c26aa7cb78bf6d970e63edfca5c7ba9282a649d16c1b640297b0bdd0129cc4",
+      "shape_group_id": "shape_21a52c0393f519210c81",
+      "pointcloud_file": "shape_21a52c0393f519210c81.npz",
+      "source_stl_file": "outputs\\magics_parts_stl\\0726-0731\\0730\\0730-铝6\\part_012__d2a9c72a-aea4-4a22-ba64-ca5a80086378.stl",
+      "source_project": "0726-0731/0730/0730-铝6",
+      "source_format": "magics",
+      "source_record_id": "magics:68c26aa7cb78bf6d970e63edfca5c7ba9282a649d16c1b640297b0bdd0129cc4",
+      "point_count": 4096,
+      "triangle_count": 60480,
+      "gt_up_axis": [
+        0,
+        0,
+        1
+      ],
+      "shape_member_count": 1,
+      "duplicate_record_count": 1
+    },
+    {
+      "geometry_sha256": "a47e73f332363833c69820ac2a1f484488a0ead3003fb0d37e9f8ed68e47b4da",
+      "shape_group_id": "shape_3c5e95bef117bac8d31e",
+      "pointcloud_file": "shape_3c5e95bef117bac8d31e.npz",
+      "source_stl_file": "outputs\\magics_parts_stl\\0711-0720\\0720\\0720-铝1\\part_005__60bc4afc-897a-454e-91ae-9d137d77a28d.stl",
+      "source_project": "0711-0720/0720/0720-铝1",
+      "source_format": "magics",
+      "source_record_id": "magics:a47e73f332363833c69820ac2a1f484488a0ead3003fb0d37e9f8ed68e47b4da",
+      "point_count": 4096,
+      "triangle_count": 4948,
+      "gt_up_axis": [
+        0,
+        0,
+        1
+      ],
+      "shape_member_count": 2,
+      "duplicate_record_count": 2
+    },
+    {
+      "geometry_sha256": "1e923e6014cc3c06fd1ec3a416fdcddabfbf442867569f15fb4c097f40b22afe",
+      "shape_group_id": "shape_89b5305035b28d39318a",
+      "pointcloud_file": "shape_89b5305035b28d39318a.npz",
+      "source_stl_file": "outputs\\magics_parts_stl\\0726-0731\\0728\\0728-铝10\\part_006__22514597-8187-4daa-be12-005fdd3cdf2b.stl",
+      "source_project": "0726-0731/0728/0728-铝10",
+      "source_format": "magics",
+      "source_record_id": "magics:1e923e6014cc3c06fd1ec3a416fdcddabfbf442867569f15fb4c097f40b22afe",
+      "point_count": 4096,
+      "triangle_count": 39000,
+      "gt_up_axis": [
+        0,
+        0,
+        1
+      ],
+      "shape_member_count": 1,
+      "duplicate_record_count": 1
+    },
+    {
+      "geometry_sha256": "a7fb8f688c92d4289b2733350d8256ab79f1d6acb4e1baa20f0d08d82df1a58c",
+      "shape_group_id": "shape_a22d92db1f050ecb3624",
+      "pointcloud_file": "shape_a22d92db1f050ecb3624.npz",
+      "source_stl_file": "outputs\\magics_parts_stl\\0721-0725\\0724\\0724-铝7\\part_001__49ff9fb4-37df-4c24-bb6f-262c0d7260aa.stl",
+      "source_project": "0721-0725/0724/0724-铝7",
+      "source_format": "magics",
+      "source_record_id": "magics:a7fb8f688c92d4289b2733350d8256ab79f1d6acb4e1baa20f0d08d82df1a58c",
+      "point_count": 4096,
+      "triangle_count": 33460,
+      "gt_up_axis": [
+        0,
+        0,
+        1
+      ],
+      "shape_member_count": 1,
+      "duplicate_record_count": 3
+    },
+    {
+      "geometry_sha256": "1a866dde74b83f662fc8cb2d781b3f006e2f8cdc380877652c24a58e4f5736db",
+      "shape_group_id": "shape_a6665f71b76a2fa68cea",
+      "pointcloud_file": "shape_a6665f71b76a2fa68cea.npz",
+      "source_stl_file": "outputs\\magics_parts_stl\\0726-0731\\0730\\0730-铝11\\part_002__32a9f6a1-5a8c-4b97-b499-1099d66e90e0.stl",
+      "source_project": "0726-0731/0730/0730-铝11",
+      "source_format": "magics",
+      "source_record_id": "magics:1a866dde74b83f662fc8cb2d781b3f006e2f8cdc380877652c24a58e4f5736db",
+      "point_count": 4096,
+      "triangle_count": 34410,
+      "gt_up_axis": [
+        0,
+        0,
+        1
+      ],
+      "shape_member_count": 1,
+      "duplicate_record_count": 1
+    },
+    {
+      "geometry_sha256": "72d372c70c04bb2055d0b0b42777c6d2e63974e0e5cafe7ccefa353dd351045b",
+      "shape_group_id": "shape_c73c00df3f03538b1134",
+      "pointcloud_file": "shape_c73c00df3f03538b1134.npz",
+      "source_stl_file": "outputs\\magics_parts_stl\\0726-0731\\0729\\0729-铝5\\part_004__c05e4209-c9d0-4923-ab27-7f504ec8b03a.stl",
+      "source_project": "0726-0731/0729/0729-铝5",
+      "source_format": "magics",
+      "source_record_id": "magics:72d372c70c04bb2055d0b0b42777c6d2e63974e0e5cafe7ccefa353dd351045b",
+      "point_count": 4096,
+      "triangle_count": 367862,
+      "gt_up_axis": [
+        0,
+        0,
+        1
+      ],
+      "shape_member_count": 1,
+      "duplicate_record_count": 1
+    },
+    {
+      "geometry_sha256": "99d1af8cee6d60e70a034dc3d62d5a7d6ae86d9f98c8fc695e4d21da9df9ae17",
+      "shape_group_id": "shape_d19597422c32de220375",
+      "pointcloud_file": "shape_d19597422c32de220375.npz",
+      "source_stl_file": "outputs\\magics_parts_stl\\0701-0710\\0702\\0702-铝18\\part_003__057eb2c9-334f-4543-9165-61d9cb1eaba8.stl",
+      "source_project": "0701-0710/0702/0702-铝18",
+      "source_format": "magics",
+      "source_record_id": "magics:99d1af8cee6d60e70a034dc3d62d5a7d6ae86d9f98c8fc695e4d21da9df9ae17",
+      "point_count": 4096,
+      "triangle_count": 2148,
+      "gt_up_axis": [
+        0,
+        0,
+        1
+      ],
+      "shape_member_count": 1,
+      "duplicate_record_count": 7
+    }
+  ],
+  "fresh_view_scope": "Same shapes and same base points, unseen fixed random rotations; no new-part test",
+  "stop": "Probe mean below 3 degrees for three consecutive checks, or 1000 epochs",
+  "training_rotations_per_part_per_epoch": 16,
+  "training_views_fixed": false,
+  "training_generator_seed": 20270813,
+  "probe": "Same 512 fresh-rotation views from prior diagnostic, never backpropagated; selects checkpoint",
+  "final_test": "512 independent rotations of same shapes, generated only after selection",
+  "point_sampling": "Same fixed 2048-point subset per shape as prior diagnostic; rotations alone change",
+  "source_commit": "4575b82"
+}

@@ -11,3 +11,4 @@ packaging
 trimesh
 matplotlib
 pillow
+wandb>=0.23,<0.24
