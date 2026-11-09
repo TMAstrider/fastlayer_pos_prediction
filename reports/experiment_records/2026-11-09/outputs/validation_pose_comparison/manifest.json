@@ -1,0 +1,1160 @@
+{
+  "run": "/mnt/d/proj/pos_set/runs/utonia_tiny_direction_ablation/with_normals_r64",
+  "selection": "First fixed validation rotation of every held-out part; saved best-checkpoint predictions.",
+  "direction_marker": "Red arrow tracks the input-frame +Z as an object-attached marker through GT restoration and prediction, including display yaw; it is not a predicted or GT build-up axis.",
+  "validation_direction_metrics": {
+    "mean_tilt_error_deg": 73.6556396484375,
+    "median_tilt_error_deg": 66.45721435546875,
+    "p90_tilt_error_deg": 129.9934539794922,
+    "within_30_deg": 19,
+    "validation_directions": 160,
+    "yaw_is_ignored": true
+  },
+  "views": [
+    "Random validation input (no platform)",
+    "Historical dataset orientation on a 40% transparent platform",
+    "Predicted orientation yaw-aligned to GT for visualization, on a 40% transparent platform"
+  ],
+  "samples": [
+    {
+      "number": 1,
+      "record_id": 4,
+      "validation_sample_index": 0,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0701-铝17_260829_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N02_166046601_1_190x143x360_铝合金（Alsi10Mg）_P26063019A2284_1_1_cut_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_273b039369/part_10002__N02_166046601_1_190x143x360_铝合金（Alsi10Mg）_P26063019A2284_1_1_cut_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/01_record_004_part_10002.png",
+      "image_file": "01_record_004_part_10002.png",
+      "augmentation_rotation": [
+        [
+          -0.8188153512851555,
+          -0.48132630438440954,
+          0.31283607401866953
+        ],
+        [
+          -0.5280622252245215,
+          0.8452745295747497,
+          -0.08161651758751211
+        ],
+        [
+          -0.22514818851302007,
+          -0.23202577089589155,
+          -0.9462940002184699
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.17748680679621276,
+          0.6898148871536234,
+          -0.7018930508806291
+        ],
+        [
+          0.6898148871536234,
+          0.4214748377648576,
+          0.5886547227299894
+        ],
+        [
+          0.7018930508806291,
+          -0.5886547227299894,
+          -0.40103835543892985
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.31283608078956604,
+        -0.08161652088165283,
+        -0.9462940096855164
+      ],
+      "predicted_direction_input_frame": [
+        0.7018930912017822,
+        -0.5886547565460205,
+        -0.40103837847709656
+      ],
+      "tilt_error_deg": 49.6750602722168
+    },
+    {
+      "number": 2,
+      "record_id": 5,
+      "validation_sample_index": 8,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0701-铝17_260829_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "N02_166046601_1_247x184x350_铝合金（Alsi10Mg）_P26063019D6A5A_1_cut_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_273b039369/part_10003__N02_166046601_1_247x184x350_铝合金（Alsi10Mg）_P26063019D6A5A_1_cut_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/02_record_005_part_10003.png",
+      "image_file": "02_record_005_part_10003.png",
+      "augmentation_rotation": [
+        [
+          0.3880559624113949,
+          -0.6842060004777838,
+          -0.6174744682552961
+        ],
+        [
+          0.7767669612962392,
+          -0.11778284741992656,
+          0.6186762389911711
+        ],
+        [
+          -0.4960298961510006,
+          -0.7197147697274586,
+          0.48576227968068725
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.580884804504583,
+          0.7908173372516676,
+          -0.192823191027054
+        ],
+        [
+          0.7908173372516676,
+          -0.4921722419502601,
+          0.36383296078810856
+        ],
+        [
+          0.192823191027054,
+          -0.36383296078810856,
+          -0.911287437445677
+        ]
+      ],
+      "target_direction_input_frame": [
+        -0.6174744963645935,
+        0.6186762452125549,
+        0.48576226830482483
+      ],
+      "predicted_direction_input_frame": [
+        0.19282320141792297,
+        -0.3638329803943634,
+        -0.9112874865531921
+      ],
+      "tilt_error_deg": 141.88999938964844
+    },
+    {
+      "number": 3,
+      "record_id": 11,
+      "validation_sample_index": 16,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10001,
+      "source_part_name": "16_166067841_1_126x43x35_东莞铝合金（Alsi10Mg）_P26070513ABF3B_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10001__16_166067841_1_126x43x35_东莞铝合金（Alsi10Mg）_P26070513ABF3B_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/03_record_011_part_10001.png",
+      "image_file": "03_record_011_part_10001.png",
+      "augmentation_rotation": [
+        [
+          -0.02528657469910522,
+          0.3541390084265028,
+          -0.9348508714499227
+        ],
+        [
+          0.7009488731924913,
+          -0.6604725670412798,
+          -0.2691591821879368
+        ],
+        [
+          -0.7127631207562323,
+          -0.6620887787121873,
+          -0.23153225000686417
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.8810851670830883,
+          -0.0619313199053515,
+          -0.46888531642710607
+        ],
+        [
+          -0.0619313199053515,
+          0.967745921251902,
+          -0.24419734543006097
+        ],
+        [
+          0.46888531642710607,
+          0.24419734543006097,
+          0.8488310883349903
+        ]
+      ],
+      "target_direction_input_frame": [
+        -0.9348508715629578,
+        -0.2691591680049896,
+        -0.2315322458744049
+      ],
+      "predicted_direction_input_frame": [
+        0.4688853323459625,
+        0.24419735372066498,
+        0.8488311171531677
+      ],
+      "tilt_error_deg": 134.4749755859375
+    },
+    {
+      "number": 4,
+      "record_id": 12,
+      "validation_sample_index": 24,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "16_166067841_1_311x195x78_东莞铝合金（Alsi10Mg）_P260705133452A_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10002__16_166067841_1_311x195x78_东莞铝合金（Alsi10Mg）_P260705133452A_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/04_record_012_part_10002.png",
+      "image_file": "04_record_012_part_10002.png",
+      "augmentation_rotation": [
+        [
+          -0.2025531101405799,
+          0.6266097592570182,
+          -0.7525506276498879
+        ],
+        [
+          0.42528518590065,
+          -0.6359400125288807,
+          -0.6439819959581301
+        ],
+        [
+          -0.8821024590294646,
+          -0.4504891897355909,
+          -0.1376762205522184
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.9350543556993022,
+          0.104815784553474,
+          0.3386546961082965
+        ],
+        [
+          0.104815784553474,
+          0.8308377904345122,
+          -0.5465548621084048
+        ],
+        [
+          -0.3386546961082965,
+          0.5465548621084048,
+          0.7658921461338143
+        ]
+      ],
+      "target_direction_input_frame": [
+        -0.7525506019592285,
+        -0.6439819931983948,
+        -0.13767622411251068
+      ],
+      "predicted_direction_input_frame": [
+        -0.33865469694137573,
+        0.5465548634529114,
+        0.7658921480178833
+      ],
+      "tilt_error_deg": 101.68680572509766
+    },
+    {
+      "number": 5,
+      "record_id": 13,
+      "validation_sample_index": 32,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10003__16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/05_record_013_part_10003.png",
+      "image_file": "05_record_013_part_10003.png",
+      "augmentation_rotation": [
+        [
+          0.784647562349594,
+          0.4682684723475319,
+          0.4062669574358076
+        ],
+        [
+          -0.055342626708689724,
+          0.7056227173262757,
+          -0.7064232261626631
+        ],
+        [
+          -0.6174669194117384,
+          0.5318093818262246,
+          0.5795803523531368
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.8526029840193439,
+          -0.1310569178593788,
+          -0.5058579206877267
+        ],
+        [
+          -0.1310569178593788,
+          0.8834717541293097,
+          -0.44977966154204957
+        ],
+        [
+          0.5058579206877267,
+          0.44977966154204957,
+          0.7360747381486537
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.4062669575214386,
+        -0.7064232230186462,
+        0.5795803666114807
+      ],
+      "predicted_direction_input_frame": [
+        0.5058578848838806,
+        0.4497796297073364,
+        0.736074686050415
+      ],
+      "tilt_error_deg": 71.67582702636719
+    },
+    {
+      "number": 6,
+      "record_id": 14,
+      "validation_sample_index": 40,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10004__16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/06_record_014_part_10004.png",
+      "image_file": "06_record_014_part_10004.png",
+      "augmentation_rotation": [
+        [
+          0.12410617547910449,
+          -0.95869343922465,
+          -0.2559385605874226
+        ],
+        [
+          -0.02834996034248599,
+          -0.26125319442383754,
+          0.9648538998998344
+        ],
+        [
+          -0.9918638701739916,
+          -0.1124884793699008,
+          -0.059602055774261725
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.9919231001680789,
+          0.0348940539759136,
+          0.12194657990314148
+        ],
+        [
+          0.0348940539759136,
+          0.8492497086491202,
+          -0.5268371070421202
+        ],
+        [
+          -0.12194657990314148,
+          0.5268371070421202,
+          0.8411728088171992
+        ]
+      ],
+      "target_direction_input_frame": [
+        -0.2559385597705841,
+        0.9648538827896118,
+        -0.059602055698633194
+      ],
+      "predicted_direction_input_frame": [
+        -0.12194658070802689,
+        0.5268371105194092,
+        0.8411728143692017
+      ],
+      "tilt_error_deg": 60.6991081237793
+    },
+    {
+      "number": 7,
+      "record_id": 15,
+      "validation_sample_index": 48,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10005__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/07_record_015_part_10005.png",
+      "image_file": "07_record_015_part_10005.png",
+      "augmentation_rotation": [
+        [
+          0.976327827163278,
+          0.1854666399792511,
+          -0.11129285404480674
+        ],
+        [
+          0.04391080758298248,
+          0.3338690854436986,
+          0.9415961314504209
+        ],
+        [
+          0.21179191411392947,
+          -0.9241934641836604,
+          0.31782168880704603
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.9907029382552764,
+          -0.02793950143396207,
+          -0.13314305236092314
+        ],
+        [
+          -0.02793950143396207,
+          0.9160362960027237,
+          -0.40012109250229727
+        ],
+        [
+          0.13314305236092314,
+          0.40012109250229727,
+          0.9067392342580002
+        ]
+      ],
+      "target_direction_input_frame": [
+        -0.11129285395145416,
+        0.9415961503982544,
+        0.3178216814994812
+      ],
+      "predicted_direction_input_frame": [
+        0.13314305245876312,
+        0.4001210927963257,
+        0.9067392349243164
+      ],
+      "tilt_error_deg": 49.449649810791016
+    },
+    {
+      "number": 8,
+      "record_id": 16,
+      "validation_sample_index": 56,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10006__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/08_record_016_part_10006.png",
+      "image_file": "08_record_016_part_10006.png",
+      "augmentation_rotation": [
+        [
+          -0.5642879806603056,
+          0.7899401062408146,
+          0.23994520923445206
+        ],
+        [
+          -0.7177004437246529,
+          -0.6130198427797957,
+          0.3303221842923519
+        ],
+        [
+          0.4080259157942674,
+          0.014188055204461647,
+          0.9128600939518412
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.9423817906916289,
+          0.12603425601338838,
+          0.30989018520113
+        ],
+        [
+          0.12603425601338838,
+          0.7243122637874045,
+          -0.6778547859522104
+        ],
+        [
+          -0.30989018520113,
+          0.6778547859522104,
+          0.6666940544790334
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.2399452030658722,
+        0.33032217621803284,
+        0.912860095500946
+      ],
+      "predicted_direction_input_frame": [
+        -0.30989018082618713,
+        0.6778547763824463,
+        0.6666940450668335
+      ],
+      "tilt_error_deg": 40.698421478271484
+    },
+    {
+      "number": 9,
+      "record_id": 17,
+      "validation_sample_index": 64,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10007__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/09_record_017_part_10007.png",
+      "image_file": "09_record_017_part_10007.png",
+      "augmentation_rotation": [
+        [
+          0.18434336193157885,
+          0.9682139980597739,
+          0.16905377509204433
+        ],
+        [
+          -0.9047204348904041,
+          0.23436837512094544,
+          -0.3557420405784033
+        ],
+        [
+          -0.3840552819627423,
+          -0.08736772118051586,
+          0.9191672435918518
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.9969942193282573,
+          0.025413331912763376,
+          0.07318940624933691
+        ],
+        [
+          0.025413331912763376,
+          0.7851348752822227,
+          -0.6188031917957926
+        ],
+        [
+          -0.07318940624933691,
+          0.6188031917957926,
+          0.78212909461048
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.16905377805233002,
+        -0.35574203729629517,
+        0.9191672205924988
+      ],
+      "predicted_direction_input_frame": [
+        -0.07318940758705139,
+        0.6188032031059265,
+        0.7821291089057922
+      ],
+      "tilt_error_deg": 60.895751953125
+    },
+    {
+      "number": 10,
+      "record_id": 18,
+      "validation_sample_index": 72,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10008,
+      "source_part_name": "16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10008__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/10_record_018_part_10008.png",
+      "image_file": "10_record_018_part_10008.png",
+      "augmentation_rotation": [
+        [
+          -0.483276385535458,
+          -0.5950889840551716,
+          0.642116061347142
+        ],
+        [
+          -0.8628768163655867,
+          0.44772265436167086,
+          -0.2344952548563167
+        ],
+        [
+          -0.1479443644163999,
+          -0.6673930819446086,
+          -0.7298622741380075
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.7637133941637919,
+          0.2812337431366368,
+          0.5810760994019432
+        ],
+        [
+          0.2812337431366368,
+          0.6652691421134975,
+          -0.6916101143512342
+        ],
+        [
+          -0.5810760994019432,
+          0.6916101143512342,
+          0.42898253627728944
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.6421160697937012,
+        -0.23449525237083435,
+        -0.7298622727394104
+      ],
+      "predicted_direction_input_frame": [
+        -0.5810760855674744,
+        0.6916100978851318,
+        0.42898252606391907
+      ],
+      "tilt_error_deg": 148.03759765625
+    },
+    {
+      "number": 11,
+      "record_id": 19,
+      "validation_sample_index": 80,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10009,
+      "source_part_name": "16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10009__16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/11_record_019_part_10009.png",
+      "image_file": "11_record_019_part_10009.png",
+      "augmentation_rotation": [
+        [
+          0.4820684576541272,
+          -0.03886653905140379,
+          0.8752710404652586
+        ],
+        [
+          -0.1942907938260286,
+          -0.9788838660524044,
+          0.06354104356044012
+        ],
+        [
+          0.8543190794834341,
+          -0.20068823813184422,
+          -0.4794404462559594
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.8005729075522945,
+          -0.5567621629493686,
+          0.2215827466234816
+        ],
+        [
+          -0.5567621629493686,
+          -0.5543730908745228,
+          0.6186164967265003
+        ],
+        [
+          -0.2215827466234816,
+          -0.6186164967265003,
+          -0.7538001833222283
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.8752710223197937,
+        0.06354104727506638,
+        -0.47944045066833496
+      ],
+      "predicted_direction_input_frame": [
+        -0.22158275544643402,
+        -0.61861652135849,
+        -0.7538002133369446
+      ],
+      "tilt_error_deg": 82.6373062133789
+    },
+    {
+      "number": 12,
+      "record_id": 20,
+      "validation_sample_index": 88,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10010,
+      "source_part_name": "16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10010__16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/12_record_020_part_10010.png",
+      "image_file": "12_record_020_part_10010.png",
+      "augmentation_rotation": [
+        [
+          0.3979919298599627,
+          0.5223383487032239,
+          0.7541651498447353
+        ],
+        [
+          0.9138021259058297,
+          -0.15309683057528234,
+          -0.37620079101164805
+        ],
+        [
+          -0.08104380578630904,
+          0.8388825960417778,
+          -0.5382451965432469
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.6032637826990669,
+          -0.5717227252881045,
+          -0.5560628866169325
+        ],
+        [
+          -0.5717227252881045,
+          0.1761103212744458,
+          -0.8013228314042686
+        ],
+        [
+          0.5560628866169325,
+          0.8013228314042686,
+          -0.2206258960264873
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.7541651725769043,
+        -0.376200795173645,
+        -0.5382452011108398
+      ],
+      "predicted_direction_input_frame": [
+        0.5560628771781921,
+        0.8013228178024292,
+        -0.2206258922815323
+      ],
+      "tilt_error_deg": 76.31074523925781
+    },
+    {
+      "number": 13,
+      "record_id": 21,
+      "validation_sample_index": 96,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10011,
+      "source_part_name": "16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10011__16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/13_record_021_part_10011.png",
+      "image_file": "13_record_021_part_10011.png",
+      "augmentation_rotation": [
+        [
+          0.3031306967294475,
+          -0.2691053456270911,
+          0.9141630563828551
+        ],
+        [
+          -0.9369862675605931,
+          -0.259016099217957,
+          0.2344512630564859
+        ],
+        [
+          0.1736908607359287,
+          -0.9276276048613672,
+          -0.33066374399981446
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          -0.4391290807788284,
+          -0.5576415829867838,
+          -0.7044157262145238
+        ],
+        [
+          -0.5576415829867838,
+          0.7839219989163735,
+          -0.2729508463788878
+        ],
+        [
+          0.7044157262145238,
+          0.2729508463788878,
+          -0.6552070818624549
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.9141630530357361,
+        0.2344512641429901,
+        -0.3306637406349182
+      ],
+      "predicted_direction_input_frame": [
+        0.7044156789779663,
+        0.27295082807540894,
+        -0.6552070379257202
+      ],
+      "tilt_error_deg": 22.392240524291992
+    },
+    {
+      "number": 14,
+      "record_id": 22,
+      "validation_sample_index": 104,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0705-铝1第二版_260831_0_V8.pjf",
+      "source_part_id": 10012,
+      "source_part_name": "16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_1507f7c8bf/part_10012__16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/14_record_022_part_10012.png",
+      "image_file": "14_record_022_part_10012.png",
+      "augmentation_rotation": [
+        [
+          0.8429469639150058,
+          -0.47254525530711916,
+          -0.2571796992633827
+        ],
+        [
+          0.042891564341414334,
+          -0.4174827608980843,
+          0.9076719991611837
+        ],
+        [
+          -0.5362841874741607,
+          -0.7761501955418442,
+          -0.331647620563659
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.7792775890791979,
+          0.3963799243101665,
+          0.4853961214954024
+        ],
+        [
+          0.3963799243101665,
+          0.2881690457227343,
+          -0.8716889105013985
+        ],
+        [
+          -0.4853961214954024,
+          0.8716889105013985,
+          0.06744663480193225
+        ]
+      ],
+      "target_direction_input_frame": [
+        -0.25717970728874207,
+        0.9076719880104065,
+        -0.3316476345062256
+      ],
+      "predicted_direction_input_frame": [
+        -0.4853961169719696,
+        0.8716889023780823,
+        0.06744663417339325
+      ],
+      "tilt_error_deg": 26.661497116088867
+    },
+    {
+      "number": 15,
+      "record_id": 163,
+      "validation_sample_index": 112,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10002,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_abe8cbf88b/part_10002__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/15_record_163_part_10002.png",
+      "image_file": "15_record_163_part_10002.png",
+      "augmentation_rotation": [
+        [
+          0.2721925712943778,
+          0.39469432631418355,
+          0.8775691385341372
+        ],
+        [
+          -0.9221927203053841,
+          -0.15337661557240923,
+          0.3550157748767071
+        ],
+        [
+          0.2747212964950304,
+          -0.9059205277346054,
+          0.3222362591036946
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          -0.01532425965940365,
+          -0.17647407757039138,
+          -0.9841859920825793
+        ],
+        [
+          -0.17647407757039138,
+          0.969326941853268,
+          -0.1710619178633009
+        ],
+        [
+          0.9841859920825793,
+          0.1710619178633009,
+          -0.045997317806135696
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.8775691390037537,
+        0.3550157845020294,
+        0.3222362697124481
+      ],
+      "predicted_direction_input_frame": [
+        0.9841859936714172,
+        0.1710619181394577,
+        -0.045997317880392075
+      ],
+      "tilt_error_deg": 24.550012588500977
+    },
+    {
+      "number": 16,
+      "record_id": 164,
+      "validation_sample_index": 120,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10003,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_abe8cbf88b/part_10003__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/16_record_164_part_10003.png",
+      "image_file": "16_record_164_part_10003.png",
+      "augmentation_rotation": [
+        [
+          0.08426364152054573,
+          0.8953607943504416,
+          0.43729702338095455
+        ],
+        [
+          0.8886248587174328,
+          0.13103242069313834,
+          -0.4395183331747594
+        ],
+        [
+          -0.450827571458445,
+          0.4256284208878004,
+          -0.7845985904559336
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.5095653901876573,
+          -0.12578815328492907,
+          -0.8511876723825761
+        ],
+        [
+          -0.12578815328492907,
+          0.9677374736809723,
+          -0.21831519078327266
+        ],
+        [
+          0.8511876723825761,
+          0.21831519078327266,
+          0.47730286386862963
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.4372970163822174,
+        -0.4395183324813843,
+        -0.7845985889434814
+      ],
+      "predicted_direction_input_frame": [
+        0.8511876463890076,
+        0.21831518411636353,
+        0.4773028492927551
+      ],
+      "tilt_error_deg": 95.6368408203125
+    },
+    {
+      "number": 17,
+      "record_id": 165,
+      "validation_sample_index": 128,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10004,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_2.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_abe8cbf88b/part_10004__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_2.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/17_record_165_part_10004.png",
+      "image_file": "17_record_165_part_10004.png",
+      "augmentation_rotation": [
+        [
+          0.9767372223164148,
+          -0.033266905439429575,
+          0.2118436016123656
+        ],
+        [
+          0.21191899014928117,
+          0.3007717164114652,
+          -0.9298530616290996
+        ],
+        [
+          -0.03278322979395852,
+          0.9531157787013,
+          0.30082481984519055
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.8565057309835031,
+          -0.30516124297360064,
+          -0.41626259570038476
+        ],
+        [
+          -0.30516124297360064,
+          0.35103063800766166,
+          -0.8852424001180361
+        ],
+        [
+          0.41626259570038476,
+          0.8852424001180361,
+          0.2075363689911648
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.2118435949087143,
+        -0.929853081703186,
+        0.3008248209953308
+      ],
+      "predicted_direction_input_frame": [
+        0.41626259684562683,
+        0.8852424025535583,
+        0.20753636956214905
+      ],
+      "tilt_error_deg": 132.26268005371094
+    },
+    {
+      "number": 18,
+      "record_id": 166,
+      "validation_sample_index": 136,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10005,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_abe8cbf88b/part_10005__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/18_record_166_part_10005.png",
+      "image_file": "18_record_166_part_10005.png",
+      "augmentation_rotation": [
+        [
+          -0.8686728366891809,
+          -0.24016469171599972,
+          0.43327638252197764
+        ],
+        [
+          -0.1240269275722721,
+          0.9522053122433247,
+          0.2791457765623105
+        ],
+        [
+          -0.4796090324789084,
+          0.18874841506235707,
+          -0.8569417785217932
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          -0.08306900313837784,
+          0.6245189329155331,
+          -0.7765794506344089
+        ],
+        [
+          0.6245189329155331,
+          0.6398900749261633,
+          0.4477910164809395
+        ],
+        [
+          0.7765794506344089,
+          -0.4477910164809395,
+          -0.4431789282122143
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.43327638506889343,
+        0.2791457772254944,
+        -0.8569417595863342
+      ],
+      "predicted_direction_input_frame": [
+        0.7765794396400452,
+        -0.4477910101413727,
+        -0.4431789219379425
+      ],
+      "tilt_error_deg": 53.75401306152344
+    },
+    {
+      "number": 19,
+      "record_id": 167,
+      "validation_sample_index": 144,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10006,
+      "source_part_name": "N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_abe8cbf88b/part_10006__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/19_record_167_part_10006.png",
+      "image_file": "19_record_167_part_10006.png",
+      "augmentation_rotation": [
+        [
+          -0.8339304619681924,
+          -0.5518690414585803,
+          -0.0007387023113936755
+        ],
+        [
+          0.5422224512031397,
+          -0.819102826414905,
+          -0.18725750497743152
+        ],
+        [
+          0.10273654662667867,
+          -0.15656027861083385,
+          0.9823105828344325
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.9864892130339139,
+          -0.03156949530565061,
+          -0.16075571384518714
+        ],
+        [
+          -0.03156949530565061,
+          0.9262342721889419,
+          -0.3756240673715776
+        ],
+        [
+          0.16075571384518714,
+          0.3756240673715776,
+          0.9127234852228558
+        ]
+      ],
+      "target_direction_input_frame": [
+        -0.0007387023069895804,
+        -0.18725749850273132,
+        0.9823105931282043
+      ],
+      "predicted_direction_input_frame": [
+        0.1607557237148285,
+        0.3756240904331207,
+        0.9127235412597656
+      ],
+      "tilt_error_deg": 34.29770278930664
+    },
+    {
+      "number": 20,
+      "record_id": 168,
+      "validation_sample_index": 152,
+      "validation_rotation_index": 0,
+      "source_project": "M300-400mm-2X2-Y.mpf_AI-0718-铝15_260907_0_V8.pjf",
+      "source_part_id": 10007,
+      "source_part_name": "N02_166171876_6_129x342x239_铝合金（Alsi10Mg）_P26071721D7F08_1.stl",
+      "stl_path": "/mnt/d/proj/pos_set/outputs/meshes_stl/parts/project_abe8cbf88b/part_10007__N02_166171876_6_129x342x239_铝合金（Alsi10Mg）_P26071721D7F08_1.stl",
+      "image_path": "/mnt/d/proj/pos_set/outputs/validation_pose_comparison/20_record_168_part_10007.png",
+      "image_file": "20_record_168_part_10007.png",
+      "augmentation_rotation": [
+        [
+          0.6304747064731183,
+          -0.661119205078809,
+          0.4067223145754345
+        ],
+        [
+          -0.7563576033766427,
+          -0.6410066722519855,
+          0.13051291868154868
+        ],
+        [
+          0.17442712034536378,
+          -0.389912609188776,
+          -0.9041810310350601
+        ]
+      ],
+      "prediction_rotation": [
+        [
+          0.9996824784919425,
+          0.022400536383016974,
+          0.011539417921200584
+        ],
+        [
+          0.022400536383016974,
+          -0.5803150889417625,
+          -0.8140839106113494
+        ],
+        [
+          -0.011539417921200584,
+          0.8140839106113494,
+          -0.5806326104498201
+        ]
+      ],
+      "target_direction_input_frame": [
+        0.4067223072052002,
+        0.13051292300224304,
+        -0.9041810035705566
+      ],
+      "predicted_direction_input_frame": [
+        -0.011539418250322342,
+        0.8140839338302612,
+        -0.5806326270103455
+      ],
+      "tilt_error_deg": 51.203800201416016
+    }
+  ]
+}

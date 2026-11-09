@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Preserve exact snapshot bytes so recorded SHA256 values survive checkout.
+reports/experiment_records/** -text
+*.csv whitespace=cr-at-eol

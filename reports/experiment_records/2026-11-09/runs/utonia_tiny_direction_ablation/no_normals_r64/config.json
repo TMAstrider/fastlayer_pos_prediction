@@ -1,0 +1,90 @@
+{
+  "pointclouds": "/mnt/d/proj/pos_set/outputs/pointclouds",
+  "weights": "/mnt/d/proj/pos_set/checkpoints/utonia_tiny.pth",
+  "output": "runs/utonia_tiny_direction_ablation/no_normals_r64",
+  "feature_cache": "runs/utonia_tiny_direction_ablation/features/no_normals_r64_p2048.npz",
+  "validation_parts": 20,
+  "train_rotations": 64,
+  "head_rotations": 64,
+  "validation_rotations": 8,
+  "use_normals": false,
+  "points": 2048,
+  "grid_size": 0.02,
+  "patch_size": 128,
+  "epochs": 120,
+  "batch_size": 256,
+  "seed": 20261108,
+  "workers": 1,
+  "encoder_batch_size": 32,
+  "extraction_chunk_size": 512,
+  "torch_threads": 1,
+  "torch_version": "2.8.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "weights_sha256": "e49a1944403d4ec3df459537fb7d5b132326736d0ebdb7c5a74868f3fa50d137",
+  "utonia_revision": "5fce241d3fd943bdef2db14fdd41fff8b090d98e",
+  "feature_pipeline_version": "deterministic-pooling-masked-batched-attention-v3",
+  "coordinate_assumption": "Historical raw mesh +Z is the accepted build-up direction; pending FastLayer round-trip verification.",
+  "training_mode": "Frozen pretrained encoder, cached random-rotation features, direction head training only.",
+  "normal_input": "Zero normals. Color is also zero.",
+  "feature_pooling": "Mean and max at every encoder stage, deepest stage first.",
+  "metric_scope": "Signed direction error against one historical pose, without symmetry correction or printability verification.",
+  "encoder_config": {
+    "in_channels": 9,
+    "order": [
+      "z",
+      "z-trans",
+      "hilbert",
+      "hilbert-trans"
+    ],
+    "stride": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "enc_depths": [
+      2,
+      2,
+      2,
+      6,
+      2
+    ],
+    "enc_channels": [
+      18,
+      36,
+      72,
+      144,
+      216
+    ],
+    "enc_num_head": [
+      1,
+      2,
+      4,
+      8,
+      12
+    ],
+    "enc_patch_size": [
+      128,
+      128,
+      128,
+      128,
+      128
+    ],
+    "mlp_ratio": 4,
+    "qkv_bias": true,
+    "qk_scale": null,
+    "attn_drop": 0.0,
+    "proj_drop": 0.0,
+    "drop_path": 0.3,
+    "shuffle_orders": false,
+    "pre_norm": true,
+    "enable_rpe": false,
+    "enable_flash": false,
+    "upcast_attention": false,
+    "upcast_softmax": false,
+    "traceable": true,
+    "enc_mode": true,
+    "mask_token": true,
+    "rope_base": 10
+  }
+}

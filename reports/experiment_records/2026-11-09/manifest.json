@@ -1,0 +1,138 @@
+{
+  "snapshot_date": "2026-11-09",
+  "purpose": "Versioned experiment configurations, splits, full metric histories and small plots; excludes models, caches and source datasets.",
+  "files": [
+    {
+      "source": "runs/utonia_tiny_direction/config.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction/config.json",
+      "bytes": 2045,
+      "sha256": "4511bd87d0e437ce1c524dd5ec143b0af83ea263f0d177a8b59eef5750e59036"
+    },
+    {
+      "source": "runs/utonia_tiny_direction/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction/metrics.json",
+      "bytes": 71788,
+      "sha256": "8d210f60ded9d594e8bda8c4938e76d03210a02d3053d62487cc15a24e04aab0"
+    },
+    {
+      "source": "runs/utonia_tiny_direction_ablation/no_normals_r16/config.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction_ablation/no_normals_r16/config.json",
+      "bytes": 2345,
+      "sha256": "b8c5a2dac0bbc1de2d10f48e65a29b7a460bbc472cfe522837e4b6c4a051b04d"
+    },
+    {
+      "source": "runs/utonia_tiny_direction_ablation/no_normals_r16/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction_ablation/no_normals_r16/metrics.json",
+      "bytes": 77417,
+      "sha256": "22bea5bed5c8b33c6cc3789f2603cffa68cb62fb0e5d75884cf8dfaddf457467"
+    },
+    {
+      "source": "runs/utonia_tiny_direction_ablation/no_normals_r64/config.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction_ablation/no_normals_r64/config.json",
+      "bytes": 2345,
+      "sha256": "0245590153744b90198874db766adefb9e6f53bb60178d76ce495242717a7fab"
+    },
+    {
+      "source": "runs/utonia_tiny_direction_ablation/no_normals_r64/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction_ablation/no_normals_r64/metrics.json",
+      "bytes": 77854,
+      "sha256": "70408aff68b59cebdae90e7ed60c6891f0099040cec19a2a79a56ab327ce62bb"
+    },
+    {
+      "source": "runs/utonia_tiny_direction_ablation/with_normals_r16/config.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction_ablation/with_normals_r16/config.json",
+      "bytes": 2432,
+      "sha256": "0670472bf0f453b0548bce30e94ff2659ca71a74ab924760c620cbcd6599933c"
+    },
+    {
+      "source": "runs/utonia_tiny_direction_ablation/with_normals_r16/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction_ablation/with_normals_r16/metrics.json",
+      "bytes": 77435,
+      "sha256": "7521508861f1ade219db702127859fc86d09cdc505f2a84f647a1842b5ed321a"
+    },
+    {
+      "source": "runs/utonia_tiny_direction_ablation/with_normals_r64/config.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction_ablation/with_normals_r64/config.json",
+      "bytes": 2432,
+      "sha256": "85ad70066b46bbf66b14f9daa6d5e914725bda5417360a5bc142d1ec78b3c339"
+    },
+    {
+      "source": "runs/utonia_tiny_direction_ablation/with_normals_r64/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction_ablation/with_normals_r64/metrics.json",
+      "bytes": 77858,
+      "sha256": "80308daa14ac77033d100f5e2ab805b1fb157d63030efc322a3f5e0ba71d1f00"
+    },
+    {
+      "source": "runs/pointnet_real_parts_scratch/config.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/pointnet_real_parts_scratch/config.json",
+      "bytes": 3228,
+      "sha256": "7e08489c08ea03e3bfef985531b81e14c24282e532d08f791ce8eed433bf295b"
+    },
+    {
+      "source": "runs/pointnet_real_parts_scratch/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/pointnet_real_parts_scratch/metrics.json",
+      "bytes": 22768,
+      "sha256": "80d4c7442ee025ca9c5f791438575fa4ca3c4c40058939e4bad1550ae68d7228"
+    },
+    {
+      "source": "runs/utonia_tiny_direction_ablation/with_normals_r64/split.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/utonia_tiny_direction_ablation/with_normals_r64/split.json",
+      "bytes": 58819,
+      "sha256": "80fe7ecc35e3cfa58ce3706660699b396be892f85cfcd1387994ad5c77fa06ad"
+    },
+    {
+      "source": "runs/pointnet_real_parts_scratch/paired_ptv3_validation/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/pointnet_real_parts_scratch/paired_ptv3_validation/metrics.json",
+      "bytes": 921,
+      "sha256": "bc0ff4dd5ac6d958a5c07dd933fcc51c052bfdf50414575cbba5b05c5e1ca1ea"
+    },
+    {
+      "source": "runs/pointnet_real_parts_scratch/paired_ptv3_validation/per_part.csv",
+      "archived": "reports/experiment_records/2026-11-09/runs/pointnet_real_parts_scratch/paired_ptv3_validation/per_part.csv",
+      "bytes": 2321,
+      "sha256": "9258a1bd156e870f27a2d23aed7651199c12c6f8cc70555ec077c9a14d0dca12"
+    },
+    {
+      "source": "runs/pointnet_real_parts_scratch/paired_ptv3_validation/validation_trend.png",
+      "archived": "reports/experiment_records/2026-11-09/runs/pointnet_real_parts_scratch/paired_ptv3_validation/validation_trend.png",
+      "bytes": 141060,
+      "sha256": "759b697e3f14ad972baf36307666d41d2947d81de39344f32f2892564c3cdfd2"
+    },
+    {
+      "source": "runs/public_pyramids_axis_v2/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/public_pyramids_axis_v2/metrics.json",
+      "bytes": 50265,
+      "sha256": "3ee3c9d4a4de4b0e6b34b7b7b1fa9f28a56400df99fec2280f0854f404a8c2b3"
+    },
+    {
+      "source": "runs/public_pyramids_model_comparison/final/pointnet_full_160/pointnet/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/public_pyramids_model_comparison/final/pointnet_full_160/pointnet/metrics.json",
+      "bytes": 84984,
+      "sha256": "b2122fac6e808d70e91aefe5f68961b1d84a7e0f6a0c6a6abab74ec641b5857c"
+    },
+    {
+      "source": "runs/public_pyramids_model_comparison/final/ptv3_scratch/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/public_pyramids_model_comparison/final/ptv3_scratch/metrics.json",
+      "bytes": 7487,
+      "sha256": "e11229349d475f4e5052c462ddad7e58d1de6b5df3f06b7f4014bd6569fd9d6b"
+    },
+    {
+      "source": "runs/public_pyramids_model_comparison/final/ptv3_pretrained/metrics.json",
+      "archived": "reports/experiment_records/2026-11-09/runs/public_pyramids_model_comparison/final/ptv3_pretrained/metrics.json",
+      "bytes": 7439,
+      "sha256": "26aed8c445fb5177be256708c9cf6631d6da4b069f5a2f88beed50c16cdb7012"
+    },
+    {
+      "source": "runs/public_pyramids_model_comparison/final/validation_curves.png",
+      "archived": "reports/experiment_records/2026-11-09/runs/public_pyramids_model_comparison/final/validation_curves.png",
+      "bytes": 161029,
+      "sha256": "2a0e4c9edb02c5a0e27bd5883e9952dd96628757b23119d815cdfbbb12df5e1e"
+    },
+    {
+      "source": "outputs/validation_pose_comparison/manifest.json",
+      "archived": "reports/experiment_records/2026-11-09/outputs/validation_pose_comparison/manifest.json",
+      "bytes": 36093,
+      "sha256": "987e898b5a8e2dd0b36606555759a1f85e2141f042accbe12a42e2e7b22c4d41"
+    }
+  ]
+}

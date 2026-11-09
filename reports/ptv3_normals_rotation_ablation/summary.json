@@ -1,0 +1,109 @@
+{
+  "matched_inputs_verified": true,
+  "training_parts": 173,
+  "validation_parts": 20,
+  "validation_examples": 160,
+  "batch_size": 256,
+  "feature_pipeline_version": "deterministic-pooling-masked-batched-attention-v3",
+  "scope": "Frozen Utonia Tiny plus direction head, one seed, one project-held-out validation split; historical +Z label convention pending FastLayer verification.",
+  "compute_caveat": "Same batch size 256 and 120 epochs; 64 rotations entail more examples and optimizer updates than 16 rotations. Effects do not isolate angle coverage from extra optimization.",
+  "normal_audit": "Source winding is preserved; finite unit normals alone do not imply a watertight outward-oriented mesh.",
+  "runs": [
+    {
+      "run": "no_normals_r16",
+      "label": "Baseline: XYZ, 16 rotations",
+      "normals": false,
+      "rotations_per_training_part": 16,
+      "training_examples": 2768,
+      "epochs": 120,
+      "batch_size": 256,
+      "optimizer_steps": 1320,
+      "best_epoch": 10,
+      "best_validation": {
+        "mean_angle_deg": 77.09320831298828,
+        "median_angle_deg": 74.5019302368164,
+        "p90_angle_deg": 124.1844482421875,
+        "within_15_deg_fraction": 0.01875,
+        "within_30_deg_fraction": 0.1
+      },
+      "best_validation_cosine_loss": 0.8073869943618774,
+      "train_angle_at_best_epoch": 38.113643646240234,
+      "initial_train_loss": 0.9196935223706196,
+      "final_train_loss": 0.017787220850156223,
+      "final_train_angle": 3.7561824321746826,
+      "training_seconds": 4.026651673999368
+    },
+    {
+      "run": "no_normals_r64",
+      "label": "More rotations: XYZ, 64",
+      "normals": false,
+      "rotations_per_training_part": 64,
+      "training_examples": 11072,
+      "epochs": 120,
+      "batch_size": 256,
+      "optimizer_steps": 5280,
+      "best_epoch": 87,
+      "best_validation": {
+        "mean_angle_deg": 75.0269775390625,
+        "median_angle_deg": 71.4722900390625,
+        "p90_angle_deg": 130.73233032226562,
+        "within_15_deg_fraction": 0.0375,
+        "within_30_deg_fraction": 0.1375
+      },
+      "best_validation_cosine_loss": 0.7858278751373291,
+      "train_angle_at_best_epoch": 8.536358833312988,
+      "initial_train_loss": 0.8380982503725615,
+      "final_train_loss": 0.030858221770711028,
+      "final_train_angle": 7.047476291656494,
+      "training_seconds": 14.310039589000553
+    },
+    {
+      "run": "with_normals_r16",
+      "label": "Normals: XYZ+normal, 16",
+      "normals": true,
+      "rotations_per_training_part": 16,
+      "training_examples": 2768,
+      "epochs": 120,
+      "batch_size": 256,
+      "optimizer_steps": 1320,
+      "best_epoch": 7,
+      "best_validation": {
+        "mean_angle_deg": 77.66034698486328,
+        "median_angle_deg": 73.33687591552734,
+        "p90_angle_deg": 132.24984741210938,
+        "within_15_deg_fraction": 0.025,
+        "within_30_deg_fraction": 0.11875
+      },
+      "best_validation_cosine_loss": 0.8216554522514343,
+      "train_angle_at_best_epoch": 45.532894134521484,
+      "initial_train_loss": 0.9589036710000451,
+      "final_train_loss": 0.017733747559475762,
+      "final_train_angle": 3.7742919921875,
+      "training_seconds": 4.948837386999912
+    },
+    {
+      "run": "with_normals_r64",
+      "label": "Both: XYZ+normal, 64",
+      "normals": true,
+      "rotations_per_training_part": 64,
+      "training_examples": 11072,
+      "epochs": 120,
+      "batch_size": 256,
+      "optimizer_steps": 5280,
+      "best_epoch": 3,
+      "best_validation": {
+        "mean_angle_deg": 73.6556396484375,
+        "median_angle_deg": 66.45721435546875,
+        "p90_angle_deg": 129.9934539794922,
+        "within_15_deg_fraction": 0.025,
+        "within_30_deg_fraction": 0.11875
+      },
+      "best_validation_cosine_loss": 0.7523319125175476,
+      "train_angle_at_best_epoch": 54.043487548828125,
+      "initial_train_loss": 0.8216601244976066,
+      "final_train_loss": 0.02975889437460486,
+      "final_train_angle": 7.016507148742676,
+      "training_seconds": 14.06410883800072
+    }
+  ]
+}

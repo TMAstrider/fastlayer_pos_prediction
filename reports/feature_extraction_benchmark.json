@@ -1,0 +1,51 @@
+{
+  "samples": 256,
+  "cpu_preprocessing": [
+    {
+      "workers": 1,
+      "seconds": 0.4238199760002317
+    },
+    {
+      "workers": 4,
+      "seconds": 0.8566640799999732
+    },
+    {
+      "workers": 8,
+      "seconds": 0.9737788729999011
+    }
+  ],
+  "gpu_encoding": [
+    {
+      "batch_size": 1,
+      "mean_actual_batch": 1.0,
+      "seconds": 20.130653349000568,
+      "samples_per_second": 12.716924560856825,
+      "max_absolute_feature_error": 0.0,
+      "peak_torch_memory_mib": 51.09814453125
+    },
+    {
+      "batch_size": 8,
+      "mean_actual_batch": 8.0,
+      "seconds": 2.532785514999887,
+      "samples_per_second": 101.07448833858774,
+      "max_absolute_feature_error": 4.76837158203125e-06,
+      "peak_torch_memory_mib": 82.5361328125
+    },
+    {
+      "batch_size": 16,
+      "mean_actual_batch": 16.0,
+      "seconds": 1.271326627000235,
+      "samples_per_second": 201.3644602127512,
+      "max_absolute_feature_error": 4.76837158203125e-06,
+      "peak_torch_memory_mib": 118.39697265625
+    },
+    {
+      "batch_size": 32,
+      "mean_actual_batch": 32.0,
+      "seconds": 0.8093719059997966,
+      "samples_per_second": 316.2946453939116,
+      "max_absolute_feature_error": 4.76837158203125e-06,
+      "peak_torch_memory_mib": 180.8984375
+    }
+  ]
+}

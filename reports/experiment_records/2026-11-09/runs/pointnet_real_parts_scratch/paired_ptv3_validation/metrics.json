@@ -1,0 +1,18 @@
+{
+  "PointNet scratch, matched 160 PTv3 views": {
+    "mean_angle_deg": 73.31941223144531,
+    "median_angle_deg": 74.15159606933594,
+    "p90_angle_deg": 117.64086151123047,
+    "within_15_deg_fraction": 0.03125,
+    "within_30_deg_fraction": 0.0875
+  },
+  "Frozen PTv3 + XYZ and normals, saved matched 160 views": {
+    "mean_angle_deg": 73.6556396484375,
+    "median_angle_deg": 66.45721435546875,
+    "p90_angle_deg": 129.9934539794922,
+    "within_15_deg_fraction": 0.025,
+    "within_30_deg_fraction": 0.11875
+  },
+  "evaluation_note": "Both predictions use the same 160 rotation matrices, target axes, and per-view sampled point indices. Each model uses its own training-time coordinate preprocessing: PointNet centers/scales the full cloud; PTv3 recenters/rescales each sampled view and voxel-deduplicates it. PTv3 also receives normals.",
+  "paired_view_delta_PointNet_minus_PTv3_mean_deg": -0.3362327516078949
+}
