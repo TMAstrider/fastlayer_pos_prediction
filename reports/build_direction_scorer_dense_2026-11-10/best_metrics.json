@@ -1,0 +1,9 @@
+{
+  "epoch": 5,
+  "train_loss": 1.5613982472808576,
+  "top1_angle_median": 46.412370681762695,
+  "top1_angle_mean": 64.75668128490447,
+  "human_rank_median": 0.0107421875,
+  "top5_within_20_fraction": 0.53,
+  "seconds": 50.00817350600846
+}

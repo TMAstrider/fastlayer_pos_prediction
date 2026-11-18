@@ -1,0 +1,36 @@
+{
+  "name": "build_direction_scorer_centred_2026-11-10",
+  "epochs": 40,
+  "batch_shapes": 48,
+  "learning_rate": 0.001,
+  "temperature": 0.05,
+  "overhang": 40.0,
+  "no_physics": false,
+  "yaw_average": 2,
+  "limit": 0,
+  "seed": 20261110,
+  "parameters": 116289,
+  "device": "cuda",
+  "train_shapes": 932,
+  "validation_shapes": 100,
+  "candidates": 512,
+  "point_count": 2048,
+  "hard_band": 0.1,
+  "hard_min_angle_deg": 20.0,
+  "negatives_hard": 4,
+  "negatives_random": 4,
+  "loss": "listwise softmax over positive and sampled negatives",
+  "physics_features": [
+    "overhang",
+    "support",
+    "height",
+    "contact"
+  ],
+  "human_negatives": "separate scoring of the exact human direction",
+  "limitations": [
+    "The human pose is treated as one acceptable answer, not the unique one.",
+    "Physics terms are proxies: overhang area, height weighted support, height, first layer contact.",
+    "No accessibility or secluded support term yet.",
+    "Validation shapes come from projects seen in training; they are not an independent test set."
+  ]
+}
