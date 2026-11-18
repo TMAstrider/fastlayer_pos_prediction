@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "name": "simplified_support_rules_v0",
+  "status": "provisional_user_supplied_rules",
+  "angle_definition": "down-facing surface angle measured from horizontal; a face with slope <= self_support_angle_threshold is an overhang candidate",
+  "threshold_boundary": "conservative_angle_and_strict_feature_exemptions: face angle equal to threshold is a candidate; feature size must be strictly below its limit to be exempt",
+  "dimensions_unit": "mm",
+  "configs": {
+    "316L": {
+      "standard": {"self_support_angle_threshold_deg": 55.0},
+      "am_build": {"self_support_angle_threshold_deg": 40.0},
+      "horizontal_hole_diameter_threshold_mm": 6.0,
+      "overhang_bridge_span_threshold_mm": 2.0,
+      "overhang_boss_size_threshold_mm": 1.0
+    },
+    "AlSi10Mg": {
+      "standard": {"self_support_angle_threshold_deg": 45.0},
+      "am_build": {"self_support_angle_threshold_deg": 35.0},
+      "horizontal_hole_diameter_threshold_mm": 6.0,
+      "overhang_bridge_span_threshold_mm": 2.0,
+      "overhang_boss_size_threshold_mm": 1.0
+    },
+    "TC4": {
+      "standard": {"self_support_angle_threshold_deg": 40.0},
+      "am_build": {"self_support_angle_threshold_deg": 25.0},
+      "horizontal_hole_diameter_threshold_mm": 6.0,
+      "overhang_bridge_span_threshold_mm": 2.0,
+      "overhang_boss_size_threshold_mm": 1.0
+    }
+  }
+}

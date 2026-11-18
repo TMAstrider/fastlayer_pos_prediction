@@ -1,0 +1,11 @@
+{
+  "no_support_face_indices": [],
+  "features": [
+    {
+      "kind": "horizontal_hole",
+      "name": "example only: manually identified inner hole patch",
+      "face_indices": [],
+      "diameter_mm": 5.0
+    }
+  ]
+}

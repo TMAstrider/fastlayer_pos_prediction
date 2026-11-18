@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "query_text": "不要在识别出的 1 号孔内部生成支撑。",
+  "no_support": {
+    "feature_ids": [
+      "internal_cylinder_0001"
+    ],
+    "feature_kinds": [],
+    "face_indices": [],
+    "all_internal_cylinders": false,
+    "horizontal_only": null,
+    "min_diameter_mm": null,
+    "max_diameter_mm": null,
+    "clearance_mm": 0.2
+  }
+}
