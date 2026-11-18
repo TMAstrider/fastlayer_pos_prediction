@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>工业件姿态调整 · AI 项目周会 · 2026.11.14</title>
+<style>
+@font-face{font-family:ReportSans;src:url('data:font/woff;base64,__REPORT_FONT__') format('woff');font-weight:400;font-display:swap}
+:root{--ink:#182c3c;--muted:#627585;--blue:#365ce6;--teal:#087f82;--line:#e3e9ee;--soft:#f3f6f8;--green-soft:#e8f4f0;--amber:#a96520;--amber-soft:#fff3e3;--scale:1}
+*{box-sizing:border-box}body{margin:0;background:#eaf0f4;color:var(--ink);font-family:ReportSans,"PingFang SC","Microsoft YaHei",sans-serif;font-synthesis:weight}button,a{ -webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #5599eb;outline-offset:4px}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}button:disabled{opacity:.35;cursor:default}
+.appbar{height:72px;padding:0 30px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px;font-size:15px;letter-spacing:.025em}.brand-mark{width:29px;height:29px;border-radius:9px;background:var(--teal);display:grid;place-items:center;color:white;font-size:13px;font-weight:700}.app-actions{display:flex;gap:9px}.app-actions button,.nav-button{border:1px solid #d5e0e7;background:#f8fbfd;border-radius:12px;color:var(--ink);height:38px;padding:0 15px;font-size:13px}.app-actions button[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}
+.deck{width:100%;padding:0 28px}.slide-shell{position:relative;width:min(1440px,calc((100dvh - 158px)*16/9));max-width:100%;aspect-ratio:16/9;margin:0 auto;overflow:hidden;border-radius:24px;background:white;box-shadow:0 16px 54px #1b35430d}.slide-shell:not(.is-active){display:none}.slide{position:absolute;inset:0 auto auto 0;width:1280px;height:720px;transform:scale(var(--scale));transform-origin:top left;background:#fff;padding:43px 54px 44px;overflow:hidden}.slide:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--teal)}.kicker{display:flex;align-items:center;gap:10px;color:var(--teal);font-size:13px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px}.kicker:before{content:"";width:21px;height:3px;background:var(--teal);border-radius:2px}.slide h1,.slide h2,.slide h3,.slide p{margin:0}.slide h1{font-size:57px;font-weight:750;line-height:1.24;letter-spacing:-.04em}.slide h2{font-size:35px;line-height:1.35;letter-spacing:-.025em;font-weight:750}.slide h3{font-size:21px;line-height:1.4;font-weight:700}.lead{font-size:17px;line-height:1.7;color:var(--muted);margin-top:8px!important}.content{margin-top:25px}.foot{position:absolute;left:54px;right:54px;bottom:20px;display:flex;justify-content:space-between;align-items:center;color:#788995;font-size:11px;letter-spacing:.025em;gap:20px}.foot .page{font-size:12px;font-weight:600;white-space:nowrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.panel{background:var(--soft);border-radius:20px;padding:25px}.panel.white{background:white;border:1px solid var(--line)}.panel.teal{background:var(--green-soft)}.panel.navy{background:var(--ink);color:white}.panel h3+p{margin-top:10px}.panel p{font-size:16px;line-height:1.7;color:var(--muted)}.panel.navy p{color:#c5d5de}.eyebrow{font-size:12px;color:var(--muted);letter-spacing:.08em;font-weight:650}.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;border-radius:20px;padding:5px 11px;background:#e9eefc;color:var(--blue);vertical-align:middle}.tag.teal{background:#d9eeea;color:#14726c}.tag.amber{background:var(--amber-soft);color:var(--amber)}.tag.gray{background:#e8edf0;color:#607482}.callout{border-radius:14px;padding:15px 20px;background:var(--green-soft);color:#1f625e;font-size:16px;line-height:1.65}.callout.amber{background:var(--amber-soft);color:#865e32}.callout.navy{background:var(--ink);color:#ecf6fa}.note{font-size:13px!important;line-height:1.65!important;color:var(--muted)}.subtle{color:var(--muted)}.teal-text{color:var(--teal)}.blue-text{color:var(--blue)}.big-number{font-size:47px;font-weight:750;letter-spacing:-.05em;line-height:1.15;font-variant-numeric:tabular-nums}.big-number small{font-size:20px;font-weight:500;letter-spacing:0}.metric-label{font-size:13px;color:var(--muted);margin-top:9px}.metric-detail{font-size:13px;color:var(--muted);line-height:1.6;margin-top:8px}.space{margin-top:18px!important}.space-sm{margin-top:10px!important}.rule{height:1px;background:var(--line);margin:18px 0}.mini-title{font-size:16px;font-weight:700;margin-bottom:12px}.table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.55}.table th{font-size:12px;font-weight:650;color:var(--muted);text-align:left;padding:12px 13px;border-bottom:1px solid var(--line);white-space:nowrap}.table td{padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle}.table tr:last-child td{border-bottom:none}.table td.num{font-size:23px;letter-spacing:-.03em;white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums}.table small{font-size:12px;color:var(--muted);display:block;line-height:1.55;margin-top:3px}.table tr.highlight td{background:#edf5f2}.table tr.highlight td:first-child{border-radius:12px 0 0 12px}.table tr.highlight td:last-child{border-radius:0 12px 12px 0}.table.compact td{padding:10px 11px;font-size:14px}.table.compact td.num{font-size:21px}.table.compact th{padding:10px 11px}.list{display:grid;gap:12px;margin:0;padding:0;list-style:none}.list li{display:flex;gap:11px;font-size:16px;line-height:1.65}.list li:before{content:"";width:5px;height:5px;flex:0 0 5px;background:var(--teal);border-radius:50%;margin-top:11px}.step-no{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:11px;background:#dcece9;color:var(--teal);font-size:17px;font-weight:700;margin-bottom:15px}.method-card{position:relative;min-height:185px}.method-card .tag{position:absolute;top:23px;right:23px}.method-card h3{margin-top:15px;font-size:20px}.method-card p{font-size:14px;line-height:1.7;margin-top:9px}.method-card a{display:block;font-size:12px;margin-top:12px}.method-label{font-size:12px;letter-spacing:.08em;color:var(--muted);font-weight:650}.bottom-line{margin-top:20px;display:flex;gap:14px;align-items:center;font-size:14px;color:var(--muted)}
+/* Cover */
+.cover{background:#f8fafb}.cover:before{height:0}.cover-head{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}.cover-layout{display:grid;grid-template-columns:1.18fr 1fr;gap:40px;margin-top:48px;align-items:center}.cover h1 span{color:var(--teal)}.cover-sub{font-size:21px;color:#5e7584;line-height:1.7;margin-top:23px!important}.cover-route{background:#fff;padding:28px;border-radius:26px;box-shadow:0 12px 40px #213d4b06}.cover-route svg{display:block;width:100%;height:170px}.route-chip{padding:13px 16px;border-radius:12px;font-size:15px;background:var(--soft);display:flex;align-items:center;justify-content:space-between}.route-chip.good{background:var(--green-soft);color:#176b65}.route-arrow{font-size:19px;color:#a6b5bf;text-align:center;line-height:30px}.cover-stats{position:absolute;left:54px;right:54px;bottom:80px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;border-top:1px solid #dce5e9;padding-top:23px}.cover-stat{display:flex;align-items:baseline;gap:16px}.cover-stat strong{font-size:35px;letter-spacing:-.04em}.cover-stat span{font-size:13px;color:var(--muted);line-height:1.6}.cover .foot{bottom:22px}.cover-route .eyebrow{margin-bottom:15px}
+.data-card{padding:27px 24px}.data-card .count{font-size:55px;line-height:1.12;font-weight:750;letter-spacing:-.05em;margin:19px 0 9px}.data-card .count small{font-size:21px;font-weight:500}.data-card h3{font-size:19px}.data-card p{font-size:14px}.data-split{display:flex;gap:8px;margin-top:21px}.data-split span{display:inline-block;padding:6px 10px;font-size:12px;border-radius:8px;background:#e1e9ed}.data-card.teal .data-split span{background:#cfe6df}.flow{display:flex;align-items:stretch;gap:12px}.flow-node{flex:1;border-radius:17px;padding:21px 18px;background:var(--soft);font-size:16px;line-height:1.6}.flow-node strong{display:block;font-size:17px;margin-bottom:7px}.flow-node small{font-size:12px;color:var(--muted);line-height:1.65;display:block}.flow-node.main{background:var(--green-soft);color:#1b6a64}.flow-join{align-self:center;font-size:23px;color:#95a9b7}.public-side{display:flex;flex-direction:column;gap:17px}.audit-svg{display:flex;align-items:center;gap:18px}.audit-svg svg{width:113px;height:120px;flex-shrink:0}.audit-svg p{font-size:14px}.bar-list{display:grid;gap:18px}.bar-top{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;gap:12px}.bar-top strong{font-size:23px;font-weight:700}.bar-track{height:9px;border-radius:10px;background:#e6edf1;margin-top:8px;overflow:hidden}.bar-fill{height:100%;background:var(--blue);border-radius:10px}.bar-fill.teal{background:var(--teal)}.bar-fill.gray{background:#97a9b7}.paired{display:flex;align-items:center;gap:28px;margin-top:15px}.paired strong{font-size:30px}.paired .vs{font-size:12px;color:var(--muted)}.diagnostic{margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}.diagnostic .panel{padding:19px}.diagnostic h3{font-size:16px}.diagnostic .big-number{font-size:30px;margin:10px 0 5px}.diagnostic p{font-size:12px;line-height:1.6}.triptych{display:block;width:100%;height:auto;border-radius:16px}.preview-wrap{background:#fff;border:1px solid var(--line);padding:9px;border-radius:22px;margin-top:19px}.score-grid{display:grid;grid-template-columns:1.07fr 1fr;gap:23px}.score-metrics{display:grid;grid-template-columns:1fr 1fr;gap:15px}.score-metrics .panel{padding:21px}.score-metrics .big-number{font-size:39px}.score-metrics .metric-label{font-size:12px}.score-explainer{font-size:15px!important;line-height:1.7!important;margin-top:14px!important}.plot-wrap{background:var(--soft);border-radius:20px;padding:20px}.plot-wrap svg{width:100%;height:238px;display:block}.concept-label{font-size:12px;color:var(--muted);margin-bottom:9px}.criteria{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.criterion{padding:22px;min-height:210px}.criterion .index{font-size:31px;color:#9fb4b9;font-weight:650;letter-spacing:-.06em;margin-bottom:12px}.criterion h3{font-size:19px}.criterion p{font-size:14px}.evaluation-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:19px}.evaluation-row .panel{padding:19px}.evaluation-row h3{font-size:16px}.evaluation-row p{font-size:13px;margin-top:9px}.loop-line{display:flex;align-items:center;gap:13px;font-size:14px;color:var(--muted);margin-top:18px}.loop-line:before{content:"↳";font-size:26px;color:var(--teal)}.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}.roadmap .panel{padding:25px;min-height:290px}.roadmap h3{font-size:22px}.roadmap .time{font-size:12px;font-weight:650;letter-spacing:.07em;color:var(--teal);margin-bottom:16px}.roadmap ul{margin:17px 0 0;padding-left:18px;color:var(--muted);font-size:15px;line-height:1.85}.deliverable{margin-top:17px;padding-top:15px;border-top:1px solid #d6e2e3;font-size:13px;line-height:1.65;color:var(--teal)}.requests{display:flex;align-items:center;gap:15px;margin-top:21px}.request-chip{font-size:13px;line-height:1.7;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:8px 12px}.references{display:grid;grid-template-columns:1fr 1fr;gap:25px}.reference-list{list-style:none;display:grid;gap:14px;margin:0;padding:0}.reference-list li{font-size:14px;line-height:1.65}.reference-list b{display:block;font-size:14px;font-weight:650}.reference-list span{display:block;font-size:12px;color:var(--muted);margin-top:3px}.reference-list a{display:inline;font-size:12px}.sources{background:var(--soft);padding:24px;border-radius:20px}.sources h3{font-size:18px;margin-bottom:16px}.scope-notes{font-size:12px;color:var(--muted);line-height:1.8;margin-top:17px!important}.bottom-controls{height:74px;max-width:1440px;margin:auto;padding:0 30px;display:flex;align-items:center;gap:18px}.slide-status{min-width:128px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}.dots{display:flex;flex:1;gap:5px;align-items:center}.dot{border:0;height:5px;border-radius:5px;padding:0;flex:1;background:#cbd8e0;position:relative}.dot:before{content:"";position:absolute;inset:-10px 0}.dot.active{background:var(--teal)}.navigation{display:flex;gap:8px}.nav-button{min-width:44px}.key-hint{font-size:11px;color:#7b8c99;white-space:nowrap}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+body.overview .deck{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:1600px;margin:0 auto 30px}body.overview .slide-shell{display:block;width:100%;cursor:pointer;border:3px solid transparent;box-shadow:0 6px 25px #1b35430a}body.overview .slide-shell.is-active{border-color:var(--teal)}body.overview .bottom-controls{display:none}body.overview .appbar{position:sticky;top:0;z-index:5;background:#eaf0f4ed;backdrop-filter:blur(12px)}body:fullscreen{background:#eaf0f4}body:fullscreen .slide-shell{width:min(1700px,calc((100dvh - 158px)*16/9))}
+@media(max-width:700px){.appbar{height:68px;padding:0 14px}.brand{font-size:12px;gap:8px}.brand-mark{width:25px;height:25px}.app-actions button{font-size:11px;padding:0 9px;height:34px}.deck{padding:0 10px}.slide-shell{border-radius:12px;width:100%}.bottom-controls{padding:0 12px;gap:10px;height:66px}.key-hint{display:none}.slide-status{min-width:68px;font-size:11px}.dots{gap:3px}.navigation{gap:5px}.nav-button{padding:0 10px;min-width:36px;height:35px}body.overview .deck{grid-template-columns:1fr;gap:15px;padding:0 12px}body:not(.overview) .deck{margin-top:max(12px,calc((100dvh - 68px - (100vw - 20px)*9/16 - 86px)/2))}}
+@media(prefers-reduced-motion:no-preference){.slide-shell{transition:box-shadow .2s}.app-actions button:hover,.nav-button:hover:not(:disabled){background:#e0eae9}.dot{transition:background .15s}}
+@media print{@page{size:1280px 720px;margin:0}html,body{background:white}.appbar,.bottom-controls{display:none!important}.deck,body.overview .deck{display:block;padding:0;max-width:none}.slide-shell,.slide-shell:not(.is-active),body.overview .slide-shell{display:block;width:1280px;height:720px;max-width:none;page-break-after:always;border-radius:0;border:0;box-shadow:none;margin:0}.slide{transform:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header class="appbar">
+  <div class="brand"><span class="brand-mark">F</span><span>工业件姿态调整 <span class="subtle">/ 周度研究进展</span></span></div>
+  <div class="app-actions"><button id="overview" type="button" aria-pressed="false">总览</button><button id="fullscreen" type="button">全屏演示</button></div>
+</header>
+<main class="deck" aria-label="AI 项目周会演示文稿">
+
+<section class="slide-shell is-active" aria-label="1. 本周结论">
+<article class="slide cover">
+  <div class="cover-head"><span>AI PROJECT REVIEW · 2026.11.14</span><span>汇报周期 11.08—11.14 · 实验记录截至 11.10</span></div>
+  <div class="cover-layout">
+    <div><div class="kicker">工业件姿态调整</div><h1>从历史方向回归<br>走向<span>候选姿态推荐</span></h1><p class="cover-sub">本周完成方法调研与多组实验验证。<br>下一步优先打分与排序，先明确“怎样才算摆得好”。</p><div class="bottom-line"><span class="tag teal">调研与实验验证阶段</span><span>工艺评价标准待对接</span></div></div>
+    <div class="cover-route">
+      <div class="eyebrow">本周形成的方案判断</div>
+      <svg viewBox="0 0 440 170" role="img" aria-label="一个零件可能对应多个候选方向">
+        <defs><linearGradient id="part-grad" x1="0" x2="1"><stop stop-color="#d4e6e9"/><stop offset="1" stop-color="#8ab5c0"/></linearGradient></defs>
+        <path d="M46 95 101 64 151 88 151 133 96 161 46 137Z" fill="url(#part-grad)"/><path d="M46 95 100 121 151 88 101 64Z" fill="#c3dce2"/><path d="M100 121 100 160 151 133 151 88Z" fill="#7fabb8"/>
+        <path d="M67 85 67 54 119 25 139 36 139 81 119 92 119 58 88 75 88 96Z" fill="#719daa"/><path d="M67 54 87 66 139 36 119 25Z" fill="#b5d3da"/>
+        <path d="M178 92H213M213 92V43H245M213 92H245M213 92V141H245" fill="none" stroke="#b4c8cd" stroke-width="2"/>
+        <g fill="#f0f5f6"><rect x="258" y="23" width="155" height="40" rx="12"/><rect x="258" y="72" width="155" height="40" rx="12"/><rect x="258" y="121" width="155" height="40" rx="12"/></g>
+        <g font-family="ReportSans,sans-serif" font-size="15" fill="#526e7c"><text x="276" y="49">候选 A</text><text x="276" y="98">候选 B</text><text x="276" y="147">候选 C</text></g>
+        <g fill="#087f82"><circle cx="387" cy="43" r="5"/><circle cx="387" cy="92" r="5" opacity=".6"/><circle cx="387" cy="141" r="5" opacity=".3"/></g>
+      </svg>
+      <div class="route-chip">单一历史方向回归 <span class="tag gray">精度不足</span></div><div class="route-arrow">↓</div><div class="route-chip good">候选打分 + 多姿态推荐 <span>优先验证 →</span></div>
+    </div>
+  </div>
+  <div class="cover-stats"><div class="cover-stat"><strong>1,032</strong><span>筛选后的代表零件<br>932 训练 / 100 验证</span></div><div class="cover-stat"><strong>0.71°</strong><span>公开金字塔 PointNet<br>独立测试平均角误差</span></div><div class="cover-stat"><strong>28% / 52%</strong><span>Top-1 / Top-5 覆盖率<br>同一组 100 件，距历史 ≤20°</span></div></div>
+  <footer class="foot"><span>方向回归尚未达到真实工业件可用精度；候选排序已有初步价值。</span><span class="page">01 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="2. 相关工作与尝试范围">
+<article class="slide">
+  <div class="kicker">01 / 相关工作</div><h2>公开方法提供路线，复杂工业件仍需独立验证</h2><p class="lead">与本项目最接近的是“随机旋转历史零件，再学习恢复参考构建方向”。</p>
+  <div class="grid3 content">
+    <div class="panel method-card"><div class="method-label">方向回归 · Zelder 2025</div><span class="tag teal">已尝试</span><h3>PointNet → 参考构建轴</h3><p>与当前监督方式一致；公开数据以参数化合成几何为主。已在金字塔与自有工业件上对照。</p><a href="https://doi.org/10.1007/s40964-025-00960-6" target="_blank" rel="noopener">论文与方法 ↗</a></div>
+    <div class="panel method-card"><div class="method-label">几何候选 · Qin 2020/2021</div><span class="tag teal">已做基线</span><h3>生成候选 → 多指标排序</h3><p>面片法向聚类与几何搜索；综合支撑、高度和表面质量。借鉴框架，工艺权重需现场确认。</p><a href="https://doi.org/10.1080/17452759.2020.1832793" target="_blank" rel="noopener">LPBF 多指标方法 ↗</a></div>
+    <div class="panel method-card"><div class="method-label">旋转一致性 · Vector Neurons</div><span class="tag teal">已尝试</span><h3>SO(3) 等变点云网络</h3><p>用轻量独立实现检查旋转建模；同件新旋转可低误差，但未解决新形状的方向泛化。</p><a href="https://github.com/FlyingGiraffe/vnn" target="_blank" rel="noopener">原始方法与代码 ↗</a></div>
+    <div class="panel method-card"><div class="method-label">学习排序 · 本项目迁移方向</div><span class="tag teal">优先推进</span><h3>零件 + 候选位姿 → 分数</h3><p>融合点云与悬垂、支撑代理特征，输出多个高分方向，适应可能存在的多种可行摆法。</p><a href="../build_direction_scorer_centred_2026-11-10/README.md" target="_blank">本地实验依据 ↗</a></div>
+    <div class="panel method-card"><div class="method-label">序贯搜索 · Learn to Rotate 2023</div><span class="tag amber">后续探索</span><h3>旋转动作 + 支撑奖励</h3><p>强化学习迭代调整姿态。前提是有可批量调用、可信的支撑评价环境；本项目尚未训练。</p><a href="https://doi.org/10.1109/TII.2023.3249751" target="_blank" rel="noopener">强化学习方法 ↗</a></div>
+    <div class="panel method-card"><div class="method-label">延伸方向 · 2026 牙科预印本</div><span class="tag gray">仅调研</span><h3>PointNeXt / 多视图 / TTA</h3><p>真实生产件的构建轴学习与测试时旋转集成值得借鉴；牙科任务表现不能直接外推工业件。</p><a href="https://arxiv.org/abs/2609.15710" target="_blank" rel="noopener">已有调研记录中的预印本 ↗</a></div>
+  </div>
+  <footer class="foot"><span>依据 11.08 已有调研；未确认官方代码的论文不视为现成可集成系统。LLM Agent 见后续路线页。</span><span class="page">02 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="3. 数据与实验组织">
+<article class="slide">
+  <div class="kicker">02 / 数据基础</div><h2>从公开简单件验证，走到自有复杂件评估</h2><p class="lead">932 是扩充后数据中的训练件数；本阶段完整代表集为 1,032 件。</p>
+  <div class="grid3 content">
+    <div class="panel data-card"><span class="tag gray">公开对照</span><div class="count">10,000<small> 件</small></div><h3>参数化金字塔</h3><p class="space-sm">单一规则几何族，每件有参考轴标签。用于检查旋转监督、网络和搜索实现。</p><div class="data-split"><span>8,100 训练</span><span>900 验证</span><span>1,000 测试</span></div></div>
+    <div class="panel data-card"><span class="tag gray">初始工业数据</span><div class="count">193<small> 件</small></div><h3>PJF 历史主零件</h3><p class="space-sm">18 个初始工程，提取无支撑零件网格、点云与法向，沿用历史打印参考方向。</p><div class="data-split"><span>173 训练</span><span>20 验证</span></div></div>
+    <div class="panel data-card teal"><span class="tag teal">扩充与保守去重</span><div class="count">1,032<small> 件</small></div><h3>PJF + Magics 代表集</h3><p class="space-sm">5,757 条来源记录经几何归并、刚体匹配与待核对组排除，保留每组一个参考摆法。</p><div class="data-split"><span>932 训练</span><span>100 验证</span></div></div>
+  </div>
+  <div class="flow space"><div class="flow-node"><strong>提取与溯源</strong><small>零件 / 支撑分开，保留来源</small></div><span class="flow-join">→</span><div class="flow-node"><strong>点云与法向</strong><small>常规池 4,096 点，输入 2,048 点</small></div><span class="flow-join">→</span><div class="flow-node"><strong>随机旋转监督</strong><small>同步旋转几何、法向与目标轴</small></div><span class="flow-join">→</span><div class="flow-node main"><strong>回归 / 打分对照</strong><small>分别评估历史方向拟合与候选排序</small></div></div>
+  <p class="note space">随机旋转增加朝向覆盖，不增加独立零件形状。扩充集按形状组隔离，完整零件族隔离、对称审计及部分对象语义仍待完善。</p>
+  <footer class="foot"><span>数据依据：shape_deduplication_2026-11-09 · 当前 100 件验证集参与选模，并非独立最终测试集。</span><span class="page">03 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="4. 公开金字塔结果">
+<article class="slide">
+  <div class="kicker">03 / 实验 · 公开金字塔</div><h2>简单参考轴能学准，仍不能说明“摆放可用”</h2><p class="lead">回归与打分两种形式均在受控几何上跑通；这里的目标是恢复数据集参考朝向。</p>
+  <div class="content" style="display:grid;grid-template-columns:1.22fr 1fr;gap:24px">
+    <div><div class="mini-title">模型对照 <span class="tag gray">平均角误差 ↓</span></div><table class="table"><thead><tr><th>方法</th><th>验证</th><th>独立测试</th></tr></thead><tbody><tr class="highlight"><td>PointNet 从头训练<small>160 轮，XYZ 点云</small></td><td class="num">0.71°</td><td class="num">0.71°</td></tr><tr><td>PTv3 从头训练<small>12 轮，全网络训练</small></td><td class="num">1.96°</td><td class="num">2.00°</td></tr><tr><td>PTv3 预训练微调<small>12 轮，全编码器 + 方向头</small></td><td class="num">2.10°</td><td class="num">2.19°</td></tr><tr><td>候选打分 + 局部细化<small>100 个验证样本；含搜索步骤</small></td><td class="num teal-text">0.463°</td><td class="subtle">未测</td></tr></tbody></table><p class="note space">不同模型训练预算不同；打分器只评估验证子集且额外使用搜索，不能据此宣称其优于 PointNet。</p></div>
+    <div class="public-side"><div class="panel"><span class="tag amber">标签审计 · 抽样 24 件</span><div class="audit-svg space-sm"><svg viewBox="0 0 110 120" role="img" aria-label="金字塔参考标签为尖端朝下"><path d="M10 36 68 12 101 33 52 105Z" fill="#bfd4df"/><path d="M10 36 52 105 68 12Z" fill="#8baeba"/><path d="M10 36 68 12 101 33 43 56Z" fill="#dce8ed"/><path d="M10 108H104" stroke="#8fabb6" stroke-width="2"/><circle cx="52" cy="105" r="4" fill="#a96520"/></svg><p>参考姿态是尖端朝下；按审计采用的接触与静力学判据，<strong>24 / 24 均不稳定</strong>。</p></div><div class="rule"></div><p>标签记录一个规范朝向，未提供多可接受摆法，也未证明工艺最优。</p></div><div class="callout">本组实验验证了实现可拟合明确目标。复杂工业件的工艺可用性需要另一套评价证据。</div></div>
+  </div>
+  <footer class="foot"><span>依据：public_pyramids_model_comparison · pyramid_scorer_control · public_pyramid_label_audit；稳定性为简化几何审计。</span><span class="page">04 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="5. 初始193件回归结果">
+<article class="slide">
+  <div class="kicker">04 / 实验 · 初始 193 件工业零件</div><h2>PointNet 与 PTv3 均未恢复出可靠历史方向</h2><p class="lead">同一 173 / 20 初步划分，真实件的方向误差显著高于公开规则几何。</p>
+  <div class="grid2 content" style="grid-template-columns:1.15fr 1fr">
+    <div><table class="table"><thead><tr><th>代表实验</th><th>验证平均误差 ↓</th></tr></thead><tbody><tr><td>冻结 PTv3，首轮方向头<small>XYZ，160 个固定验证视图</small></td><td class="num">80.21°</td></tr><tr><td>冻结 PTv3，法向 / 朝向消融<small>同一消融内：77.09° → 73.66°</small></td><td class="num">73.66°<small>法向 + 64 朝向，160 视图</small></td></tr><tr class="highlight"><td>PointNet 从头训练<small>XYZ，在线抽点与 SO(3) 旋转</small></td><td class="num">71.29°<small>640 个固定验证视图</small></td></tr></tbody></table><div class="callout amber space">加入法向与扩大朝向覆盖有有限改善；单纯更换编码器未解决真实件方向泛化。</div></div>
+    <div class="panel"><div class="eyebrow">同一批 160 个朝向的配对评估</div><div class="paired"><div><strong class="teal-text">73.32°</strong><div class="metric-label">PointNet</div></div><span class="vs">VS</span><div><strong>73.66°</strong><div class="metric-label">冻结 PTv3 + 法向</div></div></div><div class="rule"></div><ul class="list"><li>配对结果接近，尚无证据表明模型更大就能解决问题。</li><li>20 个验证形状、单种子，结果代表探索阶段。</li><li>两种真实件模型各自在工业数据上训练；问题是留出形状泛化差，并非只把金字塔权重直接拿来预测。</li></ul></div>
+  </div>
+  <p class="note space">首轮与消融随机流不同；PointNet 的完整验证视图数也不同。配对评估用于减少口径差异，不能将全部数值视作严格消融。</p>
+  <footer class="foot"><span>依据：experiment_index_2026-11-09 · ptv3_normals_rotation_ablation · pointnet_real_parts_scratch。</span><span class="page">05 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="6. 扩充数据与旋转诊断">
+<article class="slide">
+  <div class="kicker">05 / 实验 · 932 训练 / 100 验证</div><h2>扩大数据与改善旋转建模，仍未解决新件泛化</h2><p class="lead">保留主要路线结果；中断 pilot、输出层编辑和重复训练不逐项展开。</p>
+  <div class="content"><table class="table compact"><thead><tr><th>方法</th><th>最佳验证平均误差 ↓</th><th>状态与主要观察</th></tr></thead><tbody><tr><td>PointNet · XYZ</td><td class="num">66.169°</td><td>第 132 轮最佳，162 轮早停；≤30° 为 20.38%</td></tr><tr><td>PointNet · XYZ + 法向</td><td class="num">64.214°</td><td>最佳第 100 轮；记录到 377 轮后主动停止</td></tr><tr><td>轻量 SO(3) 等变网络</td><td class="num">63.955°</td><td>最佳为第 1 轮；第 55 轮验证 72.604°，主动停止</td></tr></tbody></table></div>
+  <div class="mini-title space">八件诊断进一步区分了三个问题</div>
+  <div class="diagnostic"><div class="panel"><h3>① 旋转一致性</h3><div class="big-number">0.121°</div><p>固定点训练，同件新旋转很准；但换另一半采样点后误差 <strong>46.288°</strong>。</p></div><div class="panel"><h3>② 点采样稳健性</h3><div class="big-number teal-text">1.606° → 2.649°</div><p>在线抽点后，同件原评估点 / 另一半点均改善；两者仍来自原 4,096 点池。</p></div><div class="panel"><h3>③ 新形状泛化</h3><div class="big-number">79.143°</div><p>八件等变模型在另 8 个未见形状上的平均误差；不能将同件低误差当成新件能力。</p></div></div>
+  <div class="callout space">方向稳定、同件拟合准确、新零件摆放可用，是三项不同能力；当前尚未打通最后一项。</div>
+  <footer class="foot"><span>不同设置与预算不能严格归因；八件低误差不是独立新件成绩。全量 mesh 重采点诊断此前未完成。</span><span class="page">06 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="7. 真实验证件三联图">
+<article class="slide">
+  <div class="kicker">06 / 实验 · 位姿可视化</div><h2>用真实验证输入检查：预测究竟偏在哪里</h2><p class="lead">沿用“输入／GT／预测”三联图；保留平台和随零件旋转的初始方向箭头。</p>
+  <div class="preview-wrap"><img class="triptych" src="data:image/png;base64,__TRIPTYCH_IMAGE__" alt="首个留出零件的首个固定验证朝向：随机输入、历史GT与PTv3预测；保留平台及红色初始Z方向标记。"></div>
+  <div class="grid3 space" style="gap:14px"><div class="note"><strong>选择方式</strong><br>冻结 PTv3 + 法向 + 64 朝向；第一个验证件的第一个固定朝向，未按误差选图。</div><div class="note"><strong>比较方式</strong><br>GT / 预测均落平台。预测仅在展示时绕 Z 对齐 GT；指标不计自由 yaw。</div><div class="note"><strong>解释边界</strong><br>单图用于定位倾斜差异；是否可打印、支撑是否合理，仍需工艺侧评价。</div></div>
+  <footer class="foot"><span>由既有 render_validation_poses.py 和保存的预测重新渲染；红箭头是输入坐标标记，不是预测构建轴。</span><span class="page">07 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="8. 候选位姿打分实验">
+<article class="slide">
+  <div class="kicker">07 / 实验 · 候选位姿打分</div><h2>推荐一个姿态命中 28%，推荐五个覆盖 52%</h2><p class="lead">同一组 100 个验证零件；候选与历史构建方向的夹角 ≤20°，即视为命中。</p>
+  <div class="score-grid content"><div><div class="score-metrics"><div class="panel teal"><div class="big-number teal-text">28%</div><div class="metric-label">Top-1 覆盖率 · 距历史方向 ≤20°</div><div class="metric-detail">100 个验证零件中，28 件命中</div></div><div class="panel teal"><div class="big-number teal-text">52%</div><div class="metric-label">Top-5 覆盖率 · 至少一个候选命中</div><div class="metric-detail">100 个验证零件中，52 件命中</div></div></div><div class="panel space"><h3>覆盖率怎么统计？</h3><p class="space-sm">对每件零件生成 512 个球面候选并打分。Top-1 取最高分候选后做局部细化；Top-5 取网格候选中分数最高的五个，只要一个距历史方向 ≤20°，该件就计为覆盖。</p></div><p class="score-explainer">多个推荐提供了更多接近历史方向的机会；单姿态结果仍有 72 件超出 20°。</p></div>
+    <div><div class="mini-title">后续对照：覆盖率未见稳定改善</div><table class="table compact"><thead><tr><th>方案</th><th>Top-1 ≤20°</th><th>Top-5 ≤20°</th></tr></thead><tbody><tr class="highlight"><td>去中心 + 随机 yaw<small>可信基线</small></td><td class="num">28%</td><td class="num">52%</td></tr><tr><td>近距离负样本<small>取单起点细化结果</small></td><td class="num">27%</td><td class="num">56%</td></tr><tr><td>点密度加倍<small>8,192 池 / 输入 4,096 点</small></td><td class="num">25%</td><td class="num">52%</td></tr></tbody></table><div class="callout amber space">覆盖率衡量与历史方向的一致性，不是打印成功率。其他摆法是否可用，仍需支撑评价和工艺复核。</div><p class="note space">早期存在 yaw 或绝对位置泄漏的结果已排除。此页 Top-1 均取单起点细化，Top-5 均取网格前五候选。</p></div>
+  </div>
+  <footer class="foot"><span>依据：centred / near / dense 最终 evaluation.json；统一报告 ≤20° 的零件覆盖率，各实验均为 100 件验证。</span><span class="page">08 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="9. 多可行姿态与单一GT">
+<article class="slide">
+  <div class="kicker">08 / 核心问题</div><h2>历史姿态是一个正例，复杂件可能有多个可行解</h2><p class="lead">多峰目标是需要验证的建模假设；现有实验还不足以把全部误差归因于多解标签。</p>
+  <div class="grid2 content"><div class="plot-wrap"><div class="concept-label">概念示意 · 非模型实测分布</div><svg viewBox="0 0 540 235" role="img" aria-label="多个可行姿态形成多个分数峰，历史GT只记录其中一个"><path d="M28 188H518M28 188V27" stroke="#b6c7d0" stroke-width="1.5" fill="none"/><path d="M29 188C75 188 82 177 102 119C118 65 137 58 154 124C168 178 179 188 208 188C240 188 247 176 270 89C287 26 306 25 323 96C344 177 350 187 379 188C406 188 417 174 433 124C449 72 469 78 484 141C493 179 502 187 518 188L518 188H29Z" fill="#dfefeb"/><path d="M29 188C75 188 82 177 102 119C118 65 137 58 154 124C168 178 179 188 208 188C240 188 247 176 270 89C287 26 306 25 323 96C344 177 350 187 379 188C406 188 417 174 433 124C449 72 469 78 484 141C493 179 502 187 518 188" stroke="#087f82" stroke-width="3" fill="none"/><line x1="293" y1="29" x2="293" y2="188" stroke="#365ce6" stroke-dasharray="4 5" stroke-width="1.5"/><circle cx="293" cy="46" r="6" fill="#365ce6"/><g font-family="ReportSans,sans-serif" fill="#496370" font-size="13"><text x="96" y="216">可行摆法 A</text><text x="255" y="216">历史参考 B</text><text x="416" y="216">可行摆法 C</text><text x="35" y="19">可接受程度 / 相容分数</text></g></svg><p class="note">仅用“离 B 多近”评价，会把可能可用的 A / C 判成差答案；直接做向量回归也可能落在多个偏好之间。</p></div>
+    <div class="panel"><h3>当前指标能回答什么？</h3><ul class="list space"><li><span><strong>历史方向角误差</strong><br>测量与记录姿态的一致性，未覆盖对称等价与替代可行摆法。</span></li><li><span><strong>Top-k 与历史的接近程度</strong><br>衡量推荐是否覆盖参考答案，不能代表 k 个方案都可打印。</span></li><li><span><strong>悬垂 / 支撑代理分数</strong><br>可用于筛选候选，但尚不等于实际支撑量、去除难度与质量。</span></li></ul></div>
+  </div>
+  <div class="callout space">需要把“模仿一个历史方向”逐步扩展为“找到工艺可接受的姿态集合，并对其中方案排序”。</div>
+  <footer class="foot"><span>同形多摆法审计支持检查多解；数据规模、工艺条件缺失、优化与容量也可能影响当前泛化。</span><span class="page">09 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="10. 需要对齐的评价标准">
+<article class="slide">
+  <div class="kicker">09 / 工艺评价 · 下周重点对接</div><h2>先明确：支撑怎么给，怎样的支撑才算好</h2><p class="lead">以下维度是待与工艺侧确认的评价框架；实际权重、阈值和取舍尚未确定。</p>
+  <div class="criteria content"><div class="panel criterion"><div class="index">01</div><h3>可行性与硬约束</h3><p class="space-sm">平台 / 设备范围、关键面禁支撑、通道保留及材料相关约束。</p><span class="tag gray space">先判断能不能摆</span></div><div class="panel criterion"><div class="index">02</div><h3>支撑生成一致性</h3><p class="space-sm">采用哪套支撑策略、悬垂阈值与接触参数；统一比较条件。</p><span class="tag gray space">同口径生成支撑</span></div><div class="panel criterion"><div class="index">03</div><h3>支撑质量与代价</h3><p class="space-sm">支撑量、位置、可达性、去除难度，以及关键表面损伤风险。</p><span class="tag gray space">少支撑之外的质量</span></div><div class="panel criterion"><div class="index">04</div><h3>生产结果与偏好</h3><p class="space-sm">打印稳定性、变形与后处理；允许多个可用解及人工取舍。</p><span class="tag gray space">确认实际可接受</span></div></div>
+  <div class="evaluation-row"><div class="panel white"><h3>模型侧 · 辅助指标</h3><p>历史角误差、Top-k 历史覆盖、旋转一致性，保留作诊断。</p></div><div class="panel white"><h3>工艺侧 · 主验收指标</h3><p>工艺员 Top-1 / Top-3 接受率、硬约束违规数、支撑复核结果。</p></div><div class="panel white"><h3>使用侧 · 效率指标</h3><p>推荐后的人工调整量、摆放决策时间、不可接受原因。</p></div></div>
+  <div class="loop-line">先在代表零件上与 FastLayer / 工艺员复核，再将确认结果回流为可用集合、偏好比较与评价标签。</div>
+  <footer class="foot"><span>当前几何评价使用悬垂面积与支撑需求代理；与实际切片支撑的误差、关键面和可清除性尚需验证。</span><span class="page">10 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="11. 推荐方案与探索方向">
+<article class="slide">
+  <div class="kicker">10 / 技术路线</div><h2>优先推进候选打分，把评价能力变成可复用模块</h2><p class="lead">先验证多个推荐方向是否有用，再决定搜索、迭代修正或强化学习的投入。</p>
+  <div class="flow content"><div class="flow-node"><strong>输入零件</strong><small>任意初始方向<br>网格 / 点云 + 法向</small></div><span class="flow-join">→</span><div class="flow-node"><strong>生成候选</strong><small>几何法向 + 球面采样<br>过滤硬约束、保证多样性</small></div><span class="flow-join">→</span><div class="flow-node main"><strong>位姿打分</strong><small>学习分数 + 工艺指标<br>保留多个高分峰</small></div><span class="flow-join">→</span><div class="flow-node main"><strong>Top-3 / Top-5 推荐</strong><small>三联图 + 候选比较<br>FastLayer / 工艺员复核</small></div></div>
+  <div class="loop-line">人工确认“可用 / 更优 / 不可用 / 不确定” → 补充多正例与成对偏好 → 更新打分器</div>
+  <div class="grid3 space"><div class="panel"><span class="tag teal">下一阶段可比较</span><h3 class="space-sm">候选细化 / 增量修正</h3><p>从已有候选出发，搜索或预测小旋转增量。仍用相同工艺标准评价收益。</p></div><div class="panel"><span class="tag amber">依赖评价环境</span><h3 class="space-sm">旋转策略强化学习</h3><p>状态为当前姿态，动作为旋转，奖励来自支撑 / 工艺评价。需可靠、可批量调用的环境。</p></div><div class="panel"><span class="tag amber">探索假设 · 尚未实现</span><h3 class="space-sm">LLM Agent 调用工具</h3><p>由 Agent 调用旋转、支撑评估与比较工具；是否训练策略、如何奖励，待环境与基线明确后验证。</p></div></div>
+  <div class="callout space">共同前提：足够的数据与可信的“好坏”定义。没有可靠评价，换成 Agent 或强化学习也无法补齐工艺信息。</div>
+  <footer class="foot"><span>本项目已尝试回归与候选打分；此页的增量修正、RL 与 LLM Agent 均为后续方案，未计入已完成成果。</span><span class="page">11 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="12. 下周计划与预期进展">
+<article class="slide">
+  <div class="kicker">11 / 下周计划 · 11.16—11.22</div><h2>先对齐评价，再用真实零件验证推荐闭环</h2><p class="lead">下周希望形成的进展：能说明“为什么推荐、哪些可用、还差在哪里”。</p>
+  <div class="roadmap content"><div class="panel"><div class="time">优先级 01 · 工艺对接</div><h3>统一摆放与支撑标准</h3><ul><li>选代表零件逐件讨论摆法</li><li>确认支撑生成方式与参数</li><li>明确关键面、去除难度和取舍</li></ul><div class="deliverable">预期产出：首版评价表<br>与明确的验收口径</div></div><div class="panel"><div class="time">优先级 02 · 数据补充</div><h3>收集多可接受姿态</h3><ul><li>争取更多历史生产件与记录</li><li>确认同件可用集合和优劣偏好</li><li>记录材料、设备与不可用原因</li></ul><div class="deliverable">预期产出：可复核的小批样例<br>与后续数据清单</div></div><div class="panel teal"><div class="time">优先级 03 · 推荐验证</div><h3>推进位姿打分与推荐</h3><ul><li>保留有差异的多个高分候选</li><li>结合 FastLayer 与工艺员复核</li><li>记录接受率、支撑与人工调整</li></ul><div class="deliverable">预期产出：候选推荐演示<br>与下一轮实验的判断依据</div></div></div>
+  <div class="requests"><strong style="font-size:15px;white-space:nowrap">需要协同</strong><span class="request-chip">工艺人员参与样例复核</span><span class="request-chip">可用的支撑生成 / 评估方式</span><span class="request-chip">更多零件、工艺条件与结果记录</span></div>
+  <div class="callout navy space">阶段目标：从“角度接近历史”推进到“推荐姿态经工艺确认可用”。</div>
+  <footer class="foot"><span>以上为计划与预期产出，尚未完成；实际推进取决于工艺对接与补充数据的可用情况。</span><span class="page">12 / 13</span></footer>
+</article></section>
+
+<section class="slide-shell" aria-label="13. 参考文献与指标依据">
+<article class="slide">
+  <div class="kicker">附录 / 参考与证据</div><h2>相关方法与本地实验记录</h2><p class="lead">正文以已保存实验为依据；论文成果、项目复现与后续假设分别陈述。</p>
+  <div class="references content"><div><ul class="reference-list"><li><b>[1] Zelder et al. · 2025 · PointNet 方向学习</b><a href="https://doi.org/10.1007/s40964-025-00960-6" target="_blank" rel="noopener">Learning automatic part orientation for powder bed fusion of metal from part data ↗</a><span>最接近当前监督设定；<a href="https://huggingface.co/datasets/sebius/pbflbm-part-orientation" target="_blank" rel="noopener">配套合成数据集 ↗</a></span></li><li><b>[2] Qin et al. · 2020 / 2021 · LPBF 几何候选与排序</b><a href="https://doi.org/10.1080/17452759.2020.1756086" target="_blank" rel="noopener">Facet clustering 候选生成 ↗</a> · <a href="https://doi.org/10.1080/17452759.2020.1832793" target="_blank" rel="noopener">Automatic determination of part build orientation ↗</a></li><li><b>[3] Deng et al. · ICCV 2021 · Vector Neurons</b><a href="https://github.com/FlyingGiraffe/vnn" target="_blank" rel="noopener">SO(3) 等变网络方法与代码 ↗</a><span>项目采用思想启发的轻量独立实现，并非原网络复现。</span></li><li><b>[4] Shi et al. · 2023 · Learn to Rotate</b><a href="https://doi.org/10.1109/TII.2023.3249751" target="_blank" rel="noopener">以支撑体积为目标的旋转策略学习 ↗</a><span>供后续路线参考；本项目尚未构建 RL 训练环境。</span></li><li><b>[5] 2026 牙科构建方向预印本</b><a href="https://arxiv.org/abs/2609.15710" target="_blank" rel="noopener">已有调研记录中的来源 ↗</a><span>仅为扩展线索，未复现；不引用其精度作为本项目结果。</span></li></ul></div>
+    <div class="sources"><h3>实验依据 · 可点击打开</h3><ul class="reference-list"><li><a href="../orientation_research_2026-11-08.md" target="_blank">完整公开工作调研</a> · <a href="../experiment_index_2026-11-09.md" target="_blank">初始实验索引</a></li><li><a href="../public_pyramids_model_comparison_2026-11-08.md" target="_blank">公开金字塔模型比较</a> · <a href="../public_pyramid_label_audit_2026-11-10/README.md" target="_blank">参考标签审计</a></li><li><a href="../data_expansion_experiment_index_2026-11-09.md" target="_blank">扩充数据与全量实验索引</a> · <a href="../shape_deduplication_2026-11-09/README.md" target="_blank">去重规则</a></li><li><a href="../equivariant_eight_comparison_2026-11-09.md" target="_blank">八件旋转 / 抽点诊断</a> · <a href="../equivariant_eight_unseen_parts_2026-11-09/README.md" target="_blank">未见件评估</a></li><li><a href="../build_direction_scorer_centred_2026-11-10/README.md" target="_blank">可信打分基线</a> · <a href="../../runs/build_direction_scorer_centred_2026-11-10/evaluation.json" target="_blank">最终评估 JSON</a></li><li><a href="../build_direction_scorer_near_2026-11-10/README.md" target="_blank">近距离负样本对照</a> · <a href="../build_direction_scorer_dense_2026-11-10/README.md" target="_blank">点密度对照</a></li></ul><div class="rule"></div><p class="scope-notes">口径：公开回归表为测试集平均值；公开打分为 100 件验证子集。工业件均为验证结果，未完成独立最终测试。排名分位与 Top-k 覆盖率均不代表可打印率。候选打分细化结果来自最终 evaluation.json，与训练期 best_metrics.json 可不同。</p></div>
+  </div>
+  <footer class="foot"><span>AI 项目周会 · 工业件姿态调整 · 2026.11.14</span><span class="page">13 / 13</span></footer>
+</article></section>
+</main>
+<footer class="bottom-controls"><div class="slide-status" id="slide-status" aria-live="polite">01 / 13</div><nav class="dots" id="dots" aria-label="跳转页面"></nav><span class="key-hint">← → 翻页 · O 总览 · F 全屏</span><div class="navigation"><button id="prev" class="nav-button" type="button" aria-label="上一页">←</button><button id="next" class="nav-button" type="button" aria-label="下一页">→</button></div></footer>
+<script>
+(() => {
+  const shells = [...document.querySelectorAll('.slide-shell')];
+  const dots = document.getElementById('dots');
+  const status = document.getElementById('slide-status');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  const overview = document.getElementById('overview');
+  const fullscreen = document.getElementById('fullscreen');
+  const parseHash = () => { const n = Number(location.hash.slice(1)); return Number.isInteger(n) && n >= 1 && n <= shells.length ? n - 1 : 0; };
+  let current = parseHash();
+  shells.forEach((shell, i) => {
+    const dot = document.createElement('button'); dot.className = 'dot'; dot.type = 'button';
+    dot.setAttribute('aria-label', shell.getAttribute('aria-label'));
+    dot.addEventListener('click', () => go(i)); dots.append(dot);
+    shell.addEventListener('click', e => {
+      if (!document.body.classList.contains('overview') || e.target.closest('a,button')) return;
+      setOverview(false); go(i); window.scrollTo(0, 0);
+    });
+  });
+  const fit = () => shells.forEach(shell => {
+    if (shell.clientWidth) shell.style.setProperty('--scale', (shell.clientWidth / 1280).toString());
+  });
+  const observer = new ResizeObserver(fit); shells.forEach(shell => observer.observe(shell));
+  function go(index, updateHash = true) {
+    current = Math.max(0, Math.min(shells.length - 1, index));
+    const inOverview = document.body.classList.contains('overview');
+    shells.forEach((s, i) => {s.classList.toggle('is-active', i === current); s.setAttribute('aria-hidden', String(!inOverview && i !== current));});
+    [...dots.children].forEach((d, i) => {d.classList.toggle('active', i === current); d.setAttribute('aria-current', i === current ? 'step' : 'false');});
+    status.textContent = `${String(current + 1).padStart(2,'0')} / ${shells.length}`;
+    prev.disabled = current === 0; next.disabled = current === shells.length - 1;
+    document.title = `${current + 1}. ${shells[current].getAttribute('aria-label').replace(/^\d+\. /,'')} · 工业件姿态周报`;
+    if (updateHash) history.replaceState(null, '', `#${current + 1}`);
+    requestAnimationFrame(fit);
+  }
+  function setOverview(enabled) {
+    document.body.classList.toggle('overview', enabled); overview.setAttribute('aria-pressed', String(enabled));
+    overview.textContent = enabled ? '返回演示' : '总览'; go(current, false); requestAnimationFrame(fit);
+  }
+  async function toggleFullscreen() {
+    try {if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen();}
+    catch {fullscreen.textContent = '请使用浏览器全屏';}
+  }
+  prev.addEventListener('click', () => go(current - 1)); next.addEventListener('click', () => go(current + 1));
+  overview.addEventListener('click', () => setOverview(!document.body.classList.contains('overview')));
+  fullscreen.addEventListener('click', toggleFullscreen);
+  document.addEventListener('fullscreenchange', () => {fullscreen.textContent = document.fullscreenElement ? '退出全屏' : '全屏演示'; fit();});
+  window.addEventListener('hashchange', () => go(parseHash(), false));
+  document.addEventListener('keydown', e => {
+    if (e.target.closest('input,textarea,select,[contenteditable="true"]') || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === ' ' && e.target.closest('button,a')) return;
+    if (['ArrowRight','PageDown',' '].includes(e.key) && !document.body.classList.contains('overview')) {e.preventDefault();go(current + 1);}
+    if (['ArrowLeft','PageUp'].includes(e.key) && !document.body.classList.contains('overview')) {e.preventDefault();go(current - 1);}
+    if (e.key === 'Home') {e.preventDefault();go(0);} if (e.key === 'End') {e.preventDefault();go(shells.length - 1);}
+    if (e.key.toLowerCase() === 'o') setOverview(!document.body.classList.contains('overview'));
+    if (e.key.toLowerCase() === 'f') toggleFullscreen();
+    if (e.key === 'Escape' && document.body.classList.contains('overview')) setOverview(false);
+  });
+  go(current, false); window.addEventListener('load', fit);
+})();
+</script>
+</body>
+</html>

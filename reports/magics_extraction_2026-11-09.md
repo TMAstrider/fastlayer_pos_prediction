@@ -12,8 +12,8 @@
 - Records marked for review: 1788
 - Errors: 0
 
-STL output: `/mnt/d/proj/pos_set/outputs/magics_parts_stl`
+STL output: `/mnt/panxin/proj/fastlayer_pos_prediction/outputs/magics_parts_stl`
 
-Manifest: `/mnt/d/proj/pos_set/outputs/magics_parts_stl/manifest.json`
+Manifest: `/mnt/panxin/proj/fastlayer_pos_prediction/outputs/magics_parts_stl/manifest.json`
 
 The stored Magics Z axis is used as the upward direction. Yaw around Z is unconstrained.
