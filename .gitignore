@@ -6,6 +6,7 @@
 /checkpoints/
 /runs/
 /wandb/
+/pos_set.zip
 
 # Python cache and local environments
 __pycache__/
