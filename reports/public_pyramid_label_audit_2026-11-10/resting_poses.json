@@ -1,0 +1,415 @@
+{
+  "samples": 24,
+  "mean_accepted_poses": 3.5,
+  "median_accepted_poses": 3.0,
+  "min_accepted_poses": 0,
+  "max_accepted_poses": 9,
+  "label_is_accepted_fraction": 0.0,
+  "label_within_10_deg_of_accepted_fraction": 0.0,
+  "label_within_20_deg_of_accepted_fraction": 0.0,
+  "label_stable_fraction": 0.0,
+  "label_overhang_median": 0.0,
+  "label_contact_median": 0.0,
+  "criteria": {
+    "overhang_limit": 0.01,
+    "overhang_deg": 40.0,
+    "bed_band_mm": 2.0,
+    "contact_band_mm": 1.0
+  },
+  "rows": [
+    {
+      "index": 0,
+      "faces": 7,
+      "accepted_poses": 6,
+      "accepted_angles": [
+        76.94,
+        76.94,
+        76.94,
+        76.94,
+        76.94,
+        76.94
+      ],
+      "label_angle_to_nearest_accepted": 76.94,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 56.0
+    },
+    {
+      "index": 1,
+      "faces": 10,
+      "accepted_poses": 0,
+      "accepted_angles": [],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 74.0
+    },
+    {
+      "index": 2,
+      "faces": 10,
+      "accepted_poses": 0,
+      "accepted_angles": [],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 81.0
+    },
+    {
+      "index": 3,
+      "faces": 7,
+      "accepted_poses": 7,
+      "accepted_angles": [
+        57.54,
+        57.54,
+        57.54,
+        57.54,
+        57.54,
+        57.54,
+        179.99
+      ],
+      "label_angle_to_nearest_accepted": 57.54,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 64.0
+    },
+    {
+      "index": 4,
+      "faces": 6,
+      "accepted_poses": 6,
+      "accepted_angles": [
+        84.0,
+        84.0,
+        84.0,
+        84.0,
+        84.0,
+        179.99
+      ],
+      "label_angle_to_nearest_accepted": 84.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 77.0
+    },
+    {
+      "index": 5,
+      "faces": 6,
+      "accepted_poses": 5,
+      "accepted_angles": [
+        77.76,
+        77.76,
+        77.76,
+        77.76,
+        77.76
+      ],
+      "label_angle_to_nearest_accepted": 77.76,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 97.0
+    },
+    {
+      "index": 6,
+      "faces": 10,
+      "accepted_poses": 1,
+      "accepted_angles": [
+        180.0
+      ],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 47.0
+    },
+    {
+      "index": 7,
+      "faces": 9,
+      "accepted_poses": 8,
+      "accepted_angles": [
+        76.7,
+        76.7,
+        76.7,
+        76.7,
+        76.7,
+        76.7,
+        76.7,
+        76.7
+      ],
+      "label_angle_to_nearest_accepted": 76.7,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 86.0
+    },
+    {
+      "index": 8,
+      "faces": 7,
+      "accepted_poses": 7,
+      "accepted_angles": [
+        72.62,
+        72.62,
+        72.62,
+        72.62,
+        72.62,
+        72.62,
+        180.0
+      ],
+      "label_angle_to_nearest_accepted": 72.62,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 83.0
+    },
+    {
+      "index": 9,
+      "faces": 11,
+      "accepted_poses": 0,
+      "accepted_angles": [],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 62.0
+    },
+    {
+      "index": 10,
+      "faces": 10,
+      "accepted_poses": 0,
+      "accepted_angles": [],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 66.0
+    },
+    {
+      "index": 11,
+      "faces": 6,
+      "accepted_poses": 6,
+      "accepted_angles": [
+        75.94,
+        75.94,
+        75.94,
+        75.94,
+        75.94,
+        179.99
+      ],
+      "label_angle_to_nearest_accepted": 75.94,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 42.0
+    },
+    {
+      "index": 12,
+      "faces": 11,
+      "accepted_poses": 0,
+      "accepted_angles": [],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 94.0
+    },
+    {
+      "index": 13,
+      "faces": 11,
+      "accepted_poses": 0,
+      "accepted_angles": [],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.5341,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 24.0
+    },
+    {
+      "index": 14,
+      "faces": 7,
+      "accepted_poses": 7,
+      "accepted_angles": [
+        56.49,
+        56.49,
+        56.49,
+        56.49,
+        56.49,
+        56.49,
+        180.0
+      ],
+      "label_angle_to_nearest_accepted": 56.49,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 51.0
+    },
+    {
+      "index": 15,
+      "faces": 9,
+      "accepted_poses": 0,
+      "accepted_angles": [],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 49.0
+    },
+    {
+      "index": 16,
+      "faces": 11,
+      "accepted_poses": 1,
+      "accepted_angles": [
+        180.0
+      ],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 20.0
+    },
+    {
+      "index": 17,
+      "faces": 8,
+      "accepted_poses": 8,
+      "accepted_angles": [
+        82.67,
+        82.67,
+        82.67,
+        82.67,
+        82.67,
+        82.67,
+        82.67,
+        180.0
+      ],
+      "label_angle_to_nearest_accepted": 82.67,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 91.0
+    },
+    {
+      "index": 18,
+      "faces": 10,
+      "accepted_poses": 1,
+      "accepted_angles": [
+        180.0
+      ],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 78.0
+    },
+    {
+      "index": 19,
+      "faces": 9,
+      "accepted_poses": 9,
+      "accepted_angles": [
+        79.25,
+        79.25,
+        79.25,
+        79.25,
+        79.25,
+        79.25,
+        79.25,
+        79.25,
+        179.99
+      ],
+      "label_angle_to_nearest_accepted": 79.25,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 73.0
+    },
+    {
+      "index": 20,
+      "faces": 10,
+      "accepted_poses": 1,
+      "accepted_angles": [
+        180.0
+      ],
+      "label_angle_to_nearest_accepted": 180.0,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 50.0
+    },
+    {
+      "index": 21,
+      "faces": 5,
+      "accepted_poses": 5,
+      "accepted_angles": [
+        81.95,
+        81.95,
+        81.95,
+        81.95,
+        179.99
+      ],
+      "label_angle_to_nearest_accepted": 81.95,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 60.0
+    },
+    {
+      "index": 22,
+      "faces": 5,
+      "accepted_poses": 5,
+      "accepted_angles": [
+        64.57,
+        64.57,
+        64.57,
+        64.57,
+        180.0
+      ],
+      "label_angle_to_nearest_accepted": 64.57,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 58.0
+    },
+    {
+      "index": 23,
+      "faces": 11,
+      "accepted_poses": 1,
+      "accepted_angles": [
+        179.99
+      ],
+      "label_angle_to_nearest_accepted": 179.99,
+      "label_is_accepted": false,
+      "label_overhang": 0.0,
+      "label_contact": 0.0,
+      "label_stable": false,
+      "label_height": 82.0
+    }
+  ],
+  "limitations": [
+    "Overhang is area based and uses the 40 deg rule; no sliced support volume.",
+    "Stability is a static centre of mass check against the contact polygon, no tipping or residual stress analysis.",
+    "Faces are the STL triangles grouped by normal, so tessellation does not create duplicate poses."
+  ]
+}

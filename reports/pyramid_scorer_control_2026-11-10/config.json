@@ -1,0 +1,15 @@
+{
+  "name": "pyramid_scorer_control_2026-11-10",
+  "epochs": 20,
+  "batch": 64,
+  "learning_rate": 0.002,
+  "temperature": 0.05,
+  "eval_shapes": 100,
+  "seed": 20261110,
+  "model": "Scorer(physics=0, in_channels=3)",
+  "candidates": 512,
+  "positives": 1,
+  "near_negatives": 2,
+  "medium_negatives": 3,
+  "random_negatives": 2
+}
