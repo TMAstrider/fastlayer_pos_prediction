@@ -1,0 +1,185 @@
+{
+  "part_mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10013__13.stl",
+  "reference_support": {
+    "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/supports/project_0558e01b77/part_10080__s_13.stl",
+    "raw_vertex_count": 61203,
+    "triangle_count": 20401,
+    "triangle_area_mm2": 12451.86894863461,
+    "watertight": false,
+    "winding_consistent": false,
+    "closed_volume_mm3": null,
+    "connected_components": 625,
+    "bounds_mm": [
+      [
+        -1.9977999925613403,
+        10.173800468444824,
+        0.0
+      ],
+      [
+        23.882299423217773,
+        146.3625946044922,
+        85.3499984741211
+      ]
+    ],
+    "recognized_hole_intersections": [
+      {
+        "feature_id": "internal_cylinder_0001",
+        "diameter_mm": 10.988873964911093,
+        "axis_length_mm": 7.1939294261962745,
+        "support_vertices_inside_cylinder": 364,
+        "support_triangle_centroids_inside_cylinder": 143
+      },
+      {
+        "feature_id": "internal_cylinder_0002",
+        "diameter_mm": 10.991441500145406,
+        "axis_length_mm": 7.195559985169357,
+        "support_vertices_inside_cylinder": 378,
+        "support_triangle_centroids_inside_cylinder": 147
+      },
+      {
+        "feature_id": "internal_cylinder_0003",
+        "diameter_mm": 7.982816038893844,
+        "axis_length_mm": 3.00001305560499,
+        "support_vertices_inside_cylinder": 240,
+        "support_triangle_centroids_inside_cylinder": 120
+      },
+      {
+        "feature_id": "internal_cylinder_0004",
+        "diameter_mm": 10.995674453399781,
+        "axis_length_mm": 3.0000605721204945,
+        "support_vertices_inside_cylinder": 391,
+        "support_triangle_centroids_inside_cylinder": 157
+      },
+      {
+        "feature_id": "internal_cylinder_0005",
+        "diameter_mm": 10.99565653203905,
+        "axis_length_mm": 3.0000298851435776,
+        "support_vertices_inside_cylinder": 332,
+        "support_triangle_centroids_inside_cylinder": 146
+      },
+      {
+        "feature_id": "internal_cylinder_0006",
+        "diameter_mm": 10.995662723810852,
+        "axis_length_mm": 3.00004079120691,
+        "support_vertices_inside_cylinder": 360,
+        "support_triangle_centroids_inside_cylinder": 176
+      }
+    ]
+  },
+  "recognized_features": {
+    "count": 6,
+    "horizontal_to_historical_build_axis": 6,
+    "small_horizontal_exemptions": 0,
+    "items": [
+      {
+        "feature_id": "internal_cylinder_0001",
+        "diameter_mm": 10.988873964911093,
+        "axis_length_mm": 7.1939294261962745,
+        "confidence": 0.9328375916385881
+      },
+      {
+        "feature_id": "internal_cylinder_0002",
+        "diameter_mm": 10.991441500145406,
+        "axis_length_mm": 7.195559985169357,
+        "confidence": 0.9556006655228311
+      },
+      {
+        "feature_id": "internal_cylinder_0003",
+        "diameter_mm": 7.982816038893844,
+        "axis_length_mm": 3.00001305560499,
+        "confidence": 0.9707585090556492
+      },
+      {
+        "feature_id": "internal_cylinder_0004",
+        "diameter_mm": 10.995674453399781,
+        "axis_length_mm": 3.0000605721204945,
+        "confidence": 0.9912099359611872
+      },
+      {
+        "feature_id": "internal_cylinder_0005",
+        "diameter_mm": 10.99565653203905,
+        "axis_length_mm": 3.0000298851435776,
+        "confidence": 0.9911243008066298
+      },
+      {
+        "feature_id": "internal_cylinder_0006",
+        "diameter_mm": 10.995662723810852,
+        "axis_length_mm": 3.00004079120691,
+        "confidence": 0.991116652951294
+      }
+    ]
+  },
+  "historical_pose": {
+    "build_up_input": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "support_column_count": 253,
+    "support_volume_proxy_mm3": 2848.9336610626547,
+    "build_plate_landings": 133,
+    "part_surface_landings": 120,
+    "mean_support_height_mm": 22.402266536512442,
+    "max_support_height_mm": 58.04763412475586,
+    "candidate_overhang_area_mm2": 567.768198178001,
+    "platform_height_mm": 2.0,
+    "minimum_part_height_along_build_axis_mm": 6.0,
+    "hard_constraint_violation_count": 0,
+    "direction_label": "+Z",
+    "rank": 36
+  },
+  "best_pose": {
+    "build_up_input": [
+      -0.7032370412873468,
+      -0.3332771575752208,
+      0.6280000000000001
+    ],
+    "support_column_count": 84,
+    "support_volume_proxy_mm3": 1219.0492466550145,
+    "build_plate_landings": 82,
+    "part_surface_landings": 2,
+    "mean_support_height_mm": 28.871683553213796,
+    "max_support_height_mm": 66.98636861447741,
+    "candidate_overhang_area_mm2": 188.34665356352335,
+    "platform_height_mm": -43.92632858152486,
+    "minimum_part_height_along_build_axis_mm": -39.92632858152486,
+    "hard_constraint_violation_count": 0,
+    "direction_label": "S047",
+    "rank": 1
+  },
+  "best_to_historical_angle_deg": 51.09728017995277,
+  "support_search": {
+    "candidate_count": 264,
+    "feasible_count": 264
+  },
+  "all_holes_forbidden": {
+    "candidate_count": 264,
+    "feasible_count": 0,
+    "best_near_feasible_direction_label": "S163",
+    "best_near_feasible_build_up_input": [
+      0.6891808231126131,
+      -0.6595678835827448,
+      -0.30000000000000004
+    ],
+    "best_near_feasible_violation_count": 6,
+    "best_near_feasible_violation_types": {
+      "overhang_on_no_support_face": 6
+    },
+    "historical_pose_violation_count": 154,
+    "historical_pose_violation_types": {
+      "overhang_on_no_support_face": 139,
+      "support_shaft_intersects_recognized_internal_cylinder": 15
+    }
+  },
+  "reductions_from_historical_to_best": {
+    "support_volume_proxy_fraction": 0.5721033229674053,
+    "support_column_fraction": 0.6679841897233201,
+    "candidate_overhang_area_fraction": 0.6682683986740751
+  },
+  "limitations": [
+    "The searched supports are 0.4 mm-radius vertical-column proxies, not Magics SG+ or production supports.",
+    "The stored Magics support mesh is open and disconnected, so its closed volume is unavailable.",
+    "Geometric points inside a recognized hole do not establish whether support in that hole is prohibited.",
+    "The all-hole-forbidden case is an explicit user/proxy constraint and is not inferred from feature recognition."
+  ]
+}

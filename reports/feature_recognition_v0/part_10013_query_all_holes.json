@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "query_text": "Do not place support inside any recognized internal cylindrical hole.",
+  "no_support": {
+    "all_internal_cylinders": true,
+    "clearance_mm": 0.2
+  }
+}

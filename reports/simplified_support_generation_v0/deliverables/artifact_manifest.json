@@ -1,0 +1,27 @@
+{
+  "source_mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_530670e41c/part_10001__N02_166045996_2_100x50x54_铝合金（Alsi10Mg）_P26063017A47A6_1_1_1_1_1_2.stl",
+  "support_report": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/simplified_support_generation_v0/part_10001_support_report.json",
+  "units_assumed": "mm; source PJF units remain unconfirmed",
+  "platform": {
+    "top_plane_coordinate_along_build_axis": 0.0,
+    "thickness_mm": 2.0,
+    "margin_fraction": 0.08,
+    "dimensions_xyz_input_frame": [
+      89.57190158843994,
+      124.02140548706053,
+      2.0
+    ]
+  },
+  "simple_support_column_count": 2104,
+  "support_radius_mm": 0.4,
+  "files": {
+    "original_stl": "part_original.stl",
+    "original_with_platform_obj": "part_original_with_platform.obj",
+    "supported_part_stl_without_platform": "part_with_simplified_supports.stl",
+    "build_plate_stl": "build_plate.stl",
+    "supported_with_platform_obj": "part_with_simplified_supports_and_platform.obj",
+    "supported_with_platform_stl": "part_with_simplified_supports_and_platform.stl",
+    "comparison_preview": "original_vs_supported.png"
+  },
+  "note": "STL/OBJ supported exports contain geometric vertical-cylinder proxies from the simplified algorithm; they are not Materialise Magics support output or validated production supports."
+}

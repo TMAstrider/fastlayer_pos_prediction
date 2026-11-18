@@ -1,0 +1,21 @@
+{
+  "source_part_mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10013__13.stl",
+  "source_support_mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/supports/project_0558e01b77/part_10080__s_13.stl",
+  "units_assumed": "mm; source PJF units remain unconfirmed",
+  "build_up_input": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "platform_top_coordinate_along_build_axis_mm": 0.0,
+  "platform_thickness_mm": 2.0,
+  "platform_margin_fraction": 0.08,
+  "files": {
+    "original_stl": "part_original.stl",
+    "reference_support_stl": "reference_support.stl",
+    "build_plate_stl": "build_plate.stl",
+    "combined_stl": "part_with_reference_support_and_platform.stl",
+    "editable_scene_obj": "part_with_reference_support_and_platform.obj",
+    "editable_scene_mtl": "part_with_reference_support_and_platform.mtl"
+  }
+}

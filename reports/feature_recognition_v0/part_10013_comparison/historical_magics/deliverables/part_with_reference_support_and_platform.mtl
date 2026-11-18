@@ -1,0 +1,14 @@
+newmtl part_material
+Kd 0.64 0.73 0.82
+Ka 0.10 0.12 0.14
+illum 2
+
+newmtl support_material
+Kd 0.18 0.58 0.32
+Ka 0.05 0.12 0.06
+illum 2
+
+newmtl platform_material
+Kd 0.56 0.60 0.65
+Ka 0.12 0.13 0.15
+illum 2

@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "build_up_input": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "parameters": {
+    "smooth_normal_tolerance_deg": 50.0,
+    "minimum_confidence": 0.58,
+    "horizontal_tolerance_deg": 10.0,
+    "small_hole_diameter_threshold_mm": 6.0,
+    "minimum_angular_bins_of_12": 8,
+    "minimum_axis_length_mm": 0.25
+  },
+  "summary": {
+    "recognized_internal_cylinders": 1,
+    "recognized_horizontal_internal_cylinders": 0,
+    "small_horizontal_exemptions": 0,
+    "recognized_feature_face_count": 76,
+    "recognized_feature_area_mm2": 48.30660357996551,
+    "rejected_region_counts": {
+      "not_a_stable_cylinder": 18
+    }
+  },
+  "features": [
+    {
+      "feature_id": "internal_cylinder_0001",
+      "kind": "internal_cylinder",
+      "functional_role": "hole_or_channel",
+      "face_indices": [
+        2057,
+        2058,
+        2059,
+        2060,
+        2061,
+        2062,
+        2063,
+        2064,
+        2065,
+        3509,
+        3510,
+        3511,
+        3512,
+        3513,
+        3514,
+        3515,
+        3516,
+        3517,
+        3518,
+        3519,
+        3520,
+        3521,
+        3526,
+        3533,
+        3541,
+        3545,
+        3547,
+        3548,
+        3549,
+        3550,
+        3551,
+        3552,
+        3553,
+        3554,
+        3555,
+        3557,
+        3558,
+        3561,
+        3563,
+        3564,
+        3567,
+        3654,
+        3872,
+        3873,
+        3874,
+        3875,
+        3876,
+        3877,
+        3878,
+        3879,
+        3880,
+        3881,
+        3882,
+        3883,
+        3884,
+        3885,
+        3886,
+        3887,
+        3888,
+        3889,
+        3890,
+        3897,
+        3899,
+        3902,
+        4141,
+        4142,
+        4143,
+        4144,
+        4145,
+        4146,
+        4147,
+        4148,
+        4151,
+        4154,
+        4445,
+        4448
+      ],
+      "face_count": 76,
+      "surface_area_mm2": 48.30660357996551,
+      "axis_input": [
+        0.5131716661206263,
+        0.535082379434436,
+        0.6710750243525406
+      ],
+      "centerline_point_input_mm": [
+        -111.40404197245772,
+        -116.48935273803515,
+        173.98990243696835
+      ],
+      "axis_start_input_mm": [
+        -112.12332533678119,
+        -117.23934709563349,
+        173.04929496953213
+      ],
+      "axis_end_input_mm": [
+        -110.68475860813425,
+        -115.73935838043681,
+        174.93050990440457
+      ],
+      "axis_length_mm": 2.8032855740495766,
+      "diameter_mm": 5.479098717500619,
+      "radius_mm": 2.7395493587503097,
+      "axis_to_build_axis_deg": 47.84990999126486,
+      "axis_to_build_plane_deg": 42.15009000873514,
+      "is_horizontal_to_build": false,
+      "small_horizontal_exempt": false,
+      "support_policy": "support_allowed",
+      "confidence": 0.9556725435707834,
+      "fit_metrics": {
+        "normal_axis_median_error": 0.000791605567040191,
+        "normal_direction_median_error_deg": 1.5952882811246476,
+        "radial_rms_mm": 0.07571960162791963,
+        "radius_std_mm": 0.000961532212842558,
+        "angular_bins_occupied_of_12": 12,
+        "singular_value_ratio_axis": 0.0011562713649742233,
+        "singular_value_ratio_second_axis": 0.9995544901462626
+      }
+    }
+  ],
+  "suggested_annotation": {
+    "no_support_face_indices": [],
+    "features": []
+  },
+  "input_mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_273b039369/part_10003__N02_166046601_1_247x184x350_铝合金（Alsi10Mg）_P26063019D6A5A_1_cut_1.stl",
+  "source_mesh_counts": {
+    "vertices": 124146,
+    "faces": 41382
+  }
+}

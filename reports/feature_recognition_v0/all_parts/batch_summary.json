@@ -1,0 +1,3229 @@
+{
+  "schema_version": 1,
+  "input_root": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts",
+  "mesh_count": 193,
+  "summary": {
+    "parts_with_recognized_internal_cylinders": 162,
+    "recognized_internal_cylinders": 1948,
+    "recognized_horizontal_internal_cylinders": 1114,
+    "small_horizontal_exemptions": 1046
+  },
+  "parts": [
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10001__1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10001__1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 8,
+        "recognized_horizontal_internal_cylinders": 8,
+        "small_horizontal_exemptions": 8,
+        "recognized_feature_face_count": 1211,
+        "recognized_feature_area_mm2": 816.559768302776,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 46
+        }
+      },
+      "faces": 34818
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10002__2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10002__2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 15090
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10003__3.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10003__3.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 201,
+        "recognized_feature_area_mm2": 51.804256068781356,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 2206
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10004__4.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10004__4.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 3,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 417,
+        "recognized_feature_area_mm2": 1438.5498694992632,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 6
+        }
+      },
+      "faces": 5394
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10005__5.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10005__5.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 68,
+        "recognized_feature_area_mm2": 376.52003796601275,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 6958
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10006__6.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10006__6.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 43528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10007__7.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10007__7.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 1
+        }
+      },
+      "faces": 32284
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10008__8.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10008__8.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 10000
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10009__9.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10009__9.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675442838842,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10010__10.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10010__10.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 478,
+        "recognized_feature_area_mm2": 254.40568223421255,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 48440
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10011__11.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10011__11.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 512,
+        "recognized_feature_area_mm2": 126.94178112381519,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 25
+        }
+      },
+      "faces": 50002
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10012__12.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10012__12.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 10,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 1,
+        "recognized_feature_face_count": 2107,
+        "recognized_feature_area_mm2": 119.53771720042201,
+        "rejected_region_counts": {
+          "external_cylinder": 9,
+          "not_a_stable_cylinder": 43
+        }
+      },
+      "faces": 28886
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10013__13.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10013__13.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 6,
+        "recognized_horizontal_internal_cylinders": 6,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1640,
+        "recognized_feature_area_mm2": 606.969388229459,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 4
+        }
+      },
+      "faces": 36784
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10014__14.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10014__14.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 11,
+        "recognized_horizontal_internal_cylinders": 11,
+        "small_horizontal_exemptions": 4,
+        "recognized_feature_face_count": 2058,
+        "recognized_feature_area_mm2": 749.0424855916411,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 2
+        }
+      },
+      "faces": 24556
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10015__15.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10015__15.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 70
+        }
+      },
+      "faces": 1856
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10016__16.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10016__16.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 84,
+        "recognized_feature_area_mm2": 47.051891536106105,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 7880
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10017__17.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10017__17.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 10,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 1,
+        "recognized_feature_face_count": 2107,
+        "recognized_feature_area_mm2": 119.53771452389707,
+        "rejected_region_counts": {
+          "external_cylinder": 9,
+          "not_a_stable_cylinder": 43
+        }
+      },
+      "faces": 28884
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10018__18.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10018__18.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 15090
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10019__19.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10019__19.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 15090
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10020__20.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10020__20.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 84,
+        "recognized_feature_area_mm2": 47.051888144716386,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 7878
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10021__21.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10021__21.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 84,
+        "recognized_feature_area_mm2": 47.05193346513049,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 7878
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10022__22.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10022__22.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 84,
+        "recognized_feature_area_mm2": 47.0518935000041,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 7878
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10023__23.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10023__23.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 11,
+        "recognized_horizontal_internal_cylinders": 11,
+        "small_horizontal_exemptions": 4,
+        "recognized_feature_face_count": 2058,
+        "recognized_feature_area_mm2": 749.0424410704701,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 2
+        }
+      },
+      "faces": 24556
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10024__24.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10024__24.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 6,
+        "recognized_horizontal_internal_cylinders": 6,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1640,
+        "recognized_feature_area_mm2": 606.9693897659893,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 4
+        }
+      },
+      "faces": 36784
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10025__25.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10025__25.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 6,
+        "recognized_horizontal_internal_cylinders": 6,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1640,
+        "recognized_feature_area_mm2": 606.9693998143904,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 4
+        }
+      },
+      "faces": 36784
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10026__26.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10026__26.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 6,
+        "recognized_horizontal_internal_cylinders": 6,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1640,
+        "recognized_feature_area_mm2": 606.9693926704971,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 4
+        }
+      },
+      "faces": 36784
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10027__27.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10027__27.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 43528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10028__28.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10028__28.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 43528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10029__29.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10029__29.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 10000
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10030__30.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10030__30.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146763180055906,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10031__31.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10031__31.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675622544671,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10032__32.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10032__32.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146753443377555,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10033__33.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10033__33.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675680924697,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10034__34.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10034__34.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146753874449374,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10035__35.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10035__35.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14676262637815,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10036__36.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10036__36.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675567162484,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10037__37.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10037__37.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675288973523,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10038__38.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10038__38.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146756255830674,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10039__39.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10039__39.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14673597436283,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10040__40.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10040__40.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146744725806386,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10041__41.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10041__41.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146737771607576,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10042__42.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10042__42.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14673498824896,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10043__43.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10043__43.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146738352762675,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10044__44.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10044__44.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14674810851419,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10045__45.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10045__45.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675686030484,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10046__46.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10046__46.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14674990573047,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10047__47.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10047__47.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.1467471223402,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10048__48.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10048__48.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675048797869,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10049__49.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10049__49.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675797316866,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10050__50.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10050__50.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14676014304825,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10051__51.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10051__51.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14674842537917,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10052__52.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10052__52.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.1467603677962,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10053__53.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10053__53.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146761462899796,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10054__54.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10054__54.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675774934248,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10055__55.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10055__55.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675888891176,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10056__56.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10056__56.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146764387300216,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10057__57.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10057__57.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14677203023632,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10058__58.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10058__58.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14676740910303,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10059__59.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10059__59.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146752376976174,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10060__60.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10060__60.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146763218635556,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10061__61.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10061__61.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14675311469785,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10062__62.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10062__62.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14677632813682,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10063__63.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10063__63.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146758867843666,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10064__64.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10064__64.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146759483644296,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10065__65.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10065__65.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146734744811106,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10066__66.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10066__66.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.14673923478644,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10067__67.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_0558e01b77__part_10067__67.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 508,
+        "recognized_feature_area_mm2": 54.146755543893335,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 4554
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10001__16_166067841_1_126x43x35_东莞铝合金（Alsi10Mg）_P26070513ABF3B_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10001__16_166067841_1_126x43x35_东莞铝合金（Alsi10Mg）_P26070513ABF3B_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 11,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1651,
+        "recognized_feature_area_mm2": 629.6072872549948,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 8
+        }
+      },
+      "faces": 57350
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10002__16_166067841_1_311x195x78_东莞铝合金（Alsi10Mg）_P260705133452A_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10002__16_166067841_1_311x195x78_东莞铝合金（Alsi10Mg）_P260705133452A_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 24,
+        "recognized_horizontal_internal_cylinders": 22,
+        "small_horizontal_exemptions": 22,
+        "recognized_feature_face_count": 3944,
+        "recognized_feature_area_mm2": 18400.408789476263,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 43
+        }
+      },
+      "faces": 38068
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10003__16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10003__16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 17,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2999,
+        "recognized_feature_area_mm2": 1836.180939519149,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 11
+        }
+      },
+      "faces": 40040
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10004__16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10004__16_166067841_2_34x125x36_东莞铝合金（Alsi10Mg）_P2607051353546_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 17,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2999,
+        "recognized_feature_area_mm2": 1836.1808529226798,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 11
+        }
+      },
+      "faces": 40044
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10005__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10005__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 4,
+        "small_horizontal_exemptions": 4,
+        "recognized_feature_face_count": 686,
+        "recognized_feature_area_mm2": 211.05068763008077,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 16474
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10006__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10006__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P26070513DFB5D_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 4,
+        "small_horizontal_exemptions": 4,
+        "recognized_feature_face_count": 686,
+        "recognized_feature_area_mm2": 211.05065669571752,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 16466
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10007__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10007__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 4,
+        "small_horizontal_exemptions": 4,
+        "recognized_feature_face_count": 686,
+        "recognized_feature_area_mm2": 211.05113278838624,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 16474
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10008__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10008__16_166067841_2_72x28x23_东莞铝合金（Alsi10Mg）_P2607051332207_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 4,
+        "small_horizontal_exemptions": 4,
+        "recognized_feature_face_count": 686,
+        "recognized_feature_area_mm2": 211.05104782027382,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 16474
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10009__16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10009__16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 13,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2615,
+        "recognized_feature_area_mm2": 1652.469575740372,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 13
+        }
+      },
+      "faces": 37134
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10010__16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10010__16_166067841_2_72x35x36_东莞铝合金（Alsi10Mg）_P260705134CFB4_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 15,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2961,
+        "recognized_feature_area_mm2": 1932.5624667449472,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 13
+        }
+      },
+      "faces": 37142
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10011__16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10011__16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 11,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1634,
+        "recognized_feature_area_mm2": 658.6158024608827,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 4,
+          "not_a_stable_cylinder": 4
+        }
+      },
+      "faces": 72556
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_1507f7c8bf/part_10012__16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_1507f7c8bf__part_10012__16_166067841_2_152x56x49_东莞铝合金（Alsi10Mg）_P26070513A1F18_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 12,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1770,
+        "recognized_feature_area_mm2": 706.2949610773009,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 4,
+          "not_a_stable_cylinder": 4
+        }
+      },
+      "faces": 72562
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_273b039369/part_10002__N02_166046601_1_190x143x360_铝合金（Alsi10Mg）_P26063019A2284_1_1_cut_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_273b039369__part_10002__N02_166046601_1_190x143x360_铝合金（Alsi10Mg）_P26063019A2284_1_1_cut_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 10
+        }
+      },
+      "faces": 71812
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_273b039369/part_10003__N02_166046601_1_247x184x350_铝合金（Alsi10Mg）_P26063019D6A5A_1_cut_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_273b039369__part_10003__N02_166046601_1_247x184x350_铝合金（Alsi10Mg）_P26063019D6A5A_1_cut_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 76,
+        "recognized_feature_area_mm2": 48.30660357996551,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 18
+        }
+      },
+      "faces": 41382
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_2ece441740/part_10002__N02_166067746_2_116x266x126_铝合金（Alsi10Mg）_P260705117BD32_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_2ece441740__part_10002__N02_166067746_2_116x266x126_铝合金（Alsi10Mg）_P260705117BD32_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 72
+        }
+      },
+      "faces": 99492
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_2ece441740/part_10003__N02_166067746_2_116x266x126_铝合金（Alsi10Mg）_P260705117BD32_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_2ece441740__part_10003__N02_166067746_2_116x266x126_铝合金（Alsi10Mg）_P260705117BD32_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 72
+        }
+      },
+      "faces": 99494
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_2ece441740/part_10004__N02_166067746_2_163x266x172_铝合金（Alsi10Mg）_P2607051193049_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_2ece441740__part_10004__N02_166067746_2_163x266x172_铝合金（Alsi10Mg）_P2607051193049_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 3,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 8166,
+        "recognized_feature_area_mm2": 1360.8751152687098,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 68
+        }
+      },
+      "faces": 266458
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_2ece441740/part_10005__N02_166067746_2_163x266x172_铝合金（Alsi10Mg）_P2607051193049_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_2ece441740__part_10005__N02_166067746_2_163x266x172_铝合金（Alsi10Mg）_P2607051193049_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 3,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 8166,
+        "recognized_feature_area_mm2": 1360.8751464160537,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 68
+        }
+      },
+      "faces": 266458
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_2ece441740/part_10006__N02_166068011_8_161x74x24_铝合金（Alsi10Mg）_P2607051651E5E_1_1_1_1_1_2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_2ece441740__part_10006__N02_166068011_8_161x74x24_铝合金（Alsi10Mg）_P2607051651E5E_1_1_1_1_1_2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 216,
+        "recognized_feature_area_mm2": 206.152260101271,
+        "rejected_region_counts": {
+          "external_cylinder": 6,
+          "not_a_stable_cylinder": 86
+        }
+      },
+      "faces": 127692
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_2ece441740/part_10007__N02_166068011_8_161x74x24_铝合金（Alsi10Mg）_P2607051651E5E_1_1_1_1_1_2_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_2ece441740__part_10007__N02_166068011_8_161x74x24_铝合金（Alsi10Mg）_P2607051651E5E_1_1_1_1_1_2_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 216,
+        "recognized_feature_area_mm2": 206.15225145697727,
+        "rejected_region_counts": {
+          "external_cylinder": 6,
+          "not_a_stable_cylinder": 86
+        }
+      },
+      "faces": 127688
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10002__Mirrored_Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10002__Mirrored_Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.6213990301086,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44666
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10003__Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10003__Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.6213221860716,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44666
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10004__Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10004__Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.621371058198,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44666
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10005__Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10005__Mirrored_N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.6213700075066,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44666
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10006__Mirrored_N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10006__Mirrored_N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 26,
+        "recognized_horizontal_internal_cylinders": 8,
+        "small_horizontal_exemptions": 8,
+        "recognized_feature_face_count": 2786,
+        "recognized_feature_area_mm2": 362.1186184112236,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 27
+        }
+      },
+      "faces": 39098
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10007__Mirrored_N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10007__Mirrored_N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 26,
+        "recognized_horizontal_internal_cylinders": 8,
+        "small_horizontal_exemptions": 8,
+        "recognized_feature_face_count": 2786,
+        "recognized_feature_area_mm2": 362.11863752798604,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 27
+        }
+      },
+      "faces": 39098
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10008__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10008__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.62137002947867,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44664
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10009__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10009__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.62128409201716,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44662
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10010__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10010__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.621379800199,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44666
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10011__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_3.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10011__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P26070120B967F_1_3.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.6214198492491,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44502
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10012__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P2607012090E0E_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10012__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P2607012090E0E_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.6213373238295,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44442
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10013__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P2607012090E0E_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10013__N11_166051231_5_43x103x102_铝合金（Alsi10Mg）_P2607012090E0E_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 36,
+        "recognized_horizontal_internal_cylinders": 35,
+        "small_horizontal_exemptions": 35,
+        "recognized_feature_face_count": 3455,
+        "recognized_feature_area_mm2": 471.621336176855,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 44446
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10014__N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10014__N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 26,
+        "recognized_horizontal_internal_cylinders": 8,
+        "small_horizontal_exemptions": 8,
+        "recognized_feature_face_count": 2786,
+        "recognized_feature_area_mm2": 362.11858414300883,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 27
+        }
+      },
+      "faces": 39100
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10015__N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10015__N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_2_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 26,
+        "recognized_horizontal_internal_cylinders": 8,
+        "small_horizontal_exemptions": 8,
+        "recognized_feature_face_count": 2786,
+        "recognized_feature_area_mm2": 362.11858150331295,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 27
+        }
+      },
+      "faces": 39100
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_4c06232a1d/part_10016__N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_4.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_4c06232a1d__part_10016__N11_166051231_5_117x44x59_铝合金（Alsi10Mg）_P2607012071DF9_1_2_4.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 26,
+        "recognized_horizontal_internal_cylinders": 8,
+        "small_horizontal_exemptions": 8,
+        "recognized_feature_face_count": 2786,
+        "recognized_feature_area_mm2": 362.118633761631,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 27
+        }
+      },
+      "faces": 39038
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_530670e41c/part_10001__N02_166045996_2_100x50x54_铝合金（Alsi10Mg）_P26063017A47A6_1_1_1_1_1_2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_530670e41c__part_10001__N02_166045996_2_100x50x54_铝合金（Alsi10Mg）_P26063017A47A6_1_1_1_1_1_2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 1,
+        "recognized_feature_face_count": 108,
+        "recognized_feature_area_mm2": 48.39679580273874,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 30
+        }
+      },
+      "faces": 2694
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_530670e41c/part_10002__N02_166047121_3_95x304x136_铝合金（Alsi10Mg）_P2607011189EFA_1_1_1_2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_530670e41c__part_10002__N02_166047121_3_95x304x136_铝合金（Alsi10Mg）_P2607011189EFA_1_1_1_2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1050,
+        "recognized_feature_area_mm2": 354.57808231685533,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 45
+        }
+      },
+      "faces": 376108
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_530670e41c/part_10007__N01_166046021_1_95x65x12_铝合金（Alsi10Mg）_P260630179BF31_1_1_1_1_2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_530670e41c__part_10007__N01_166046021_1_95x65x12_铝合金（Alsi10Mg）_P260630179BF31_1_1_1_1_2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 38,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 6426,
+        "recognized_feature_area_mm2": 772.3193950517614,
+        "rejected_region_counts": {
+          "external_cylinder": 40,
+          "insufficient_angular_coverage": 4,
+          "not_a_stable_cylinder": 221
+        }
+      },
+      "faces": 146310
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_587cba6347/part_10001__Merge_of_改进模型-改圆角_bb-s-1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_587cba6347__part_10001__Merge_of_改进模型-改圆角_bb-s-1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 5,
+        "recognized_horizontal_internal_cylinders": 4,
+        "small_horizontal_exemptions": 4,
+        "recognized_feature_face_count": 736,
+        "recognized_feature_area_mm2": 167.0818287178417,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "low_confidence": 1,
+          "not_a_stable_cylinder": 157
+        }
+      },
+      "faces": 395926
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_587cba6347/part_10002__Merge_of_改进模型-改圆角_bb-s-1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_587cba6347__part_10002__Merge_of_改进模型-改圆角_bb-s-1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 5,
+        "recognized_horizontal_internal_cylinders": 4,
+        "small_horizontal_exemptions": 4,
+        "recognized_feature_face_count": 736,
+        "recognized_feature_area_mm2": 167.0818278689913,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "low_confidence": 1,
+          "not_a_stable_cylinder": 156
+        }
+      },
+      "faces": 395926
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_587cba6347/part_10007__机械臂-优化_1__x_b.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_587cba6347__part_10007__机械臂-优化_1__x_b.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 11,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1654,
+        "recognized_feature_area_mm2": 692.7632115608542,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "not_a_stable_cylinder": 24
+        }
+      },
+      "faces": 332694
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_587cba6347/part_10008__机械臂-优化_1__x_b_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_587cba6347__part_10008__机械臂-优化_1__x_b_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 11,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1654,
+        "recognized_feature_area_mm2": 692.7632188824052,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "not_a_stable_cylinder": 24
+        }
+      },
+      "faces": 332694
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_5e114fc162/part_10002__N02_166020461_2_366x240x182_铝合金（Alsi10Mg）_P260626152CA16_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_5e114fc162__part_10002__N02_166020461_2_366x240x182_铝合金（Alsi10Mg）_P260626152CA16_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 135,
+        "recognized_feature_area_mm2": 175.6912109464351,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 25
+        }
+      },
+      "faces": 34392
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_637abbd59f/part_10002__N01_166061121_5_216x110x164_铝合金（Alsi10Mg）_P260702151DC0F_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_637abbd59f__part_10002__N01_166061121_5_216x110x164_铝合金（Alsi10Mg）_P260702151DC0F_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "external_cylinder": 45,
+          "insufficient_angular_coverage": 22,
+          "low_confidence": 1,
+          "not_a_stable_cylinder": 1042
+        }
+      },
+      "faces": 640606
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_637abbd59f/part_10003__N02_166061386_4_207x116x81_铝合金（Alsi10Mg）_P26070216AAE9F_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_637abbd59f__part_10003__N02_166061386_4_207x116x81_铝合金（Alsi10Mg）_P26070216AAE9F_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 6,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1874,
+        "recognized_feature_area_mm2": 805.2399359122276,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 3,
+          "not_a_stable_cylinder": 36
+        }
+      },
+      "faces": 49760
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_637abbd59f/part_10004__N02_166061386_4_207x116x81_铝合金（Alsi10Mg）_P26070216AAE9F_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_637abbd59f__part_10004__N02_166061386_4_207x116x81_铝合金（Alsi10Mg）_P26070216AAE9F_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 6,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1874,
+        "recognized_feature_area_mm2": 805.2398345834704,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 3,
+          "not_a_stable_cylinder": 36
+        }
+      },
+      "faces": 49760
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10001__N01_166140841_3_30x48x10_铝合金（Alsi10Mg）_P260709161467F_1_1_2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10001__N01_166140841_3_30x48x10_铝合金（Alsi10Mg）_P260709161467F_1_1_2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 1
+        }
+      },
+      "faces": 6656
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10002__N01_166140841_3_30x70x35_铝合金（Alsi10Mg）_P26070916D0A45_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10002__N01_166140841_3_30x70x35_铝合金（Alsi10Mg）_P26070916D0A45_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "external_cylinder": 2,
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 16738
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10003__N01_166150226_1_175x79x69_铝合金（Alsi10Mg）_P26071211BB7EA_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10003__N01_166150226_1_175x79x69_铝合金（Alsi10Mg）_P26071211BB7EA_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "external_cylinder": 5,
+          "not_a_stable_cylinder": 20
+        }
+      },
+      "faces": 332750
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10004__N02_166130311_1_16x17x21_铝合金（Alsi10Mg）_P260709090D5D4.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10004__N02_166130311_1_16x17x21_铝合金（Alsi10Mg）_P260709090D5D4.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 762,
+        "recognized_feature_area_mm2": 281.72157250304497,
+        "rejected_region_counts": {
+          "external_cylinder": 4,
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 19488
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10005__N02_166130311_1_16x17x32_铝合金（Alsi10Mg）_P260709096A237.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10005__N02_166130311_1_16x17x32_铝合金（Alsi10Mg）_P260709096A237.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1965,
+        "recognized_feature_area_mm2": 281.73290479166417,
+        "rejected_region_counts": {
+          "external_cylinder": 4,
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 22772
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10006__N02_166130311_1_16x17x36_铝合金（Alsi10Mg）_P2607090928B58.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10006__N02_166130311_1_16x17x36_铝合金（Alsi10Mg）_P2607090928B58.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 832,
+        "recognized_feature_area_mm2": 281.721530690411,
+        "rejected_region_counts": {
+          "external_cylinder": 4,
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 19534
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10007__N02_166150201_12_120x120x2_铝合金（Alsi10Mg）_P26071211E9A0E_1_1_9.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10007__N02_166150201_12_120x120x2_铝合金（Alsi10Mg）_P26071211E9A0E_1_1_9.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 8,
+        "recognized_horizontal_internal_cylinders": 8,
+        "small_horizontal_exemptions": 8,
+        "recognized_feature_face_count": 1123,
+        "recognized_feature_area_mm2": 86.87976544052569,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "not_a_stable_cylinder": 2
+        }
+      },
+      "faces": 6628
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10008__N02_166150201_12_160x160x15_铝合金（Alsi10Mg）_P26071211A63EB_1_1_5.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10008__N02_166150201_12_160x160x15_铝合金（Alsi10Mg）_P26071211A63EB_1_1_5.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 26,
+        "recognized_horizontal_internal_cylinders": 26,
+        "small_horizontal_exemptions": 26,
+        "recognized_feature_face_count": 4501,
+        "recognized_feature_area_mm2": 1397.559118524417,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 4,
+          "not_a_stable_cylinder": 40
+        }
+      },
+      "faces": 78424
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10009__N52_166130551_2_238x200x34_铝合金（Alsi10Mg）_P260709102DA05_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10009__N52_166130551_2_238x200x34_铝合金（Alsi10Mg）_P260709102DA05_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 99,
+        "recognized_horizontal_internal_cylinders": 16,
+        "small_horizontal_exemptions": 16,
+        "recognized_feature_face_count": 32226,
+        "recognized_feature_area_mm2": 10981.174231250232,
+        "rejected_region_counts": {
+          "external_cylinder": 3,
+          "not_a_stable_cylinder": 549
+        }
+      },
+      "faces": 313448
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10010__QN00_166130666_1_66x77x51_铝合金（Alsi10Mg）_P26070912249D7_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10010__QN00_166130666_1_66x77x51_铝合金（Alsi10Mg）_P26070912249D7_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 9617,
+        "recognized_feature_area_mm2": 416.2182065520874,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 135992
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10041__N01_166130531_2_45x34x28_铝合金（Alsi10Mg）_P2607091061618.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10041__N01_166130531_2_45x34x28_铝合金（Alsi10Mg）_P2607091061618.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 3,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1824,
+        "recognized_feature_area_mm2": 687.1846812606861,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 20204
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10042__N01_166130661_2_39x39x14_铝合金（Alsi10Mg）_P260709127339A_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10042__N01_166130661_2_39x39x14_铝合金（Alsi10Mg）_P260709127339A_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 947,
+        "recognized_feature_area_mm2": 126.45277915623237,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "not_a_stable_cylinder": 166
+        }
+      },
+      "faces": 59488
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10043__N01_166140841_1_69x44x39_铝合金（Alsi10Mg）_P260709166F792_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10043__N01_166140841_1_69x44x39_铝合金（Alsi10Mg）_P260709166F792_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "external_cylinder": 2,
+          "not_a_stable_cylinder": 6
+        }
+      },
+      "faces": 12190
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10044__N01_166140841_2_61x45x30_铝合金（Alsi10Mg）_P26070916EEE9A_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10044__N01_166140841_2_61x45x30_铝合金（Alsi10Mg）_P26070916EEE9A_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "external_cylinder": 4,
+          "not_a_stable_cylinder": 18
+        }
+      },
+      "faces": 6002
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10045__N01_166140841_2_68x29x30_铝合金（Alsi10Mg）_P26070916424EC_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_66cf0edb70__part_10045__N01_166140841_2_68x29x30_铝合金（Alsi10Mg）_P26070916424EC_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 6
+        }
+      },
+      "faces": 9390
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_6bebbb6d82/part_10002__N11_166045306_1_429x153x228_铝合金（Alsi10Mg）_P26063014E86BA_1_1_1_1_cut_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_6bebbb6d82__part_10002__N11_166045306_1_429x153x228_铝合金（Alsi10Mg）_P26063014E86BA_1_1_1_1_cut_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 16,
+        "recognized_horizontal_internal_cylinders": 10,
+        "small_horizontal_exemptions": 1,
+        "recognized_feature_face_count": 4605,
+        "recognized_feature_area_mm2": 1279.1269309331576,
+        "rejected_region_counts": {
+          "external_cylinder": 4,
+          "not_a_stable_cylinder": 83,
+          "short_axis": 2
+        }
+      },
+      "faces": 154270
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10002__Mirrored_N02_166073211_2_50x52x37_铝合金（Alsi10Mg）_P2607071551769_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10002__Mirrored_N02_166073211_2_50x52x37_铝合金（Alsi10Mg）_P2607071551769_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 2,
+        "recognized_feature_face_count": 1769,
+        "recognized_feature_area_mm2": 2251.070556679582,
+        "rejected_region_counts": {
+          "external_cylinder": 6,
+          "not_a_stable_cylinder": 10
+        }
+      },
+      "faces": 25454
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10003__N01_166073141_1_105x15x105_铝合金（Alsi10Mg）_P26070715CE35B_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10003__N01_166073141_1_105x15x105_铝合金（Alsi10Mg）_P26070715CE35B_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 54238
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10004__N01_166073141_1_105x15x105_铝合金（Alsi10Mg）_P26070715CE35B_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10004__N01_166073141_1_105x15x105_铝合金（Alsi10Mg）_P26070715CE35B_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 3
+        }
+      },
+      "faces": 54232
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10005__N01_166073141_1_129x129x52_铝合金（Alsi10Mg）_P26070715D50BA_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10005__N01_166073141_1_129x129x52_铝合金（Alsi10Mg）_P26070715D50BA_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 11,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1465,
+        "recognized_feature_area_mm2": 620.2283018040355,
+        "rejected_region_counts": {
+          "external_cylinder": 8,
+          "not_a_stable_cylinder": 29
+        }
+      },
+      "faces": 29964
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10006__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10006__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 29
+        }
+      },
+      "faces": 25346
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10007__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10007__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 29
+        }
+      },
+      "faces": 25346
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10008__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10008__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 29
+        }
+      },
+      "faces": 25346
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10009__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10009__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 29
+        }
+      },
+      "faces": 25346
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10010__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10010__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 29
+        }
+      },
+      "faces": 25346
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10011__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10011__N01_166073156_2_28x32x7_铝合金（Alsi10Mg）_P26070715D3191_1_1_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 29
+        }
+      },
+      "faces": 25346
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10012__N01_166073156_2_91x91x4_铝合金（Alsi10Mg）_P26070715B7C0F_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10012__N01_166073156_2_91x91x4_铝合金（Alsi10Mg）_P26070715B7C0F_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 12,
+        "recognized_horizontal_internal_cylinders": 12,
+        "small_horizontal_exemptions": 12,
+        "recognized_feature_face_count": 1793,
+        "recognized_feature_area_mm2": 178.05607538382029,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 13
+        }
+      },
+      "faces": 28372
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10013__N01_166073156_2_91x91x4_铝合金（Alsi10Mg）_P26070715B7C0F_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10013__N01_166073156_2_91x91x4_铝合金（Alsi10Mg）_P26070715B7C0F_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 12,
+        "recognized_horizontal_internal_cylinders": 12,
+        "small_horizontal_exemptions": 12,
+        "recognized_feature_face_count": 1793,
+        "recognized_feature_area_mm2": 178.05650814268728,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 13
+        }
+      },
+      "faces": 28372
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10014__N01_166073156_2_97x97x14_铝合金（Alsi10Mg）_P26070715A91AE_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10014__N01_166073156_2_97x97x14_铝合金（Alsi10Mg）_P26070715A91AE_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 12,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2648,
+        "recognized_feature_area_mm2": 1941.269798926074,
+        "rejected_region_counts": {
+          "external_cylinder": 5,
+          "not_a_stable_cylinder": 56
+        }
+      },
+      "faces": 54518
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10015__N01_166073156_2_97x97x14_铝合金（Alsi10Mg）_P26070715A91AE_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10015__N01_166073156_2_97x97x14_铝合金（Alsi10Mg）_P26070715A91AE_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 12,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2648,
+        "recognized_feature_area_mm2": 1941.2698687177267,
+        "rejected_region_counts": {
+          "external_cylinder": 5,
+          "not_a_stable_cylinder": 56
+        }
+      },
+      "faces": 54518
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10016__N02_166073211_2_49x51x21_铝合金（Alsi10Mg）_P260707152C1C2_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10016__N02_166073211_2_49x51x21_铝合金（Alsi10Mg）_P260707152C1C2_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 6,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2565,
+        "recognized_feature_area_mm2": 700.5259570234894,
+        "rejected_region_counts": {
+          "external_cylinder": 2,
+          "not_a_stable_cylinder": 4
+        }
+      },
+      "faces": 11918
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10017__N02_166073211_2_49x51x21_铝合金（Alsi10Mg）_P260707152C1C2_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10017__N02_166073211_2_49x51x21_铝合金（Alsi10Mg）_P260707152C1C2_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 6,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2565,
+        "recognized_feature_area_mm2": 700.5259395113305,
+        "rejected_region_counts": {
+          "external_cylinder": 2,
+          "not_a_stable_cylinder": 4
+        }
+      },
+      "faces": 11918
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10018__N02_166073211_2_50x52x37_铝合金（Alsi10Mg）_P2607071551769_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10018__N02_166073211_2_50x52x37_铝合金（Alsi10Mg）_P2607071551769_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 2,
+        "recognized_feature_face_count": 1769,
+        "recognized_feature_area_mm2": 2251.070536027656,
+        "rejected_region_counts": {
+          "external_cylinder": 6,
+          "not_a_stable_cylinder": 10
+        }
+      },
+      "faces": 25454
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10019__N16_166072861_1_82x14x92_铝合金（Alsi10Mg）_P260707146D3E0_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10019__N16_166072861_1_82x14x92_铝合金（Alsi10Mg）_P260707146D3E0_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 11
+        }
+      },
+      "faces": 38988
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_99d81275e6/part_10020__N16_166072861_1_83x78x92_铝合金（Alsi10Mg）_P26070714B3CC7_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_99d81275e6__part_10020__N16_166072861_1_83x78x92_铝合金（Alsi10Mg）_P26070714B3CC7_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 431,
+        "recognized_feature_area_mm2": 87.8564724169976,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 68116
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_abe8cbf88b/part_10002__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_abe8cbf88b__part_10002__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 13,
+        "recognized_horizontal_internal_cylinders": 13,
+        "small_horizontal_exemptions": 13,
+        "recognized_feature_face_count": 1842,
+        "recognized_feature_area_mm2": 501.06318417042587,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 52530
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_abe8cbf88b/part_10003__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_abe8cbf88b__part_10003__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 13,
+        "recognized_horizontal_internal_cylinders": 13,
+        "small_horizontal_exemptions": 13,
+        "recognized_feature_face_count": 1842,
+        "recognized_feature_area_mm2": 501.06318446644167,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 52530
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_abe8cbf88b/part_10004__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_abe8cbf88b__part_10004__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_1_8_1_4_1_1_1_1_1_1_1_2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 13,
+        "recognized_horizontal_internal_cylinders": 13,
+        "small_horizontal_exemptions": 13,
+        "recognized_feature_face_count": 1842,
+        "recognized_feature_area_mm2": 501.0631714057432,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 52530
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_abe8cbf88b/part_10005__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_abe8cbf88b__part_10005__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 13,
+        "recognized_horizontal_internal_cylinders": 13,
+        "small_horizontal_exemptions": 13,
+        "recognized_feature_face_count": 1842,
+        "recognized_feature_area_mm2": 501.0621929759466,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 52530
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_abe8cbf88b/part_10006__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_abe8cbf88b__part_10006__N02_166171861_60_156x50x104_铝合金（Alsi10Mg）_P260717213A394_1_1_9_9_1_4_1_2_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 13,
+        "recognized_horizontal_internal_cylinders": 13,
+        "small_horizontal_exemptions": 13,
+        "recognized_feature_face_count": 1842,
+        "recognized_feature_area_mm2": 501.0621840977294,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 5
+        }
+      },
+      "faces": 52530
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_abe8cbf88b/part_10007__N02_166171876_6_129x342x239_铝合金（Alsi10Mg）_P26071721D7F08_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_abe8cbf88b__part_10007__N02_166171876_6_129x342x239_铝合金（Alsi10Mg）_P26071721D7F08_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 146,
+        "recognized_feature_area_mm2": 37.6519221200213,
+        "rejected_region_counts": {
+          "external_cylinder": 6,
+          "not_a_stable_cylinder": 41
+        }
+      },
+      "faces": 155686
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10001__B.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10001__B.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.93435467238947,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10002__B_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10002__B_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.93433804290416,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10003__B_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10003__B_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.93435402514132,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10004__B_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10004__B_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.93433045722279,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10005__B_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10005__B_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.93434816652461,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10006__B_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10006__B_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.93434598322892,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10007__B_1_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10007__B_1_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.93432227311482,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23526
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10008__B_1_1_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10008__B_1_1_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.934345433737,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10009__B_1_1_1_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10009__B_1_1_1_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.93434689851622,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10010__B_1_1_1_1_1_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10010__B_1_1_1_1_1_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 427,
+        "recognized_feature_area_mm2": 234.93433575379976,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 15
+        }
+      },
+      "faces": 23528
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10011__L.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10011__L.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 11,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2326,
+        "recognized_feature_area_mm2": 847.1447278152052,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 127962
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10012__M.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10012__M.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 11,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2326,
+        "recognized_feature_area_mm2": 847.1447280120958,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 127978
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10013__N.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10013__N.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 1,
+        "recognized_feature_face_count": 74,
+        "recognized_feature_area_mm2": 57.09158563622965,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 6
+        }
+      },
+      "faces": 5034
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10014__N_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10014__N_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 1,
+        "recognized_feature_face_count": 74,
+        "recognized_feature_area_mm2": 57.09158514976374,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 6
+        }
+      },
+      "faces": 5034
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10015__N_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10015__N_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 1,
+        "small_horizontal_exemptions": 1,
+        "recognized_feature_face_count": 74,
+        "recognized_feature_area_mm2": 57.091571656683534,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 6
+        }
+      },
+      "faces": 5034
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10016__P.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10016__P.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1259,
+        "recognized_feature_area_mm2": 134.77977185164042,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 51614
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10017__P_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10017__P_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1259,
+        "recognized_feature_area_mm2": 134.77975551315748,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 51614
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10018__P_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10018__P_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1259,
+        "recognized_feature_area_mm2": 134.77974963969586,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 16
+        }
+      },
+      "faces": 51614
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10039__T.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10039__T.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 216,
+        "recognized_horizontal_internal_cylinders": 216,
+        "small_horizontal_exemptions": 216,
+        "recognized_feature_face_count": 66931,
+        "recognized_feature_area_mm2": 2944.548733126893,
+        "rejected_region_counts": {
+          "external_cylinder": 3,
+          "insufficient_angular_coverage": 6,
+          "not_a_stable_cylinder": 52
+        }
+      },
+      "faces": 113188
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_af694798d0/part_10040__U.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_af694798d0__part_10040__U.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 216,
+        "recognized_horizontal_internal_cylinders": 216,
+        "small_horizontal_exemptions": 216,
+        "recognized_feature_face_count": 66931,
+        "recognized_feature_area_mm2": 2944.5486879779933,
+        "rejected_region_counts": {
+          "external_cylinder": 3,
+          "insufficient_angular_coverage": 6,
+          "not_a_stable_cylinder": 52
+        }
+      },
+      "faces": 113188
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10002__Mirrored_N01_166159366_3_220x42x255_铝合金（Alsi10Mg）_P26071618D84A3_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10002__Mirrored_N01_166159366_3_220x42x255_铝合金（Alsi10Mg）_P26071618D84A3_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 2,
+        "recognized_feature_face_count": 673,
+        "recognized_feature_area_mm2": 369.62402365364136,
+        "rejected_region_counts": {
+          "external_cylinder": 8,
+          "not_a_stable_cylinder": 65
+        }
+      },
+      "faces": 71370
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10003__Mirrored_N02_166159036_2_106x106x36_铝合金（Alsi10Mg）_P26071617A8DFB_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10003__Mirrored_N02_166159036_2_106x106x36_铝合金（Alsi10Mg）_P26071617A8DFB_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1605,
+        "recognized_feature_area_mm2": 1371.4589114895837,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 7,
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 157438
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10004__N01_166159366_2_60x36x127_铝合金（Alsi10Mg）_P26071618DA7CC_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10004__N01_166159366_2_60x36x127_铝合金（Alsi10Mg）_P26071618DA7CC_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 3059,
+        "recognized_feature_area_mm2": 1043.4338700225226,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 10
+        }
+      },
+      "faces": 73600
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10005__N01_166159366_2_60x36x127_铝合金（Alsi10Mg）_P26071618DA7CC_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10005__N01_166159366_2_60x36x127_铝合金（Alsi10Mg）_P26071618DA7CC_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 7,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 3059,
+        "recognized_feature_area_mm2": 1043.433904333679,
+        "rejected_region_counts": {
+          "insufficient_angular_coverage": 1,
+          "not_a_stable_cylinder": 10
+        }
+      },
+      "faces": 73602
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10006__N01_166159366_3_38x18x43_铝合金（Alsi10Mg）_P2607161817E85_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10006__N01_166159366_3_38x18x43_铝合金（Alsi10Mg）_P2607161817E85_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 3,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 2,
+        "recognized_feature_face_count": 698,
+        "recognized_feature_area_mm2": 474.2656182040086,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 2
+        }
+      },
+      "faces": 22942
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10007__N01_166159366_3_38x18x43_铝合金（Alsi10Mg）_P2607161817E85_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10007__N01_166159366_3_38x18x43_铝合金（Alsi10Mg）_P2607161817E85_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 3,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 2,
+        "recognized_feature_face_count": 698,
+        "recognized_feature_area_mm2": 474.26562684828485,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 2
+        }
+      },
+      "faces": 22942
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10008__N01_166159366_3_38x18x43_铝合金（Alsi10Mg）_P2607161817E85_1_1_2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10008__N01_166159366_3_38x18x43_铝合金（Alsi10Mg）_P2607161817E85_1_1_2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 3,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 2,
+        "recognized_feature_face_count": 698,
+        "recognized_feature_area_mm2": 474.26561426454145,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 2
+        }
+      },
+      "faces": 22940
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10009__N01_166159366_3_220x42x255_铝合金（Alsi10Mg）_P26071618D84A3_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10009__N01_166159366_3_220x42x255_铝合金（Alsi10Mg）_P26071618D84A3_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 2,
+        "recognized_feature_face_count": 673,
+        "recognized_feature_area_mm2": 369.6240298460158,
+        "rejected_region_counts": {
+          "external_cylinder": 8,
+          "not_a_stable_cylinder": 65
+        }
+      },
+      "faces": 71384
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10010__N01_166159366_3_220x42x255_铝合金（Alsi10Mg）_P26071618D84A3_1_2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10010__N01_166159366_3_220x42x255_铝合金（Alsi10Mg）_P26071618D84A3_1_2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 2,
+        "recognized_feature_face_count": 673,
+        "recognized_feature_area_mm2": 369.6240196968993,
+        "rejected_region_counts": {
+          "external_cylinder": 8,
+          "not_a_stable_cylinder": 65
+        }
+      },
+      "faces": 71358
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_bb700587de/part_10011__N02_166159036_2_106x106x36_铝合金（Alsi10Mg）_P26071617A8DFB_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_bb700587de__part_10011__N02_166159036_2_106x106x36_铝合金（Alsi10Mg）_P26071617A8DFB_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 2,
+        "recognized_horizontal_internal_cylinders": 2,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1605,
+        "recognized_feature_area_mm2": 1371.4574421702284,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "insufficient_angular_coverage": 7,
+          "not_a_stable_cylinder": 7
+        }
+      },
+      "faces": 157438
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_d727f34a37/part_10001__N01_166060606_10_264x112x57_铝合金（Alsi10Mg）_P2607021412E5F_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_d727f34a37__part_10001__N01_166060606_10_264x112x57_铝合金（Alsi10Mg）_P2607021412E5F_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 8,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 936,
+        "recognized_feature_area_mm2": 1116.2096062178018,
+        "rejected_region_counts": {
+          "external_cylinder": 40,
+          "not_a_stable_cylinder": 300
+        }
+      },
+      "faces": 110828
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_d727f34a37/part_10002__N01_166060606_10_288x98x57_铝合金（Alsi10Mg）_P2607021466266_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_d727f34a37__part_10002__N01_166060606_10_288x98x57_铝合金（Alsi10Mg）_P2607021466266_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 8,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 1036,
+        "recognized_feature_area_mm2": 1057.350139348573,
+        "rejected_region_counts": {
+          "external_cylinder": 40,
+          "not_a_stable_cylinder": 166
+        }
+      },
+      "faces": 9990
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_eda28e3f60/part_10002__Mirrored_N01_166140836_7_181x147x95_铝合金（Alsi10Mg）_P26070916A6E3D_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_eda28e3f60__part_10002__Mirrored_N01_166140836_7_181x147x95_铝合金（Alsi10Mg）_P26070916A6E3D_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 4361,
+        "recognized_feature_area_mm2": 10918.613334537931,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "low_confidence": 1,
+          "not_a_stable_cylinder": 11,
+          "short_axis": 1
+        }
+      },
+      "faces": 396388
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_eda28e3f60/part_10003__N01_166140836_7_181x147x95_铝合金（Alsi10Mg）_P26070916A6E3D_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_eda28e3f60__part_10003__N01_166140836_7_181x147x95_铝合金（Alsi10Mg）_P26070916A6E3D_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 4,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 4361,
+        "recognized_feature_area_mm2": 10918.613284969779,
+        "rejected_region_counts": {
+          "external_cylinder": 1,
+          "low_confidence": 1,
+          "not_a_stable_cylinder": 11,
+          "short_axis": 1
+        }
+      },
+      "faces": 396446
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_eda28e3f60/part_10004__N01_166141626_1_91x196x169_铝合金（Alsi10Mg）_P26070918E44A0_1_1_1_1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_eda28e3f60__part_10004__N01_166141626_1_91x196x169_铝合金（Alsi10Mg）_P26070918E44A0_1_1_1_1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 8,
+        "recognized_horizontal_internal_cylinders": 3,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 2341,
+        "recognized_feature_area_mm2": 1203.9532013134021,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 12
+        }
+      },
+      "faces": 167290
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_f86eb4ff1f/part_10001__1.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_f86eb4ff1f__part_10001__1.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 72,
+        "recognized_feature_area_mm2": 652.6210629846058,
+        "rejected_region_counts": {
+          "external_cylinder": 3,
+          "not_a_stable_cylinder": 11
+        }
+      },
+      "faces": 3654
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_f86eb4ff1f/part_10002__3.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_f86eb4ff1f__part_10002__3.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 1,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 72,
+        "recognized_feature_area_mm2": 652.6210390743338,
+        "rejected_region_counts": {
+          "external_cylinder": 3,
+          "not_a_stable_cylinder": 11
+        }
+      },
+      "faces": 3652
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_f86eb4ff1f/part_10003__2.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_f86eb4ff1f__part_10003__2.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "not_a_stable_cylinder": 8
+        }
+      },
+      "faces": 78912
+    },
+    {
+      "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_f86eb4ff1f/part_10005__4.stl",
+      "output": "/mnt/panxin/proj/fastlayer_pos_prediction/reports/feature_recognition_v0/all_parts/project_f86eb4ff1f__part_10005__4.features.json",
+      "preview": null,
+      "summary": {
+        "recognized_internal_cylinders": 0,
+        "recognized_horizontal_internal_cylinders": 0,
+        "small_horizontal_exemptions": 0,
+        "recognized_feature_face_count": 0,
+        "recognized_feature_area_mm2": 0.0,
+        "rejected_region_counts": {
+          "external_cylinder": 4,
+          "insufficient_angular_coverage": 2,
+          "not_a_stable_cylinder": 63
+        }
+      },
+      "faces": 131157
+    }
+  ]
+}

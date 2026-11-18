@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "query_text": "Do not place support inside recognized feature internal_cylinder_0001.",
+  "no_support": {
+    "feature_ids": [
+      "internal_cylinder_0001"
+    ],
+    "face_indices": [],
+    "clearance_mm": 0.2
+  }
+}

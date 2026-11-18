@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "build_up_input": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "parameters": {
+    "smooth_normal_tolerance_deg": 50.0,
+    "minimum_confidence": 0.58,
+    "horizontal_tolerance_deg": 10.0,
+    "small_hole_diameter_threshold_mm": 6.0,
+    "minimum_angular_bins_of_12": 8,
+    "minimum_axis_length_mm": 0.25
+  },
+  "summary": {
+    "recognized_internal_cylinders": 0,
+    "recognized_horizontal_internal_cylinders": 0,
+    "small_horizontal_exemptions": 0,
+    "recognized_feature_face_count": 0,
+    "recognized_feature_area_mm2": 0.0,
+    "rejected_region_counts": {
+      "external_cylinder": 2,
+      "not_a_stable_cylinder": 6
+    }
+  },
+  "features": [],
+  "suggested_annotation": {
+    "no_support_face_indices": [],
+    "features": []
+  },
+  "input_mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_66cf0edb70/part_10043__N01_166140841_1_69x44x39_铝合金（Alsi10Mg）_P260709166F792_1_1.stl",
+  "source_mesh_counts": {
+    "vertices": 36570,
+    "faces": 12190
+  }
+}

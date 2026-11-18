@@ -1,0 +1,595 @@
+{
+  "schema_version": 1,
+  "mesh": "/mnt/panxin/proj/fastlayer_pos_prediction/outputs/meshes_stl/parts/project_0558e01b77/part_10013__13.stl",
+  "material": "AlSi10Mg",
+  "mode": "standard",
+  "support_query": {
+    "schema_version": 1,
+    "query_text": "Do not place support inside any recognized internal cylindrical hole.",
+    "no_support": {
+      "all_internal_cylinders": true,
+      "clearance_mm": 0.2
+    }
+  },
+  "base_feature_summary": {
+    "recognized_internal_cylinders": 6,
+    "recognized_horizontal_internal_cylinders": 6,
+    "small_horizontal_exemptions": 0,
+    "recognized_feature_face_count": 1640,
+    "recognized_feature_area_mm2": 606.969388229459,
+    "rejected_region_counts": {
+      "not_a_stable_cylinder": 4
+    }
+  },
+  "candidate_count": 14,
+  "feasible_count": 0,
+  "current_direction": {
+    "direction_label": "+Z",
+    "direction_group": "axis",
+    "build_up_input": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "feasible": false,
+    "violation_count": 154,
+    "violation_types": {
+      "overhang_on_no_support_face": 139,
+      "support_shaft_intersects_recognized_internal_cylinder": 15
+    },
+    "support_column_count": 99,
+    "support_volume_mm3": 810.977557864968,
+    "build_plate_landings": 77,
+    "part_surface_landings": 22,
+    "mean_support_height_mm": 16.296854428131724,
+    "max_support_height_mm": 51.81469980875651,
+    "minimum_part_height_aligned_mm": 6.0,
+    "platform_height_aligned_mm": 2.0,
+    "lift_mm": 4.0,
+    "candidate_overhang_area_mm2": 567.768198178001,
+    "no_support_face_count": 1640,
+    "small_horizontal_exemptions": 0,
+    "selected_query_feature_ids": [
+      "internal_cylinder_0001",
+      "internal_cylinder_0002",
+      "internal_cylinder_0003",
+      "internal_cylinder_0004",
+      "internal_cylinder_0005",
+      "internal_cylinder_0006"
+    ],
+    "rank": 1
+  },
+  "best_direction": {
+    "direction_label": "+Z",
+    "direction_group": "axis",
+    "build_up_input": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "feasible": false,
+    "violation_count": 154,
+    "violation_types": {
+      "overhang_on_no_support_face": 139,
+      "support_shaft_intersects_recognized_internal_cylinder": 15
+    },
+    "support_column_count": 99,
+    "support_volume_mm3": 810.977557864968,
+    "build_plate_landings": 77,
+    "part_surface_landings": 22,
+    "mean_support_height_mm": 16.296854428131724,
+    "max_support_height_mm": 51.81469980875651,
+    "minimum_part_height_aligned_mm": 6.0,
+    "platform_height_aligned_mm": 2.0,
+    "lift_mm": 4.0,
+    "candidate_overhang_area_mm2": 567.768198178001,
+    "no_support_face_count": 1640,
+    "small_horizontal_exemptions": 0,
+    "selected_query_feature_ids": [
+      "internal_cylinder_0001",
+      "internal_cylinder_0002",
+      "internal_cylinder_0003",
+      "internal_cylinder_0004",
+      "internal_cylinder_0005",
+      "internal_cylinder_0006"
+    ],
+    "rank": 1
+  },
+  "ranking": [
+    {
+      "direction_label": "+Z",
+      "direction_group": "axis",
+      "build_up_input": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "feasible": false,
+      "violation_count": 154,
+      "violation_types": {
+        "overhang_on_no_support_face": 139,
+        "support_shaft_intersects_recognized_internal_cylinder": 15
+      },
+      "support_column_count": 99,
+      "support_volume_mm3": 810.977557864968,
+      "build_plate_landings": 77,
+      "part_surface_landings": 22,
+      "mean_support_height_mm": 16.296854428131724,
+      "max_support_height_mm": 51.81469980875651,
+      "minimum_part_height_aligned_mm": 6.0,
+      "platform_height_aligned_mm": 2.0,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 567.768198178001,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 1
+    },
+    {
+      "direction_label": "+1,+1,-1",
+      "direction_group": "cube_diagonal",
+      "build_up_input": [
+        0.5773502691896258,
+        0.5773502691896258,
+        -0.5773502691896258
+      ],
+      "feasible": false,
+      "violation_count": 63,
+      "violation_types": {
+        "overhang_on_no_support_face": 63
+      },
+      "support_column_count": 144,
+      "support_volume_mm3": 848.1468170784289,
+      "build_plate_landings": 144,
+      "part_surface_landings": 0,
+      "mean_support_height_mm": 11.717600556049437,
+      "max_support_height_mm": 44.005947274880015,
+      "minimum_part_height_aligned_mm": -9.733720646289003,
+      "platform_height_aligned_mm": -13.733720646289003,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 463.5124584448722,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 2
+    },
+    {
+      "direction_label": "+1,-1,-1",
+      "direction_group": "cube_diagonal",
+      "build_up_input": [
+        0.5773502691896258,
+        -0.5773502691896258,
+        -0.5773502691896258
+      ],
+      "feasible": false,
+      "violation_count": 80,
+      "violation_types": {
+        "overhang_on_no_support_face": 80
+      },
+      "support_column_count": 156,
+      "support_volume_mm3": 1244.281542707325,
+      "build_plate_landings": 139,
+      "part_surface_landings": 17,
+      "mean_support_height_mm": 15.86807356729808,
+      "max_support_height_mm": 51.13071737014795,
+      "minimum_part_height_aligned_mm": -104.70928223548344,
+      "platform_height_aligned_mm": -108.70928223548344,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 530.3429959617655,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 3
+    },
+    {
+      "direction_label": "-1,-1,+1",
+      "direction_group": "cube_diagonal",
+      "build_up_input": [
+        -0.5773502691896258,
+        -0.5773502691896258,
+        0.5773502691896258
+      ],
+      "feasible": false,
+      "violation_count": 80,
+      "violation_types": {
+        "overhang_on_no_support_face": 80
+      },
+      "support_column_count": 112,
+      "support_volume_mm3": 1368.1745251626955,
+      "build_plate_landings": 103,
+      "part_surface_landings": 9,
+      "mean_support_height_mm": 24.302649407594835,
+      "max_support_height_mm": 72.62885430198277,
+      "minimum_part_height_aligned_mm": -70.70744947164374,
+      "platform_height_aligned_mm": -74.70744947164374,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 430.57753402922583,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 4
+    },
+    {
+      "direction_label": "+Y",
+      "direction_group": "axis",
+      "build_up_input": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "feasible": false,
+      "violation_count": 81,
+      "violation_types": {
+        "overhang_on_no_support_face": 81
+      },
+      "support_column_count": 122,
+      "support_volume_mm3": 1713.5660857182843,
+      "build_plate_landings": 75,
+      "part_surface_landings": 47,
+      "mean_support_height_mm": 27.942880415645018,
+      "max_support_height_mm": 60.89793237050374,
+      "minimum_part_height_aligned_mm": 14.053000450134277,
+      "platform_height_aligned_mm": 10.053000450134277,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 455.65288973711773,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 5
+    },
+    {
+      "direction_label": "-Z",
+      "direction_group": "axis",
+      "build_up_input": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "feasible": false,
+      "violation_count": 118,
+      "violation_types": {
+        "overhang_on_no_support_face": 118
+      },
+      "support_column_count": 182,
+      "support_volume_mm3": 2315.438514672805,
+      "build_plate_landings": 138,
+      "part_surface_landings": 44,
+      "mean_support_height_mm": 25.3099921040888,
+      "max_support_height_mm": 58.87616729736328,
+      "minimum_part_height_aligned_mm": -93.2490005493164,
+      "platform_height_aligned_mm": -97.2490005493164,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 674.5819398917838,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 6
+    },
+    {
+      "direction_label": "-Y",
+      "direction_group": "axis",
+      "build_up_input": [
+        -0.0,
+        -1.0,
+        -0.0
+      ],
+      "feasible": false,
+      "violation_count": 62,
+      "violation_types": {
+        "overhang_on_no_support_face": 62
+      },
+      "support_column_count": 133,
+      "support_volume_mm3": 2523.1316990011287,
+      "build_plate_landings": 75,
+      "part_surface_landings": 58,
+      "mean_support_height_mm": 37.741436275176866,
+      "max_support_height_mm": 128.06757418314615,
+      "minimum_part_height_aligned_mm": -140.63900756835938,
+      "platform_height_aligned_mm": -144.63900756835938,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 436.5776385934662,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 7
+    },
+    {
+      "direction_label": "-1,+1,+1",
+      "direction_group": "cube_diagonal",
+      "build_up_input": [
+        -0.5773502691896258,
+        0.5773502691896258,
+        0.5773502691896258
+      ],
+      "feasible": false,
+      "violation_count": 84,
+      "violation_types": {
+        "overhang_on_no_support_face": 84
+      },
+      "support_column_count": 126,
+      "support_volume_mm3": 2998.055565444243,
+      "build_plate_landings": 125,
+      "part_surface_landings": 1,
+      "mean_support_height_mm": 47.33684155799787,
+      "max_support_height_mm": 85.85102648015815,
+      "minimum_part_height_aligned_mm": 20.44558841640574,
+      "platform_height_aligned_mm": 16.44558841640574,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 472.01092659196865,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 8
+    },
+    {
+      "direction_label": "+1,+1,+1",
+      "direction_group": "cube_diagonal",
+      "build_up_input": [
+        0.5773502691896258,
+        0.5773502691896258,
+        0.5773502691896258
+      ],
+      "feasible": false,
+      "violation_count": 43,
+      "violation_types": {
+        "overhang_on_no_support_face": 17,
+        "support_shaft_intersects_recognized_internal_cylinder": 26
+      },
+      "support_column_count": 525,
+      "support_volume_mm3": 9566.159359334693,
+      "build_plate_landings": 525,
+      "part_surface_landings": 0,
+      "mean_support_height_mm": 36.25003686768846,
+      "max_support_height_mm": 72.6287606992818,
+      "minimum_part_height_aligned_mm": 39.094522542247994,
+      "platform_height_aligned_mm": 35.094522542247994,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 1277.3851591194716,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 9
+    },
+    {
+      "direction_label": "+1,-1,+1",
+      "direction_group": "cube_diagonal",
+      "build_up_input": [
+        0.5773502691896258,
+        -0.5773502691896258,
+        0.5773502691896258
+      ],
+      "feasible": false,
+      "violation_count": 50,
+      "violation_types": {
+        "overhang_on_no_support_face": 17,
+        "support_shaft_intersects_recognized_internal_cylinder": 33
+      },
+      "support_column_count": 551,
+      "support_volume_mm3": 10081.142956789326,
+      "build_plate_landings": 551,
+      "part_surface_landings": 0,
+      "mean_support_height_mm": 36.39890502697519,
+      "max_support_height_mm": 72.60148707463843,
+      "minimum_part_height_aligned_mm": -53.19110472379739,
+      "platform_height_aligned_mm": -57.19110472379739,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 1351.9632067325028,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 10
+    },
+    {
+      "direction_label": "-1,-1,-1",
+      "direction_group": "cube_diagonal",
+      "build_up_input": [
+        -0.5773502691896258,
+        -0.5773502691896258,
+        -0.5773502691896258
+      ],
+      "feasible": false,
+      "violation_count": 58,
+      "violation_types": {
+        "overhang_on_no_support_face": 36,
+        "support_shaft_intersects_recognized_internal_cylinder": 22
+      },
+      "support_column_count": 513,
+      "support_volume_mm3": 10997.117468325163,
+      "build_plate_landings": 513,
+      "part_surface_landings": 0,
+      "mean_support_height_mm": 42.647310059604756,
+      "max_support_height_mm": 73.81213211203465,
+      "minimum_part_height_aligned_mm": -115.47934528250582,
+      "platform_height_aligned_mm": -119.47934528250582,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 1283.082883291021,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 11
+    },
+    {
+      "direction_label": "+X",
+      "direction_group": "axis",
+      "build_up_input": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "feasible": false,
+      "violation_count": 9,
+      "violation_types": {
+        "support_shaft_intersects_recognized_internal_cylinder": 9
+      },
+      "support_column_count": 2420,
+      "support_volume_mm3": 12144.636498239324,
+      "build_plate_landings": 2420,
+      "part_surface_landings": 0,
+      "mean_support_height_mm": 9.983878774530137,
+      "max_support_height_mm": 14.118166446685791,
+      "minimum_part_height_aligned_mm": 4.918300151824951,
+      "platform_height_aligned_mm": 0.9183001518249512,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 5463.552002688252,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 12
+    },
+    {
+      "direction_label": "-1,+1,-1",
+      "direction_group": "cube_diagonal",
+      "build_up_input": [
+        -0.5773502691896258,
+        0.5773502691896258,
+        -0.5773502691896258
+      ],
+      "feasible": false,
+      "violation_count": 27,
+      "violation_types": {
+        "overhang_on_no_support_face": 16,
+        "support_shaft_intersects_recognized_internal_cylinder": 11
+      },
+      "support_column_count": 589,
+      "support_volume_mm3": 12467.891863825387,
+      "build_plate_landings": 589,
+      "part_surface_landings": 0,
+      "mean_support_height_mm": 42.11219482306949,
+      "max_support_height_mm": 56.4876450038815,
+      "minimum_part_height_aligned_mm": -28.104314476930714,
+      "platform_height_aligned_mm": -32.10431447693071,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 1384.1838823102416,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 13
+    },
+    {
+      "direction_label": "-X",
+      "direction_group": "axis",
+      "build_up_input": [
+        -1.0,
+        -0.0,
+        -0.0
+      ],
+      "feasible": false,
+      "violation_count": 15,
+      "violation_types": {
+        "support_shaft_intersects_recognized_internal_cylinder": 15
+      },
+      "support_column_count": 2404,
+      "support_volume_mm3": 14180.651905857752,
+      "build_plate_landings": 2404,
+      "part_surface_landings": 0,
+      "mean_support_height_mm": 11.735237349640014,
+      "max_support_height_mm": 17.750499566396076,
+      "minimum_part_height_aligned_mm": -21.669599533081055,
+      "platform_height_aligned_mm": -25.669599533081055,
+      "lift_mm": 4.0,
+      "candidate_overhang_area_mm2": 5442.530875841621,
+      "no_support_face_count": 1640,
+      "small_horizontal_exemptions": 0,
+      "selected_query_feature_ids": [
+        "internal_cylinder_0001",
+        "internal_cylinder_0002",
+        "internal_cylinder_0003",
+        "internal_cylinder_0004",
+        "internal_cylinder_0005",
+        "internal_cylinder_0006"
+      ],
+      "rank": 14
+    }
+  ]
+}
