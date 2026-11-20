@@ -227,6 +227,30 @@ class PointNetDirectionScorerTests(unittest.TestCase):
         self.assertEqual(rows[0]["top3_exact"], 0)
         self.assertEqual(summary["top3_within_10pct_count"], 0)
 
+    def test_zero_area_oracle_is_not_implicitly_a_threshold_success(self) -> None:
+        prediction = np.asarray([0.9, 0.8, 0.7])
+        part = {
+            "record": {
+                "source_project": "project",
+                "source_part_id": 2,
+            },
+            "targets": np.asarray([0.0, 0.2, 1.0]),
+            "areas": np.asarray([9.0, 6.0, 0.0]),
+            "directions": np.eye(3, dtype=np.float32),
+        }
+        row = enriched_rows([prediction], [part])[0]
+        summary = summarise_rows([row])
+
+        self.assertIsNone(row["top1_area_ratio"])
+        self.assertEqual(row["top1_exact"], 0)
+        self.assertEqual(summary["top1_within_5pct_count"], 0)
+        self.assertEqual(summary["top1_within_10pct_count"], 0)
+        self.assertAlmostEqual(row["top1_area_excess_mm2"], 9.0)
+        self.assertAlmostEqual(
+            summary["top1_area_excess_mm2_p90"],
+            9.0,
+        )
+
     def test_listwise_loss_rewards_target_order(self) -> None:
         targets = torch.tensor([[1.0, 0.5, 0.0]])
         good = listwise_softmax_loss(targets, targets, temperature=0.1)

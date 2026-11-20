@@ -654,6 +654,19 @@ def write_report(
 
 {results_table}
 
+## 推荐质量
+
+| 指标 | Top-1 | Top-5 | Top-10 |
+|---|---:|---:|---:|
+| 最小面积 / oracle，中位数 | {network["top1_area_ratio_median"]:.4f} | {network["top5_area_ratio_median"]:.4f} | {network["top10_area_ratio_median"]:.4f} |
+| 最小面积 / oracle，P90 | {network["top1_area_ratio_p90"]:.4f} | {network["top5_area_ratio_p90"]:.4f} | {network["top10_area_ratio_p90"]:.4f} |
+| 面积误差 ≤5% | {network["top1_within_5pct_count"]}/{network["count"]} | {network["top5_within_5pct_count"]}/{network["count"]} | {network["top10_within_5pct_count"]}/{network["count"]} |
+| 面积误差 ≤10% | {network["top1_within_10pct_count"]}/{network["count"]} | {network["top5_within_10pct_count"]}/{network["count"]} | {network["top10_within_10pct_count"]}/{network["count"]} |
+| 绝对面积差中位数 (mm²) | {network["top1_area_excess_mm2_median"]:.2f} | {network["top5_area_excess_mm2_median"]:.2f} | {network["top10_area_excess_mm2_median"]:.2f} |
+| 绝对面积差 P90 (mm²) | {network["top1_area_excess_mm2_p90"]:.2f} | {network["top5_area_excess_mm2_p90"]:.2f} | {network["top10_area_excess_mm2_p90"]:.2f} |
+
+面积比只在 oracle 面积大于零时定义。oracle 面积为零时，只有候选也达到零面积才算阈值成功。
+
 ## 训练
 
 - 参数更新零件：{metrics["dataset"]["fit_count"]}
@@ -663,6 +676,9 @@ def write_report(
 - 完成 epoch：{metrics["training"]["epochs_completed"]}
 - 参数量：{metrics["model"]["parameters"]}
 - 30°几何先验：{metrics["dataset"]["uses_30deg_geometry_prior"]}
+- test 零件加载耗时：{metrics["timing"]["test_parts_load_seconds"]:.4f} 秒
+- test 模型前向耗时：{metrics["timing"]["test_model_forward_seconds"]:.4f} 秒
+- Top-K 候选精确复核耗时：需针对实际支撑实现单独测量
 
 ## 产物
 
@@ -829,11 +845,13 @@ def main() -> None:
         args.point_count,
         geometry_feature_records,
     )
+    test_load_started = time.monotonic()
     test_parts = load_part_rows(
         test_records,
         args.point_count,
         geometry_feature_records,
     )
+    test_data_load_seconds = time.monotonic() - test_load_started
 
     prior_mean, prior_std = stacked_feature_standardisation(
         fit_parts,
@@ -1063,6 +1081,9 @@ def main() -> None:
     if best_state is None:
         raise RuntimeError("Training did not produce a checkpoint")
     model.load_state_dict(best_state)
+    if device.type == "cuda":
+        torch.cuda.synchronize(device)
+    test_inference_started = time.monotonic()
     test_predictions = predict_parts(
         model,
         test_parts,
@@ -1075,6 +1096,9 @@ def main() -> None:
         anchor_weight=args.anchor_weight,
         residual_scale=args.residual_scale,
     )
+    if device.type == "cuda":
+        torch.cuda.synchronize(device)
+    test_inference_seconds = time.monotonic() - test_inference_started
     baseline_predictions = [
         score_from_lower_is_better(part["retained_surface"])
         for part in test_parts
@@ -1104,6 +1128,50 @@ def main() -> None:
         if geometry_feature_records is not None
         else "PointNetDirectionScorer"
     )
+    geometry_prior_timing = None
+    if geometry_features_dir is not None:
+        geometry_manifest = json.loads(
+            (geometry_features_dir / "manifest.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        test_job_ids = {
+            record["job_id"] for record in test_records
+        }
+        geometry_test_records = [
+            record
+            for record in geometry_manifest["records"]
+            if record["job_id"] in test_job_ids
+        ]
+        geometry_test_seconds = [
+            float(record["elapsed_seconds"])
+            for record in geometry_test_records
+        ]
+        geometry_test_values = np.asarray(
+            geometry_test_seconds,
+            dtype=np.float64,
+        )
+        geometry_prior_timing = {
+            "manifest_full_dataset_parallel_seconds": float(
+                geometry_manifest["elapsed_seconds"]
+            ),
+            "test_part_count": len(geometry_test_records),
+            "test_cpu_compute_seconds": (
+                float(np.sum(geometry_test_values))
+                if geometry_test_values.size
+                else None
+            ),
+            "test_cpu_compute_seconds_per_part_median": (
+                float(np.median(geometry_test_values))
+                if geometry_test_values.size
+                else None
+            ),
+            "test_cpu_compute_seconds_per_part_p90": (
+                float(np.percentile(geometry_test_values, 90))
+                if geometry_test_values.size
+                else None
+            ),
+        }
 
     metrics = {
         "dataset": {
@@ -1142,6 +1210,19 @@ def main() -> None:
             "best_selection_score": best_score,
             "device": str(device),
             "elapsed_seconds": time.monotonic() - started,
+        },
+        "timing": {
+            "test_parts_load_seconds": test_data_load_seconds,
+            "test_model_forward_seconds": test_inference_seconds,
+            "test_model_forward_milliseconds_per_part": (
+                1000.0 * test_inference_seconds / len(test_parts)
+            ),
+            "geometry_prior": geometry_prior_timing,
+            "candidate_recheck_seconds": None,
+            "candidate_recheck_note": (
+                "Candidate recheck must be measured against the target "
+                "support implementation; proxy-label files are cached."
+            ),
         },
         "model": {
             "name": network_name,

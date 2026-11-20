@@ -368,6 +368,9 @@ def enriched_rows(
             row[f"top{k}_area_ratio"] = (
                 best_area / oracle_area if positive_oracle else None
             )
+            row[f"top{k}_area_excess_mm2"] = float(
+                max(best_area - oracle_area, 0.0)
+            )
             row[f"top{k}_exact"] = int(
                 np.any(np.isclose(
                     part["areas"][top],
@@ -403,6 +406,12 @@ def summarise_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
     zero_exact = int(sum(
         row["predicted_area_mm2"] <= 1e-9 for row in zero
     ))
+
+    def optional_stat(values: np.ndarray, function: str) -> float | None:
+        if not values.size:
+            return None
+        return float(getattr(np, function)(values))
+
     result = {
         **aggregate,
         "count": len(rows),
@@ -417,11 +426,13 @@ def summarise_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "within_5pct_count": int(np.sum(excess <= 5.0)),
         "within_10pct_count": int(np.sum(excess <= 10.0)),
         "within_15pct_count": int(np.sum(excess <= 15.0)),
-        "area_excess_pct_p50": float(np.percentile(excess, 50)),
-        "area_excess_pct_p90": float(np.percentile(excess, 90)),
-        "area_excess_pct_max": float(excess.max()),
-        "top1_area_ratio_mean": float(np.mean(ratio)),
-        "top1_area_ratio_median": float(np.median(ratio)),
+        "area_excess_pct_p50": optional_stat(excess, "median"),
+        "area_excess_pct_p90": (
+            float(np.percentile(excess, 90)) if excess.size else None
+        ),
+        "area_excess_pct_max": optional_stat(excess, "max"),
+        "top1_area_ratio_mean": optional_stat(ratio, "mean"),
+        "top1_area_ratio_median": optional_stat(ratio, "median"),
     }
     for k in (1, 3, 5, 10, 20):
         positive_ratios = np.asarray([
@@ -432,16 +443,35 @@ def summarise_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
         for row in rows:
             value = row[f"top{k}_area_ratio"]
             if value is None:
-                accepted.append(bool(row[f"top{k}_exact"]))
+                accepted.append(
+                    0.0 if row[f"top{k}_exact"] else float("inf")
+                )
             else:
                 accepted.append(float(value))
+        excess_mm2 = np.asarray([
+            row[f"top{k}_area_excess_mm2"] for row in rows
+        ], dtype=np.float64)
         result.update({
-            f"top{k}_area_ratio_mean": float(np.mean(positive_ratios)),
-            f"top{k}_area_ratio_median": float(np.median(positive_ratios)),
-            f"top{k}_area_ratio_p90": float(np.percentile(
+            f"top{k}_area_ratio_mean": optional_stat(
                 positive_ratios,
+                "mean",
+            ),
+            f"top{k}_area_ratio_median": optional_stat(
+                positive_ratios,
+                "median",
+            ),
+            f"top{k}_area_ratio_p90": (
+                float(np.percentile(positive_ratios, 90))
+                if positive_ratios.size
+                else None
+            ),
+            f"top{k}_area_excess_mm2_mean": float(np.mean(excess_mm2)),
+            f"top{k}_area_excess_mm2_median": float(np.median(excess_mm2)),
+            f"top{k}_area_excess_mm2_p90": float(np.percentile(
+                excess_mm2,
                 90,
             )),
+            f"top{k}_area_excess_mm2_max": float(np.max(excess_mm2)),
             f"top{k}_exact_count": int(sum(
                 row[f"top{k}_exact"] for row in rows
             )),
@@ -449,14 +479,26 @@ def summarise_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
                 float(value) <= 1.05 + 1e-12
                 for value in accepted
             )),
+            f"top{k}_within_5pct_rate": float(np.mean([
+                float(value) <= 1.05 + 1e-12
+                for value in accepted
+            ])),
             f"top{k}_within_10pct_count": int(sum(
                 float(value) <= 1.10 + 1e-12
                 for value in accepted
             )),
+            f"top{k}_within_10pct_rate": float(np.mean([
+                float(value) <= 1.10 + 1e-12
+                for value in accepted
+            ])),
             f"top{k}_within_20pct_count": int(sum(
                 float(value) <= 1.20 + 1e-12
                 for value in accepted
             )),
+            f"top{k}_within_20pct_rate": float(np.mean([
+                float(value) <= 1.20 + 1e-12
+                for value in accepted
+            ])),
         })
     return result
 
