@@ -171,6 +171,183 @@ class PointNetDirectionScorer(nn.Module):
         return scores.squeeze(-1)
 
 
+class PointDirectionInteractionScorer(nn.Module):
+    """Score each direction after interacting with retained per-point features."""
+
+    def __init__(
+        self,
+        point_channels: int = 6,
+        point_embedding_dim: int = 128,
+        interaction_hidden_dim: int = 64,
+        direction_hidden_dim: int = 64,
+        candidate_chunk_size: int = 32,
+        dropout: float = 0.1,
+    ) -> None:
+        super().__init__()
+        if point_embedding_dim < 1 or interaction_hidden_dim < 1:
+            raise ValueError("Point and interaction dimensions must be positive")
+        if direction_hidden_dim < 1 or candidate_chunk_size < 1:
+            raise ValueError("Direction and chunk dimensions must be positive")
+        self.candidate_chunk_size = candidate_chunk_size
+        self.point_mlp = nn.Sequential(
+            nn.Conv1d(point_channels, 64, 1, bias=False),
+            nn.BatchNorm1d(64),
+            nn.SiLU(inplace=True),
+            nn.Conv1d(64, 128, 1, bias=False),
+            nn.BatchNorm1d(128),
+            nn.SiLU(inplace=True),
+            nn.Conv1d(128, point_embedding_dim, 1, bias=False),
+            nn.BatchNorm1d(point_embedding_dim),
+            nn.SiLU(inplace=True),
+        )
+        self.direction_mlp = nn.Sequential(
+            nn.Linear(3, direction_hidden_dim),
+            nn.SiLU(inplace=True),
+            nn.LayerNorm(direction_hidden_dim),
+            nn.Linear(direction_hidden_dim, direction_hidden_dim),
+            nn.SiLU(inplace=True),
+        )
+        # n.u, p.u, tangential radius, |n.u|, and raw coordinate radius.
+        self.geometry_mlp = nn.Sequential(
+            nn.Linear(5, interaction_hidden_dim),
+            nn.SiLU(inplace=True),
+            nn.LayerNorm(interaction_hidden_dim),
+        )
+        self.point_condition = nn.Linear(
+            point_embedding_dim,
+            interaction_hidden_dim,
+            bias=False,
+        )
+        self.direction_condition = nn.Linear(
+            direction_hidden_dim,
+            2 * interaction_hidden_dim,
+        )
+        self.condition_refine = nn.Sequential(
+            nn.SiLU(inplace=True),
+            nn.LayerNorm(interaction_hidden_dim),
+            nn.Dropout(dropout),
+            nn.Linear(interaction_hidden_dim, interaction_hidden_dim),
+            nn.SiLU(inplace=True),
+            nn.LayerNorm(interaction_hidden_dim),
+        )
+        self.salience_head = nn.Linear(interaction_hidden_dim, 1)
+        self.score_head = nn.Sequential(
+            nn.Linear(
+                direction_hidden_dim + 2 * interaction_hidden_dim,
+                128,
+            ),
+            nn.SiLU(inplace=True),
+            nn.LayerNorm(128),
+            nn.Dropout(dropout),
+            nn.Linear(128, 64),
+            nn.SiLU(inplace=True),
+            nn.Linear(64, 1),
+        )
+
+    def forward(
+        self,
+        points: torch.Tensor,
+        candidate_features: torch.Tensor,
+        global_features: torch.Tensor | None = None,
+    ) -> torch.Tensor:
+        del global_features
+        if candidate_features.shape[-1] != 3:
+            raise ValueError(
+                "Point-direction interaction accepts direction XYZ only"
+            )
+        direction_count = candidate_features.shape[1]
+        coordinates = points[:, :, :3]
+        normals = points[:, :, 3:6]
+        point_features = self.point_mlp(
+            points.transpose(1, 2).contiguous()
+        ).transpose(1, 2)
+        point_base = self.point_condition(point_features)
+        coordinate_radius = torch.linalg.vector_norm(
+            coordinates,
+            dim=-1,
+        )
+        scores = []
+        for start in range(
+            0,
+            direction_count,
+            self.candidate_chunk_size,
+        ):
+            directions = F.normalize(
+                candidate_features[
+                    :,
+                    start:start + self.candidate_chunk_size,
+                    :3,
+                ],
+                dim=-1,
+            )
+            chunk_size = directions.shape[1]
+            point_height = torch.einsum(
+                "bnd,bud->bun",
+                coordinates,
+                directions,
+            )
+            normal_dot = torch.einsum(
+                "bnd,bud->bun",
+                normals,
+                directions,
+            )
+            tangential_radius = torch.sqrt(
+                (
+                    coordinate_radius[:, None, :].square()
+                    - point_height.square()
+                ).clamp_min(0.0)
+            )
+            geometry = torch.stack(
+                [
+                    normal_dot,
+                    point_height,
+                    tangential_radius,
+                    normal_dot.abs(),
+                    coordinate_radius[:, None, :].expand(
+                        -1,
+                        chunk_size,
+                        -1,
+                    ),
+                ],
+                dim=-1,
+            )
+            geometry_embedding = self.geometry_mlp(geometry)
+            direction_embedding = self.direction_mlp(directions)
+            direction_scale, direction_bias = (
+                self.direction_condition(direction_embedding)
+                .chunk(2, dim=-1)
+            )
+            conditioned = (
+                point_base[:, None, :, :].expand(
+                    -1,
+                    chunk_size,
+                    -1,
+                    -1,
+                )
+                * (1.0 + direction_scale[:, :, None, :].tanh())
+                + direction_bias[:, :, None, :]
+                + geometry_embedding
+            )
+            conditioned = self.condition_refine(conditioned)
+            salience = self.salience_head(conditioned).squeeze(-1)
+            weighted = torch.sum(
+                conditioned
+                * torch.softmax(salience, dim=-1).unsqueeze(-1),
+                dim=2,
+            )
+            maximum = conditioned.amax(dim=2)
+            chunk_scores = self.score_head(torch.cat(
+                [
+                    direction_embedding,
+                    weighted,
+                    maximum,
+                ],
+                dim=-1,
+            ))
+            scores.append(chunk_scores.squeeze(-1))
+        return torch.cat(scores, dim=1)
+
+
 def load_geometry_feature_records(
     directory: Path,
 ) -> tuple[dict[str, dict[str, Any]], list[str], list[str]]:
@@ -376,7 +553,10 @@ def make_model_inputs(
                 global_std,
             )
         targets[index] = part["targets"]
-        anchors[index] = part["anchor_scores"]
+        if part["anchor_scores"].size:
+            anchors[index] = part["anchor_scores"]
+        else:
+            anchors[index] = 0.0
 
     points_tensor = torch.from_numpy(points).to(device)
     candidate_tensor = torch.from_numpy(candidate_features).to(device)
@@ -501,20 +681,17 @@ def topk_pairwise_loss(
 
 
 def development_selection_score(metrics: dict[str, Any]) -> float:
-    """Balance global ranking with practical Top-5/Top-10 recommendation."""
+    """Select checkpoints by practical Top-K support-area quality."""
+    def ratio_quality(name: str) -> float:
+        ratio = metrics.get(name)
+        return 0.0 if ratio is None else 1.0 / max(float(ratio), 1.0)
+
     return (
-        0.25 * metrics["spearman_median"]
-        + 0.25 * metrics["ndcg_at_5_median"]
-        + 0.15 * metrics["ndcg_at_10_median"]
-        + 0.15 * (
-            1.0 - min(metrics["top5_regret_median"] * 20.0, 1.0)
-        )
-        + 0.10 * (
-            1.0 - min(metrics["top10_regret_median"] * 20.0, 1.0)
-        )
-        + 0.10 * (
-            metrics["top5_within_20pct_count"] / metrics["count"]
-        )
+        0.20 * ratio_quality("top1_area_ratio_median")
+        + 0.25 * ratio_quality("top5_area_ratio_median")
+        + 0.25 * ratio_quality("top10_area_ratio_median")
+        + 0.15 * metrics["top5_within_10pct_rate"]
+        + 0.15 * metrics["top10_within_10pct_rate"]
     )
 
 
@@ -592,14 +769,44 @@ def write_report(
     baseline = metrics["test"]["retained_surface_baseline"]
     anchor_weight = metrics["model"]["anchor_weight"]
     residual_scale = metrics["model"]["residual_scale"]
+    point_encoding_lines = (
+        f"- 每个零件的全部点先通过全局 max pooling 压缩成 "
+        f"{arguments.point_embedding_dim} 维 embedding。\n"
+        "- 全局形状 embedding 在之后才与候选方向 embedding 拼接。"
+    )
+    anchor_lines = (
+        "- 网络直接输出候选分数，本实验不使用 30° anchor 或残差尺度。"
+    )
     if prior30 is None:
-        title = "4096 点 PointNet 方向-only 评分器"
-        comparison_header = "方向-only PointNet"
-        comparison_values = direction_only
-        input_lines = (
-            "- 每个候选方向只输入 3 维 XYZ。\n"
-            "- 不使用候选几何特征或几何 baseline。"
+        title = (
+            "4096 点逐点方向交互评分器"
+            if arguments.architecture == "point_direction"
+            else "4096 点 PointNet 方向-only 评分器"
         )
+        comparison_header = (
+            "逐点方向交互"
+            if arguments.architecture == "point_direction"
+            else "方向-only PointNet"
+        )
+        comparison_values = direction_only
+        if arguments.architecture == "point_direction":
+            point_encoding_lines = (
+                f"- 每件零件的逐点特征只编码一次，得到 "
+                f"{arguments.interaction_point_dim} 维逐点表示。\n"
+                "- 对每个候选方向，网络在保留逐点表示时计算 "
+                "`n·u`、`p·u`、切向半径等基础关系。\n"
+                "- 方向条件化后的逐点表示通过 salience 加权和与最大值汇总，"
+                "再输出该方向的分数。"
+            )
+            input_lines = (
+                "- 每个候选方向只输入 3 维 XYZ。\n"
+                "- 不使用任何30°候选面积特征或几何 baseline。"
+            )
+        else:
+            input_lines = (
+                "- 每个候选方向只输入 3 维 XYZ。\n"
+                "- 不使用候选几何特征或几何 baseline。"
+            )
         results_table = f"""| 指标 | 当前网络 | 方向-only参考 | 45°保留面规则 |
 |---|---:|---:|---:|
 | Spearman 均值 | {network["spearman_mean"]:.4f} | {direction_only["spearman_mean"]:.4f} | {baseline["spearman_mean"]:.4f} |
@@ -615,15 +822,23 @@ def write_report(
         title = "4096 点 PointNet＋30° 几何先验评分器"
         comparison_header = "PointNet＋30°先验"
         comparison_values = network
+        point_encoding_lines = (
+            f"- 每个零件的全部点先通过全局 max pooling 压缩成 "
+            f"{arguments.point_embedding_dim} 维 embedding。\n"
+            "- PointNet 形状向量额外拼接旋转不变全局形状特征。"
+        )
+        anchor_lines = (
+            f"- `anchor_weight={anchor_weight:g}`，"
+            f"`residual_scale={residual_scale:g}`。\n"
+            "- 残差头零初始化；训练前输出精确等于30°规则分数。"
+        )
         input_lines = (
             f"- 每个候选方向输入 3 维方向、"
             f"{len(metrics['dataset']['candidate_input']) - 3} 维 "
             "30°候选几何特征。\n"
             f"- PointNet 形状向量额外拼接 "
             f"{metrics['dataset']['global_input_dim']} 维旋转不变全局形状特征。\n"
-            "- 30°先验不应用小孔豁免，也不读取 45°目标面积。\n"
-            f"- 预测为 `{anchor_weight:g} × 30°分数 + "
-            f"{residual_scale:g} × 网络残差`。"
+            "- 30°先验不应用小孔豁免，也不读取 45°目标面积。"
         )
         results_table = f"""| 指标 | {comparison_header} | 方向-only PointNet | 30°规则直接排序 | 45°保留面规则 |
 |---|---:|---:|---:|---:|
@@ -642,12 +857,11 @@ def write_report(
 ## 输入与网络
 
 - 每件零件 {arguments.point_count} 点，输入 XYZ＋法向，共 6 个通道。
-- PointNet 对每件形状只编码一次，得到 {arguments.point_embedding_dim} 维 embedding。
+{point_encoding_lines}
 {input_lines}
-- 形状上下文与候选方向 embedding 拼接后输出一个标量分数。
+- 每个候选方向使用同一个评分函数，输出一个标量分数。
 - 训练时对点云、法向和候选方向施加同一个随机 SO(3) 旋转。
-- `anchor_weight={anchor_weight:g}`，`residual_scale={residual_scale:g}`。
-- 残差头零初始化；启用 anchor 时，训练前输出精确等于30°规则分数。
+{anchor_lines}
 - 45°投影面积目标只进入损失和评价，不进入输入。
 
 ## Test 结果
@@ -712,6 +926,15 @@ def main() -> None:
         default="pointnet_direction_only_4096_2026-11-20",
     )
     parser.add_argument(
+        "--architecture",
+        choices=["global", "point_direction"],
+        default="global",
+        help=(
+            "global pools points before direction interaction; "
+            "point_direction interacts with retained per-point features"
+        ),
+    )
+    parser.add_argument(
         "--geometry-features",
         type=Path,
         help="30-degree prior feature directory with manifest.json",
@@ -730,6 +953,9 @@ def main() -> None:
     parser.add_argument("--point-embedding-dim", type=int, default=1024)
     parser.add_argument("--shape-hidden-dim", type=int, default=256)
     parser.add_argument("--direction-hidden-dim", type=int, default=128)
+    parser.add_argument("--interaction-point-dim", type=int, default=128)
+    parser.add_argument("--interaction-hidden-dim", type=int, default=64)
+    parser.add_argument("--candidate-chunk-size", type=int, default=16)
     parser.add_argument("--dropout", type=float, default=0.1)
     parser.add_argument("--learning-rate", type=float, default=3e-4)
     parser.add_argument("--weight-decay", type=float, default=1e-4)
@@ -775,6 +1001,17 @@ def main() -> None:
         parser.error("Top-K loss counts must be positive")
     if args.anchor_weight and args.geometry_features is None:
         parser.error("--anchor-weight requires --geometry-features")
+    if args.architecture == "point_direction" and args.geometry_features:
+        parser.error(
+            "--architecture point_direction accepts point cloud and direction "
+            "XYZ only; remove --geometry-features"
+        )
+    if args.interaction_point_dim < 1:
+        parser.error("--interaction-point-dim must be positive")
+    if args.interaction_hidden_dim < 1:
+        parser.error("--interaction-hidden-dim must be positive")
+    if args.candidate_chunk_size < 1:
+        parser.error("--candidate-chunk-size must be positive")
 
     seed_everything(args.seed)
     torch.set_float32_matmul_precision("high")
@@ -870,15 +1107,25 @@ def main() -> None:
             "Global feature names and values have inconsistent sizes"
         )
 
-    model = PointNetDirectionScorer(
-        point_channels=6,
-        point_embedding_dim=args.point_embedding_dim,
-        shape_hidden_dim=args.shape_hidden_dim,
-        direction_hidden_dim=args.direction_hidden_dim,
-        candidate_feature_dim=len(prior_mean),
-        global_feature_dim=len(global_mean),
-        dropout=args.dropout,
-    ).to(device)
+    if args.architecture == "point_direction":
+        model = PointDirectionInteractionScorer(
+            point_channels=6,
+            point_embedding_dim=args.interaction_point_dim,
+            interaction_hidden_dim=args.interaction_hidden_dim,
+            direction_hidden_dim=args.direction_hidden_dim,
+            candidate_chunk_size=args.candidate_chunk_size,
+            dropout=args.dropout,
+        ).to(device)
+    else:
+        model = PointNetDirectionScorer(
+            point_channels=6,
+            point_embedding_dim=args.point_embedding_dim,
+            shape_hidden_dim=args.shape_hidden_dim,
+            direction_hidden_dim=args.direction_hidden_dim,
+            candidate_feature_dim=len(prior_mean),
+            global_feature_dim=len(global_mean),
+            dropout=args.dropout,
+        ).to(device)
     if args.anchor_weight:
         zero_last_linear_layer(model)
     parameter_count = sum(parameter.numel() for parameter in model.parameters())
@@ -1046,6 +1293,24 @@ def main() -> None:
             "validation_top1_regret": development_metrics["top1_regret_median"],
             "validation_top5_regret": development_metrics["top5_regret_median"],
             "validation_top10_regret": development_metrics["top10_regret_median"],
+            "validation_top1_area_ratio": (
+                development_metrics["top1_area_ratio_median"]
+            ),
+            "validation_top5_area_ratio": (
+                development_metrics["top5_area_ratio_median"]
+            ),
+            "validation_top10_area_ratio": (
+                development_metrics["top10_area_ratio_median"]
+            ),
+            "validation_top10_area_ratio_p90": (
+                development_metrics["top10_area_ratio_p90"]
+            ),
+            "validation_top5_within_10pct": (
+                development_metrics["top5_within_10pct_rate"]
+            ),
+            "validation_top10_within_10pct": (
+                development_metrics["top10_within_10pct_rate"]
+            ),
             "validation_top5_within_20pct": (
                 development_metrics["top5_within_20pct_count"]
                 / development_metrics["count"]
@@ -1123,11 +1388,14 @@ def main() -> None:
             prior30_predictions,
     )
     pointnet_reference = load_reference_model(pointnet_reference_path)
-    network_name = (
-        "PointNetGeometryPrior30Scorer"
-        if geometry_feature_records is not None
-        else "PointNetDirectionScorer"
-    )
+    network_name = {
+        "global": (
+            "PointNetGeometryPrior30Scorer"
+            if geometry_feature_records is not None
+            else "PointNetDirectionScorer"
+        ),
+        "point_direction": "PointDirectionInteractionScorer",
+    }[args.architecture]
     geometry_prior_timing = None
     if geometry_features_dir is not None:
         geometry_manifest = json.loads(
@@ -1226,6 +1494,7 @@ def main() -> None:
         },
         "model": {
             "name": network_name,
+            "architecture": args.architecture,
             "parameters": parameter_count,
             "anchor_weight": args.anchor_weight,
             "residual_scale": args.residual_scale,
@@ -1239,6 +1508,21 @@ def main() -> None:
             "geometry_fusion": bool(prior_mean.size),
             "uses_18_candidate_geometry_features": False,
             "uses_30deg_geometry_prior": bool(prior_mean.size),
+            "interaction_point_dim": (
+                args.interaction_point_dim
+                if args.architecture == "point_direction"
+                else None
+            ),
+            "interaction_hidden_dim": (
+                args.interaction_hidden_dim
+                if args.architecture == "point_direction"
+                else None
+            ),
+            "candidate_chunk_size": (
+                args.candidate_chunk_size
+                if args.architecture == "point_direction"
+                else None
+            ),
         },
         "test": {
             "network": test_network,
@@ -1255,11 +1539,16 @@ def main() -> None:
             "The expanded split contains 100 validation parts, but 95 come from projects also represented in training.",
             "The model scores 256 sampled directions rather than a continuous sphere.",
             "PointNet rotation robustness is encouraged by augmentation but is not mathematically guaranteed.",
-            "The 30-degree prior is a geometric proxy and is strongly related to the 45-degree target by construction.",
+            *(
+                ["The 30-degree prior is a geometric proxy and is strongly related to the 45-degree target by construction."]
+                if prior_mean.size
+                else []
+            ),
         ],
     }
     config = {
         "name": args.name,
+        "architecture": args.architecture,
         "dataset": str(dataset_dir),
         "split_file": str(split_path),
         "epochs": args.epochs,
@@ -1286,6 +1575,21 @@ def main() -> None:
         "point_embedding_dim": args.point_embedding_dim,
         "shape_hidden_dim": args.shape_hidden_dim,
         "direction_hidden_dim": args.direction_hidden_dim,
+        "interaction_point_dim": (
+            args.interaction_point_dim
+            if args.architecture == "point_direction"
+            else None
+        ),
+        "interaction_hidden_dim": (
+            args.interaction_hidden_dim
+            if args.architecture == "point_direction"
+            else None
+        ),
+        "candidate_chunk_size": (
+            args.candidate_chunk_size
+            if args.architecture == "point_direction"
+            else None
+        ),
         "dropout": args.dropout,
         "learning_rate": args.learning_rate,
         "weight_decay": args.weight_decay,

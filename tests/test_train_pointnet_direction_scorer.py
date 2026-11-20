@@ -6,6 +6,7 @@ import numpy as np
 import torch
 
 from tools.train_pointnet_direction_scorer import (
+    PointDirectionInteractionScorer,
     PointNetDirectionScorer,
     combine_anchor_residual,
     enriched_rows,
@@ -20,6 +21,73 @@ from tools.train_pointnet_direction_scorer import (
 
 
 class PointNetDirectionScorerTests(unittest.TestCase):
+    def test_point_direction_interaction_preserves_candidate_order(self) -> None:
+        torch.manual_seed(3)
+        model = PointDirectionInteractionScorer(
+            point_channels=6,
+            point_embedding_dim=32,
+            interaction_hidden_dim=24,
+            direction_hidden_dim=16,
+            candidate_chunk_size=2,
+            dropout=0.0,
+        ).eval()
+        points = torch.randn(2, 32, 6)
+        directions = torch.randn(2, 5, 3)
+        permutation = torch.tensor([3, 0, 4, 1, 2])
+        with torch.no_grad():
+            scores = model(points, directions)
+            permuted_scores = model(
+                points,
+                directions[:, permutation],
+            )
+        self.assertEqual(tuple(scores.shape), (2, 5))
+        torch.testing.assert_close(
+            permuted_scores,
+            scores[:, permutation],
+            atol=1e-6,
+            rtol=1e-6,
+        )
+
+    def test_point_direction_interaction_shares_function_across_chunks(
+        self,
+    ) -> None:
+        torch.manual_seed(4)
+        model = PointDirectionInteractionScorer(
+            point_channels=6,
+            point_embedding_dim=24,
+            interaction_hidden_dim=16,
+            direction_hidden_dim=12,
+            candidate_chunk_size=2,
+            dropout=0.0,
+        ).eval()
+        points = torch.randn(1, 16, 6)
+        directions = torch.randn(1, 7, 3)
+        with torch.no_grad():
+            chunked_scores = model(points, directions)
+            model.candidate_chunk_size = 7
+            unchunked_scores = model(points, directions)
+        torch.testing.assert_close(
+            chunked_scores,
+            unchunked_scores,
+            atol=1e-6,
+            rtol=1e-6,
+        )
+
+    def test_point_direction_interaction_rejects_prior_features(self) -> None:
+        model = PointDirectionInteractionScorer(
+            point_channels=6,
+            point_embedding_dim=16,
+            interaction_hidden_dim=16,
+            direction_hidden_dim=8,
+            candidate_chunk_size=8,
+            dropout=0.0,
+        ).eval()
+        with self.assertRaisesRegex(ValueError, "direction XYZ only"):
+            model(
+                torch.randn(1, 8, 6),
+                torch.randn(1, 3, 4),
+            )
+
     def test_forward_scores_each_direction_from_xyz(self) -> None:
         model = PointNetDirectionScorer(
             point_channels=6,
@@ -77,6 +145,29 @@ class PointNetDirectionScorerTests(unittest.TestCase):
             1.0,
             atol=1e-6,
         )
+
+    def test_missing_anchor_scores_default_to_zero(self) -> None:
+        part = {
+            "points": np.zeros((4, 3), dtype=np.float32),
+            "normals": np.zeros((4, 3), dtype=np.float32),
+            "directions": np.eye(3, dtype=np.float32),
+            "targets": np.zeros(3, dtype=np.float32),
+            "candidate_prior": np.empty((3, 0), dtype=np.float32),
+            "global_features": np.empty(0, dtype=np.float32),
+            "anchor_scores": np.empty(0, dtype=np.float32),
+        }
+        *_, anchors = make_model_inputs(
+            [part],
+            point_count=4,
+            prior_mean=np.empty(0, dtype=np.float32),
+            prior_std=np.ones(0, dtype=np.float32),
+            global_mean=np.empty(0, dtype=np.float32),
+            global_std=np.ones(0, dtype=np.float32),
+            device=torch.device("cpu"),
+            augment=False,
+            generator=None,
+        )
+        self.assertTrue(torch.equal(anchors, torch.zeros_like(anchors)))
 
     def test_forward_uses_prior_features_and_global_shape_context(self) -> None:
         model = PointNetDirectionScorer(
