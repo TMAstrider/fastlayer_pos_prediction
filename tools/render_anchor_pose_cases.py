@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render historical-GT and anchored-model-prediction pose comparisons."""
+"""Render synthetic-GT and anchored-model-prediction pose comparisons."""
 from __future__ import annotations
 
 import argparse
@@ -13,9 +13,6 @@ import torch
 from scipy.spatial.transform import Rotation
 
 try:
-    from tools.generate_simplified_supports import process_config, read_mesh
-    from tools.recognize_part_features import recognize_features
-    from tools.support_area_scoring import evaluate_support_projection
     from tools.train_pointnet_direction_scorer import (
         PointNetDirectionScorer,
         choose_development_project,
@@ -25,9 +22,6 @@ try:
         stacked_feature_standardisation,
     )
 except ModuleNotFoundError:
-    from generate_simplified_supports import process_config, read_mesh
-    from recognize_part_features import recognize_features
-    from support_area_scoring import evaluate_support_projection
     from train_pointnet_direction_scorer import (
         PointNetDirectionScorer,
         choose_development_project,
@@ -66,36 +60,10 @@ def yaw_align_prediction(
     return aligned, yaw
 
 
-def exact_gt_area_mm2(
-    mesh_path: Path,
-    limits: dict[str, Any],
-    projection_grid_mm: float,
-) -> float:
-    vertices, faces = read_mesh(mesh_path)
-    recognized = recognize_features(
-        vertices,
-        faces,
-        build_up=np.array([0.0, 0.0, 1.0]),
-        small_hole_diameter_mm=limits[
-            "horizontal_hole_diameter_threshold_mm"
-        ],
-    )
-    result = evaluate_support_projection(
-        vertices,
-        faces,
-        limits,
-        up=np.array([0.0, 0.0, 1.0]),
-        recognized_features=recognized,
-        projection_grid_mm=projection_grid_mm,
-    )
-    return float(result["report"]["areas_mm2"]["projected_union"])
-
-
 def make_jobs(
     arguments: argparse.Namespace,
 ) -> list[dict[str, Any]]:
     root = Path(__file__).resolve().parents[1]
-    dataset_dir = (root / arguments.dataset).resolve()
     split_path = (root / arguments.split_file).resolve()
     geometry_dir = (root / arguments.geometry_features).resolve()
     run_dir = (root / arguments.run).resolve()
@@ -171,8 +139,6 @@ def make_jobs(
         residual_scale=float(config.get("residual_scale", 0.5)),
     )
 
-    rules = json.loads((root / arguments.rules).read_text(encoding="utf-8"))
-    limits = process_config(rules, arguments.material, arguments.mode)
     jobs = []
     for number, (part, prediction) in enumerate(
         zip(selected_parts, predictions),
@@ -181,8 +147,10 @@ def make_jobs(
         record = part["record"]
         direction = np.asarray(part["directions"][int(np.argmax(prediction))])
         direction /= np.linalg.norm(direction)
-        oracle_index = int(np.argmax(part["targets"]))
-        oracle_area = float(part["areas"][oracle_index])
+        gt_index = int(np.argmin(part["areas"]))
+        gt_direction = np.asarray(part["directions"][gt_index])
+        gt_direction /= np.linalg.norm(gt_direction)
+        gt_area = float(part["areas"][gt_index])
         predicted_area = float(
             part["areas"][int(np.argmax(prediction))]
         )
@@ -191,25 +159,29 @@ def make_jobs(
         direct30_index = int(np.argmax(part["anchor_scores"]))
         direct30_area = float(part["areas"][direct30_index])
         gt_angle = float(np.degrees(np.arccos(np.clip(
-            direction @ np.array([0.0, 0.0, 1.0]),
+            direction @ gt_direction,
             -1.0,
             1.0,
         ))))
-        correction = Rotation.align_vectors(
+        gt_rotation = Rotation.align_vectors(
+            [[0.0, 0.0, 1.0]],
+            gt_direction[None, :],
+        )[0].as_matrix()
+        np.testing.assert_allclose(
+            gt_rotation @ gt_direction,
+            [0.0, 0.0, 1.0],
+            atol=1e-6,
+        )
+        prediction_rotation = Rotation.align_vectors(
             [[0.0, 0.0, 1.0]],
             direction[None, :],
         )[0].as_matrix()
         np.testing.assert_allclose(
-            correction @ direction,
+            prediction_rotation @ direction,
             [0.0, 0.0, 1.0],
             atol=1e-6,
         )
         mesh_path = Path(record["mesh_path"])
-        gt_area = exact_gt_area_mm2(
-            mesh_path,
-            limits,
-            arguments.projection_grid_mm,
-        )
         filename = f"{number:02d}_part_{record['source_part_id']}.png"
         jobs.append({
             "number": number,
@@ -220,22 +192,22 @@ def make_jobs(
             "mesh_path": str(mesh_path),
             "image_path": str(arguments.output / "images" / filename),
             "image_file": f"images/{filename}",
-            "prediction_rotation": correction.tolist(),
+            "gt_rotation": gt_rotation.tolist(),
+            "gt_direction": gt_direction.tolist(),
+            "prediction_rotation": prediction_rotation.tolist(),
             "pred_direction": direction.tolist(),
             "pred_angle_gt_deg": gt_angle,
-            "oracle_area_mm2": oracle_area,
             "gt_area_mm2": gt_area,
             "pred_area_mm2": predicted_area,
-            "pred_over_oracle": predicted_area / max(oracle_area, 1e-9),
-            "gt_over_oracle": gt_area / max(oracle_area, 1e-9),
+            "pred_over_gt": predicted_area / max(gt_area, 1e-9),
             "top5_min_area_mm2": top5_area,
-            "top5_over_oracle": top5_area / max(oracle_area, 1e-9),
-            "top5_contains_oracle": bool(
-                oracle_index in top5_indices
+            "top5_over_gt": top5_area / max(gt_area, 1e-9),
+            "top5_contains_gt": bool(
+                gt_index in top5_indices
             ),
             "direct30_area_mm2": direct30_area,
-            "direct30_over_oracle": (
-                direct30_area / max(oracle_area, 1e-9)
+            "direct30_over_gt": (
+                direct30_area / max(gt_area, 1e-9)
             ),
         })
     return jobs
@@ -270,20 +242,28 @@ def render_job(job: dict[str, Any]) -> None:
     ) / 2
     original[:, :2] -= original_center_xy
     original[:, 2] -= original[:, 2].min()
+    gt_rotation = np.asarray(job["gt_rotation"])
+    gt_pose = original @ gt_rotation.T
+    gt_pose_center_xy = (
+        gt_pose[:, :2].min(axis=0)
+        + gt_pose[:, :2].max(axis=0)
+    ) / 2
+    gt_pose[:, :2] -= gt_pose_center_xy
+    gt_pose[:, 2] -= gt_pose[:, 2].min()
     prediction_rotation = np.asarray(job["prediction_rotation"])
     predicted = original @ prediction_rotation.T
-    predicted, display_yaw = yaw_align_prediction(predicted, original)
+    predicted, display_yaw = yaw_align_prediction(predicted, gt_pose)
     predicted_center_xy = (
         predicted[:, :2].min(axis=0)
         + predicted[:, :2].max(axis=0)
     ) / 2
     predicted[:, :2] -= predicted_center_xy
     predicted[:, 2] -= predicted[:, 2].min()
-    poses = [original, original, predicted]
+    poses = [original, gt_pose, predicted]
     original_z = np.array([0.0, 0.0, 1.0])
     marker_directions = [
         original_z,
-        original_z,
+        gt_rotation @ original_z,
         display_yaw @ prediction_rotation @ original_z,
     ]
     faces = np.asarray(mesh.faces)
@@ -294,20 +274,20 @@ def render_job(job: dict[str, Any]) -> None:
     figure = plt.figure(figsize=(16, 6.1), facecolor="white")
     titles = [
         "Raw part / input coordinates",
-        "GT / historical engineering pose",
+        "GT / synthetic minimum-area pose",
         "Pred / anchor-model Top-1 pose",
     ]
     title_colors = ["#325a91", "#27704c", "#9b531b"]
     subtitles = [
         "No platform; red arrow = original part +Z",
         (
-            f"Historical-pose support {job['gt_area_mm2']:.1f} mm²"
-            f" ({job['gt_over_oracle']:.2f}× oracle)"
+            f"Synthetic-GT support {job['gt_area_mm2']:.1f} mm²"
+            " (minimum of 256 directions)"
         ),
         (
             f"Angle to GT {job['pred_angle_gt_deg']:.1f}°; "
             f"support {job['pred_area_mm2']:.1f} mm²"
-            f" ({job['pred_over_oracle']:.2f}× oracle)"
+            f" ({job['pred_over_gt']:.2f}× GT)"
         ),
     ]
     light = np.array([-0.4, -0.6, 0.8])
@@ -474,8 +454,8 @@ def render_job(job: dict[str, Any]) -> None:
         0.5,
         0.012,
         (
-            "GT is the historical engineering pose. Oracle is the minimum "
-            "proxy support area over 256 sampled directions."
+            "Synthetic GT is the minimum 45° proxy-support-area direction "
+            "among 256 sampled directions."
         ),
         ha="center",
         fontproperties=font,
@@ -540,22 +520,6 @@ def main() -> None:
         nargs="+",
         default=DEFAULT_JOB_IDS,
     )
-    parser.add_argument(
-        "--rules",
-        type=Path,
-        default=Path("configs/support_rules_v0.json"),
-    )
-    parser.add_argument(
-        "--material",
-        choices=["316L", "AlSi10Mg", "TC4"],
-        default="AlSi10Mg",
-    )
-    parser.add_argument(
-        "--mode",
-        choices=["standard", "am_build"],
-        default="standard",
-    )
-    parser.add_argument("--projection-grid-mm", type=float, default=0.5)
     parser.add_argument("--point-count", type=int, default=4096)
     parser.add_argument("--device", default="auto")
     args = parser.parse_args()
@@ -567,7 +531,6 @@ def main() -> None:
         root / args.geometry_features
     ).resolve()
     args.run = (root / args.run).resolve()
-    args.rules = (root / args.rules).resolve()
     args.output = (root / args.output).resolve()
     if args.output.exists() and any(args.output.iterdir()):
         parser.error(f"Output directory is not empty: {args.output}")
@@ -585,12 +548,15 @@ def main() -> None:
         json.dumps({
             "run": str(args.run),
             "selection": (
-                "Four test examples: GT-aligned success, large-angle area "
-                "improvement, 30-degree-anchor correction, and Top-1 failure "
-                "with oracle in Top-5."
+                "Four test examples: exact synthetic-GT recovery, near-GT "
+                "area despite opposite direction, large area-direction "
+                "disagreement, and synthetic GT present in Top-5 after a "
+                "Top-1 miss."
             ),
-            "gt": "Historical engineering print pose; build-up is world +Z.",
-            "oracle": "Minimum 45-degree proxy area over 256 sampled directions.",
+            "gt": (
+                "Synthetic ground truth: the sampled build direction with the "
+                "minimum 45-degree proxy support area."
+            ),
             "yaw": (
                 "Prediction is rotated about world +Z only for display; "
                 "GT/pred angle is not altered."
@@ -603,7 +569,7 @@ def main() -> None:
         (
             f"<article><h2>part {job['source_part_id']} · "
             f"与GT夹角 {job['pred_angle_gt_deg']:.1f}° · "
-            f"预测/oracle {job['pred_over_oracle']:.2f}×</h2>"
+            f"预测/GT {job['pred_over_gt']:.2f}×</h2>"
             f"<a href=\"{job['image_file']}\"><img "
             f"src=\"{job['image_file']}\"></a></article>"
         )
@@ -612,13 +578,13 @@ def main() -> None:
     (args.output / "index.html").write_text(
         (
             "<!doctype html><html lang=\"zh-CN\"><meta charset=\"utf-8\">"
-            "<title>GT与anchor模型预测姿态</title>"
+            "<title>过滤合成GT与anchor模型预测姿态</title>"
             "<style>body{margin:24px;background:#eef1f5;color:#233044;"
             "font:16px system-ui}main{max-width:1600px;margin:auto}"
             "article{background:white;margin:20px 0;box-shadow:"
             "0 2px 10px #0001}h2{padding:12px}img{width:100%;"
             "display:block}</style><main>"
-            "<h1>历史 GT 与 anchor 模型预测姿态</h1>"
+            "<h1>过滤合成 GT 与 anchor 模型预测姿态</h1>"
             "<p>红箭头跟随零件原始 +Z；GT 和 Pred 使用透明平台。"
             "Pred 仅为显示绕平台 Z 做 yaw 对齐，夹角指标只比较打印方向。</p>"
             f"{cards}</main></html>"
