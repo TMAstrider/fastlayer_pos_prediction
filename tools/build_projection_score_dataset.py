@@ -180,22 +180,24 @@ def score_one_part(
     scores, minimum, maximum = normalise_projected_areas(areas)
     ranks = dense_area_ranks(areas)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with np.load(job["pointcloud_path"]) as point_data:
-        points = np.asarray(point_data["points"], dtype=np.float32)
-        normals = np.asarray(point_data["normals"], dtype=np.float32)
+    payload = {
+        "directions": directions.astype(np.float32),
+        "features": features,
+        "projected_area_mm2": areas.astype(np.float32),
+        "score": scores.astype(np.float32),
+        "rank": ranks.astype(np.int16),
+        "retained_surface_mm2": retained_surface.astype(np.float32),
+        "exempt_surface_mm2": exempt_surface.astype(np.float32),
+        "candidate_face_count": candidate_faces,
+        "small_hole_exemptions": small_hole_exemptions,
+    }
+    if job.get("pointcloud_path"):
+        with np.load(job["pointcloud_path"]) as point_data:
+            payload["points"] = np.asarray(point_data["points"], dtype=np.float32)
+            payload["normals"] = np.asarray(point_data["normals"], dtype=np.float32)
     np.savez_compressed(
         output_path,
-        directions=directions.astype(np.float32),
-        features=features,
-        projected_area_mm2=areas.astype(np.float32),
-        score=scores.astype(np.float32),
-        rank=ranks.astype(np.int16),
-        retained_surface_mm2=retained_surface.astype(np.float32),
-        exempt_surface_mm2=exempt_surface.astype(np.float32),
-        candidate_face_count=candidate_faces,
-        small_hole_exemptions=small_hole_exemptions,
-        points=points,
-        normals=normals,
+        **payload,
     )
     return {
         **job,
