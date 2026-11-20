@@ -340,7 +340,7 @@ def enriched_rows(
             part["directions"],
         )
         evaluation.pop("top1_area_ratio")
-        rows.append({
+        row = {
             "source_project": part["record"]["source_project"],
             "source_part_id": part["record"]["source_part_id"],
             **evaluation,
@@ -356,7 +356,27 @@ def enriched_rows(
             ),
             "top1_exact": int(predicted_index == oracle_index),
             "top5_exact": int(oracle_index in top5),
-        })
+        }
+        for k in (1, 3, 5, 10, 20):
+            top = np.argsort(-prediction)[:k]
+            best_area = float(part["areas"][top].min())
+            best_target = float(part["targets"][top].max())
+            row[f"top{k}_regret"] = float(max(
+                part["targets"][oracle_index] - best_target,
+                0.0,
+            ))
+            row[f"top{k}_area_ratio"] = (
+                best_area / oracle_area if positive_oracle else None
+            )
+            row[f"top{k}_exact"] = int(
+                np.any(np.isclose(
+                    part["areas"][top],
+                    oracle_area,
+                    rtol=1e-7,
+                    atol=1e-7,
+                ))
+            )
+        rows.append(row)
     return rows
 
 
@@ -365,7 +385,8 @@ def summarise_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
         {
             key: value
             for key, value in row.items()
-            if key not in {"top1_area_ratio", "area_excess_pct"}
+            if not key.endswith("_area_ratio")
+            and key not in {"area_excess_pct"}
         }
         for row in rows
     ])
@@ -382,7 +403,7 @@ def summarise_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
     zero_exact = int(sum(
         row["predicted_area_mm2"] <= 1e-9 for row in zero
     ))
-    return {
+    result = {
         **aggregate,
         "count": len(rows),
         "top1_exact_count": int(sum(row["top1_exact"] for row in rows)),
@@ -402,6 +423,42 @@ def summarise_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "top1_area_ratio_mean": float(np.mean(ratio)),
         "top1_area_ratio_median": float(np.median(ratio)),
     }
+    for k in (1, 3, 5, 10, 20):
+        positive_ratios = np.asarray([
+            row[f"top{k}_area_ratio"]
+            for row in positive
+        ], dtype=np.float64)
+        accepted = []
+        for row in rows:
+            value = row[f"top{k}_area_ratio"]
+            if value is None:
+                accepted.append(bool(row[f"top{k}_exact"]))
+            else:
+                accepted.append(float(value))
+        result.update({
+            f"top{k}_area_ratio_mean": float(np.mean(positive_ratios)),
+            f"top{k}_area_ratio_median": float(np.median(positive_ratios)),
+            f"top{k}_area_ratio_p90": float(np.percentile(
+                positive_ratios,
+                90,
+            )),
+            f"top{k}_exact_count": int(sum(
+                row[f"top{k}_exact"] for row in rows
+            )),
+            f"top{k}_within_5pct_count": int(sum(
+                float(value) <= 1.05 + 1e-12
+                for value in accepted
+            )),
+            f"top{k}_within_10pct_count": int(sum(
+                float(value) <= 1.10 + 1e-12
+                for value in accepted
+            )),
+            f"top{k}_within_20pct_count": int(sum(
+                float(value) <= 1.20 + 1e-12
+                for value in accepted
+            )),
+        })
+    return result
 
 
 def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:

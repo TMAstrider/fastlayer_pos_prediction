@@ -7,9 +7,15 @@ import torch
 
 from tools.train_pointnet_direction_scorer import (
     PointNetDirectionScorer,
+    combine_anchor_residual,
+    enriched_rows,
+    listwise_softmax_loss,
     load_part_rows,
     make_model_inputs,
     stacked_feature_standardisation,
+    summarise_rows,
+    topk_pairwise_loss,
+    zero_last_linear_layer,
 )
 
 
@@ -42,8 +48,15 @@ class PointNetDirectionScorerTests(unittest.TestCase):
             "targets": np.asarray([0.2, 0.8, 0.5], dtype=np.float32),
             "candidate_prior": np.empty((3, 0), dtype=np.float32),
             "global_features": np.empty(0, dtype=np.float32),
+            "anchor_scores": np.zeros(3, dtype=np.float32),
         }
-        cloud, directions, global_features, targets = make_model_inputs(
+        (
+            cloud,
+            directions,
+            global_features,
+            targets,
+            anchors,
+        ) = make_model_inputs(
             [part],
             point_count=4,
             prior_mean=np.empty(0, dtype=np.float32),
@@ -58,6 +71,7 @@ class PointNetDirectionScorerTests(unittest.TestCase):
         self.assertEqual(tuple(directions.shape), (1, 3, 3))
         self.assertEqual(tuple(global_features.shape), (1, 0))
         self.assertEqual(tuple(targets.shape), (1, 3))
+        self.assertEqual(tuple(anchors.shape), (1, 3))
         np.testing.assert_allclose(
             torch.linalg.vector_norm(directions, dim=-1).numpy(),
             1.0,
@@ -138,11 +152,21 @@ class PointNetDirectionScorerTests(unittest.TestCase):
         self.assertEqual(part["global_features"].shape, (3,))
         self.assertEqual(part["projected_area_30"].shape, (3,))
         np.testing.assert_allclose(
+            part["anchor_scores"],
+            np.asarray([0.0, 0.5, 1.0], dtype=np.float32),
+        )
+        np.testing.assert_allclose(
             np.linalg.norm(part["directions"], axis=1),
             1.0,
             atol=1e-6,
         )
-        cloud, candidates, global_features, targets = make_model_inputs(
+        (
+            cloud,
+            candidates,
+            global_features,
+            targets,
+            anchors,
+        ) = make_model_inputs(
             [part],
             point_count=4,
             prior_mean=np.zeros(4, dtype=np.float32),
@@ -157,6 +181,73 @@ class PointNetDirectionScorerTests(unittest.TestCase):
         self.assertEqual(tuple(candidates.shape), (1, 3, 7))
         self.assertEqual(tuple(global_features.shape), (1, 3))
         self.assertEqual(tuple(targets.shape), (1, 3))
+        self.assertEqual(tuple(anchors.shape), (1, 3))
+
+    def test_anchor_residual_model_starts_from_zero_residual(self) -> None:
+        torch.manual_seed(1)
+        model = PointNetDirectionScorer(
+            point_channels=6,
+            point_embedding_dim=64,
+            shape_hidden_dim=32,
+            direction_hidden_dim=24,
+            dropout=0.0,
+        ).eval()
+        zero_last_linear_layer(model)
+        points = torch.randn(2, 32, 6)
+        directions = torch.randn(2, 17, 3)
+        anchor = torch.rand(2, 17)
+        with torch.no_grad():
+            residual = model(points, directions)
+            prediction = combine_anchor_residual(
+                residual,
+                anchor,
+                anchor_weight=1.0,
+                residual_scale=0.5,
+            )
+        self.assertTrue(torch.equal(residual, torch.zeros_like(residual)))
+        self.assertTrue(torch.equal(prediction, anchor))
+
+    def test_topk_metrics_use_best_support_area_within_selected_set(self) -> None:
+        prediction = np.asarray([0.9, 0.8, 0.7, 0.6])
+        part = {
+            "record": {
+                "source_project": "project",
+                "source_part_id": 1,
+            },
+            "targets": np.asarray([0.0, 0.2, 0.7, 1.0]),
+            "areas": np.asarray([9.0, 6.0, 3.0, 1.0]),
+            "directions": np.eye(3, dtype=np.float32)[
+                [0, 1, 2, 0]
+            ],
+        }
+        rows = enriched_rows([prediction], [part])
+        summary = summarise_rows(rows)
+        self.assertAlmostEqual(rows[0]["top3_regret"], 0.3)
+        self.assertAlmostEqual(rows[0]["top3_area_ratio"], 3.0)
+        self.assertEqual(rows[0]["top3_exact"], 0)
+        self.assertEqual(summary["top3_within_10pct_count"], 0)
+
+    def test_listwise_loss_rewards_target_order(self) -> None:
+        targets = torch.tensor([[1.0, 0.5, 0.0]])
+        good = listwise_softmax_loss(targets, targets, temperature=0.1)
+        bad = listwise_softmax_loss(
+            -targets,
+            targets,
+            temperature=0.1,
+        )
+        self.assertGreater(float(bad), float(good))
+
+    def test_topk_loss_penalizes_low_target_above_top_target(self) -> None:
+        torch.manual_seed(2)
+        targets = torch.tensor([[1.0, 0.8, 0.5, 0.0, 0.0]])
+        predictions = torch.tensor([[0.0, 0.0, 0.0, 1.0, 1.0]])
+        loss = topk_pairwise_loss(
+            predictions,
+            targets,
+            positive_count=2,
+            samples_per_shape=128,
+        )
+        self.assertGreater(float(loss), 0.0)
 
     def test_standardisation_handles_candidate_and_global_shapes(self) -> None:
         parts = [

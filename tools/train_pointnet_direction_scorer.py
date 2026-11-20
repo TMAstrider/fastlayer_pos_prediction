@@ -246,6 +246,7 @@ def load_part_rows(
         )
         global_features = np.empty(0, dtype=np.float32)
         projected_area_30 = None
+        anchor_scores = np.empty(0, dtype=np.float32)
         if geometry_feature_records is not None:
             try:
                 geometry_record = geometry_feature_records[record["job_id"]]
@@ -280,6 +281,9 @@ def load_part_rows(
                     data["projected_area_mm2_30"],
                     dtype=np.float32,
                 )
+                anchor_scores = score_from_lower_is_better(
+                    projected_area_30
+                ).astype(np.float32)
         points, normals = normalise_cloud(raw_points, raw_normals)
         directions /= np.clip(
             np.linalg.norm(directions, axis=1, keepdims=True),
@@ -297,6 +301,7 @@ def load_part_rows(
             "candidate_prior": candidate_prior,
             "global_features": global_features,
             "projected_area_30": projected_area_30,
+            "anchor_scores": anchor_scores,
         })
     if not parts:
         raise ValueError("No labelled parts found")
@@ -316,7 +321,13 @@ def make_model_inputs(
     device: torch.device,
     augment: bool,
     generator: torch.Generator | None,
-) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+) -> tuple[
+    torch.Tensor,
+    torch.Tensor,
+    torch.Tensor,
+    torch.Tensor,
+    torch.Tensor,
+]:
     batch = len(parts)
     direction_count = len(parts[0]["directions"])
     prior_dim = len(prior_mean)
@@ -331,6 +342,7 @@ def make_model_inputs(
         dtype=np.float32,
     )
     targets = np.empty((batch, direction_count), dtype=np.float32)
+    anchors = np.empty((batch, direction_count), dtype=np.float32)
     for index, part in enumerate(parts):
         if augment:
             ids = np.random.choice(
@@ -364,11 +376,13 @@ def make_model_inputs(
                 global_std,
             )
         targets[index] = part["targets"]
+        anchors[index] = part["anchor_scores"]
 
     points_tensor = torch.from_numpy(points).to(device)
     candidate_tensor = torch.from_numpy(candidate_features).to(device)
     global_tensor = torch.from_numpy(global_features).to(device)
     targets_tensor = torch.from_numpy(targets).to(device)
+    anchors_tensor = torch.from_numpy(anchors).to(device)
     if augment:
         if generator is None:
             raise ValueError("A random generator is required for training")
@@ -385,7 +399,123 @@ def make_model_inputs(
             candidate_tensor[:, :, :3],
             rotations.transpose(1, 2),
         )
-    return points_tensor, candidate_tensor, global_tensor, targets_tensor
+    return (
+        points_tensor,
+        candidate_tensor,
+        global_tensor,
+        targets_tensor,
+        anchors_tensor,
+    )
+
+
+def zero_last_linear_layer(model: nn.Module) -> None:
+    """Make an anchor-residual model start from an exact zero residual."""
+    last = model.score_head[-1]
+    if not isinstance(last, nn.Linear):
+        raise TypeError("PointNetDirectionScorer score head must end in Linear")
+    nn.init.zeros_(last.weight)
+    nn.init.zeros_(last.bias)
+
+
+def combine_anchor_residual(
+    residual: torch.Tensor,
+    anchors: torch.Tensor,
+    anchor_weight: float,
+    residual_scale: float,
+) -> torch.Tensor:
+    """Apply the explicit lower-threshold anchor before residual correction."""
+    if residual.shape != anchors.shape:
+        raise ValueError("Residual and anchor tensors must have matching shapes")
+    return residual_scale * residual + anchor_weight * anchors
+
+
+def listwise_softmax_loss(
+    predictions: torch.Tensor,
+    targets: torch.Tensor,
+    temperature: float = 0.1,
+) -> torch.Tensor:
+    """Match the target score distribution over each part's candidates."""
+    if temperature <= 0:
+        raise ValueError("Listwise temperature must be positive")
+    target_probabilities = F.softmax(targets / temperature, dim=1)
+    log_prediction_probabilities = F.log_softmax(
+        predictions / temperature,
+        dim=1,
+    )
+    return -(
+        target_probabilities * log_prediction_probabilities
+    ).sum(dim=1).mean()
+
+
+def topk_pairwise_loss(
+    predictions: torch.Tensor,
+    targets: torch.Tensor,
+    positive_count: int,
+    samples_per_shape: int,
+) -> torch.Tensor:
+    """Rank 45-degree target top-k candidates above sampled negatives."""
+    if positive_count < 1 or samples_per_shape < 1:
+        raise ValueError("Top-k loss counts must be positive")
+    batch, candidate_count = targets.shape
+    k = min(positive_count, candidate_count)
+    positive_indices = torch.topk(
+        targets,
+        k=k,
+        dim=1,
+        sorted=False,
+    ).indices
+    positive_indices = torch.gather(
+        positive_indices,
+        1,
+        torch.randint(
+            0,
+            k,
+            (batch, samples_per_shape),
+            device=predictions.device,
+        ),
+    )
+    negative_indices = torch.randint(
+        0,
+        candidate_count,
+        (batch, samples_per_shape),
+        device=predictions.device,
+    )
+    positive_targets = torch.gather(targets, 1, positive_indices)
+    negative_targets = torch.gather(targets, 1, negative_indices)
+    gaps = (positive_targets - negative_targets).clamp_min(0.0)
+    valid = gaps > 1e-6
+    if not valid.any():
+        return torch.zeros((), device=predictions.device)
+    positive_scores = torch.gather(
+        predictions,
+        1,
+        positive_indices,
+    )
+    negative_scores = torch.gather(
+        predictions,
+        1,
+        negative_indices,
+    )
+    losses = F.softplus(negative_scores - positive_scores) * gaps
+    return losses[valid].sum() / gaps[valid].sum().clamp_min(1e-9)
+
+
+def development_selection_score(metrics: dict[str, Any]) -> float:
+    """Balance global ranking with practical Top-5/Top-10 recommendation."""
+    return (
+        0.25 * metrics["spearman_median"]
+        + 0.25 * metrics["ndcg_at_5_median"]
+        + 0.15 * metrics["ndcg_at_10_median"]
+        + 0.15 * (
+            1.0 - min(metrics["top5_regret_median"] * 20.0, 1.0)
+        )
+        + 0.10 * (
+            1.0 - min(metrics["top10_regret_median"] * 20.0, 1.0)
+        )
+        + 0.10 * (
+            metrics["top5_within_20pct_count"] / metrics["count"]
+        )
+    )
 
 
 @torch.no_grad()
@@ -399,12 +529,20 @@ def predict_parts(
     global_std: np.ndarray,
     device: torch.device,
     batch_shapes: int = 8,
+    anchor_weight: float = 0.0,
+    residual_scale: float = 1.0,
 ) -> list[np.ndarray]:
     model.eval()
     predictions = []
     for start in range(0, len(parts), batch_shapes):
         selected = parts[start:start + batch_shapes]
-        points, candidate_features, global_features, _ = make_model_inputs(
+        (
+            points,
+            candidate_features,
+            global_features,
+            _,
+            anchors,
+        ) = make_model_inputs(
             selected,
             point_count,
             prior_mean,
@@ -415,13 +553,18 @@ def predict_parts(
             augment=False,
             generator=None,
         )
-        predictions.extend(
-            model(
+        residual = model(
                 points,
                 candidate_features,
                 global_features if len(global_mean) else None,
-            ).float().cpu().numpy()
+            )
+        prediction = combine_anchor_residual(
+            residual,
+            anchors,
+            anchor_weight,
+            residual_scale,
         )
+        predictions.extend(prediction.float().cpu().numpy())
     return predictions
 
 
@@ -447,6 +590,8 @@ def write_report(
     direction_only = metrics["test"]["direction_only_reference"]
     prior30 = metrics["test"]["geometry_prior_30deg_baseline"]
     baseline = metrics["test"]["retained_surface_baseline"]
+    anchor_weight = metrics["model"]["anchor_weight"]
+    residual_scale = metrics["model"]["residual_scale"]
     if prior30 is None:
         title = "4096 点 PointNet 方向-only 评分器"
         comparison_header = "方向-only PointNet"
@@ -476,7 +621,9 @@ def write_report(
             "30°候选几何特征。\n"
             f"- PointNet 形状向量额外拼接 "
             f"{metrics['dataset']['global_input_dim']} 维旋转不变全局形状特征。\n"
-            "- 30°先验不应用小孔豁免，也不读取 45°目标面积。"
+            "- 30°先验不应用小孔豁免，也不读取 45°目标面积。\n"
+            f"- 预测为 `{anchor_weight:g} × 30°分数 + "
+            f"{residual_scale:g} × 网络残差`。"
         )
         results_table = f"""| 指标 | {comparison_header} | 方向-only PointNet | 30°规则直接排序 | 45°保留面规则 |
 |---|---:|---:|---:|---:|
@@ -499,7 +646,9 @@ def write_report(
 {input_lines}
 - 形状上下文与候选方向 embedding 拼接后输出一个标量分数。
 - 训练时对点云、法向和候选方向施加同一个随机 SO(3) 旋转。
-- `anchor_weight=0`；任何几何 baseline 都不进入预测、损失或模型选择。
+- `anchor_weight={anchor_weight:g}`，`residual_scale={residual_scale:g}`。
+- 残差头零初始化；启用 anchor 时，训练前输出精确等于30°规则分数。
+- 45°投影面积目标只进入损失和评价，不进入输入。
 
 ## Test 结果
 
@@ -551,6 +700,14 @@ def main() -> None:
         type=Path,
         help="30-degree prior feature directory with manifest.json",
     )
+    parser.add_argument(
+        "--split-file",
+        type=Path,
+        help=(
+            "Optional split JSON inside the dataset. Defaults to the "
+            "dataset's split.json."
+        ),
+    )
     parser.add_argument("--epochs", type=int, default=120)
     parser.add_argument("--batch-shapes", type=int, default=16)
     parser.add_argument("--point-count", type=int, default=4096)
@@ -562,12 +719,46 @@ def main() -> None:
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--pairwise-weight", type=float, default=0.5)
     parser.add_argument("--pairwise-samples", type=int, default=128)
+    parser.add_argument("--mse-weight", type=float, default=1.0)
+    parser.add_argument("--listwise-weight", type=float, default=0.0)
+    parser.add_argument("--listwise-temperature", type=float, default=0.1)
+    parser.add_argument("--topk-weight", type=float, default=0.0)
+    parser.add_argument("--topk-positive-count", type=int, default=10)
+    parser.add_argument("--topk-pairwise-samples", type=int, default=64)
+    parser.add_argument(
+        "--anchor-weight",
+        type=float,
+        default=0.0,
+        help=(
+            "Weight on the lower-threshold anchor score. Set to 1 with a "
+            "geometry prior to train an anchored residual model."
+        ),
+    )
+    parser.add_argument(
+        "--residual-scale",
+        type=float,
+        default=1.0,
+        help="Multiplier on the network residual when an anchor is enabled.",
+    )
     parser.add_argument("--patience", type=int, default=30)
     parser.add_argument("--seed", type=int, default=20261120)
     parser.add_argument("--device", default="auto")
     args = parser.parse_args()
     if args.epochs < 1 or args.batch_shapes < 1 or args.point_count < 16:
         parser.error("epochs, batch-shapes, and point-count must be positive")
+    if args.mse_weight < 0 or args.pairwise_weight < 0:
+        parser.error("MSE and pairwise weights must be non-negative")
+    if args.listwise_weight < 0 or args.topk_weight < 0:
+        parser.error("Listwise and Top-K weights must be non-negative")
+    if args.listwise_temperature <= 0:
+        parser.error("Listwise temperature must be positive")
+    if (
+        args.topk_positive_count < 1
+        or args.topk_pairwise_samples < 1
+    ):
+        parser.error("Top-K loss counts must be positive")
+    if args.anchor_weight and args.geometry_features is None:
+        parser.error("--anchor-weight requires --geometry-features")
 
     seed_everything(args.seed)
     torch.set_float32_matmul_precision("high")
@@ -583,13 +774,18 @@ def main() -> None:
 
     root = Path(__file__).resolve().parents[1]
     dataset_dir = (root / args.dataset).resolve()
+    split_path = (
+        (root / args.split_file).resolve()
+        if args.split_file is not None
+        else dataset_dir / "split.json"
+    )
     geometry_features_dir = (
         (root / args.geometry_features).resolve()
         if args.geometry_features is not None
         else None
     )
     pointnet_reference_path = (root / args.pointnet_reference_report).resolve()
-    split = json.loads((dataset_dir / "split.json").read_text(encoding="utf-8"))
+    split = json.loads(split_path.read_text(encoding="utf-8"))
     source_train_records = split["train_records"]
     test_records = split["validation_records"]
     development_project = choose_development_project(source_train_records)
@@ -665,6 +861,8 @@ def main() -> None:
         global_feature_dim=len(global_mean),
         dropout=args.dropout,
     ).to(device)
+    if args.anchor_weight:
+        zero_last_linear_layer(model)
     parameter_count = sum(parameter.numel() for parameter in model.parameters())
     optimizer = torch.optim.AdamW(
         model.parameters(),
@@ -693,7 +891,13 @@ def main() -> None:
     for epoch in range(1, args.epochs + 1):
         model.train()
         order = np.random.permutation(len(fit_parts))
-        totals = {"total": 0.0, "mse": 0.0, "rank": 0.0}
+        totals = {
+            "total": 0.0,
+            "mse": 0.0,
+            "rank": 0.0,
+            "listwise": 0.0,
+            "topk": 0.0,
+        }
         batches = 0
         for start in range(0, len(order), args.batch_shapes):
             selected = [
@@ -705,6 +909,7 @@ def main() -> None:
                 candidate_features,
                 global_features,
                 targets,
+                anchors,
             ) = make_model_inputs(
                 selected,
                 args.point_count,
@@ -716,10 +921,16 @@ def main() -> None:
                 augment=True,
                 generator=generator,
             )
-            predictions = model(
+            residual = model(
                 points,
                 candidate_features,
                 global_features if len(global_mean) else None,
+            )
+            predictions = combine_anchor_residual(
+                residual,
+                anchors,
+                args.anchor_weight,
+                args.residual_scale,
             )
             mse = F.mse_loss(predictions, targets)
             batch, candidates = targets.shape
@@ -750,7 +961,31 @@ def main() -> None:
                 ).mean()
             else:
                 rank_loss = torch.zeros((), device=device)
-            loss = mse + args.pairwise_weight * rank_loss
+            listwise_loss = (
+                listwise_softmax_loss(
+                    predictions,
+                    targets,
+                    args.listwise_temperature,
+                )
+                if args.listwise_weight
+                else torch.zeros((), device=device)
+            )
+            topk_loss = (
+                topk_pairwise_loss(
+                    predictions,
+                    targets,
+                    args.topk_positive_count,
+                    args.topk_pairwise_samples,
+                )
+                if args.topk_weight
+                else torch.zeros((), device=device)
+            )
+            loss = (
+                args.mse_weight * mse
+                + args.pairwise_weight * rank_loss
+                + args.listwise_weight * listwise_loss
+                + args.topk_weight * topk_loss
+            )
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 2.0)
@@ -758,6 +993,8 @@ def main() -> None:
             totals["total"] += float(loss.item())
             totals["mse"] += float(mse.item())
             totals["rank"] += float(rank_loss.item())
+            totals["listwise"] += float(listwise_loss.item())
+            totals["topk"] += float(topk_loss.item())
             batches += 1
         scheduler.step()
 
@@ -770,28 +1007,31 @@ def main() -> None:
             global_mean,
             global_std,
             device,
+            anchor_weight=args.anchor_weight,
+            residual_scale=args.residual_scale,
         )
         development_rows = enriched_rows(
             development_predictions,
             development_parts,
         )
         development_metrics = summarise_rows(development_rows)
-        current_score = (
-            0.45 * development_metrics["spearman_median"]
-            + 0.35 * development_metrics["ndcg_at_5_median"]
-            + 0.20 * (
-                1.0
-                - min(development_metrics["top1_regret_median"] * 20.0, 1.0)
-            )
-        )
+        current_score = development_selection_score(development_metrics)
         row = {
             "epoch": epoch,
             "train_total_loss": totals["total"] / batches,
             "train_mse": totals["mse"] / batches,
             "train_rank_loss": totals["rank"] / batches,
+            "train_listwise_loss": totals["listwise"] / batches,
+            "train_topk_loss": totals["topk"] / batches,
             "validation_spearman": development_metrics["spearman_median"],
             "validation_ndcg_at_5": development_metrics["ndcg_at_5_median"],
             "validation_top1_regret": development_metrics["top1_regret_median"],
+            "validation_top5_regret": development_metrics["top5_regret_median"],
+            "validation_top10_regret": development_metrics["top10_regret_median"],
+            "validation_top5_within_20pct": (
+                development_metrics["top5_within_20pct_count"]
+                / development_metrics["count"]
+            ),
             "validation_selection_score": current_score,
             "learning_rate": scheduler.get_last_lr()[0],
             "elapsed_seconds": time.monotonic() - started,
@@ -812,7 +1052,8 @@ def main() -> None:
             f"loss={row['train_total_loss']:.5f} "
             f"val_spearman={row['validation_spearman']:.4f} "
             f"val_ndcg5={row['validation_ndcg_at_5']:.4f} "
-            f"val_regret={row['validation_top1_regret']:.4f} "
+            f"val_top5_regret={row['validation_top5_regret']:.4f} "
+            f"val_top5_20={row['validation_top5_within_20pct']:.2f} "
             f"best={best_epoch}",
             flush=True,
         )
@@ -831,6 +1072,8 @@ def main() -> None:
         global_mean,
         global_std,
         device,
+        anchor_weight=args.anchor_weight,
+        residual_scale=args.residual_scale,
     )
     baseline_predictions = [
         score_from_lower_is_better(part["retained_surface"])
@@ -865,6 +1108,7 @@ def main() -> None:
     metrics = {
         "dataset": {
             "path": str(dataset_dir),
+            "split_file": str(split_path),
             "fit_count": len(fit_parts),
             "development_count": len(development_parts),
             "test_count": len(test_parts),
@@ -902,7 +1146,15 @@ def main() -> None:
         "model": {
             "name": network_name,
             "parameters": parameter_count,
-            "anchor_weight": 0.0,
+            "anchor_weight": args.anchor_weight,
+            "residual_scale": args.residual_scale,
+            "mse_weight": args.mse_weight,
+            "pairwise_weight": args.pairwise_weight,
+            "listwise_weight": args.listwise_weight,
+            "listwise_temperature": args.listwise_temperature,
+            "topk_weight": args.topk_weight,
+            "topk_positive_count": args.topk_positive_count,
+            "topk_pairwise_samples": args.topk_pairwise_samples,
             "geometry_fusion": bool(prior_mean.size),
             "uses_18_candidate_geometry_features": False,
             "uses_30deg_geometry_prior": bool(prior_mean.size),
@@ -928,6 +1180,7 @@ def main() -> None:
     config = {
         "name": args.name,
         "dataset": str(dataset_dir),
+        "split_file": str(split_path),
         "epochs": args.epochs,
         "batch_shapes": args.batch_shapes,
         "point_count": args.point_count,
@@ -957,12 +1210,21 @@ def main() -> None:
         "weight_decay": args.weight_decay,
         "pairwise_weight": args.pairwise_weight,
         "pairwise_samples": args.pairwise_samples,
+        "mse_weight": args.mse_weight,
+        "listwise_weight": args.listwise_weight,
+        "listwise_temperature": args.listwise_temperature,
+        "topk_weight": args.topk_weight,
+        "topk_positive_count": args.topk_positive_count,
+        "topk_pairwise_samples": args.topk_pairwise_samples,
+        "anchor_weight": args.anchor_weight,
+        "residual_scale": args.residual_scale,
         "patience": args.patience,
         "seed": args.seed,
         "device": str(device),
         "parameters": parameter_count,
         "best_epoch": best_epoch,
-        "anchor_weight": 0.0,
+        "anchor_weight": args.anchor_weight,
+        "residual_scale": args.residual_scale,
         "geometry_fusion": bool(prior_mean.size),
         "candidate_prior_mean": prior_mean.tolist(),
         "candidate_prior_std": prior_std.tolist(),

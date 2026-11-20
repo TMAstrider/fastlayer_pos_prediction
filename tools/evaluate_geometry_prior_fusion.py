@@ -86,6 +86,14 @@ def main() -> None:
         ),
     )
     parser.add_argument(
+        "--split-file",
+        type=Path,
+        help=(
+            "Optional split JSON inside the dataset. Defaults to the "
+            "dataset's split.json."
+        ),
+    )
+    parser.add_argument(
         "--run",
         type=Path,
         default=Path(
@@ -129,6 +137,11 @@ def main() -> None:
 
     root = Path(__file__).resolve().parents[1]
     dataset_dir = (root / args.dataset).resolve()
+    split_path = (
+        (root / args.split_file).resolve()
+        if args.split_file is not None
+        else dataset_dir / "split.json"
+    )
     geometry_dir = (root / args.geometry_features).resolve()
     run_dir = (root / args.run).resolve()
     report_dir = root / "reports" / args.name
@@ -142,7 +155,7 @@ def main() -> None:
         if args.device == "auto"
         else args.device
     )
-    split = json.loads((dataset_dir / "split.json").read_text(encoding="utf-8"))
+    split = json.loads(split_path.read_text(encoding="utf-8"))
     development_project = choose_development_project(
         split["train_records"]
     )
@@ -272,6 +285,7 @@ def main() -> None:
     document = {
         "name": args.name,
         "dataset": str(dataset_dir),
+        "split_file": str(split_path),
         "geometry_features": str(geometry_dir),
         "run": str(run_dir),
         "development_project": development_project,
