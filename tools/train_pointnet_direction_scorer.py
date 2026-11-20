@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Train PointNet to score directions directly from 3D direction coordinates."""
+"""Train PointNet direction scorers with optional geometric prior features."""
 from __future__ import annotations
 
 import argparse
@@ -24,6 +24,7 @@ try:
         evaluate_parts,
         fixed_point_indices,
         normalise_cloud,
+        normalise_features,
         random_rotations,
         seed_everything,
         summarise_rows,
@@ -37,6 +38,7 @@ except ModuleNotFoundError:
         evaluate_parts,
         fixed_point_indices,
         normalise_cloud,
+        normalise_features,
         random_rotations,
         seed_everything,
         summarise_rows,
@@ -46,7 +48,7 @@ except ModuleNotFoundError:
 
 
 class PointNetDirectionScorer(nn.Module):
-    """Encode a shape once, then score candidate directions from XYZ only."""
+    """Encode a shape once, then score directions with optional prior features."""
 
     def __init__(
         self,
@@ -54,6 +56,9 @@ class PointNetDirectionScorer(nn.Module):
         point_embedding_dim: int = 1024,
         shape_hidden_dim: int = 256,
         direction_hidden_dim: int = 128,
+        candidate_feature_dim: int = 0,
+        global_feature_dim: int = 0,
+        global_hidden_dim: int = 64,
         dropout: float = 0.1,
     ) -> None:
         super().__init__()
@@ -79,8 +84,22 @@ class PointNetDirectionScorer(nn.Module):
             nn.SiLU(inplace=True),
             nn.LayerNorm(shape_hidden_dim),
         )
+        self.global_feature_dim = global_feature_dim
+        self.global_hidden_dim = global_hidden_dim if global_feature_dim else 0
+        self.global_head = (
+            nn.Sequential(
+                nn.Linear(global_feature_dim, self.global_hidden_dim),
+                nn.SiLU(inplace=True),
+                nn.LayerNorm(self.global_hidden_dim),
+                nn.Dropout(dropout),
+                nn.Linear(self.global_hidden_dim, self.global_hidden_dim),
+                nn.SiLU(inplace=True),
+            )
+            if global_feature_dim
+            else None
+        )
         self.direction_head = nn.Sequential(
-            nn.Linear(3, direction_hidden_dim),
+            nn.Linear(3 + candidate_feature_dim, direction_hidden_dim),
             nn.SiLU(inplace=True),
             nn.LayerNorm(direction_hidden_dim),
             nn.Dropout(dropout),
@@ -89,7 +108,12 @@ class PointNetDirectionScorer(nn.Module):
             nn.LayerNorm(direction_hidden_dim),
         )
         self.score_head = nn.Sequential(
-            nn.Linear(shape_hidden_dim + direction_hidden_dim, 256),
+            nn.Linear(
+                shape_hidden_dim
+                + self.global_hidden_dim
+                + direction_hidden_dim,
+                256,
+            ),
             nn.SiLU(inplace=True),
             nn.LayerNorm(256),
             nn.Dropout(dropout),
@@ -101,16 +125,40 @@ class PointNetDirectionScorer(nn.Module):
     def forward(
         self,
         points: torch.Tensor,
-        directions: torch.Tensor,
+        candidate_features: torch.Tensor,
+        global_features: torch.Tensor | None = None,
     ) -> torch.Tensor:
         batch = points.shape[0]
-        direction_count = directions.shape[1]
+        direction_count = candidate_features.shape[1]
         point_features = self.point_mlp(
             points.transpose(1, 2).contiguous()
         )
         shape_embedding = self.shape_head(point_features.amax(dim=2))
+        if self.global_head is not None:
+            if global_features is None:
+                raise ValueError(
+                    "global_features are required by this model"
+                )
+            shape_embedding = torch.cat(
+                [shape_embedding, self.global_head(global_features)],
+                dim=-1,
+            )
+        normalized_direction = F.normalize(
+            candidate_features[:, :, :3],
+            dim=-1,
+        )
+        if candidate_features.shape[-1] > 3:
+            direction_input = torch.cat(
+                [
+                    normalized_direction,
+                    candidate_features[:, :, 3:],
+                ],
+                dim=-1,
+            )
+        else:
+            direction_input = normalized_direction
         direction_embedding = self.direction_head(
-            F.normalize(directions, dim=-1)
+            direction_input
         )
         shape_context = shape_embedding[:, None, :].expand(
             -1,
@@ -123,9 +171,45 @@ class PointNetDirectionScorer(nn.Module):
         return scores.squeeze(-1)
 
 
+def load_geometry_feature_records(
+    directory: Path,
+) -> tuple[dict[str, dict[str, Any]], list[str], list[str]]:
+    """Load a 30-degree prior manifest and index records by job ID."""
+    manifest_path = directory / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("target_values_used_as_inputs"):
+        raise ValueError(
+            "Geometry prior manifest unexpectedly declares target leakage"
+        )
+    records = {
+        str(record["job_id"]): record
+        for record in manifest["records"]
+    }
+    candidate_names = [str(name) for name in manifest["candidate_feature_names"]]
+    global_names = [str(name) for name in manifest["global_feature_names"]]
+    return records, candidate_names, global_names
+
+
+def stacked_feature_standardisation(
+    parts: list[dict[str, Any]],
+    field: str,
+) -> tuple[np.ndarray, np.ndarray]:
+    values = [part[field] for part in parts if part[field].size]
+    if not values:
+        return (
+            np.zeros(0, dtype=np.float32),
+            np.ones(0, dtype=np.float32),
+        )
+    stacked = np.concatenate(values, axis=0)
+    mean = stacked.mean(axis=0)
+    std = np.maximum(stacked.std(axis=0), 1e-6)
+    return mean.astype(np.float32), std.astype(np.float32)
+
+
 def load_part_rows(
     records: list[dict[str, Any]],
     point_count: int,
+    geometry_feature_records: dict[str, dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     parts = []
     for record in records:
@@ -152,6 +236,46 @@ def load_part_rows(
                 data["retained_surface_mm2"],
                 dtype=np.float32,
             )
+        candidate_prior = np.empty(
+            (len(directions), 0),
+            dtype=np.float32,
+        )
+        global_features = np.empty(0, dtype=np.float32)
+        projected_area_30 = None
+        if geometry_feature_records is not None:
+            try:
+                geometry_record = geometry_feature_records[record["job_id"]]
+            except KeyError as error:
+                raise KeyError(
+                    f"Missing geometry prior for {record['job_id']}"
+                ) from error
+            with np.load(
+                geometry_record["geometry_feature_file"]
+            ) as data:
+                prior_directions = np.asarray(
+                    data["directions"],
+                    dtype=np.float32,
+                )
+                if not np.allclose(
+                    prior_directions,
+                    directions,
+                    atol=1e-7,
+                ):
+                    raise ValueError(
+                        f"Direction mismatch for {record['job_id']}"
+                    )
+                candidate_prior = np.asarray(
+                    data["candidate_features"],
+                    dtype=np.float32,
+                )
+                global_features = np.asarray(
+                    data["global_features"],
+                    dtype=np.float32,
+                )
+                projected_area_30 = np.asarray(
+                    data["projected_area_mm2_30"],
+                    dtype=np.float32,
+                )
         points, normals = normalise_cloud(raw_points, raw_normals)
         directions /= np.clip(
             np.linalg.norm(directions, axis=1, keepdims=True),
@@ -166,6 +290,9 @@ def load_part_rows(
             "areas": areas,
             "targets": targets,
             "retained_surface": retained_surface,
+            "candidate_prior": candidate_prior,
+            "global_features": global_features,
+            "projected_area_30": projected_area_30,
         })
     if not parts:
         raise ValueError("No labelled parts found")
@@ -178,14 +305,27 @@ def load_part_rows(
 def make_model_inputs(
     parts: list[dict[str, Any]],
     point_count: int,
+    prior_mean: np.ndarray,
+    prior_std: np.ndarray,
+    global_mean: np.ndarray,
+    global_std: np.ndarray,
     device: torch.device,
     augment: bool,
     generator: torch.Generator | None,
-) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
     batch = len(parts)
     direction_count = len(parts[0]["directions"])
+    prior_dim = len(prior_mean)
+    global_dim = len(global_mean)
     points = np.empty((batch, point_count, 6), dtype=np.float32)
-    directions = np.empty((batch, direction_count, 3), dtype=np.float32)
+    candidate_features = np.empty(
+        (batch, direction_count, 3 + prior_dim),
+        dtype=np.float32,
+    )
+    global_features = np.empty(
+        (batch, global_dim),
+        dtype=np.float32,
+    )
     targets = np.empty((batch, direction_count), dtype=np.float32)
     for index, part in enumerate(parts):
         if augment:
@@ -199,15 +339,31 @@ def make_model_inputs(
         points[index, :, :3] = part["points"][ids]
         points[index, :, 3:] = part["normals"][ids]
         part_directions = np.asarray(part["directions"], dtype=np.float32)
-        directions[index] = part_directions / np.clip(
+        normalized_directions = part_directions / np.clip(
             np.linalg.norm(part_directions, axis=1, keepdims=True),
             1e-9,
             None,
         )
+        if prior_dim:
+            candidate_features[index, :, :3] = normalized_directions
+            candidate_features[index, :, 3:] = normalise_features(
+                part["candidate_prior"],
+                prior_mean,
+                prior_std,
+            )
+        else:
+            candidate_features[index] = normalized_directions
+        if global_dim:
+            global_features[index] = normalise_features(
+                part["global_features"],
+                global_mean,
+                global_std,
+            )
         targets[index] = part["targets"]
 
     points_tensor = torch.from_numpy(points).to(device)
-    directions_tensor = torch.from_numpy(directions).to(device)
+    candidate_tensor = torch.from_numpy(candidate_features).to(device)
+    global_tensor = torch.from_numpy(global_features).to(device)
     targets_tensor = torch.from_numpy(targets).to(device)
     if augment:
         if generator is None:
@@ -221,11 +377,11 @@ def make_model_inputs(
             points_tensor[:, :, 3:],
             rotations.transpose(1, 2),
         )
-        directions_tensor = torch.bmm(
-            directions_tensor,
+        candidate_tensor[:, :, :3] = torch.bmm(
+            candidate_tensor[:, :, :3],
             rotations.transpose(1, 2),
         )
-    return points_tensor, directions_tensor, targets_tensor
+    return points_tensor, candidate_tensor, global_tensor, targets_tensor
 
 
 @torch.no_grad()
@@ -233,6 +389,10 @@ def predict_parts(
     model: nn.Module,
     parts: list[dict[str, Any]],
     point_count: int,
+    prior_mean: np.ndarray,
+    prior_std: np.ndarray,
+    global_mean: np.ndarray,
+    global_std: np.ndarray,
     device: torch.device,
     batch_shapes: int = 8,
 ) -> list[np.ndarray]:
@@ -240,15 +400,23 @@ def predict_parts(
     predictions = []
     for start in range(0, len(parts), batch_shapes):
         selected = parts[start:start + batch_shapes]
-        points, directions, _ = make_model_inputs(
+        points, candidate_features, global_features, _ = make_model_inputs(
             selected,
             point_count,
+            prior_mean,
+            prior_std,
+            global_mean,
+            global_std,
             device,
             augment=False,
             generator=None,
         )
         predictions.extend(
-            model(points, directions).float().cpu().numpy()
+            model(
+                points,
+                candidate_features,
+                global_features if len(global_mean) else None,
+            ).float().cpu().numpy()
         )
     return predictions
 
@@ -271,37 +439,67 @@ def write_report(
     arguments: argparse.Namespace,
     metrics: dict[str, Any],
 ) -> None:
-    direction_only = metrics["test"]["pointnet_direction_only"]
-    pointnet_features = metrics["test"]["pointnet_with_18_features"]
-    candidate_mlp = metrics["test"]["candidate_mlp"]
+    network = metrics["test"]["network"]
+    direction_only = metrics["test"]["direction_only_reference"]
+    prior30 = metrics["test"]["geometry_prior_30deg_baseline"]
     baseline = metrics["test"]["retained_surface_baseline"]
+    if prior30 is None:
+        title = "4096 点 PointNet 方向-only 评分器"
+        comparison_header = "方向-only PointNet"
+        comparison_values = direction_only
+        input_lines = (
+            "- 每个候选方向只输入 3 维 XYZ。\n"
+            "- 不使用候选几何特征或几何 baseline。"
+        )
+        results_table = f"""| 指标 | 当前网络 | 方向-only参考 | 45°保留面规则 |
+|---|---:|---:|---:|
+| Spearman 均值 | {network["spearman_mean"]:.4f} | {direction_only["spearman_mean"]:.4f} | {baseline["spearman_mean"]:.4f} |
+| Spearman 中位数 | {network["spearman_median"]:.4f} | {direction_only["spearman_median"]:.4f} | {baseline["spearman_median"]:.4f} |
+| Kendall 中位数 | {network["kendall_median"]:.4f} | {direction_only["kendall_median"]:.4f} | {baseline["kendall_median"]:.4f} |
+| NDCG@5 均值 | {network["ndcg_at_5_mean"]:.4f} | {direction_only["ndcg_at_5_mean"]:.4f} | {baseline["ndcg_at_5_mean"]:.4f} |
+| NDCG@5 中位数 | {network["ndcg_at_5_median"]:.4f} | {direction_only["ndcg_at_5_median"]:.4f} | {baseline["ndcg_at_5_median"]:.4f} |
+| NDCG@10 中位数 | {network["ndcg_at_10_median"]:.4f} | {direction_only["ndcg_at_10_median"]:.4f} | {baseline["ndcg_at_10_median"]:.4f} |
+| Top-1 regret 中位数 | {network["top1_regret_median"]:.4f} | {direction_only["top1_regret_median"]:.4f} | {baseline["top1_regret_median"]:.4f} |
+| Top-1 面积/oracle 中位数 | {network["top1_area_ratio_median"]:.4f} | {direction_only["top1_area_ratio_median"]:.4f} | {baseline["top1_area_ratio_median"]:.4f} |
+| Top-5 精确命中 | {network["top5_exact_count"]}/{network["count"]} | {direction_only["top5_exact_count"]}/{direction_only["count"]} | {baseline["top5_exact_count"]}/{baseline["count"]} |"""
+    else:
+        title = "4096 点 PointNet＋30° 几何先验评分器"
+        comparison_header = "PointNet＋30°先验"
+        comparison_values = network
+        input_lines = (
+            f"- 每个候选方向输入 3 维方向、"
+            f"{len(metrics['dataset']['candidate_input']) - 3} 维 "
+            "30°候选几何特征。\n"
+            f"- PointNet 形状向量额外拼接 "
+            f"{metrics['dataset']['global_input_dim']} 维旋转不变全局形状特征。\n"
+            "- 30°先验不应用小孔豁免，也不读取 45°目标面积。"
+        )
+        results_table = f"""| 指标 | {comparison_header} | 方向-only PointNet | 30°规则直接排序 | 45°保留面规则 |
+|---|---:|---:|---:|---:|
+| Spearman 均值 | {comparison_values["spearman_mean"]:.4f} | {direction_only["spearman_mean"]:.4f} | {prior30["spearman_mean"]:.4f} | {baseline["spearman_mean"]:.4f} |
+| Spearman 中位数 | {comparison_values["spearman_median"]:.4f} | {direction_only["spearman_median"]:.4f} | {prior30["spearman_median"]:.4f} | {baseline["spearman_median"]:.4f} |
+| Kendall 中位数 | {comparison_values["kendall_median"]:.4f} | {direction_only["kendall_median"]:.4f} | {prior30["kendall_median"]:.4f} | {baseline["kendall_median"]:.4f} |
+| NDCG@5 均值 | {comparison_values["ndcg_at_5_mean"]:.4f} | {direction_only["ndcg_at_5_mean"]:.4f} | {prior30["ndcg_at_5_mean"]:.4f} | {baseline["ndcg_at_5_mean"]:.4f} |
+| NDCG@5 中位数 | {comparison_values["ndcg_at_5_median"]:.4f} | {direction_only["ndcg_at_5_median"]:.4f} | {prior30["ndcg_at_5_median"]:.4f} | {baseline["ndcg_at_5_median"]:.4f} |
+| NDCG@10 中位数 | {comparison_values["ndcg_at_10_median"]:.4f} | {direction_only["ndcg_at_10_median"]:.4f} | {prior30["ndcg_at_10_median"]:.4f} | {baseline["ndcg_at_10_median"]:.4f} |
+| Top-1 regret 中位数 | {comparison_values["top1_regret_median"]:.4f} | {direction_only["top1_regret_median"]:.4f} | {prior30["top1_regret_median"]:.4f} | {baseline["top1_regret_median"]:.4f} |
+| Top-1 面积/oracle 中位数 | {comparison_values["top1_area_ratio_median"]:.4f} | {direction_only["top1_area_ratio_median"]:.4f} | {prior30["top1_area_ratio_median"]:.4f} | {baseline["top1_area_ratio_median"]:.4f} |
+| Top-5 精确命中 | {comparison_values["top5_exact_count"]}/{comparison_values["count"]} | {direction_only["top5_exact_count"]}/{direction_only["count"]} | {prior30["top5_exact_count"]}/{prior30["count"]} | {baseline["top5_exact_count"]}/{baseline["count"]} |"""
     path.write_text(
-        f"""# 4096 点 PointNet 方向评分器
+        f"""# {title}
 
 ## 输入与网络
 
 - 每件零件 {arguments.point_count} 点，输入 XYZ＋法向，共 6 个通道。
 - PointNet 对每件形状只编码一次，得到 {arguments.point_embedding_dim} 维 embedding。
-- 每个候选方向只输入 3 维 XYZ，不使用任何 18 维候选几何特征。
-- 形状 embedding 与方向 embedding 拼接后输出一个标量分数。
+{input_lines}
+- 形状上下文与候选方向 embedding 拼接后输出一个标量分数。
 - 训练时对点云、法向和候选方向施加同一个随机 SO(3) 旋转。
-- `anchor_weight=0`；几何 baseline 不进入预测、损失或模型选择。
+- `anchor_weight=0`；任何几何 baseline 都不进入预测、损失或模型选择。
 
 ## Test 结果
 
-| 指标 | 方向-only PointNet | PointNet＋18 特征 | CandidateMLP |
-|---|---:|---:|---:|
-| Spearman 中位数 | {direction_only["spearman_median"]:.4f} | {pointnet_features["spearman_median"]:.4f} | {candidate_mlp["spearman_median"]:.4f} |
-| Kendall 中位数 | {direction_only["kendall_median"]:.4f} | {pointnet_features["kendall_median"]:.4f} | {candidate_mlp["kendall_median"]:.4f} |
-| NDCG@5 中位数 | {direction_only["ndcg_at_5_median"]:.4f} | {pointnet_features["ndcg_at_5_median"]:.4f} | {candidate_mlp["ndcg_at_5_median"]:.4f} |
-| NDCG@10 中位数 | {direction_only["ndcg_at_10_median"]:.4f} | {pointnet_features["ndcg_at_10_median"]:.4f} | {candidate_mlp["ndcg_at_10_median"]:.4f} |
-| Top-1 面积/oracle 中位数 | {direction_only["top1_area_ratio_median"]:.4f} | {pointnet_features["top1_area_ratio_median"]:.4f} | {candidate_mlp["top1_area_ratio_median"]:.4f} |
-| Top-5 精确命中 | {direction_only["top5_exact_count"]}/{direction_only["count"]} | {pointnet_features["top5_exact_count"]}/{pointnet_features["count"]} | — |
-
-独立几何 baseline 的 Spearman 中位数为
-{baseline["spearman_median"]:.4f}，NDCG@5 中位数为
-{baseline["ndcg_at_5_median"]:.4f}。它与当前候选特征高度相关，因此只用于
-检查标签可预测性，不作为网络输入。
+{results_table}
 
 ## 训练
 
@@ -311,6 +509,7 @@ def write_report(
 - 最佳 epoch：{metrics["training"]["best_epoch"]}
 - 完成 epoch：{metrics["training"]["epochs_completed"]}
 - 参数量：{metrics["model"]["parameters"]}
+- 30°几何先验：{metrics["dataset"]["uses_30deg_geometry_prior"]}
 
 ## 产物
 
@@ -336,19 +535,17 @@ def main() -> None:
         "--pointnet-reference-report",
         type=Path,
         default=Path(
-            "reports/pointnet_projection_scorer_2026-11-20/metrics.json"
-        ),
-    )
-    parser.add_argument(
-        "--mlp-reference-report",
-        type=Path,
-        default=Path(
-            "reports/projection_score_mlp_unanchored_2026-11-20/metrics.json"
+            "reports/pointnet_direction_only_4096_expanded_932_100_2026-11-20/metrics.json"
         ),
     )
     parser.add_argument(
         "--name",
         default="pointnet_direction_only_4096_2026-11-20",
+    )
+    parser.add_argument(
+        "--geometry-features",
+        type=Path,
+        help="30-degree prior feature directory with manifest.json",
     )
     parser.add_argument("--epochs", type=int, default=120)
     parser.add_argument("--batch-shapes", type=int, default=16)
@@ -382,8 +579,12 @@ def main() -> None:
 
     root = Path(__file__).resolve().parents[1]
     dataset_dir = (root / args.dataset).resolve()
+    geometry_features_dir = (
+        (root / args.geometry_features).resolve()
+        if args.geometry_features is not None
+        else None
+    )
     pointnet_reference_path = (root / args.pointnet_reference_report).resolve()
-    mlp_reference_path = (root / args.mlp_reference_report).resolve()
     split = json.loads((dataset_dir / "split.json").read_text(encoding="utf-8"))
     source_train_records = split["train_records"]
     test_records = split["validation_records"]
@@ -408,18 +609,56 @@ def main() -> None:
     ) & test_hashes:
         raise ValueError("Geometry hash overlap detected between data splits")
 
-    fit_parts = load_part_rows(fit_records, args.point_count)
+    geometry_feature_records = None
+    candidate_prior_names: list[str] = []
+    global_feature_names: list[str] = []
+    if geometry_features_dir is not None:
+        (
+            geometry_feature_records,
+            candidate_prior_names,
+            global_feature_names,
+        ) = load_geometry_feature_records(geometry_features_dir)
+
+    fit_parts = load_part_rows(
+        fit_records,
+        args.point_count,
+        geometry_feature_records,
+    )
     development_parts = load_part_rows(
         development_records,
         args.point_count,
+        geometry_feature_records,
     )
-    test_parts = load_part_rows(test_records, args.point_count)
+    test_parts = load_part_rows(
+        test_records,
+        args.point_count,
+        geometry_feature_records,
+    )
+
+    prior_mean, prior_std = stacked_feature_standardisation(
+        fit_parts,
+        "candidate_prior",
+    )
+    global_mean, global_std = stacked_feature_standardisation(
+        fit_parts,
+        "global_features",
+    )
+    if len(prior_mean) != len(candidate_prior_names):
+        raise ValueError(
+            "Candidate prior feature names and values have inconsistent sizes"
+        )
+    if len(global_mean) != len(global_feature_names):
+        raise ValueError(
+            "Global feature names and values have inconsistent sizes"
+        )
 
     model = PointNetDirectionScorer(
         point_channels=6,
         point_embedding_dim=args.point_embedding_dim,
         shape_hidden_dim=args.shape_hidden_dim,
         direction_hidden_dim=args.direction_hidden_dim,
+        candidate_feature_dim=len(prior_mean),
+        global_feature_dim=len(global_mean),
         dropout=args.dropout,
     ).to(device)
     parameter_count = sum(parameter.numel() for parameter in model.parameters())
@@ -457,14 +696,27 @@ def main() -> None:
                 fit_parts[int(index)]
                 for index in order[start:start + args.batch_shapes]
             ]
-            points, directions, targets = make_model_inputs(
+            (
+                points,
+                candidate_features,
+                global_features,
+                targets,
+            ) = make_model_inputs(
                 selected,
                 args.point_count,
+                prior_mean,
+                prior_std,
+                global_mean,
+                global_std,
                 device,
                 augment=True,
                 generator=generator,
             )
-            predictions = model(points, directions)
+            predictions = model(
+                points,
+                candidate_features,
+                global_features if len(global_mean) else None,
+            )
             mse = F.mse_loss(predictions, targets)
             batch, candidates = targets.shape
             left = torch.randint(
@@ -509,6 +761,10 @@ def main() -> None:
             model,
             development_parts,
             args.point_count,
+            prior_mean,
+            prior_std,
+            global_mean,
+            global_std,
             device,
         )
         development_rows = enriched_rows(
@@ -566,13 +822,17 @@ def main() -> None:
         model,
         test_parts,
         args.point_count,
+        prior_mean,
+        prior_std,
+        global_mean,
+        global_std,
         device,
     )
     baseline_predictions = [
         score_from_lower_is_better(part["retained_surface"])
         for part in test_parts
     ]
-    test_direction_only, test_rows = evaluate_parts(
+    test_network, test_rows = evaluate_parts(
         test_parts,
         test_predictions,
     )
@@ -580,8 +840,23 @@ def main() -> None:
         test_parts,
         baseline_predictions,
     )
+    test_prior30 = None
+    prior30_rows = None
+    if geometry_feature_records is not None:
+        prior30_predictions = [
+            score_from_lower_is_better(part["projected_area_30"])
+            for part in test_parts
+        ]
+        test_prior30, prior30_rows = evaluate_parts(
+            test_parts,
+            prior30_predictions,
+    )
     pointnet_reference = load_reference_model(pointnet_reference_path)
-    candidate_mlp = load_reference_model(mlp_reference_path)
+    network_name = (
+        "PointNetGeometryPrior30Scorer"
+        if geometry_feature_records is not None
+        else "PointNetDirectionScorer"
+    )
 
     metrics = {
         "dataset": {
@@ -590,11 +865,24 @@ def main() -> None:
             "development_count": len(development_parts),
             "test_count": len(test_parts),
             "direction_count": int(len(fit_parts[0]["targets"])),
-            "candidate_input_dim": 3,
-            "candidate_input": ["direction_x", "direction_y", "direction_z"],
+            "candidate_input_dim": 3 + len(prior_mean),
+            "candidate_input": [
+                "direction_x",
+                "direction_y",
+                "direction_z",
+                *candidate_prior_names,
+            ],
+            "global_input_dim": len(global_mean),
+            "global_input": global_feature_names,
             "point_count": args.point_count,
             "point_channels": ["x", "y", "z", "normal_x", "normal_y", "normal_z"],
             "uses_18_candidate_geometry_features": False,
+            "uses_30deg_geometry_prior": bool(prior_mean.size),
+            "geometry_features": (
+                str(geometry_features_dir)
+                if geometry_features_dir is not None
+                else None
+            ),
             "development_project": development_project,
             "test_projects": sorted({
                 record["source_project"] for record in test_records
@@ -608,25 +896,29 @@ def main() -> None:
             "elapsed_seconds": time.monotonic() - started,
         },
         "model": {
-            "name": "PointNetDirectionScorer",
+            "name": network_name,
             "parameters": parameter_count,
             "anchor_weight": 0.0,
-            "geometry_fusion": False,
+            "geometry_fusion": bool(prior_mean.size),
             "uses_18_candidate_geometry_features": False,
+            "uses_30deg_geometry_prior": bool(prior_mean.size),
         },
         "test": {
-            "pointnet_direction_only": test_direction_only,
-            "pointnet_with_18_features": pointnet_reference,
-            "candidate_mlp": candidate_mlp,
+            "network": test_network,
+            "network_name": network_name,
+            "direction_only_reference": pointnet_reference,
+            "geometry_prior_30deg_baseline": test_prior30,
             "retained_surface_baseline": test_baseline,
             "per_part": test_rows,
             "baseline_per_part": baseline_rows,
+            "prior30_per_part": prior30_rows,
         },
         "limitations": [
             "The target is a deterministic projected-area proxy, not Magics output.",
-            "The final test contains one project and only 10 parts.",
+            "The expanded split contains 100 validation parts, but 95 come from projects also represented in training.",
             "The model scores 256 sampled directions rather than a continuous sphere.",
             "PointNet rotation robustness is encouraged by augmentation but is not mathematically guaranteed.",
+            "The 30-degree prior is a geometric proxy and is strongly related to the 45-degree target by construction.",
         ],
     }
     config = {
@@ -636,9 +928,23 @@ def main() -> None:
         "batch_shapes": args.batch_shapes,
         "point_count": args.point_count,
         "point_channels": 6,
-        "candidate_input_dim": 3,
-        "candidate_input": ["direction_x", "direction_y", "direction_z"],
+        "candidate_input_dim": 3 + len(prior_mean),
+        "candidate_input": [
+            "direction_x",
+            "direction_y",
+            "direction_z",
+            *candidate_prior_names,
+        ],
+        "candidate_feature_names": candidate_prior_names,
+        "global_input_dim": len(global_mean),
+        "global_feature_names": global_feature_names,
         "uses_18_candidate_geometry_features": False,
+        "uses_30deg_geometry_prior": bool(prior_mean.size),
+        "geometry_features": (
+            str(geometry_features_dir)
+            if geometry_features_dir is not None
+            else None
+        ),
         "point_embedding_dim": args.point_embedding_dim,
         "shape_hidden_dim": args.shape_hidden_dim,
         "direction_hidden_dim": args.direction_hidden_dim,
@@ -653,7 +959,11 @@ def main() -> None:
         "parameters": parameter_count,
         "best_epoch": best_epoch,
         "anchor_weight": 0.0,
-        "geometry_fusion": False,
+        "geometry_fusion": bool(prior_mean.size),
+        "candidate_prior_mean": prior_mean.tolist(),
+        "candidate_prior_std": prior_std.tolist(),
+        "global_feature_mean": global_mean.tolist(),
+        "global_feature_std": global_std.tolist(),
     }
     torch.save({
         "model_state_dict": best_state,
@@ -683,7 +993,10 @@ def main() -> None:
         "name": args.name,
         "best_epoch": best_epoch,
         "elapsed_seconds": round(time.monotonic() - started, 2),
-        "test": metrics["test"]["pointnet_direction_only"],
+        "test": metrics["test"]["network"],
+        "prior30_baseline": metrics["test"][
+            "geometry_prior_30deg_baseline"
+        ],
         "baseline": metrics["test"]["retained_surface_baseline"],
         "report": str(report_dir),
     }, ensure_ascii=False, indent=2))
