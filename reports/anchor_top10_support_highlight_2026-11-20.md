@@ -1,8 +1,9 @@
 # Anchor 模型 Top-10 位姿与支撑面高亮
 
-对上一轮的 4 个测试零件，每个零件取平衡版 anchor + listwise/Top-K 模型评分最高的
-10 个候选方向。每个位姿用两个视角渲染，并按参与训练标签完全相同的 AlSi10Mg/standard
-45° 规则高亮保留下来的向下悬垂候选面。橙色面就是简化代理计入支撑投影的位置。
+对上一轮的 4 个测试零件，每个零件先渲染 256 个方向中 45° 投影面积最小的合成 GT，
+再取平衡版 anchor + listwise/Top-K 模型评分最高的 10 个候选方向。每个位姿用两个视角
+渲染，并按参与训练标签完全相同的 AlSi10Mg/standard 45° 规则高亮保留下来的向下悬垂
+候选面。橙色面就是简化代理计入支撑投影的位置。
 
 | 零件 | Top-1 面积/合成 GT | Top-10 最小 | Top-10 中位数 | Top-10 最大 | 合成 GT 的模型名次 |
 |---|---:|---:|---:|---:|---:|
@@ -23,13 +24,16 @@ reports/anchor_top10_support_highlight_2026-11-20/
 ├── manifest.json
 ├── ranking.csv
 ├── overview.jpg
-├── part_285_top_10.jpg
-├── part_822_top_10.jpg
-├── part_130_top_10.jpg
-├── part_348_top_10.jpg
+├── part_285_gt_and_top10.jpg
+├── part_822_gt_and_top10.jpg
+├── part_130_gt_and_top10.jpg
+├── part_348_gt_and_top10.jpg
 ├── images/
 └── anchor_top10_support_faces.zip
 ```
+
+每个零件汇总图包含 11 个姿态：第 1 个是合成 GT，后 10 个是模型 Top-10。合成 GT
+可能同时出现在 Top-10 中；这是正常现象，单独保留 GT 能明确无歧义地展示最小值基准。
 
 复现命令：
 
