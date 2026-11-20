@@ -23,6 +23,7 @@
 5. 网络输入为零件几何和候选方向，输出该方向的面积、代价或分数。
 6. query 只在推理阶段作为几何硬约束使用。
 7. 网络按分数从高到低推荐；方向违反 query 时舍弃并检查下一名。
+8. 低阈值30°评分作为显式锚点，网络优先学习相对锚点的残差。
 
 ## 代理支撑与评分
 
@@ -69,8 +70,20 @@ normalized_cost
 - 输入：采样点、法向、候选构建方向。
 - 模型：复用现有 PointNet/MLP 候选评分器结构。
 - 输出：候选方向的预测面积、代价或分数。
-- 损失：弱回归损失 + 同一零件候选之间的 pairwise ranking loss。
+- 损失：弱回归损失 + listwise ranking loss + 同一零件候选之间的pairwise
+  ranking loss + 45°目标Top-K候选对随机负例的损失。
 - 排序约束：`A_proj(i) < A_proj(j)` 时，`score(i) > score(j)`。
+
+30°锚点后的评分为：
+
+```text
+final_score =
+    anchor_weight × score_from_lower_is_better(projected_area_30)
+    + residual_scale × network_residual(shape, build_direction)
+```
+
+启用anchor时，残差打分头最后一层零初始化，使训练前输出严格等于30°
+规则分数。45°目标只进入损失和评价，不进入输入。
 
 现有 MLP 以人工历史方向为正样本，属于旧任务。新训练器需要替换标签、负样本构造和评价指标，复用编码器与球面候选框架。
 
@@ -92,7 +105,9 @@ normalized_cost
 - Spearman、Kendall 排序相关；
 - NDCG@5、NDCG@10；
 - Top-1 与 oracle 最小面积的差距；
-- Top-K 覆盖率；
+- Top-3/Top-5/Top-10/Top-20 regret；
+- Top-K最小面积/oracle面积比；
+- Top-K内面积误差`≤5%`、`≤10%`、`≤20%`的零件比例；
 - 不同输入旋转下的评分和排名稳定性；
 - query 过滤前后的排名、面积损失和推理耗时。
 
@@ -130,6 +145,15 @@ normalized_cost
   实验见
   `reports/pointnet_geometry_prior_30deg_4096_expanded_932_100_2026-11-20.md`。
 - 下一步：以 30°排序为锚点训练残差排序器，并改用项目隔离 test 验证新零件族泛化。
+- 2026-11-20：已实现显式30° anchor residual、listwise loss、Top-K pairwise loss，
+  以及Top-3/5/10/20 regret和面积容差指标。重新按完整源项目生成
+  922件参数更新、10件development、100件test的严格隔离划分，项目交集为0。
+- 2026-11-20：在严格划分上，无anchor模型的Spearman中位数为0.7979，
+  anchor残差为0.8145；叠加平衡listwise/Top-K损失后，Top-5 regret从
+  0.0561降到0.0271，Top-10 regret降到0.0096。实验见
+  `reports/pointnet_30deg_anchor_residual_2026-11-20.md`。
+- 下一步：在未参与本轮λ扫描的新development项目上预注册并验证残差尺度，
+  同时尝试保留30°直接排序候选的混合候选集。
 - 下一步：接入 query 后过滤，在真实用户 query 上验证禁支撑区命中率。
 
 ## 复用代码
