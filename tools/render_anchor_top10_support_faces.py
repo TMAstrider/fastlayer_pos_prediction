@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render each model-top-10 pose with its retained support faces highlighted."""
+"""Render synthetic GT and model Top-10 poses with support faces highlighted."""
 from __future__ import annotations
 
 import argparse
@@ -231,6 +231,7 @@ def make_part_jobs(arguments: argparse.Namespace) -> list[dict[str, Any]]:
                 f"{int(candidate_index):03d}.png"
             )
             cases.append({
+                "case_kind": "model",
                 "model_rank": model_rank,
                 "candidate_index": int(candidate_index),
                 "direction": direction.tolist(),
@@ -242,6 +243,23 @@ def make_part_jobs(arguments: argparse.Namespace) -> list[dict[str, Any]]:
                 "image_path": str(output_dir / "images" / filename),
                 "image_file": f"images/{filename}",
             })
+        gt_filename = (
+            f"part_{record['source_part_id']}/"
+            f"gt_minimum_area_candidate_{gt_index:03d}.png"
+        )
+        gt_case = {
+            "case_kind": "gt",
+            "model_rank": None,
+            "candidate_index": gt_index,
+            "direction": gt_direction.tolist(),
+            "model_score": None,
+            "area_mm2": gt_area,
+            "area_over_gt": 1.0,
+            "angle_to_gt_deg": 0.0,
+            "area_rank": 1,
+            "image_path": str(output_dir / "images" / gt_filename),
+            "image_file": f"images/{gt_filename}",
+        }
         part_jobs.append({
             "number": number,
             "job_id": record["job_id"],
@@ -255,6 +273,7 @@ def make_part_jobs(arguments: argparse.Namespace) -> list[dict[str, Any]]:
             "gt_area_mm2": gt_area,
             "limits": limits,
             "projection_grid_mm": arguments.projection_grid_mm,
+            "gt_case": gt_case,
             "cases": cases,
             "output_dir": str(output_dir),
         })
@@ -465,25 +484,39 @@ def render_pose(
             pad=-8,
         )
 
-    figure.text(
-        0.025,
-        0.955,
-        (
+    if case["case_kind"] == "gt":
+        header = (
+            f"Part {part['source_part_id']} · synthetic GT · "
+            f"minimum-area candidate {case['candidate_index']}"
+        )
+        details = (
+            f"Support-candidate area {case['area_mm2']:.2f} mm² · "
+            "minimum of 256 sampled directions\n"
+            "area rank 1 · model score n/a"
+        )
+        header_color = "#196b46"
+    else:
+        header = (
             f"Part {part['source_part_id']} · model rank "
             f"{case['model_rank']} / {len(part['cases'])} · "
             f"candidate {case['candidate_index']}"
-        ),
+        )
+        details = (
+            f"Support-candidate area {case['area_mm2']:.2f} mm² · "
+            f"{case['area_over_gt']:.2f}× synthetic GT · "
+            f"angle to GT {case['angle_to_gt_deg']:.1f}°\n"
+            f"model score {case['model_score']:.4f} · "
+            f"area rank {case['area_rank']}"
+        )
+        header_color = "#202b3b"
+    figure.text(
+        0.025,
+        0.955,
+        header,
         fontsize=13,
         weight="bold",
-        color="#202b3b",
+        color=header_color,
         va="top",
-    )
-    details = (
-        f"Support-candidate area {case['area_mm2']:.2f} mm² · "
-        f"{case['area_over_gt']:.2f}× synthetic GT · "
-        f"angle to GT {case['angle_to_gt_deg']:.1f}°\n"
-        f"model score {case['model_score']:.4f} · "
-        f"area rank {case['area_rank']}"
     )
     figure.text(
         0.025,
@@ -533,8 +566,9 @@ def render_part(part: dict[str, Any]) -> tuple[dict[str, Any], Path]:
     gt_rotation = np.asarray(part["gt_rotation"])
     reference_pose = vertices @ gt_rotation.T
 
+    rendered_gt_case = None
     rendered_cases = []
-    for case in part["cases"]:
+    for case in [part["gt_case"], *part["cases"]]:
         direction = np.asarray(case["direction"], dtype=np.float64)
         result = evaluate_support_projection(
             vertices,
@@ -571,7 +605,7 @@ def render_part(part: dict[str, Any]) -> tuple[dict[str, Any], Path]:
             case,
             part,
         )
-        rendered_cases.append({
+        rendered_case = {
             **case,
             "recomputed_area_mm2": recomputed_area,
             "support_candidate_face_count": candidate_count,
@@ -580,34 +614,45 @@ def render_part(part: dict[str, Any]) -> tuple[dict[str, Any], Path]:
                     "small_horizontal_exemptions"
                 ]
             ),
-        })
+        }
+        if case["case_kind"] == "gt":
+            rendered_gt_case = rendered_case
+        else:
+            rendered_cases.append(rendered_case)
         print(
             f"Part {part['source_part_id']} "
-            f"rank {case['model_rank']}/{len(part['cases'])}: "
+            f"{case['case_kind']} "
+            f"{case['model_rank'] or ''}: "
             f"{candidate_count} support-candidate faces",
             flush=True,
         )
 
+    if rendered_gt_case is None:
+        raise RuntimeError("Synthetic GT pose was not rendered")
     thumbnails = []
-    for case in rendered_cases:
+    for case in [rendered_gt_case, *rendered_cases]:
         with Image.open(case["image_path"]) as image:
             thumbnails.append(
                 ImageOps.contain(
                     image.convert("RGB"),
-                    (720, 370),
+                    (600, 370),
                 )
             )
     sheet = Image.new("RGB", (3600, 740), "#e9edf2")
     for index, thumbnail in enumerate(thumbnails):
-        x = (index % 5) * 720
-        y = (index // 5) * 370
+        x = (index % 6) * 600
+        y = (index // 6) * 370
         sheet.paste(thumbnail, (x, y))
     sheet_path = (
         Path(part["output_dir"])
-        / f"part_{part['source_part_id']}_top_10.jpg"
+        / f"part_{part['source_part_id']}_gt_and_top10.jpg"
     )
     sheet.save(sheet_path, quality=92)
-    return {**part, "cases": rendered_cases}, sheet_path
+    return {
+        **part,
+        "gt_case": rendered_gt_case,
+        "cases": rendered_cases,
+    }, sheet_path
 
 
 def write_html_report(
@@ -621,6 +666,7 @@ def write_html_report(
 ) -> None:
     sections = []
     for part in parts:
+        gt_case = part["gt_case"]
         cards = "".join(
             (
                 f'<article><a href="{case["image_file"]}">'
@@ -638,6 +684,12 @@ def write_html_report(
                 f'{part["gt_area_mm2"]:.2f} mm². '
                 f'Top-10 uses the model ranking; the displayed area is '
                 f'the retained 45° overhang projection area.</p>'
+                f'<h3>45° synthetic GT / minimum-area reference</h3>'
+                f'<article class="reference"><a href="'
+                f'{gt_case["image_file"]}"><img loading="lazy" src="'
+                f'{gt_case["image_file"]}" alt="part '
+                f'{part["source_part_id"]} synthetic GT"></a></article>'
+                f'<h3>Model Top-10</h3>'
                 f'<a href="{sheets[int(part["source_part_id"])].name}">'
                 f'<img class="sheet" src="'
                 f'{sheets[int(part["source_part_id"])].name}" '
@@ -656,6 +708,8 @@ def write_html_report(
             '.sheet{width:100%;display:block}.grid{display:grid;'
             'grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;'
             'margin-top:12px}.grid img{width:100%;display:block}'
+            '.reference{max-width:920px;margin:8px 0 16px}'
+            '.reference img{width:100%;display:block}'
             '@media(max-width:900px){.grid{grid-template-columns:1fr}}'
             '</style><main>'
             '<h1>模型 Top-10 位姿与支撑面高亮</h1>'
@@ -666,6 +720,9 @@ def write_html_report(
             '<p>每张卡片的两个视角共享同一姿态和比例。所有候选方向'
             '都只做绕平台 Z 的显示 yaw 对齐，不改变构建方向、支撑面'
             '判定或面积。</p>'
+            '<p>每个零件先给出 256 个方向中投影面积最小的 45° 合成 GT，'
+            '再给出模型 Top-10。即使合成 GT 不在模型 Top-10 里，也会'
+            '单独保留。</p>'
             f'<p>规则文件：<code>{rules_path}</code></p>'
             + "".join(sections)
             + '</main></html>'
@@ -681,6 +738,7 @@ def write_ranking_csv(
     fields = [
         "source_part_id",
         "gt_area_mm2",
+        "case_kind",
         "model_rank",
         "candidate_index",
         "model_score",
@@ -696,15 +754,29 @@ def write_ranking_csv(
         writer = csv.DictWriter(file, fieldnames=fields)
         writer.writeheader()
         for part in parts:
-            for case in part["cases"]:
+            for case in [part["gt_case"], *part["cases"]]:
                 writer.writerow({
                     "source_part_id": part["source_part_id"],
                     "gt_area_mm2": part["gt_area_mm2"],
-                    **{
-                        field: case[field]
-                        for field in fields
-                        if field in case
-                    },
+                    "case_kind": case["case_kind"],
+                    "model_rank": case["model_rank"] or "",
+                    "candidate_index": case["candidate_index"],
+                    "model_score": (
+                        ""
+                        if case["model_score"] is None
+                        else case["model_score"]
+                    ),
+                    "area_mm2": case["area_mm2"],
+                    "area_over_gt": case["area_over_gt"],
+                    "angle_to_gt_deg": case["angle_to_gt_deg"],
+                    "area_rank": case["area_rank"],
+                    "support_candidate_face_count": case[
+                        "support_candidate_face_count"
+                    ],
+                    "small_horizontal_exemptions": case[
+                        "small_horizontal_exemptions"
+                    ],
+                    "image_file": case["image_file"],
                 })
 
 
