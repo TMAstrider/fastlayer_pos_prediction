@@ -9,6 +9,7 @@ from tools.train_pointnet_direction_scorer import (
     PointNetDirectionScorer,
     load_part_rows,
     make_model_inputs,
+    stacked_feature_standardisation,
 )
 
 
@@ -156,6 +157,36 @@ class PointNetDirectionScorerTests(unittest.TestCase):
         self.assertEqual(tuple(candidates.shape), (1, 3, 7))
         self.assertEqual(tuple(global_features.shape), (1, 3))
         self.assertEqual(tuple(targets.shape), (1, 3))
+
+    def test_standardisation_handles_candidate_and_global_shapes(self) -> None:
+        parts = [
+            {
+                "candidate_prior": np.asarray(
+                    [[1.0, 2.0], [3.0, 4.0]],
+                    dtype=np.float32,
+                ),
+                "global_features": np.asarray([5.0, 9.0]),
+            },
+            {
+                "candidate_prior": np.asarray(
+                    [[5.0, 6.0], [7.0, 8.0]],
+                    dtype=np.float32,
+                ),
+                "global_features": np.asarray([7.0, 11.0]),
+            },
+        ]
+        candidate_mean, candidate_std = stacked_feature_standardisation(
+            parts,
+            "candidate_prior",
+        )
+        global_mean, global_std = stacked_feature_standardisation(
+            parts,
+            "global_features",
+        )
+        np.testing.assert_allclose(candidate_mean, [4.0, 5.0])
+        np.testing.assert_allclose(candidate_std, np.sqrt([5.0, 5.0]))
+        np.testing.assert_allclose(global_mean, [6.0, 10.0])
+        np.testing.assert_allclose(global_std, [1.0, 1.0])
 
 
 if __name__ == "__main__":

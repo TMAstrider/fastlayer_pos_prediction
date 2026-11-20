@@ -200,7 +200,11 @@ def stacked_feature_standardisation(
             np.zeros(0, dtype=np.float32),
             np.ones(0, dtype=np.float32),
         )
-    stacked = np.concatenate(values, axis=0)
+    stacked = (
+        np.stack(values, axis=0)
+        if values[0].ndim == 1
+        else np.concatenate(values, axis=0)
+    )
     mean = stacked.mean(axis=0)
     std = np.maximum(stacked.std(axis=0), 1e-6)
     return mean.astype(np.float32), std.astype(np.float32)
