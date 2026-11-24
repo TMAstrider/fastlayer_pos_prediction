@@ -1,0 +1,22 @@
+{
+  "name": "history_preference_head_direction_2026-11-24",
+  "dataset": "/mnt/panxin/proj/fastlayer_pos_prediction/labels/projection_support_area_expanded_932_100_v0_256",
+  "split_file": "/mnt/panxin/proj/fastlayer_pos_prediction/labels/projection_support_area_expanded_932_100_v0_256/split_project_isolated_100_seed30.json",
+  "init_model": "/mnt/panxin/proj/fastlayer_pos_prediction/runs/pointnet_point_direction_topk_controlled_4096_922_10_100_2026-11-20/best_model.pt",
+  "development_project": "0701-0710/0708/0708-铝1",
+  "point_count": 4096,
+  "batch_shapes": 4,
+  "epochs": 20,
+  "patience": 6,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "history_temperature": 0.1,
+  "candidate_history_weight": 1.0,
+  "target_cosine_temperature": 0.1,
+  "history_hidden_dim": 64,
+  "history_head_parameters": 16833,
+  "backbone_frozen": true,
+  "seed": 20261124,
+  "device": "cuda:2",
+  "best_epoch": 1
+}
