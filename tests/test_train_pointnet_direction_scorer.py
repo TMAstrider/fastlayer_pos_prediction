@@ -88,6 +88,41 @@ class PointNetDirectionScorerTests(unittest.TestCase):
                 torch.randn(1, 3, 4),
             )
 
+    def test_point_direction_dual_scorer_outputs_area_and_history(self) -> None:
+        torch.manual_seed(5)
+        model = PointDirectionInteractionScorer(
+            point_channels=6,
+            point_embedding_dim=24,
+            interaction_hidden_dim=16,
+            direction_hidden_dim=12,
+            candidate_chunk_size=3,
+            dropout=0.0,
+            enable_history_head=True,
+            history_hidden_dim=10,
+        ).eval()
+        points = torch.randn(2, 16, 6)
+        directions = torch.randn(2, 7, 3)
+        history_directions = torch.tensor([
+            [0.0, 0.0, 1.0],
+            [0.0, 1.0, 0.0],
+        ])
+        with torch.no_grad():
+            area_scores, candidate_history, exact_history = model.forward_dual(
+                points,
+                directions,
+                history_directions,
+            )
+            direct_area_scores = model(points, directions)
+        self.assertEqual(tuple(area_scores.shape), (2, 7))
+        self.assertEqual(tuple(candidate_history.shape), (2, 7))
+        self.assertEqual(tuple(exact_history.shape), (2,))
+        torch.testing.assert_close(
+            area_scores,
+            direct_area_scores,
+            atol=1e-6,
+            rtol=1e-6,
+        )
+
     def test_forward_scores_each_direction_from_xyz(self) -> None:
         model = PointNetDirectionScorer(
             point_channels=6,
@@ -113,6 +148,10 @@ class PointNetDirectionScorerTests(unittest.TestCase):
                 [0.0, 2.0, 0.0],
                 [0.0, 0.0, -3.0],
             ], dtype=np.float32),
+            "history_direction": np.asarray(
+                [0.0, 0.0, 1.0],
+                dtype=np.float32,
+            ),
             "targets": np.asarray([0.2, 0.8, 0.5], dtype=np.float32),
             "candidate_prior": np.empty((3, 0), dtype=np.float32),
             "global_features": np.empty(0, dtype=np.float32),
@@ -124,6 +163,7 @@ class PointNetDirectionScorerTests(unittest.TestCase):
             global_features,
             targets,
             anchors,
+            history_direction,
         ) = make_model_inputs(
             [part],
             point_count=4,
@@ -140,9 +180,15 @@ class PointNetDirectionScorerTests(unittest.TestCase):
         self.assertEqual(tuple(global_features.shape), (1, 0))
         self.assertEqual(tuple(targets.shape), (1, 3))
         self.assertEqual(tuple(anchors.shape), (1, 3))
+        self.assertEqual(tuple(history_direction.shape), (1, 3))
         np.testing.assert_allclose(
             torch.linalg.vector_norm(directions, dim=-1).numpy(),
             1.0,
+            atol=1e-6,
+        )
+        np.testing.assert_allclose(
+            history_direction.numpy(),
+            np.asarray([[0.0, 0.0, 1.0]], dtype=np.float32),
             atol=1e-6,
         )
 
@@ -151,12 +197,16 @@ class PointNetDirectionScorerTests(unittest.TestCase):
             "points": np.zeros((4, 3), dtype=np.float32),
             "normals": np.zeros((4, 3), dtype=np.float32),
             "directions": np.eye(3, dtype=np.float32),
+            "history_direction": np.asarray(
+                [0.0, 0.0, 1.0],
+                dtype=np.float32,
+            ),
             "targets": np.zeros(3, dtype=np.float32),
             "candidate_prior": np.empty((3, 0), dtype=np.float32),
             "global_features": np.empty(0, dtype=np.float32),
             "anchor_scores": np.empty(0, dtype=np.float32),
         }
-        *_, anchors = make_model_inputs(
+        *_, anchors, _history_direction = make_model_inputs(
             [part],
             point_count=4,
             prior_mean=np.empty(0, dtype=np.float32),
@@ -257,6 +307,7 @@ class PointNetDirectionScorerTests(unittest.TestCase):
             global_features,
             targets,
             anchors,
+            history_direction,
         ) = make_model_inputs(
             [part],
             point_count=4,
@@ -273,6 +324,7 @@ class PointNetDirectionScorerTests(unittest.TestCase):
         self.assertEqual(tuple(global_features.shape), (1, 3))
         self.assertEqual(tuple(targets.shape), (1, 3))
         self.assertEqual(tuple(anchors.shape), (1, 3))
+        self.assertEqual(tuple(history_direction.shape), (1, 3))
 
     def test_anchor_residual_model_starts_from_zero_residual(self) -> None:
         torch.manual_seed(1)

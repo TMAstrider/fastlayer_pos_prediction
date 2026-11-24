@@ -182,11 +182,17 @@ class PointDirectionInteractionScorer(nn.Module):
         direction_hidden_dim: int = 64,
         candidate_chunk_size: int = 32,
         dropout: float = 0.1,
+        enable_history_head: bool = False,
+        history_hidden_dim: int = 64,
     ) -> None:
         super().__init__()
         if point_embedding_dim < 1 or interaction_hidden_dim < 1:
             raise ValueError("Point and interaction dimensions must be positive")
-        if direction_hidden_dim < 1 or candidate_chunk_size < 1:
+        if (
+            direction_hidden_dim < 1
+            or candidate_chunk_size < 1
+            or history_hidden_dim < 1
+        ):
             raise ValueError("Direction and chunk dimensions must be positive")
         self.candidate_chunk_size = candidate_chunk_size
         self.point_mlp = nn.Sequential(
@@ -243,19 +249,27 @@ class PointDirectionInteractionScorer(nn.Module):
             nn.SiLU(inplace=True),
             nn.Linear(64, 1),
         )
+        representation_dim = (
+            direction_hidden_dim + 2 * interaction_hidden_dim
+        )
+        self.history_head = (
+            nn.Sequential(
+                nn.Linear(representation_dim + 3, history_hidden_dim),
+                nn.SiLU(inplace=True),
+                nn.LayerNorm(history_hidden_dim),
+                nn.Dropout(dropout),
+                nn.Linear(history_hidden_dim, 1),
+            )
+            if enable_history_head
+            else None
+        )
 
-    def forward(
+    def _direction_representations(
         self,
         points: torch.Tensor,
-        candidate_features: torch.Tensor,
-        global_features: torch.Tensor | None = None,
+        directions: torch.Tensor,
     ) -> torch.Tensor:
-        del global_features
-        if candidate_features.shape[-1] != 3:
-            raise ValueError(
-                "Point-direction interaction accepts direction XYZ only"
-            )
-        direction_count = candidate_features.shape[1]
+        direction_count = directions.shape[1]
         coordinates = points[:, :, :3]
         normals = points[:, :, 3:6]
         point_features = self.point_mlp(
@@ -266,30 +280,29 @@ class PointDirectionInteractionScorer(nn.Module):
             coordinates,
             dim=-1,
         )
-        scores = []
+        representations = []
         for start in range(
             0,
             direction_count,
             self.candidate_chunk_size,
         ):
-            directions = F.normalize(
-                candidate_features[
+            chunk_directions = F.normalize(
+                directions[
                     :,
                     start:start + self.candidate_chunk_size,
-                    :3,
                 ],
                 dim=-1,
             )
-            chunk_size = directions.shape[1]
+            chunk_size = chunk_directions.shape[1]
             point_height = torch.einsum(
                 "bnd,bud->bun",
                 coordinates,
-                directions,
+                chunk_directions,
             )
             normal_dot = torch.einsum(
                 "bnd,bud->bun",
                 normals,
-                directions,
+                chunk_directions,
             )
             tangential_radius = torch.sqrt(
                 (
@@ -312,7 +325,7 @@ class PointDirectionInteractionScorer(nn.Module):
                 dim=-1,
             )
             geometry_embedding = self.geometry_mlp(geometry)
-            direction_embedding = self.direction_mlp(directions)
+            direction_embedding = self.direction_mlp(chunk_directions)
             direction_scale, direction_bias = (
                 self.direction_condition(direction_embedding)
                 .chunk(2, dim=-1)
@@ -336,7 +349,7 @@ class PointDirectionInteractionScorer(nn.Module):
                 dim=2,
             )
             maximum = conditioned.amax(dim=2)
-            chunk_scores = self.score_head(torch.cat(
+            representations.append(torch.cat(
                 [
                     direction_embedding,
                     weighted,
@@ -344,8 +357,69 @@ class PointDirectionInteractionScorer(nn.Module):
                 ],
                 dim=-1,
             ))
-            scores.append(chunk_scores.squeeze(-1))
-        return torch.cat(scores, dim=1)
+        return torch.cat(representations, dim=1)
+
+    def forward(
+        self,
+        points: torch.Tensor,
+        candidate_features: torch.Tensor,
+        global_features: torch.Tensor | None = None,
+    ) -> torch.Tensor:
+        del global_features
+        if candidate_features.shape[-1] != 3:
+            raise ValueError(
+                "Point-direction interaction accepts direction XYZ only"
+            )
+        representations = self._direction_representations(
+            points,
+            candidate_features[:, :, :3],
+        )
+        return self.score_head(representations).squeeze(-1)
+
+    def forward_dual(
+        self,
+        points: torch.Tensor,
+        candidate_features: torch.Tensor,
+        history_directions: torch.Tensor,
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+        """Return area scores and history logits for candidates plus history."""
+        if self.history_head is None:
+            raise RuntimeError("History head was not enabled")
+        if candidate_features.shape[-1] != 3:
+            raise ValueError(
+                "Point-direction interaction accepts direction XYZ only"
+            )
+        if history_directions.shape != (
+            points.shape[0],
+            3,
+        ):
+            raise ValueError(
+                "history_directions must have shape [batch, 3]"
+            )
+        direction_count = candidate_features.shape[1]
+        directions = torch.cat(
+            [
+                candidate_features[:, :, :3],
+                history_directions[:, None, :],
+            ],
+            dim=1,
+        )
+        normalized_directions = F.normalize(directions, dim=-1)
+        representations = self._direction_representations(points, directions)
+        area_scores = self.score_head(
+            representations[:, :direction_count]
+        ).squeeze(-1)
+        history_logits = self.history_head(
+            torch.cat(
+                [representations, normalized_directions],
+                dim=-1,
+            )
+        ).squeeze(-1)
+        return (
+            area_scores,
+            history_logits[:, :direction_count],
+            history_logits[:, -1],
+        )
 
 
 def load_geometry_feature_records(
@@ -472,6 +546,10 @@ def load_part_rows(
             "points": points,
             "normals": normals,
             "directions": directions.astype(np.float32),
+            "history_direction": np.asarray(
+                record.get("gt_up_axis", [0.0, 0.0, 1.0]),
+                dtype=np.float32,
+            ),
             "areas": areas,
             "targets": targets,
             "retained_surface": retained_surface,
@@ -504,6 +582,7 @@ def make_model_inputs(
     torch.Tensor,
     torch.Tensor,
     torch.Tensor,
+    torch.Tensor,
 ]:
     batch = len(parts)
     direction_count = len(parts[0]["directions"])
@@ -520,6 +599,7 @@ def make_model_inputs(
     )
     targets = np.empty((batch, direction_count), dtype=np.float32)
     anchors = np.empty((batch, direction_count), dtype=np.float32)
+    history_directions = np.empty((batch, 3), dtype=np.float32)
     for index, part in enumerate(parts):
         if augment:
             ids = np.random.choice(
@@ -557,12 +637,22 @@ def make_model_inputs(
             anchors[index] = part["anchor_scores"]
         else:
             anchors[index] = 0.0
+        history_direction = np.asarray(
+            part["history_direction"],
+            dtype=np.float32,
+        )
+        history_directions[index] = history_direction / np.clip(
+            np.linalg.norm(history_direction),
+            1e-9,
+            None,
+        )
 
     points_tensor = torch.from_numpy(points).to(device)
     candidate_tensor = torch.from_numpy(candidate_features).to(device)
     global_tensor = torch.from_numpy(global_features).to(device)
     targets_tensor = torch.from_numpy(targets).to(device)
     anchors_tensor = torch.from_numpy(anchors).to(device)
+    history_tensor = torch.from_numpy(history_directions).to(device)
     if augment:
         if generator is None:
             raise ValueError("A random generator is required for training")
@@ -579,12 +669,17 @@ def make_model_inputs(
             candidate_tensor[:, :, :3],
             rotations.transpose(1, 2),
         )
+        history_tensor = torch.bmm(
+            history_tensor[:, None, :],
+            rotations.transpose(1, 2),
+        ).squeeze(1)
     return (
         points_tensor,
         candidate_tensor,
         global_tensor,
         targets_tensor,
         anchors_tensor,
+        history_tensor,
     )
 
 
@@ -719,6 +814,7 @@ def predict_parts(
             global_features,
             _,
             anchors,
+            _,
         ) = make_model_inputs(
             selected,
             point_count,
@@ -1175,6 +1271,7 @@ def main() -> None:
                 global_features,
                 targets,
                 anchors,
+                _,
             ) = make_model_inputs(
                 selected,
                 args.point_count,
